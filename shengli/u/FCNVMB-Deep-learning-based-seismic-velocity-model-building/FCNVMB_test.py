@@ -24,7 +24,7 @@ from LibConfig import *
 # Here indicating the GPU you want to use. if you don't have GPU, just leave it.
 cuda_available = torch.cuda.is_available()
 device         = torch.device("cuda" if cuda_available else "cpu")
-model_file     = models_dir+modelname+'_epoch'+str(Epochs)+'.pkl'
+model_file     = "/home/pengyaoguang/data/unet_data/models/SimulataModel/Simulate_FCNVMBModel_TrainSize100_Epoch100_BatchSize10_LR0.001_epoch80.pkl"
 net            = UnetModel(n_classes=Nclasses,in_channels=Inchannels, \
                            is_deconv=True,is_batchnorm=True) 
 net.load_state_dict(torch.load(model_file))

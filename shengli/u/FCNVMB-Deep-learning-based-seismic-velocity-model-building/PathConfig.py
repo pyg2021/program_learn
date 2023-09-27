@@ -17,9 +17,9 @@ from ParamConfig import *
 
 # Data filename
 if SimulateData:
-    tagD0 = 'georec'
+    tagD0 = 'seismic_data'
     tagV0 = 'vmodel'
-    tagD1 = 'Rec'
+    tagD1 = 'seismic_data'
     tagV1 = 'vmodel'
 else:
     tagD0 = 'srec'
@@ -38,7 +38,7 @@ truthname     = tagV1
 ####                   PATHS                  #####
 ###################################################
  
-main_dir   = '/home/pengyaoguang/1325/shengli/unet/FCNVMB-Deep-learning-based-seismic-velocity-model-building'     # Replace your main path here
+main_dir   = '/home/pengyaoguang/data/unet_data/'     # Replace your main path here
 
 ## Check the main directory
 if len(main_dir) == 0:

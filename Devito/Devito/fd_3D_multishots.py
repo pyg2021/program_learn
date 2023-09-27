@@ -54,11 +54,11 @@ for index_v in range(nv):
     time_range = TimeAxis(start=t0, stop=tn, step=dt)
     
     # Define a velocity profile. The velocity is in km/s
-    # v = np.empty(shape, dtype=np.float32)
-    # v[:, :, :51] = velocity_nv[index_v][0]
-    # v[:, :, 51:] = velocity_nv[index_v][1]
-    v_0=sio.loadmat('program/shengli/salt_data/v0.mat')
-    v=v_0['v']
+    v = np.empty(shape, dtype=np.float32)
+    v[:, :, :51] = velocity_nv[index_v][0]
+    v[:, :, 51:] = velocity_nv[index_v][1]
+    # v_0=sio.loadmat('program/shengli/salt_data/v0.mat')
+    # v=v_0['v']
     f0 = 0.015  # Source peak frequency is 15Hz (0.015 kHz)
     check_points_per_wavelength(np.min(v), f0, np.max(spacing), dt) # 注意是否会不满足波长条件，可能会有频散？
     

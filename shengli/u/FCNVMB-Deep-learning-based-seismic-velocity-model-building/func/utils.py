@@ -105,7 +105,7 @@ def SaveTrainResults(loss,SavePath,font2,font3):
     data = {}
     data['loss'] = loss
     scipy.io.savemat(SavePath+'TrainLoss',data)
-    plt.show(fig)
+    # plt.show(fig)
     plt.close()
 
 def SaveTestResults(TotPSNR,TotSSIM,Prediction,GT,SavePath):
@@ -149,7 +149,7 @@ def PlotComparison(pd,gt,label_dsp_dim,label_dsp_blk,dh,minvalue,maxvalue,font2,
     ax2.invert_yaxis()
     plt.subplots_adjust(bottom=0.15,top=0.92,left=0.08,right=0.98)
     plt.savefig(SavePath+'PD',transparent=True)
-    plt.show(fig1)
-    plt.show(fig2)
-    plt.close()
+    # plt.show(fig1)
+    # plt.show(fig2)
+    # plt.close()
    

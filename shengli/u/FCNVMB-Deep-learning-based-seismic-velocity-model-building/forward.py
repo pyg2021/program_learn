@@ -12,8 +12,10 @@ ny = 301
 nx = 201
 dx = 10
 i=1
-for i in range(1,1601):
-    v=sio.loadmat("/home/pengyaoguang/data/unet_data/train_data/SimulateData/vmodel_train/vmodel{}.mat".format(i))['vmodel']
+for i in range(1700,1701):
+    # v=sio.loadmat("/home/pengyaoguang/data/unet_data/data/train_data/SimulateData/vmodel_train/vmodel{}.mat".format(i))['vmodel']
+    # v=sio.loadmat("/home/pengyaoguang/data/unet_data/data/train_data/SEGSaltData/vmodel_train/svmodel{}.mat".format(i))['svmodel']
+    v=sio.loadmat("/home/pengyaoguang/data/unet_data/data/test_data/SimulateData/vmodel_test/vmodel{}.mat".format(i))['vmodel']
     # ny = 2301
     # nx = 751
     # dx = 4.0
@@ -25,11 +27,11 @@ for i in range(1,1601):
     # plt.savefig("/home/pengyaoguang/data/unet_data/result/svmodel1.png")
     v=np.float32(v.T)
     v=torch.from_numpy(v).to(device)
-    n_shots = 27
+    n_shots = 29
 
     n_sources_per_shot = 1
     d_source = 10  # 20 * 4m = 80m
-    first_source = 10  # 10 * 4m = 40m
+    first_source = 0  # 10 * 4m = 40m
     source_depth = 0  # 2 * 4m = 8m
 
     n_receivers_per_shot = 301
@@ -88,8 +90,9 @@ for i in range(1,1601):
 
     # plt.savefig('/home/pengyaoguang/data/unet_data/result/test_image.png')
     end=time.time()
-    print(end-start,"ss")
+    print(end-start,"s")
 
     seismic=receiver_amplitudes.cpu().numpy()
-    sio.savemat("/home/pengyaoguang/data/unet_data/train_data/SimulateData/georec_train/seismic_data{}.mat".format(i),{'seismic_data':seismic})
+    # sio.savemat("/home/pengyaoguang/data/unet_data/data/train_data/SimulateData/georec_train/seismic_data{}.mat".format(i),{'seismic_data':seismic})
+    sio.savemat("/home/pengyaoguang/data/unet_data/data/test_data/SimulateData/georec_test/seismic_data{}.mat".format(i),{'seismic_data':seismic})
     # receiver_amplitudes.cpu().numpy().tofile('./deepwave_learn/marmousi_data.bin')
