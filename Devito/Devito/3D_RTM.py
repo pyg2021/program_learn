@@ -18,7 +18,7 @@ if preset == 'layers-isotropic':
                           spacing=(10., 10., 10.), nbl=20, grid=grid, nlayers=2)
     filter_sigma = (1, 1, 1 )
     nshots = 21
-    nreceivers = 101
+    nreceivers = 400
     t0 = 0.
     tn = 1000.  # Simulation last 1 second (1000 ms)
     f0 = 0.010  # Source peak frequency is 10Hz (0.010 kHz)
@@ -57,8 +57,8 @@ src_coordinates[0, -1] = 20.  # Depth is 20m
 
 # Initialize receivers for synthetic and imaging data
 rec_coordinates = np.empty((nreceivers, 3))
-rec_coordinates[:, 0] = np.linspace(0, model.domain_size[0], num=nreceivers)
-rec_coordinates[:, 1] = 30
+rec_coordinates[:, 0] = np.repeat(np.linspace(0, model.domain_size[0], num=20), 20)
+rec_coordinates[:, 1] = np.tile(np.linspace(20, model.domain_size[1], num=20), 20)
 rec_coordinates[:, 2] = 30.
 
 # Geometry
@@ -119,7 +119,7 @@ def ImagingOperator(model, image):
 # Prepare the varying source locations
 source_locations = np.empty((nshots, 3), dtype=np.float32)
 source_locations[:, 0] = np.linspace(0., 1000, num=nshots)
-source_locations[:, 1] = 30
+source_locations[:, 1] = np.linspace(0., 1000, num=nshots)
 source_locations[:, 2] = 30.
 # plt.figure()
 # plot_velocity(model, source=source_locations)
@@ -132,7 +132,7 @@ from devito import Function
 # Create image symbol and instantiate the previously defined imaging operator
 image = Function(name='image', grid=model.grid)
 op_imaging = ImagingOperator(model, image)
-nshots=2
+nshots=21
 for i in range(nshots):
     print('Imaging source %d out of %d' % (i+1, nshots))
 

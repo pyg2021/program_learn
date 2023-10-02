@@ -2,8 +2,7 @@ import matplotlib.pyplot as plt
 import scipy.io as sio
 import numpy as np
 import cv2
-air=sio.loadmat('program/Ultrasonic/data/air_injection_scan_pre_switch.mat')
-print()
+air=sio.loadmat('/home/pengyaoguang/data/Ultrasonic_data/data/air_injection_scan_pre_switch.mat')
 real_data=air['all_traces_pre_switch_CSG'][0].item().T
 
 # #高通滤波
@@ -79,7 +78,7 @@ real_data_filter=iimg
 # img_back = cv2.magnitude(img_back[:, :, 0], img_back[:, :, 1])   # 频域转回空域
 # real_data_filter=img_back
 
-synthetic=sio.loadmat('program/Ultrasonic/data4.mat')
+synthetic=sio.loadmat('/home/pengyaoguang/data/Ultrasonic_data/synthetic_data/synthetic_data0.mat')
 synthetic_data=synthetic['V'][0].T
 
 plt.figure(figsize=(20,20))
@@ -116,24 +115,24 @@ plt.colorbar()
 # plt.xlabel("Channel")
 # plt.ylabel("Time Sample(ms)")
 # plt.set_cmap("gray")
-plt.savefig("program/Ultrasonic//result/5.png")
+plt.savefig("/home/pengyaoguang/data/Ultrasonic_data/data/synthetic_data.png")
 plt.figure()
 max=np.max(real_data[:6250,:])
 plt.imshow(real_data[:6250,:]/max,aspect='auto',cmap='seismic',vmax=1,vmin=-1,extent=(0,26,0.6,0))
 plt.colorbar()
-plt.savefig("program/Ultrasonic//result/2.png")
+plt.savefig("/home/pengyaoguang/data/Ultrasonic_data/data/real_data.png")
 plt.figure()
 max=np.max(real_data_filter[:6250,:])
 plt.imshow(real_data_filter[100:6250,:]/max,aspect='auto',cmap='seismic',vmax=0.03,vmin=-0.03,extent=(0,26,0.6,0))
 plt.colorbar()
-plt.savefig("program/Ultrasonic//result/3.png")
-shot_1_filter=sio.loadmat('program/Ultrasonic/shot_1_filter.mat')
+plt.savefig("/home/pengyaoguang/data/Ultrasonic_data/data/real_data_filter.png")
+shot_1_filter=sio.loadmat('/home/pengyaoguang/1325/program/Ultrasonic/shot_1_filter.mat')
 shot_1_filter=shot_1_filter['sht_a_f']
 plt.figure()
 max=np.max(shot_1_filter[:6250,:])
 plt.imshow(shot_1_filter[:6250,:]/max,aspect='auto',cmap='seismic',vmax=1,vmin=-1,extent=(0,26,0.6,0))
 plt.colorbar()
-plt.savefig("program/Ultrasonic//result/4.png")
+plt.savefig("/home/pengyaoguang/data/Ultrasonic_data/data/shot_1_filter.png")
 
 fft_data_new=np.zeros((11750))
 from scipy.fftpack import fft,fftshift
@@ -170,9 +169,9 @@ plt.title(' spectrum single-sided')
 # plt.ylim(0, 0.01)
 plt.xlabel('frequency  (Hz)')
 plt.ylabel(' Amplitude ')
-plt.savefig("m3.png")
+plt.savefig("/home/pengyaoguang/data/Ultrasonic_data/data/synthetic_data_frequency.png")
 
-water=sio.loadmat('program/Ultrasonic/data/air_injection_scan_pre_switch.mat')
+water=sio.loadmat('/home/pengyaoguang/data/Ultrasonic_data/data/air_injection_scan_pre_switch.mat')
 real_data=water['all_traces_pre_switch_CSG'][0].item().T
 fft_data_new=np.zeros((5003))
 for i in range(27):
@@ -237,4 +236,4 @@ plt.legend()
 plt.xlabel('frequency  (Hz)')
 plt.ylabel(' Amplitude ')
 # plt.legend()
-plt.savefig("m2.png")
+plt.savefig("/home/pengyaoguang/data/Ultrasonic_data/data/real_data_filter_frequency.png")

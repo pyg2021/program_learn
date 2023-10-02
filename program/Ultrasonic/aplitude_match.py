@@ -5,7 +5,8 @@ import cv2
 import math
 from scipy.signal import butter, lfilter
 from scipy.io import wavfile
-air=sio.loadmat('program/Ultrasonic/data/air_injection_scan_pre_switch.mat')
+from cut_direct_wave import cut_direct_wave_easy
+air=sio.loadmat('/home/pengyaoguang/data/Ultrasonic_data/data/air_injection_scan_pre_switch.mat')
 print()
 real_data=air['all_traces_pre_switch_CSG'][0].item().T
 #图片的高通滤波
@@ -48,14 +49,14 @@ iimg = np.fft.ifft2(ishift)
 # iimg = iimg.real
 iimg = iimg.real
 real_data_filter=iimg
-synthetic=sio.loadmat('program/Ultrasonic/data4.mat')
+synthetic=sio.loadmat('/home/pengyaoguang/data/Ultrasonic_data/synthetic_data/synthetic_data0.mat')
 synthetic_data=synthetic['V'][0].T
 max=np.max(real_data_filter[:6250,:])
 plt.imshow(real_data_filter[0:6250,:]/max,aspect='auto',cmap='seismic',vmax=0.03,vmin=-0.03,extent=(0,26,0.564,0))
 plt.colorbar()
-plt.savefig("program/Ultrasonic//result/aplitude_real_data_filter.png")
-a=65
-b=1200
+plt.savefig("/home/pengyaoguang/data/Ultrasonic_data/data/aplitude_real_data_filter.png")
+a=71
+b=500+300
 for i in range(real_data_filter.shape[1]):
     real_data_filter[:a*i+b,i]=0
 plt.figure()
@@ -66,15 +67,15 @@ print(max)
 # plt.imshow((real_data_filter[0:6250,:]-mean_real)/var_real,aspect='auto',cmap='seismic',vmax=0.03,vmin=-0.03,extent=(0,26,0.6,0))
 plt.imshow((real_data_filter[:6250,:]-mean_real)/var_real,aspect='auto',cmap='seismic',vmax=1,vmin=-1,extent=(0,26,0.564,0))
 plt.colorbar()
-plt.savefig("program/Ultrasonic//result/aplitude_real_data_filter_cut.png")
+plt.savefig("/home/pengyaoguang/data/Ultrasonic_data/data/aplitude_real_data_filter_cut.png")
 
 plt.figure()
 max=np.max(synthetic_data[:25000,])
 plt.imshow(synthetic_data[:25000,]/max,aspect='auto',cmap='seismic',vmax=0.005,vmin=-0.005,extent=(0,26,0.564,0))
 plt.colorbar()
-plt.savefig("program/Ultrasonic//result/synthetic_data.png")
-a=300
-b=3500
+plt.savefig("/home/pengyaoguang/data/Ultrasonic_data/data/aplitude_synthetic_data.png")
+a=284
+b=2000+1200
 for i in range(synthetic_data.shape[1]):
     synthetic_data[:a*i+b,i]=0
 plt.figure()
@@ -85,7 +86,7 @@ var_real=math.sqrt(np.var(synthetic_data))
 plt.imshow((synthetic_data[:25000,]-mean_real)/var_real,aspect='auto',cmap='seismic',vmax=1,vmin=-1,extent=(0,26,0.564,0))
 # plt.imshow((synthetic_data[:25000,]-mean_real)/var_real,aspect='auto',cmap='seismic',vmax=0.03,vmin=-0.03,extent=(0,26,0.564,0))
 plt.colorbar()
-plt.savefig("program/Ultrasonic//result/synthetic_data_cut.png")
+plt.savefig("/home/pengyaoguang/data/Ultrasonic_data/data/aplitude_synthetic_data_cut.png")
 
 
 

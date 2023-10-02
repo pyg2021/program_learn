@@ -41,10 +41,10 @@ for i in range(0,x_number):
 plt.figure()
 plt.imshow(v_model.T*1000,cmap='seismic')
 plt.colorbar()
-plt.savefig("program/Ultrasonic/test4.png")
+plt.savefig("/home/pengyaoguang/data/Ultrasonic_data/data/v_model4.png")
 # plt.imsave("program/Ultrasonic/test2.png",v_model.T)
 
-filepath='program/Ultrasonic/v_model4.bin'
+filepath='/home/pengyaoguang/data/Ultrasonic_data/data/v_model4.bin'
 binfile = open(filepath, 'wb') #写入
 binfile.write(v_model*1000)
 binfile.close()

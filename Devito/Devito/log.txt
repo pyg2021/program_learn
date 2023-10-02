@@ -1,0 +1,17 @@
+nohup: ignoring input
+Objective value is 22.966170 at iteration 1
+Objective value is 3700.659906 at iteration 2
+Objective value is 3693.230245 at iteration 3
+Objective value is 3684.181571 at iteration 4
+Objective value is 3674.985540 at iteration 5
+Objective value is 3666.128900 at iteration 6
+Objective value is 3657.518473 at iteration 7
+Objective value is 3649.100434 at iteration 8
+Objective value is 3640.844372 at iteration 9
+Objective value is 3632.729919 at iteration 10
+Objective value is 3624.737912 at iteration 11
+Objective value is 3616.854947 at iteration 12
+Objective value is 3609.071156 at iteration 13
+Objective value is 3601.377835 at iteration 14
+Objective value is 3593.768085 at iteration 15
+5809.361610651016 s
