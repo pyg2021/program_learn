@@ -30,30 +30,42 @@ fshift = np.fft.fftshift(f)
 #设置高通滤波器
 n=1000
 rows, cols = img.shape
-mask=np.ones((rows,cols))
 crow,ccol = int(rows/2), int(cols/2)
-cen=np.ones_like(mask[crow-1000:crow, ccol-300:ccol+300])
-for i in range(cen.shape[1]):
-    cen[:,i]=np.linspace(1,0,n)
-mask[crow-1000:crow, ccol-300:ccol+300] = cen
-cen=np.ones((n,27))
-for i in range(27):
-    cen[:,i]=np.linspace(0,1,n)
-mask[crow:crow+n, ccol-300:ccol+300] = cen
+##set mask
+# mask=np.ones((rows,cols))
 
-cen=np.ones_like(mask[crow+700:crow+1800, ccol-300:ccol+300])
-for i in range(cen.shape[1]):
-    cen[:,i]=np.linspace(1,0,cen.shape[0])
-mask[crow+700:crow+1800, ccol-300:ccol+300] = cen
-cen=np.ones_like(mask[crow-1800:crow-900, ccol-300:ccol+300])
-for i in range(cen.shape[1]):
-    cen[:,i]=np.linspace(0,1,cen.shape[0])
-mask[crow-1800:crow-900, ccol-300:ccol+300] = cen
+# cen=np.ones_like(mask[crow-1000:crow, ccol-300:ccol+300])
+# for i in range(cen.shape[1]):
+#     cen[:,i]=np.linspace(1,0,n)
+# mask[crow-1000:crow, ccol-300:ccol+300] = cen
+# cen=np.ones((n,27))
+# for i in range(27):
+#     cen[:,i]=np.linspace(0,1,n)
+# mask[crow:crow+n, ccol-300:ccol+300] = cen
 
-mask[crow-300:crow, ccol-300:ccol+300] = 0
-mask[crow:crow+300, ccol-300:ccol+300] = 0
-mask[crow+1800:, ccol-300:ccol+300] = 0
-mask[:crow-1800, ccol-300:ccol+300] = 0
+# cen=np.ones_like(mask[crow+700:crow+1800, ccol-300:ccol+300])
+# for i in range(cen.shape[1]):
+#     cen[:,i]=np.linspace(1,0,cen.shape[0])
+# mask[crow+700:crow+1800, ccol-300:ccol+300] = cen
+# cen=np.ones_like(mask[crow-1800:crow-900, ccol-300:ccol+300])
+# for i in range(cen.shape[1]):
+#     cen[:,i]=np.linspace(0,1,cen.shape[0])
+# mask[crow-1800:crow-900, ccol-300:ccol+300] = cen
+
+# mask[crow-300:crow, ccol-300:ccol+300] = 0
+# mask[crow:crow+300, ccol-300:ccol+300] = 0
+# mask[crow+1800:, ccol-300:ccol+300] = 0
+# mask[:crow-1800, ccol-300:ccol+300] = 0
+mask=np.zeros((rows,cols))
+cen=np.ones_like(mask)
+n=20
+m=50
+m1=100
+mask[crow-m1:crow+m1,ccol-300:ccol+300]=1
+mask[crow-n:crow,ccol-300:ccol+300]=np.repeat(np.linspace(1,0,n),27,axis=0).reshape(n,27)
+mask[crow:crow+n,ccol-300:ccol+300]=np.repeat(np.linspace(0,1,n),27,axis=0).reshape(n,27)
+mask[crow-m1:crow-m,ccol-300:ccol+300]=np.repeat(np.linspace(0,1,m1-m),27,axis=0).reshape(m1-m,27)
+mask[crow+m:crow+m1,ccol-300:ccol+300]=np.repeat(np.linspace(1,0,m1-m),27,axis=0).reshape(m1-m,27)
 #傅里叶逆变换
 fshift=fshift*mask
 ishift = np.fft.ifftshift(fshift)
@@ -109,7 +121,7 @@ plt.figure(figsize=(20,20))
 # plt.xlabel("ms")
 plt.figure()
 max=np.max(synthetic_data[:25000,])
-plt.imshow(synthetic_data[:25000,]/max,aspect='auto',cmap='seismic',vmax=0.005,vmin=-0.005,extent=(0,26,0.564,0))
+plt.imshow(synthetic_data[:25000,]/max,aspect='auto',cmap='seismic',vmax=0.5,vmin=-0.5,extent=(0,26,0.564,0))
 plt.colorbar()
 # plt.colorbar()
 # plt.xlabel("Channel")
@@ -123,7 +135,7 @@ plt.colorbar()
 plt.savefig("/home/pengyaoguang/data/Ultrasonic_data/data/real_data.png")
 plt.figure()
 max=np.max(real_data_filter[:6250,:])
-plt.imshow(real_data_filter[100:6250,:]/max,aspect='auto',cmap='seismic',vmax=0.03,vmin=-0.03,extent=(0,26,0.6,0))
+plt.imshow(real_data_filter[100:6250,:]/max,aspect='auto',cmap='seismic',vmax=1,vmin=-1,extent=(0,26,0.6,0))
 plt.colorbar()
 plt.savefig("/home/pengyaoguang/data/Ultrasonic_data/data/real_data_filter.png")
 shot_1_filter=sio.loadmat('/home/pengyaoguang/1325/program/Ultrasonic/shot_1_filter.mat')
@@ -134,11 +146,11 @@ plt.imshow(shot_1_filter[:6250,:]/max,aspect='auto',cmap='seismic',vmax=1,vmin=-
 plt.colorbar()
 plt.savefig("/home/pengyaoguang/data/Ultrasonic_data/data/shot_1_filter.png")
 
-fft_data_new=np.zeros((11750))
+fft_data_new=np.zeros((1175))
 from scipy.fftpack import fft,fftshift
 for i in range(27):
-    N=23500
-    fft_data = fft(synthetic_data[:23500,i])
+    N=2350
+    fft_data = fft(synthetic_data[:2350,i])
     fft_amp0 = np.array(np.abs(fft_data)/N*2)   # 用于计算双边谱
     fft_amp0[0]=0.5*fft_amp0[0]
     N_2 = int(N/2)
@@ -147,7 +159,7 @@ for i in range(27):
     list0 = np.array(range(0, N))
     list1 = np.array(range(0, int(N/2)))
     list0_shift = np.array(range(0, N))
-    dt=2.4*1e-8
+    dt=2.4*1e-7
     sample_freq=1/dt
     freq0 = sample_freq*list0/N        # 双边谱的频率轴
     freq1 = sample_freq*list1/N        # 单边谱的频率轴
@@ -162,8 +174,8 @@ plt.figure()
 # for i in range(fft_data.shape[1]):
 #     fft_data_new=fft_data_new[:]+fft_amp1[:,i]
 # fft_amp1=fft_data_new
-nmax=np.max(fft_amp1[:25000])
-plt.plot(freq1[:5000], fft_amp1[:5000]/nmax,label='synthetic_data')
+nmax=np.max(fft_amp1[:])
+plt.plot(freq1[:1000], fft_amp1[:1000]/nmax,label='synthetic_data')
 plt.legend()
 plt.title(' spectrum single-sided')
 # plt.ylim(0, 0.01)
@@ -229,7 +241,7 @@ fft_amp1=fft_data_new
 # plt.subplot(222)
 # plt.figure()
 max=np.max(fft_amp1[10:10006])
-plt.plot(freq1[10:10006], fft_amp1[10:10006]/max,label='filter_data')
+plt.plot(freq1[10:1000], fft_amp1[10:1000]/max,label='filter_data')
 plt.title(' spectrum single-sided')
 plt.legend()
 # plt.ylim(0, 0.01)

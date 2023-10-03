@@ -10,7 +10,7 @@ device = torch.device('cuda' if torch.cuda.is_available()
 ny = 2301
 nx = 751
 dx = 4.0
-v_true = torch.from_file('./deepwave_learn/marmousi_vp.bin',
+v_true = torch.from_file('/home/pengyaoguang/data/vp.bin',
                          size=ny*nx).reshape(ny, nx)
 
 # Select portion of model for inversion
@@ -42,7 +42,7 @@ dt = 0.004
 peak_time = 1.5 / freq
 
 observed_data = (
-    torch.from_file('./deepwave_learn/marmousi_data.bin',
+    torch.from_file('/home/pengyaoguang/data/marmousi_data.bin',
                     size=n_shots*n_receivers_per_shot*nt)
     .reshape(n_shots, n_receivers_per_shot, nt)
 )
@@ -82,7 +82,7 @@ optimiser = torch.optim.SGD([v], lr=0.1, momentum=0.9)
 loss_fn = torch.nn.MSELoss()
 
 # Run optimisation/inversion
-n_epochs = 250
+n_epochs = 25
 v_true = v_true.to(device)
 
 for epoch in range(n_epochs):
@@ -101,11 +101,12 @@ for epoch in range(n_epochs):
             v,
             torch.quantile(v.grad.detach().abs(), 0.98)
         )
+        print("epoch",epoch,"loss:",loss.cpu().item())
         return loss
 
     optimiser.step(closure)
     plt.imshow((v.cpu().detach().numpy().T))
-    plt.savefig("./deepwave_learn/result/{}.png".format(epoch))
+    plt.savefig("/home/pengyaoguang/data/FWI_test/FWI_normal/{}.png".format(epoch))
 
 
 

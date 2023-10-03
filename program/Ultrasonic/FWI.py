@@ -19,23 +19,25 @@ nx = 550
 dx = 0.001*c
 # v = np.fromfile('/home/pengyaoguang/data/Ultrasonic_data/data/v_model4.bin').reshape(ny, nx)
 v = np.fromfile('/home/pengyaoguang/data/Ultrasonic_data/data/v_model4.bin').reshape(6000, -1)[::10,::10]
-v_real=torch.from_numpy(v).float().to(device)
-v=torch.tensor(gaussian_filter(v, 5)).float()
-# plt.figure()
-# plt.imshow(v.T)
-# plt.colorbar()
-# plt.savefig("/home/pengyaoguang/data/FWI_test/v_init0.png")
+v_real=torch.from_numpy(v).float()
+# v=gaussian_filter(v, 5)
+plt.figure()
+plt.imshow(v.T)
+plt.colorbar()
+plt.savefig("/home/pengyaoguang/data/FWI_test/v_init0.png")
 
-# plt.figure()
-# plt.imshow(v_real.T)
-# plt.colorbar()
-# plt.savefig("/home/pengyaoguang/data/FWI_test/v_real.png")
-v_init = v.to(device)
+plt.figure()
+plt.imshow(v_real.T)
+plt.colorbar()
+plt.savefig("/home/pengyaoguang/data/FWI_test/v_real.png")
+v_real=v_real.to(device)
+v_init = torch.tensor(v).float().to(device)
 v = v_init.clone()
+# v[:,150:]=1845
 v.requires_grad_()
 
-n_shots = 4
-n_epochs = 10
+n_shots = 26
+n_epochs = 1000
 
 n_sources_per_shot = 1
 d_source = 10
@@ -79,80 +81,86 @@ source_amplitudes = (
 
 p=20
 # change
-# wave_real=sio.loadmat("/home/pengyaoguang/data/Ultrasonic_data/data/wave_500_aq1.mat")
-# x_real=np.squeeze(wave_real["stime"])/1000
-# y_real=np.squeeze(wave_real["seis"])/1000
-# y_real[600:]=0
-# N=nt
-# f=interp1d(x_real,y_real,kind='linear')
-# t=np.arange(0,N)*dt
-# y_real_0=f(t)
-# # y_real[0:10]=0
-# # y_real[700:]=0
-# # plt.figure()
-# # plt.plot(t[:4000],y_real_0[:4000],label='inter')
-# # # plt.plot(x_real,y_real,label='real')
-# # plt.legend()
-# # plt.savefig("t0.png")
-# #高通滤波
-# from scipy.signal import butter, lfilter
-# from scipy.io import wavfile
-# b, a = butter(4, 0.01, btype="highpass")
-# y_real_0_filter = lfilter(b, a, y_real_0)
+wave_real=sio.loadmat("/home/pengyaoguang/data/Ultrasonic_data/data/wave_500_aq1.mat")
+x_real=np.squeeze(wave_real["stime"])/1000
+y_real=np.squeeze(wave_real["seis"])/1000
+y_real[600:]=0
+y_real[:500]=0
+N=nt
+f=interp1d(x_real,y_real,kind='linear')
+t=np.arange(0,N)*dt
+y_real_0=f(t)
+# y_real[0:10]=0
+# y_real[700:]=0
+# plt.figure()
+# plt.plot(t[:4000],y_real_0[:4000],label='inter')
+# # plt.plot(x_real,y_real,label='real')
+# plt.legend()
+# plt.savefig("t0.png")
+#高通滤波
+from scipy.signal import butter, lfilter
+from scipy.io import wavfile
+b, a = butter(4, 0.1, btype="lowpass")
+y_real_0_filter = lfilter(b, a, y_real_0)
 
 
 
 
-# source_amplitudes=torch.Tensor(y_real_0_filter).repeat(n_shots, n_sources_per_shot, 1)
-# source_amplitudes=source_amplitudes.to(device)
-out = scalar(
-            v_real, dx, dt,
-            source_amplitudes=source_amplitudes[:,:,:],#150
-            source_locations=source_locations,
-            receiver_locations=receiver_locations,
-            pml_width=[p,p,0,p],
-            pml_freq=freq,
-        )
-# ob_data=sio.loadmat("/home/pengyaoguang/data/Ultrasonic_data/data/real_data_all_test.mat")["data"]
-# ob_data=torch.from_numpy(ob_data).float()
-# observed_data =ob_data[:20,:,:].to(device)
-observed_data=out[-1]
+source_amplitudes=torch.Tensor(y_real_0_filter).repeat(n_shots, n_sources_per_shot, 1)
+source_amplitudes=source_amplitudes[:,:,150:].to(device)
+# out = scalar(
+#             v_real, dx, dt,
+#             source_amplitudes=source_amplitudes[:,:,:],#150
+#             source_locations=source_locations,
+#             receiver_locations=receiver_locations,
+#             pml_width=[p,p,0,p],
+#             pml_freq=freq,
+#         )
+ob_data=sio.loadmat("/home/pengyaoguang/data/Ultrasonic_data/data/real_data_all_test.mat")["data"]
+ob_data=torch.from_numpy(ob_data).float()
+observed_data =ob_data[:,:,:].to(device)
+# observed_data=out[-1]
+# for i in range(observed_data.shape[0]):
+#     observed_data[i]=(observed_data[i]-torch.mean(observed_data[i]))/math.sqrt(torch.var(observed_data[i]))
 # Setup optimiser to perform inversion
 optimiser = torch.optim.SGD([v], lr=0.1, momentum=0.9)
 loss_fn = torch.nn.MSELoss()
 
 # Run optimisation/inversion
 # v_true = v_true.to(device)
-
-for epoch in range(n_epochs):
-    def closure():
+def closure():
         optimiser.zero_grad()
         out = scalar(
             v, dx, dt,
-            source_amplitudes=source_amplitudes[:,:,:],#150
-            source_locations=source_locations,
-            receiver_locations=receiver_locations,
+            source_amplitudes=source_amplitudes[i:i+m,:,:],#150
+            source_locations=source_locations[i:i+m,:,:],
+            receiver_locations=receiver_locations[i:i+m,:,:],
             pml_width=[p,p,0,p],
             pml_freq=freq,
         )
-
-        loss = 1e10 * loss_fn(out[-1], observed_data)
+        loss = 1e6*loss_fn((out[-1][:,i:,::2]-torch.mean(out[-1]))/math.sqrt(torch.var(out[-1])), observed_data[i:i+m,i:,:])
         loss.backward()
         torch.nn.utils.clip_grad_value_(
             v,
             torch.quantile(v.grad.detach().abs(), 0.98)
         )
-        print("loss:",loss.cpu().item())
+        if i==50:
+            print("loss:",loss.cpu().item())
         return loss
+m=1
+for epoch in range(n_epochs):
+    for i in range(0,n_shots,m):
+        optimiser.step(closure)
+    if epoch%50==0:
+        plt.figure()
+        plt.imshow((v.cpu().detach().numpy().T))
+        plt.colorbar()
+        plt.savefig("/home/pengyaoguang/data/FWI_test/{}.png".format(epoch))
+        end=time.time()
+        print("epoch:",epoch,"shot:",i,"time:",end-start,"s")
+        plt.close()
 
-    optimiser.step(closure)
-    plt.figure()
-    plt.imshow((v.cpu().detach().numpy().T))
-    plt.colorbar()
-    plt.savefig("/home/pengyaoguang/data/FWI_test/{}.png".format(epoch))
-    end=time.time()
-    print("epoch:",epoch,"time:",end-start,"s")
-
+sio.savemat("/home/pengyaoguang/data/FWI_test/v.mat",{"data":v.cpu().detach().numpy()})
 
 
 

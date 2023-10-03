@@ -68,14 +68,15 @@ for i in range(1):
     p=20
 
     # change
-    # wave_real=sio.loadmat("/home/pengyaoguang/data/Ultrasonic_data/data/wave_500_aq1.mat")
-    # x_real=np.squeeze(wave_real["stime"])/1000
-    # y_real=np.squeeze(wave_real["seis"])/1000
-    # y_real[600:]=0
-    # N=nt
-    # f=interp1d(x_real,y_real,kind='linear')
-    # t=np.arange(0,nt)*dt
-    # y_real_0=f(t)
+    wave_real=sio.loadmat("/home/pengyaoguang/data/Ultrasonic_data/data/wave_500_aq1.mat")
+    x_real=np.squeeze(wave_real["stime"])/1000
+    y_real=np.squeeze(wave_real["seis"])/1000
+    y_real[600:]=0
+    y_real[:500]=0
+    N=nt
+    f=interp1d(x_real,y_real,kind='linear')
+    t=np.arange(0,nt)*dt
+    y_real_0=f(t)
     # y_real[0:10]=0
     # y_real[700:]=0
     # plt.figure()
@@ -84,17 +85,17 @@ for i in range(1):
     # plt.legend()
     # plt.savefig("t0.png")
     #高通滤波
-    # from scipy.signal import butter, lfilter
-    # from scipy.io import wavfile
-    # b, a = butter(4, 0.01, btype="highpass")
-    # y_real_0_filter = lfilter(b, a, y_real_0)
+    from scipy.signal import butter, lfilter
+    from scipy.io import wavfile
+    b, a = butter(4, 0.1, btype="lowpass")
+    y_real_0_filter = lfilter(b, a, y_real_0)
     # plt.figure()
     # plt.plot(t,y_real_0_filter,label='filter')
     # plt.legend()
     # plt.savefig("/home/pengyaoguang/data/Ultrasonic_data/synthetic_data/filter——wave.png")
     # y_real[0:300]=0
     # y_real[600:]=0
-    # from scipy.fftpack import fft,fftshift
+    from scipy.fftpack import fft,fftshift
     # N=25000
     # f=interp1d(x_real,y_real,kind='linear')
     # t=np.arange(0,25000)*2.4*1e-8
@@ -106,30 +107,31 @@ for i in range(1):
     # plt.savefig("t3.png")
 
 
-    # fft_data = fft(y_real_0_filter)
-    # fft_amp0 = np.array(np.abs(fft_data)/N*2)   # 用于计算双边谱
-    # fft_amp0[0]=0.5*fft_amp0[0]
-    # N_2 = int(N/2)
-    # fft_amp1 = fft_amp0[0:N_2]  # 单边谱
-    # # 计算频谱的频率轴
-    # list0 = np.array(range(0, N))
-    # list1 = np.array(range(0, int(N/2)))
-    # list0_shift = np.array(range(0, N))
-    # dt=2.4*1e-8
-    # sample_freq=1/dt
-    # freq0 = sample_freq*list0/N        # 双边谱的频率轴
-    # freq1 = sample_freq*list1/N        # 单边谱的频率轴
-    # # # 单边谱
-    # max=max(fft_amp1[:])
-    # min=min(fft_amp1[:])
-    # plt.subplot(222)
-    # plt.figure()
-    # plt.plot(freq1[:], fft_amp1[:],label='filter')
-    # plt.title(' spectrum single-sided')
-    # # plt.ylim(0, 0.01)
-    # plt.xlabel('frequency  (Hz)')
-    # plt.ylabel(' Amplitude ')
-    
+    fft_data = fft(y_real_0_filter)
+    fft_amp0 = np.array(np.abs(fft_data)/N*2)   # 用于计算双边谱
+    fft_amp0[0]=0.5*fft_amp0[0]
+    N=int(N)
+    N_2 = int(N/2)
+    fft_amp1 = fft_amp0[0:N_2]  # 单边谱
+    # 计算频谱的频率轴
+    list0 = np.array(range(0, N))
+    list1 = np.array(range(0, int(N/2)))
+    list0_shift = np.array(range(0, N))
+    dt=dt
+    sample_freq=1/dt
+    freq0 = sample_freq*list0/N        # 双边谱的频率轴
+    freq1 = sample_freq*list1/N        # 单边谱的频率轴
+    # # 单边谱
+    max=max(fft_amp1[:])
+    min=min(fft_amp1[:])
+    plt.subplot(222)
+    plt.figure()
+    plt.plot(freq1[:100], fft_amp1[:100],label='filter')
+    plt.title(' spectrum single-sided')
+    # plt.ylim(0, 0.01)
+    plt.xlabel('frequency  (Hz)')
+    plt.ylabel(' Amplitude ')
+    plt.savefig("/home/pengyaoguang/data/Ultrasonic_data/synthetic_data/spectrum_filter_wave.png")
 
 
     # fft_data = fft(y_real_0)
@@ -156,8 +158,8 @@ for i in range(1):
     # plt.xlabel('frequency  (Hz)')
     # plt.ylabel(' Amplitude ')
     # plt.savefig("m.png")
-    # source_amplitudes=y_real_0_filter[np.newaxis,np.newaxis,:]
-    # source_amplitudes=torch.Tensor(source_amplitudes).to(device)
+    source_amplitudes=y_real_0_filter[np.newaxis,np.newaxis,150:]
+    source_amplitudes=torch.Tensor(source_amplitudes).to(device)
     
 
 
