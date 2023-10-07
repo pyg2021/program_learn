@@ -1,0 +1,51 @@
+nohup: ignoring input
+Imaging source 1 out of 25
+62.83120369911194 s
+Imaging source 2 out of 25
+115.07363748550415 s
+Imaging source 3 out of 25
+166.88849592208862 s
+Imaging source 4 out of 25
+220.2623598575592 s
+Imaging source 5 out of 25
+273.0494771003723 s
+Imaging source 6 out of 25
+324.62532329559326 s
+Imaging source 7 out of 25
+373.9716558456421 s
+Imaging source 8 out of 25
+425.92001247406006 s
+Imaging source 9 out of 25
+479.08067536354065 s
+Imaging source 10 out of 25
+532.2243530750275 s
+Imaging source 11 out of 25
+584.0688872337341 s
+Imaging source 12 out of 25
+636.0423550605774 s
+Imaging source 13 out of 25
+690.3590326309204 s
+Imaging source 14 out of 25
+742.8706941604614 s
+Imaging source 15 out of 25
+793.975841999054 s
+Imaging source 16 out of 25
+847.311861038208 s
+Imaging source 17 out of 25
+901.0246994495392 s
+Imaging source 18 out of 25
+953.452125787735 s
+Imaging source 19 out of 25
+1005.4716157913208 s
+Imaging source 20 out of 25
+1058.5544016361237 s
+Imaging source 21 out of 25
+1111.6022379398346 s
+Imaging source 22 out of 25
+1163.3647096157074 s
+Imaging source 23 out of 25
+1215.435789346695 s
+Imaging source 24 out of 25
+1269.7131962776184 s
+Imaging source 25 out of 25
+1322.1733968257904 s

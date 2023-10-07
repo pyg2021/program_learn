@@ -27,14 +27,18 @@ origin = (0., 0., 0.)  # What is the location of the top left corner (x,y,z). Th
 # v[:, :, 51:] = 2.5
 v=sio.loadmat("/home/pengyaoguang/data/shengli/data_all/floed_v0.mat")['v']
 # Create true model from a preset
+plt.figure()
+plt.imshow(v[:,70,:])
+plt.colorbar()
+plt.savefig("/home/pengyaoguang/1325/Devito/Devito/result/8.png")
 model = Model(vp=v, origin=origin, shape=shape, spacing=spacing,
-                  space_order=8, nbl=50, bcs="damp")
+                  space_order=8, nbl=20, bcs="damp")
 
-nshots = 40
+nshots = 400
 nreceivers = 400
 t0 = 0.
 tn = 1000.  # Simulation last 1 second (1000 ms)
-f0 = 0.010  # Source peak frequency is 10Hz (0.010 kHz)
+f0 = 0.015  # Source peak frequency is 10Hz (0.010 kHz)
 #NBVAL_IGNORE_OUTPUT
 from devito import gaussian_smooth
 
@@ -60,6 +64,8 @@ src_coordinates[0, -1] = 20.  # Depth is 20m
 rec_coordinates = np.empty((nreceivers, 3))
 rec_coordinates[:, 0] = np.repeat(np.linspace(0, model.domain_size[0], num=20), 20)
 rec_coordinates[:, 1] = np.tile(np.linspace(20, model.domain_size[1], num=20), 20)
+# rec_coordinates[:, 0] = np.linspace(0, model.domain_size[0], num=nreceivers)
+# rec_coordinates[:, 1] = model.domain_size[1]*0.5
 rec_coordinates[:, 2] = 30.
 
 # Geometry
@@ -118,10 +124,10 @@ def ImagingOperator(model, image):
 
 # Prepare the varying source locations
 source_locations = np.empty((nshots, 3), dtype=np.float32)
-# source_locations[:, 0] = np.repeat(np.linspace(0., 1000, num=1),1)
-# source_locations[:, 1] = np.tile(np.linspace(0., 1000, num=1),1)
-source_locations[:, 0] = np.linspace(0., 1000, num=nshots)
-source_locations[:, 1] = np.linspace(0., 1000, num=nshots)
+source_locations[:, 0] = np.repeat(np.linspace(0., 1000, num=20),20)
+source_locations[:, 1] = np.tile(np.linspace(0., 1000, num=20),20)
+# source_locations[:, 0] = np.linspace(0., 1000, num=nshots)
+# source_locations[:, 1] = model.domain_size[1]*0.5
 source_locations[:, 2] = 30.
 # plt.figure()
 # plot_velocity(model, source=source_locations)
@@ -160,6 +166,15 @@ from examples.seismic import plot_image
 
 # Plot the inverted image
 plt.figure()
-plot_image(np.diff(image.data, axis=1)[50])
+plot_image(np.diff(image.data, axis=1)[:,70,:])
 plt.savefig("/home/pengyaoguang/1325/Devito/Devito/result/6.png")
-sio.savemat("/home/pengyaoguang/data/shengli/data_all_RTM/RTM.mat",{"RTM":image.data})
+sio.savemat("/home/pengyaoguang/data/shengli/data_all_RTM/RTM_easy.mat",{"RTM":image.data})
+
+from examples.seismic import plot_image
+plt.figure()
+data=np.diff(sio.loadmat("/home/pengyaoguang/data/shengli/data_all_RTM/RTM_easy.mat")["RTM"], axis=1)
+max=np.max(data)
+plt.imshow(data[50,:,:].T/max,vmax=0.1,vmin=-0.1,cmap="gray")
+plt.colorbar()
+plt.savefig("/home/pengyaoguang/1325/Devito/Devito/result/6.png")
+

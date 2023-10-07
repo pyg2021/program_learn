@@ -10,7 +10,7 @@ configuration['log-level'] = 'WARNING'
 
 nshots = 36  # Number of shots to create gradient from
 nreceivers = 400  # Number of receiver locations per shot 
-fwi_iterations = 1000  # Number of outer FWI iterations
+fwi_iterations = 1  # Number of outer FWI iterations
 
 #NBVAL_IGNORE_OUTPUT
 from examples.seismic import demo_model, plot_velocity, plot_perturbation
@@ -226,7 +226,8 @@ for i in range(0, fwi_iterations):
     plt.imshow(v_update[50].T)
     plt.colorbar()
     plt.savefig("/home/pengyaoguang/data/devito/FWI/updated{}_model.png".format(i))
-
+    end=time.time()
+    print(end-start,"s")
 #NBVAL_SKIP
 import matplotlib.pyplot as plt
 
@@ -238,6 +239,4 @@ plt.ylabel('Misift value Phi')
 plt.title('Convergence')
 plt.show()
 plt.savefig("/home/pengyaoguang/data/devito/FWI/history.png")
-end=time.time()
-print(end-start,"s")
 sio.savemat("/home/pengyaoguang/data/devito/FWI/v.mat",{"v":model0.vp.data})

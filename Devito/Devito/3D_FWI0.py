@@ -8,15 +8,15 @@ from devito import configuration
 configuration['log-level'] = 'WARNING'
 
 
-nshots = 36  # Number of shots to create gradient from
+nshots = 25  # Number of shots to create gradient from
 nreceivers = 400  # Number of receiver locations per shot 
-fwi_iterations = 1000  # Number of outer FWI iterations
-
+fwi_iterations = 100  # Number of outer FWI iterations
+print("some information:\n","nshots:",nshots,"nreceivers:",nreceivers,"fwi_iterations:",fwi_iterations)
 #NBVAL_IGNORE_OUTPUT
 from examples.seismic import demo_model, plot_velocity, plot_perturbation
 
 # Define true and initial model
-v=sio.loadmat("/home/pengyaoguang/data/shengli/floded_data/floed_v2.mat")['v']
+v=sio.loadmat("/home/pengyaoguang/data/shengli/data_all/floed_v0.mat")['v']
 origin=(0., 0., 0. )
 shape=(100, 100, 100)
 spacing=(10., 10., 10.)
@@ -27,7 +27,8 @@ model0 = Model(vp=v, origin=origin, shape=shape, spacing=spacing,
                   space_order=8, nbl=20, grid=model.grid,bcs="damp")
 
 from devito import gaussian_smooth
-filter_sigma = (1, 1, 1 )
+filter_sigma = (5, 5, 5 )
+print("filter_sigma:",filter_sigma)
 gaussian_smooth(model0.vp, sigma=filter_sigma)
 # plot_velocity(model)
 # plot_velocity(model0)
@@ -95,8 +96,8 @@ from examples.seismic import plot_shotrecord
 # Prepare the varying source locations sources
 source_locations = np.empty((nshots, 3), dtype=np.float32)
 
-source_locations[:, 0] = np.repeat(np.linspace(20, model.domain_size[0], num=6), 6)
-source_locations[:, 1] = np.tile(np.linspace(20, model.domain_size[1], num=6), 6)
+source_locations[:, 0] = np.repeat(np.linspace(20, model.domain_size[0], num=5), 5)
+source_locations[:, 1] = np.tile(np.linspace(20, model.domain_size[1], num=5), 5)
 source_locations[:, -1] = 30.
 
 # plot_velocity(model, source=source_locations)
@@ -158,28 +159,32 @@ def fwi_gradient(vp_in):
     return objective, grad
 
 # Compute gradient of initial model
-ff, update = fwi_gradient(model0.vp)
+# ff, update = fwi_gradient(model0.vp)
 # assert np.isclose(ff, 57283, rtol=1e0)
 
-#NBVAL_IGNORE_OUTPUT
-from devito import mmax
-from examples.seismic import plot_image
+# #NBVAL_IGNORE_OUTPUT
+# from devito import mmax
+# from examples.seismic import plot_image
 
 # # Plot the FWI gradient
-# plot_image(-update.data, vmin=-1e4, vmax=1e4, cmap="jet")
-
+# plt.figure()
+# plot_image(-update.data[50], vmin=-1e4, vmax=1e4, cmap="jet")
+# plt.savefig("/home/pengyaoguang/data/devito/FWI/test_update_data.png")
 # # Plot the difference between the true and initial model.
 # # This is not known in practice as only the initial model is provided.
-# plot_image(model0.vp.data - model.vp.data, vmin=-1e-1, vmax=1e-1, cmap="jet")
-
+# plt.figure()
+# plot_image(model0.vp.data[50] - model.vp.data[50], vmin=-1e-1, vmax=1e-1, cmap="jet")
+# plt.savefig("/home/pengyaoguang/data/devito/FWI/test_v_error.png")
 # # Show what the update does to the model
+# plt.figure()
 # alpha = .5 / mmax(update)
-# plot_image(model0.vp.data + alpha*update.data, vmin=2.5, vmax=3.0, cmap="jet")
+# plot_image(model0.vp.data[50][20:120,20:120] + alpha*update.data[50][20:120,20:120],cmap="jet")
+# plt.savefig("/home/pengyaoguang/data/devito/FWI/test_v_update.png")
 
 
 from sympy import Min, Max
 # Define bounding box constraints on the solution.
-def update_with_box(vp, alpha, dm, vmin=2.0, vmax=3.5):
+def update_with_box(vp, alpha, dm, vmin=1.8, vmax=9):
     """
     Apply gradient update in-place to vp with box constraint
 
@@ -226,6 +231,11 @@ for i in range(0, fwi_iterations):
     plt.imshow(v_update[50].T)
     plt.colorbar()
     plt.savefig("/home/pengyaoguang/data/devito/FWI/updated{}_model.png".format(i))
+    plt.close()
+    print("loss:",phi)
+    end=time.time()
+    print(end-start,"s")
+    
 
 #NBVAL_SKIP
 import matplotlib.pyplot as plt
@@ -238,6 +248,4 @@ plt.ylabel('Misift value Phi')
 plt.title('Convergence')
 plt.show()
 plt.savefig("/home/pengyaoguang/data/devito/FWI/history.png")
-end=time.time()
-print(end-start,"s")
 sio.savemat("/home/pengyaoguang/data/devito/FWI/v.mat",{"v":model0.vp.data})

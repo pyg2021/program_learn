@@ -1,5 +1,43 @@
 nohup: ignoring input
-Traceback (most recent call last):
-  File "/home/pengyaoguang/1325/Devito/Devito/3D_RTM.py", line 5, in <module>
-    from devito import configuration
-ModuleNotFoundError: No module named 'devito'
+Imaging source 1 out of 21
+18.787883758544922 s
+Imaging source 2 out of 21
+29.06069302558899 s
+Imaging source 3 out of 21
+39.249141216278076 s
+Imaging source 4 out of 21
+49.36930012702942 s
+Imaging source 5 out of 21
+61.30991840362549 s
+Imaging source 6 out of 21
+72.20131087303162 s
+Imaging source 7 out of 21
+81.61059546470642 s
+Imaging source 8 out of 21
+92.88825297355652 s
+Imaging source 9 out of 21
+103.47661662101746 s
+Imaging source 10 out of 21
+113.05703139305115 s
+Imaging source 11 out of 21
+124.06252026557922 s
+Imaging source 12 out of 21
+135.43340587615967 s
+Imaging source 13 out of 21
+146.46028113365173 s
+Imaging source 14 out of 21
+156.26151585578918 s
+Imaging source 15 out of 21
+166.09241604804993 s
+Imaging source 16 out of 21
+177.63968515396118 s
+Imaging source 17 out of 21
+188.18426251411438 s
+Imaging source 18 out of 21
+198.39870166778564 s
+Imaging source 19 out of 21
+209.84970355033875 s
+Imaging source 20 out of 21
+220.28916239738464 s
+Imaging source 21 out of 21
+230.30337738990784 s

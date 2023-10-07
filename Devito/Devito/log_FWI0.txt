@@ -1,0 +1,63 @@
+nohup: ignoring input
+/home/pengyaoguang/1325/Devito/Devito/3D_FWI0.py:228: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`). Consider using `matplotlib.pyplot.close()`.
+  plt.figure()
+Objective value is 15.441623 at iteration 1
+loss: 15.441623346213959
+65.54310917854309 s
+Objective value is 10.197425 at iteration 2
+loss: 10.197425340808024
+123.26620888710022 s
+Objective value is 4.769743 at iteration 3
+loss: 4.769743467121103
+181.11727237701416 s
+Objective value is 3.234259 at iteration 4
+loss: 3.234258934055582
+239.22496914863586 s
+Objective value is 4.179265 at iteration 5
+loss: 4.179265001768762
+332.5297758579254 s
+Objective value is 3.451649 at iteration 6
+loss: 3.4516490097698025
+429.4965581893921 s
+Objective value is 2.537425 at iteration 7
+loss: 2.5374250818591833
+528.8599102497101 s
+Objective value is 55.817452 at iteration 8
+loss: 55.817452203998414
+629.2907662391663 s
+Objective value is 39.520581 at iteration 9
+loss: 39.52058072888863
+727.0373997688293 s
+Objective value is 19.001942 at iteration 10
+loss: 19.00194249001578
+822.7884774208069 s
+Objective value is 4.716862 at iteration 11
+loss: 4.71686247178895
+922.4857857227325 s
+Objective value is 3.684895 at iteration 12
+loss: 3.6848953452975337
+1021.6199495792389 s
+Objective value is 2.278002 at iteration 13
+loss: 2.2780016105484258
+1119.1454107761383 s
+Objective value is 1.791995 at iteration 14
+loss: 1.7919946935242859
+1218.7021210193634 s
+Objective value is 1.485159 at iteration 15
+loss: 1.4851590239628027
+1320.3248507976532 s
+Objective value is 1.047610 at iteration 16
+loss: 1.0476095694355738
+1419.7482142448425 s
+Objective value is 8.657155 at iteration 17
+loss: 8.657154642884734
+1517.1441357135773 s
+Objective value is 6.019983 at iteration 18
+loss: 6.0199829789814245
+1617.9014110565186 s
+Objective value is 2.271144 at iteration 19
+loss: 2.2711435204362633
+1746.1922860145569 s
+Objective value is 1.710164 at iteration 20
+loss: 1.7101644601888655
+1891.0611591339111 s

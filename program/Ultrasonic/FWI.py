@@ -138,13 +138,13 @@ def closure():
             pml_width=[p,p,0,p],
             pml_freq=freq,
         )
-        loss = 1e6*loss_fn((out[-1][:,i:,::2]-torch.mean(out[-1]))/math.sqrt(torch.var(out[-1])), observed_data[i:i+m,i:,:])
+        loss = 1e5*loss_fn((out[-1][:,i:,::2]-torch.mean(out[-1]))/math.sqrt(torch.var(out[-1])), observed_data[i:i+m,i:,:])
         loss.backward()
         torch.nn.utils.clip_grad_value_(
             v,
             torch.quantile(v.grad.detach().abs(), 0.98)
         )
-        if i==50:
+        if i==0:
             print("loss:",loss.cpu().item())
         return loss
 m=1

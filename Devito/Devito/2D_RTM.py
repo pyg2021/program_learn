@@ -15,10 +15,10 @@ preset = 'layers-isotropic'  # A simple but cheap model (recommended)
 if preset == 'layers-isotropic':
     def create_model(grid=None):
         return demo_model('layers-isotropic', origin=(0., 0.), shape=(101, 101),
-                          spacing=(10., 10.), nbl=20, grid=grid, nlayers=2)
+                          spacing=(10., 10.), nbl=20, grid=grid, nlayers=5)
     filter_sigma = (1, 1)
-    nshots = 21
-    nreceivers = 10000
+    nshots = 50
+    nreceivers = 100
     t0 = 0.
     tn = 1000.  # Simulation last 1 second (1000 ms)
     f0 = 0.010  # Source peak frequency is 10Hz (0.010 kHz)
@@ -130,7 +130,6 @@ from devito import Function
 # Create image symbol and instantiate the previously defined imaging operator
 image = Function(name='image', grid=model.grid)
 op_imaging = ImagingOperator(model, image)
-nshots=2
 for i in range(nshots):
     print('Imaging source %d out of %d' % (i+1, nshots))
 
