@@ -7,7 +7,7 @@ import numpy as np
 from examples.seismic import Model, plot_velocity
 
 # Define a physical size
-shape = (151, 101, 101)  # Number of grid point (nx, nz)
+shape = (100, 100, 100)  # Number of grid point (nx, nz)
 spacing = (10., 10., 10)  # Grid spacing in m. The domain size is now 1km by 1km
 origin = (0., 0., 0.)  # What is the location of the top left corner. This is necessary to define
 # the absolute location of the source and receivers

@@ -138,7 +138,7 @@ def closure():
             pml_width=[p,p,0,p],
             pml_freq=freq,
         )
-        loss = 1e5*loss_fn((out[-1][:,i:,::2]-torch.mean(out[-1]))/math.sqrt(torch.var(out[-1])), observed_data[i:i+m,i:,:])
+        loss = 1e5*loss_fn((out[-1][:,i:,::2]-torch.mean(out[-1][:,i:,::2]))/math.sqrt(torch.var(out[-1][:,i:,::2])), observed_data[i:i+m,i:,:])
         loss.backward()
         torch.nn.utils.clip_grad_value_(
             v,

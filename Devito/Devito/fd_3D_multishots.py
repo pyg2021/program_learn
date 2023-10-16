@@ -113,12 +113,12 @@ for index_v in range(nv):
 
         # reshape t x y
         temp = rec.data.reshape(5001,20,20)
-        plot_shotrecord(temp[:,:,10], model, t0, tn)
-        plt.savefig('Devito/Devito/data/1.png')
-        plt.figure()
-        plot_shotrecord(rec.data, model, t0, tn)
-        plt.savefig('Devito/Devito/data/2.png')
-        file_save_data = 'Devito/Devito/data/'
-        sio.savemat(file_save_data + 'data_v'+ str(index_v) + '_s' + str(index_s) + '.mat',{'rec_data':rec.data,})
+        # plot_shotrecord(temp[:,:,10], model, t0, tn)
+        # plt.savefig('Devito/Devito/data/1.png')
+        # plt.figure()
+        # plot_shotrecord(rec.data, model, t0, tn)
+        # plt.savefig('Devito/Devito/data/2.png')
+        # file_save_data = 'Devito/Devito/data/'
+        # sio.savemat(file_save_data + 'data_v'+ str(index_v) + '_s' + str(index_s) + '.mat',{'rec_data':rec.data,})
         end=time.time()
         print(end-start)

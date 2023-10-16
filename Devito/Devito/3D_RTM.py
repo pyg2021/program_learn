@@ -7,7 +7,8 @@ configuration['log-level'] = 'WARNING'
 # Configure model presets
 from examples.seismic import demo_model
 import time
-
+import multiprocessing as mp
+from multiprocessing import Pool,Manager
 start=time.time()
 # Enable model presets here:
 preset = 'layers-isotropic'  # A simple but cheap model (recommended)
@@ -15,9 +16,9 @@ preset = 'layers-isotropic'  # A simple but cheap model (recommended)
 if preset == 'layers-isotropic':
     def create_model(grid=None):
         return demo_model('layers-isotropic', origin=(0., 0., 0. ), shape=(101, 101, 101),
-                          spacing=(10., 10., 10.), nbl=20, grid=grid, nlayers=2)
+                          spacing=(10., 10., 10.), space_order=8, nbl=20, grid=grid, nlayers=2)
     filter_sigma = (1, 1, 1 )
-    nshots = 21
+    nshots = 200
     nreceivers = 100
     t0 = 0.
     tn = 1000.  # Simulation last 1 second (1000 ms)
@@ -132,8 +133,8 @@ from devito import Function
 # Create image symbol and instantiate the previously defined imaging operator
 image = Function(name='image', grid=model.grid)
 op_imaging = ImagingOperator(model, image)
-nshots=21
-for i in range(nshots):
+m=0
+def test(i):
     print('Imaging source %d out of %d' % (i+1, nshots))
 
     # Update source location
@@ -151,12 +152,41 @@ for i in range(nshots):
     op_imaging(u=u0, v=v, vp=model0.vp, dt=model0.critical_dt, 
                residual=residual)
     end=time.time()
+    m=m+i
     print(end-start,"s")
+list0=range(21)
+P = Pool(5)
+for i in range(33):
+    P.apply_async(func=test, args=(i,))
+P.close()
+P.join()
+# print(value_y)
+print(time.time()-start,"s")
+print(m)
+# for i in range(nshots):
+#     print('Imaging source %d out of %d' % (i+1, nshots))
+
+#     # Update source location
+#     geometry.src_positions[0, :] = source_locations[i, :]
+
+#     # Generate synthetic data from true model
+#     true_d, _, _ = solver.forward(vp=model.vp)
+
+#     # Compute smooth data and full forward wavefield u0
+#     smooth_d, u0, _ = solver.forward(vp=model0.vp, save=True)
+
+#     # Compute gradient from the data residual  
+#     v = TimeFunction(name='v', grid=model.grid, time_order=2, space_order=4)
+#     residual = smooth_d.data - true_d.data
+#     op_imaging(u=u0, v=v, vp=model0.vp, dt=model0.critical_dt, 
+#                residual=residual)
+#     end=time.time()
+#     print(end-start,"s")
 #NBVAL_IGNORE_OUTPUT
 
 from examples.seismic import plot_image
 
 # Plot the inverted image
-plt.figure()
-plot_image(np.diff(image.data, axis=1)[10])
-plt.savefig("/home/pengyaoguang/1325/Devito/Devito/result/6.png")
+# plt.figure()
+# plot_image(np.diff(image.data, axis=1)[10])
+# plt.savefig("/home/pengyaoguang/1325/Devito/Devito/result/6.png")

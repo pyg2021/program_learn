@@ -27,13 +27,13 @@ model0 = Model(vp=v, origin=origin, shape=shape, spacing=spacing,
                   space_order=8, nbl=20, grid=model.grid,bcs="damp")
 
 from devito import gaussian_smooth
-filter_sigma = (5, 5, 5 )
+filter_sigma = (20, 20, 20 )
 print("filter_sigma:",filter_sigma)
 gaussian_smooth(model0.vp, sigma=filter_sigma)
 # plot_velocity(model)
 # plot_velocity(model0)
 # plot_perturbation(model0, model)
-
+sio.savemat("/home/pengyaoguang/data/devito/FWI/v_smooth.mat",{"v":model0.vp.data})
 plt.figure()
 v_update=model0.vp.data[tuple(slice(model0.nbl, -model0.nbl) for _ in range(3))]
 plt.imshow(v_update[50].T)
@@ -118,9 +118,7 @@ def compute_residual(residual, dobs, dsyn):
     else:
         # A simple data difference is enough in serial
         residual.data[:] = dsyn.data[:] - dobs.data[:]
-
     return residual
-
 # Create FWI gradient kernel 
 from devito import Function, TimeFunction, norm
 from examples.seismic import Receiver
