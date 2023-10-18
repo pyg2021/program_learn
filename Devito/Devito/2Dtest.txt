@@ -1,0 +1,35 @@
+nohup: ignoring input
+filter_sigma: (2, 2, 2)
+141.88617587089539 s
+filter_sigma: (2, 2, 2)
+filter_sigma: (2, 2, 2)
+RUNNING THE L-BFGS-B CODE
+
+           * * *
+
+Machine precision = 2.220D-16
+ N =      1000000     M =           10
+
+At X0    319654 variables are exactly at the bounds
+
+At iterate    0    f=  8.15999D+00    |proj g|=  2.65593D-01
+
+At iterate    1    f=  3.35536D+00    |proj g|=  2.43453D-01
+
+           * * *
+
+Tit   = total number of iterations
+Tnf   = total number of function evaluations
+Tnint = total number of segments explored during Cauchy searches
+Skip  = number of BFGS updates skipped
+Nact  = number of active bounds at final generalized Cauchy point
+Projg = norm of the final projected gradient
+F     = final function value
+
+           * * *
+
+   N    Tit     Tnf  Tnint  Skip  Nact     Projg        F
+*****      1      3    976     0 *****   2.435D-01   3.355D+00
+  F =   3.3553629115370285     
+
+STOP: TOTAL NO. of ITERATIONS REACHED LIMIT                 

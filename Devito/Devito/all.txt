@@ -1,0 +1,9 @@
+mul
+shot_number    worker    iter      gpu/cpu    yes/no      time
+5               5          1        cpu        yes      
+
+
+
+
+im
+5               5           1          cpu          

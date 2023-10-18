@@ -3,18 +3,19 @@ param = {'t0': 0.,
          'tn': 1000.,              # Simulation last 1 second (1000 ms)
          'f0': 0.010,              # Source peak frequency is 10Hz (0.010 kHz)
          'nshots': 5,              # Number of shots to create gradient from
-         'shape': (101, 101),      # Number of grid points (nx, nz).
-         'spacing': (10., 10.),    # Grid spacing in m. The domain size is now 1km by 1km.
-         'origin': (0, 0),         # Need origin to define relative source and receiver locations.
-         'nbl': 40}                # nbl thickness.
+         'shape': (100, 100, 100),      # Number of grid points (nx, nz).
+         'spacing': (10., 10., 10.),    # Grid spacing in m. The domain size is now 1km by 1km.
+         'origin': (0, 0, 0),         # Need origin to define relative source and receiver locations.
+         'nbl': 20,
+         'filter_sigma' :(20, 20, 20 )}                # nbl thickness.
 
 import numpy as np
 import time
-import scipy
+import scipy.io as sio
 from scipy import signal, optimize
-
+import matplotlib.pyplot as plt
 from devito import Grid
-
+from devito import gaussian_smooth
 from distributed import Client, LocalCluster, wait
 
 import cloudpickle as pickle
@@ -33,19 +34,20 @@ def get_true_model():
     ''' Define the test phantom; in this case we are using
     a simple circle so we can easily see what is going on.
     '''
-    return demo_model('circle-isotropic', vp_circle=3.0, vp_background=2.5, 
-                      origin=param['origin'], shape=param['shape'],
-                      spacing=param['spacing'], nbl=param['nbl'])
+    v=sio.loadmat("/home/pengyaoguang/data/shengli/data_all/floed_v0.mat")['v']
+    return Model(vp=v, origin=param['origin'], shape=param['shape'], spacing=param['spacing'],
+                  space_order=4, nbl=param['nbl'], bcs="damp")
 
 def get_initial_model():
     '''The initial guess for the subsurface model.
     '''
     # Make sure both model are on the same grid
     grid = get_true_model().grid
-    return demo_model('circle-isotropic', vp_circle=2.5, vp_background=2.5, 
-                      origin=param['origin'], shape=param['shape'],
-                      spacing=param['spacing'], nbl=param['nbl'],
-                      grid=grid)
+    v=sio.loadmat("/home/pengyaoguang/data/shengli/data_all/floed_v0.mat")['v']
+    M0=Model(vp=v, origin=param['origin'], shape=param['shape'], spacing=param['spacing'],
+                  space_order=4, nbl=param['nbl'], bcs="damp")
+    gaussian_smooth(M0.vp, sigma=param['filter_sigma'])
+    return M0
 
 def wrap_model(x, astype=None):
     '''Wrap a flat array as a subsurface model.
@@ -98,7 +100,7 @@ def generate_shotdata_i(param):
     # source position changes according to the index
     shot_id=param['shot_id']
     
-    solver.geometry.src_positions[0,:]=[20, shot_id*1000./(param['nshots']-1)]
+    solver.geometry.src_positions[0,:]=[20, shot_id*1000./(param['nshots']-1),20]
     true_d = solver.forward()[0]
     dump_shot_data(shot_id, true_d.resample(4.0), solver.geometry.src_positions)
 
@@ -187,7 +189,7 @@ def fwi_gradient_i(param):
     
     # Copying here to avoid a (probably overzealous) destructor deleting
     # the gradient before Dask has had a chance to communicate it.
-    g = np.array(grad.data[:])[nbl:-nbl, nbl:-nbl]    
+    g = np.array(grad.data[:])[nbl:-nbl, nbl:-nbl, nbl:-nbl]    
     
     # return the objective functional and gradient.
     return fg_pair(f, g)
@@ -231,8 +233,9 @@ if __name__=="__main__":
     nreceivers = 101
     # Set up receiver data and geometry.
     rec_coordinates = np.empty((nreceivers, len(param['shape'])))
-    rec_coordinates[:, 1] = np.linspace(param['spacing'][0], true_model.domain_size[0] - param['spacing'][0], num=nreceivers)
-    rec_coordinates[:, 0] = 980. # 20m from the right end
+    rec_coordinates[:, 0] = np.linspace(param['spacing'][0], true_model.domain_size[0] - param['spacing'][0], num=nreceivers)
+    rec_coordinates[:, 1] = 20. 
+    rec_coordinates[:, 2] = 20.# 20m from the right end
     # Geometry 
     geometry = AcquisitionGeometry(true_model, rec_coordinates, src_coordinates,
                                 param['t0'], param['tn'], src_type='Ricker',
@@ -252,22 +255,22 @@ if __name__=="__main__":
     relative_error = []
     def fwi_callbacks(x):    
         # Calculate true relative error
-        true_vp = get_true_model().vp.data[param['nbl']:-param['nbl'], param['nbl']:-param['nbl']]
+        true_vp = get_true_model().vp.data[param['nbl']:-param['nbl'], param['nbl']:-param['nbl'],param['nbl']:-param['nbl']]
         true_m = 1.0 / (true_vp.reshape(-1).astype(np.float64))**2
         relative_error.append(np.linalg.norm((x-true_m)/true_m))
 
     # FWI with L-BFGS
     ftol = 0.1
-    maxiter = 5
+    maxiter = 1
 
     def fwi(model, param, ftol=ftol, maxiter=maxiter):
         # Initial guess
-        v0 = model.vp.data[param['nbl']:-param['nbl'], param['nbl']:-param['nbl']]
+        v0 = model.vp.data[param['nbl']:-param['nbl'], param['nbl']:-param['nbl'],param['nbl']:-param['nbl']]
         m0 = 1.0 / (v0.reshape(-1).astype(np.float64))**2
         
         # Define bounding box constraints on the solution.
         vmin = 1.4    # do not allow velocities slower than water
-        vmax = 4.0
+        vmax = 8.0
         bounds = [(1.0/vmax**2, 1.0/vmin**2) for _ in range(np.prod(model.shape))]    # in [s^2/km^2]
         
         result = optimize.minimize(fwi_gradient,
@@ -282,10 +285,11 @@ if __name__=="__main__":
     #NBVAL_IGNORE_OUTPUT
 
     model0 = get_initial_model()
-
+    plt.figure()
+    plot_image(true_model.vp.data[50],cmap="cividis")
+    plt.savefig("/home/pengyaoguang/data/devito/FWI/test_result/improved_v_start.png")
     # Baby steps
     result = fwi(model0, param)
-
     # Print out results of optimizer.
     print(result)
 
@@ -295,8 +299,12 @@ if __name__=="__main__":
     # Plot FWI result
     from examples.seismic import plot_image
 
-    slices = tuple(slice(param['nbl'],-param['nbl']) for _ in range(2))
+    slices = tuple(slice(param['nbl'],-param['nbl']) for _ in range(3))
     vp = 1.0/np.sqrt(result['x'].reshape(true_model.shape))
-    plot_image(true_model.vp.data[slices], vmin=2.4, vmax=2.8, cmap="cividis")
-    plot_image(vp, vmin=2.4, vmax=2.8, cmap="cividis")
+    plt.figure()
+    plot_image(true_model.vp.data[slices][50],cmap="cividis")
+    plt.savefig("/home/pengyaoguang/data/devito/FWI/test_result/improved_v_real.png")
+    plt.figure()
+    plot_image(vp[50], cmap="cividis")
+    plt.savefig("/home/pengyaoguang/data/devito/FWI/test_result/improved_v_update.png")
     print(time.time()-start,"s")

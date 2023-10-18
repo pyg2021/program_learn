@@ -21,10 +21,10 @@ origin=(0., 0., 0. )
 shape=(100, 100, 100)
 spacing=(10., 10., 10.)
 model = Model(vp=v, origin=origin, shape=shape, spacing=spacing,
-                  space_order=8, nbl=20, bcs="damp")
+                  space_order=4, nbl=20, bcs="damp")
 
 model0 = Model(vp=v, origin=origin, shape=shape, spacing=spacing,
-                  space_order=8, nbl=20, grid=model.grid,bcs="damp")
+                  space_order=4, nbl=20, grid=model.grid,bcs="damp")
 
 from devito import gaussian_smooth
 filter_sigma = (20, 20, 20 )

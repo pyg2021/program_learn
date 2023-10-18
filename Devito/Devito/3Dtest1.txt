@@ -1,0 +1,197 @@
+nohup: ignoring input
+/home/pengyaoguang/.conda/envs/pytorch3.9/lib/python3.9/site-packages/distributed/node.py:182: UserWarning: Port 8787 is already in use.
+Perhaps you already have a cluster running?
+Hosting the HTTP server on port 35193 instead
+  warnings.warn(
+Operator `initdamp` ran in 0.01 s
+Operator `Forward` ran in 2.78 s
+Operator `Forward` ran in 2.80 s
+Operator `Forward` ran in 2.81 s
+Operator `Forward` ran in 2.79 s
+Operator `Forward` ran in 2.81 s
+Operator `Forward` ran in 13.03 s
+Operator `Forward` ran in 13.09 s
+Operator `Forward` ran in 13.32 s
+Operator `Forward` ran in 12.85 s
+Operator `Forward` ran in 12.16 s
+Operator `initdamp` ran in 0.01 s
+Operator `initdamp` ran in 0.01 s
+Operator `initdamp` ran in 0.01 s
+Operator `initdamp` ran in 0.01 s
+2023-10-16 16:51:45,624 - distributed.utils_perf - WARNING - full garbage collections took 11% CPU time recently (threshold: 10%)
+2023-10-16 16:51:46,781 - distributed.utils_perf - WARNING - full garbage collections took 11% CPU time recently (threshold: 10%)
+2023-10-18 09:47:59,603 - distributed.nanny - WARNING - Restarting worker
+39.92721462249756 s
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+2023-10-18 09:48:08,524 - distributed.nanny - WARNING - Restarting worker
+2023-10-18 09:48:18,213 - distributed.nanny - WARNING - Restarting worker
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+2023-10-18 09:48:35,489 - distributed.nanny - WARNING - Restarting worker
+Traceback (most recent call last):
+  File "/home/pengyaoguang/1325/Devito/Devito/mul_3DFWI_improved.py", line 292, in <module>
+    result = fwi(model0, param)
+  File "/home/pengyaoguang/1325/Devito/Devito/mul_3DFWI_improved.py", line 276, in fwi
+    result = optimize.minimize(fwi_gradient,
+  File "/home/pengyaoguang/.conda/envs/pytorch3.9/lib/python3.9/site-packages/scipy/optimize/_minimize.py", line 710, in minimize
+    res = _minimize_lbfgsb(fun, x0, args, jac, bounds,
+  File "/home/pengyaoguang/.conda/envs/pytorch3.9/lib/python3.9/site-packages/scipy/optimize/_lbfgsb_py.py", line 307, in _minimize_lbfgsb
+    sf = _prepare_scalar_function(fun, x0, jac=jac, args=args, epsilon=eps,
+  File "/home/pengyaoguang/.conda/envs/pytorch3.9/lib/python3.9/site-packages/scipy/optimize/_optimize.py", line 383, in _prepare_scalar_function
+    sf = ScalarFunction(fun, x0, args, grad, hess,
+  File "/home/pengyaoguang/.conda/envs/pytorch3.9/lib/python3.9/site-packages/scipy/optimize/_differentiable_functions.py", line 158, in __init__
+    self._update_fun()
+  File "/home/pengyaoguang/.conda/envs/pytorch3.9/lib/python3.9/site-packages/scipy/optimize/_differentiable_functions.py", line 251, in _update_fun
+    self._update_fun_impl()
+  File "/home/pengyaoguang/.conda/envs/pytorch3.9/lib/python3.9/site-packages/scipy/optimize/_differentiable_functions.py", line 155, in update_fun
+    self.f = fun_wrapped(self.x)
+  File "/home/pengyaoguang/.conda/envs/pytorch3.9/lib/python3.9/site-packages/scipy/optimize/_differentiable_functions.py", line 137, in fun_wrapped
+    fx = fun(np.copy(x), *args)
+  File "/home/pengyaoguang/.conda/envs/pytorch3.9/lib/python3.9/site-packages/scipy/optimize/_optimize.py", line 77, in __call__
+    self._compute_if_needed(x, *args)
+  File "/home/pengyaoguang/.conda/envs/pytorch3.9/lib/python3.9/site-packages/scipy/optimize/_optimize.py", line 71, in _compute_if_needed
+    fg = self.fun(x, *args)
+  File "/home/pengyaoguang/1325/Devito/Devito/mul_3DFWI_improved.py", line 212, in fwi_gradient
+    fg = c.submit(sum, fgi).result()
+  File "/home/pengyaoguang/.conda/envs/pytorch3.9/lib/python3.9/site-packages/distributed/client.py", line 321, in result
+    return self.client.sync(self._result, callback_timeout=timeout)
+  File "/home/pengyaoguang/.conda/envs/pytorch3.9/lib/python3.9/site-packages/distributed/client.py", line 329, in _result
+    raise exc.with_traceback(tb)
+distributed.scheduler.KilledWorker: Attempted to run task fwi_gradient_i-8f8a3bb90f8ea15b198384261e7ecfde on 3 different workers, but all those workers died while running it. The last worker that attempt to run the task was tcp://127.0.0.1:45447. Inspecting worker logs is often a good next step to diagnose what went wrong. For more information see https://distributed.dask.org/en/stable/killed.html.
+2023-10-18 09:48:36,434 - distributed.worker.state_machine - WARNING - Async instruction for <Task cancelled name='execute(fwi_gradient_i-d7d5fc83df76978cb5b41799a0266f17)' coro=<Worker.execute() done, defined at /home/pengyaoguang/.conda/envs/pytorch3.9/lib/python3.9/site-packages/distributed/worker_state_machine.py:3608>> ended with CancelledError
+2023-10-18 09:48:36,435 - distributed.worker.state_machine - WARNING - Async instruction for <Task cancelled name='execute(fwi_gradient_i-3bc1cf18968f832e47ecb94e310f7ea6)' coro=<Worker.execute() done, defined at /home/pengyaoguang/.conda/envs/pytorch3.9/lib/python3.9/site-packages/distributed/worker_state_machine.py:3608>> ended with CancelledError
+2023-10-18 09:48:36,435 - distributed.worker.state_machine - WARNING - Async instruction for <Task cancelled name='execute(fwi_gradient_i-1f27bb29f053d08ec5af7dab22dbd416)' coro=<Worker.execute() done, defined at /home/pengyaoguang/.conda/envs/pytorch3.9/lib/python3.9/site-packages/distributed/worker_state_machine.py:3608>> ended with CancelledError
+2023-10-18 09:48:36,435 - distributed.worker.state_machine - WARNING - Async instruction for <Task cancelled name='execute(fwi_gradient_i-3e16251e9da90c23464483ec860ab155)' coro=<Worker.execute() done, defined at /home/pengyaoguang/.conda/envs/pytorch3.9/lib/python3.9/site-packages/distributed/worker_state_machine.py:3608>> ended with CancelledError
+2023-10-18 09:48:39,416 - distributed.nanny - WARNING - Worker process still alive after 3.199999389648438 seconds, killing
+2023-10-18 09:48:46,271 - distributed.process - WARNING - [<AsyncProcess Dask Worker process (from Nanny)>] process 2052233 exit status was already read will report exitcode 255
