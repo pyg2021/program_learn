@@ -17,13 +17,20 @@ nbl = 20
 v=sio.loadmat("/home/pengyaoguang/data/shengli/data_all/floed_v0.mat")['v']
 v=v[:30,:30,:30]
 model1 = Model(vp=v, origin=origin, shape=shape, spacing=spacing,
-                space_order=2, nbl=nbl, bcs="damp")
+                space_order=8, nbl=nbl, bcs="damp")
 filter_sigma = (2, 2, 2 )
 model0 = Model(vp=v, origin=origin, shape=shape, spacing=spacing,
-                space_order=2, nbl=nbl, bcs="damp", grid = model1.grid)
+                space_order=4, nbl=nbl, bcs="damp", grid = model1.grid)
 print("filter_sigma:",filter_sigma)
 gaussian_smooth(model0.vp, sigma=filter_sigma)
 
+
+# model1 = demo_model('layers-isotropic', 
+#     origin=origin, shape=shape, spacing=spacing, nbl=nbl,nlayers=5)
+
+# # Initial model
+# model0 = demo_model('layers-isotropic', vp_circle=2.5, vp_background=2.5,
+#     origin=origin, shape=shape, spacing=spacing, nbl=nbl,nlayers=5, grid = model1.grid)
 
 from examples.seismic import AcquisitionGeometry
 import numpy as np
@@ -34,9 +41,10 @@ tn = 1000.
 f0 = 0.010
 
 # Set up source geometry, but define 5 sources instead of just one.
-nsources = 5
+nsources = 2
 src_coordinates = np.empty((nsources, 3))
 src_coordinates[:, 1] = np.linspace(0, model1.domain_size[0], num=nsources)
+src_coordinates[:, 1] = 20
 src_coordinates[:, 0] = 20. 
 src_coordinates[:, 2] = 20.  # Source depth is 20m
 
@@ -71,7 +79,7 @@ def forward_modeling_multi_shots(model, geometry, save=False, dt=4.0):
         
         # Call serial modeling function for each index
         futures.append(client.submit(forward_modeling_single_shot, model, geometry_i, save=save, dt=dt))
-
+        print(futures[i])
     # Wait for all workers to finish and collect shots
     wait(futures)
     shots = []
@@ -152,7 +160,7 @@ if __name__ == "__main__":
 
         return fval, grad
 
-
+    
     # Compute FWI gradient for 5 shots
     f, g = fwi_objective_multi_shots(model0, geometry0, d_obs)
 

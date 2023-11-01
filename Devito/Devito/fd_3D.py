@@ -20,7 +20,7 @@ v[:, :, 51:] = 2.5
 # With the velocity and model size defined, we can create the seismic model that
 # encapsulates this properties. We also define the size of the absorbing layer as 10 grid points
 model = Model(vp=v, origin=origin, shape=shape, spacing=spacing,
-              space_order=8, nbl=50, bcs="damp")
+              space_order=8, nbl=20, bcs="damp")
 
 # plot_velocity(model)
 

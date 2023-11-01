@@ -18,7 +18,7 @@ if preset == 'layers-isotropic':
         return demo_model('layers-isotropic', origin=(0., 0., 0. ), shape=(101, 101, 101),
                           spacing=(10., 10., 10.), nbl=20, grid=grid, nlayers=2)
 
-shape = (100, 100, 100)  # Number of grid point (nx, ny, nz)
+
 spacing = (10., 10., 10)  # Grid spacing in m. The domain size is now dx=1km, dy=1km, dz=1km
 origin = (0., 0., 0.)  # What is the location of the top left corner (x,y,z). This is necessary to define
  # Define a velocity profile. The velocity is in km/s
@@ -26,25 +26,28 @@ origin = (0., 0., 0.)  # What is the location of the top left corner (x,y,z). Th
 # v[:, :, :51] = 1.5
 # v[:, :, 51:] = 2.5
 v=sio.loadmat("/home/pengyaoguang/data/shengli/data_all/floed_v0.mat")['v']
+sample=1
+v=v[::sample,::sample,::sample]
+shape = (v.shape[0], v.shape[1], v.shape[2])  # Number of grid point (nx, ny, nz)
 # Create true model from a preset
 plt.figure()
-plt.imshow(v[:,70,:])
+plt.imshow(v[:,10,:])
 plt.colorbar()
 plt.savefig("/home/pengyaoguang/1325/Devito/Devito/result/8.png")
 model = Model(vp=v, origin=origin, shape=shape, spacing=spacing,
-                  space_order=8, nbl=20, bcs="damp")
+                  space_order=6, nbl=10, bcs="damp")
 
-nshots = 400
+nshots = 2500
 nreceivers = 400
 t0 = 0.
 tn = 1000.  # Simulation last 1 second (1000 ms)
-f0 = 0.015  # Source peak frequency is 10Hz (0.010 kHz)
+f0 = 0.01  # Source peak frequency is 10Hz (0.010 kHz)
 #NBVAL_IGNORE_OUTPUT
 from devito import gaussian_smooth
 
 # Create initial model and smooth the boundaries
 model0 = Model(vp=v, origin=origin, shape=shape, spacing=spacing,
-                  space_order=8, grid=model.grid, nbl=20, bcs="damp")
+                  space_order=4, grid=model.grid, nbl=10, bcs="damp")
 filter_sigma = (1, 1, 1 )
 gaussian_smooth(model0.vp, sigma=filter_sigma)
 
@@ -55,7 +58,7 @@ from examples.seismic import AcquisitionGeometry
 # First, position source centrally in all dimensions, then set depth
 src_coordinates = np.empty((1, 3))
 src_coordinates[0, :] = np.array(model.domain_size) * .5
-src_coordinates[0, -1] = 20.  # Depth is 20m
+src_coordinates[0, -1] = 10.  # Depth is 20m
 
 
 # Define acquisition geometry: receivers
@@ -66,7 +69,7 @@ rec_coordinates[:, 0] = np.repeat(np.linspace(0, model.domain_size[0], num=20), 
 rec_coordinates[:, 1] = np.tile(np.linspace(20, model.domain_size[1], num=20), 20)
 # rec_coordinates[:, 0] = np.linspace(0, model.domain_size[0], num=nreceivers)
 # rec_coordinates[:, 1] = model.domain_size[1]*0.5
-rec_coordinates[:, 2] = 30.
+rec_coordinates[:, 2] = 1.
 
 # Geometry
 geometry = AcquisitionGeometry(model, rec_coordinates, src_coordinates, t0, tn, f0=.010, src_type='Ricker')
@@ -124,11 +127,11 @@ def ImagingOperator(model, image):
 
 # Prepare the varying source locations
 source_locations = np.empty((nshots, 3), dtype=np.float32)
-source_locations[:, 0] = np.repeat(np.linspace(0., 1000, num=20),20)
-source_locations[:, 1] = np.tile(np.linspace(0., 1000, num=20),20)
+source_locations[:, 0] = np.repeat(np.linspace(0., model.domain_size[0], num=50),50)
+source_locations[:, 1] = np.tile(np.linspace(0., model.domain_size[1], num=50),50)
 # source_locations[:, 0] = np.linspace(0., 1000, num=nshots)
 # source_locations[:, 1] = model.domain_size[1]*0.5
-source_locations[:, 2] = 30.
+source_locations[:, 2] = 1.
 # plt.figure()
 # plot_velocity(model, source=source_locations)
 # plt.savefig("/home/pengyaoguang/1325/Devito/Devito/result/5.png")
@@ -140,7 +143,6 @@ from devito import Function
 # Create image symbol and instantiate the previously defined imaging operator
 image = Function(name='image', grid=model.grid)
 op_imaging = ImagingOperator(model, image)
-
 for i in range(nshots):
     print('Imaging source %d out of %d' % (i+1, nshots))
 
@@ -160,21 +162,22 @@ for i in range(nshots):
                residual=residual)
     end=time.time()
     print(end-start,"s")
+    sio.savemat("/home/pengyaoguang/data/shengli/data_all_RTM/RTM_easy1022.mat",{"RTM":image.data})
 #NBVAL_IGNORE_OUTPUT
 
 from examples.seismic import plot_image
 
 # Plot the inverted image
 plt.figure()
-plot_image(np.diff(image.data, axis=1)[:,70,:])
+plot_image(np.diff(image.data, axis=1)[:,20,:])
 plt.savefig("/home/pengyaoguang/1325/Devito/Devito/result/6.png")
-sio.savemat("/home/pengyaoguang/data/shengli/data_all_RTM/RTM_easy.mat",{"RTM":image.data})
+
 
 # from examples.seismic import plot_image
 # plt.figure()
-# data=np.diff(sio.loadmat("/home/pengyaoguang/data/shengli/data_all_RTM/RTM_easy.mat")["RTM"], axis=1)
+# data=np.diff(sio.loadmat("/home/pengyaoguang/data/shengli/data_all_RTM/RTM_easy1021.mat")["RTM"], axis=1)
 # max=np.max(data)
 # plt.imshow(data[50,:,:].T/max,vmax=0.1,vmin=-0.1,cmap="gray")
 # plt.colorbar()
-# plt.savefig("/home/pengyaoguang/1325/Devito/Devito/result/6.png")
+# plt.savefig("/home/pengyaoguang/1325/Devito/Devito/result/8.png")
 

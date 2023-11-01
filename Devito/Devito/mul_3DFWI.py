@@ -1,6 +1,5 @@
 if __name__ == "__main__":
     USE_GPU_AWARE_DASK = False
-
     from examples.seismic import demo_model,Model
     import matplotlib.pyplot as plt
     from devito import configuration
@@ -11,11 +10,18 @@ if __name__ == "__main__":
     import numpy as np
     from examples.seismic.acoustic import AcousticWaveSolver
     from distributed import Client, wait
+    import gc
+    # import sys
 
     # Serial modeling function
     def forward_modeling_single_shot(model, geometry, save=False, dt=4.0):
         solver = AcousticWaveSolver(model, geometry, space_order=4)
         d_obs, u0 = solver.forward(vp=model.vp, save=save)[0:2]
+        # del solver,model,geometry
+        for key, value in globals().items():
+            if key == "d_obs" or "u0" or "dt":
+                continue
+            del globals()[key]
         return d_obs.resample(dt), u0
 
 
@@ -59,7 +65,14 @@ if __name__ == "__main__":
         
         # Convert to numpy array and remove absorbing boundaries
         grad_crop = np.array(grad.data[:])[model.nbl:-model.nbl, model.nbl:-model.nbl, model.nbl:-model.nbl]
-        
+        # del solver,model,geometry,d_obs,residual,d_pred,u0,grad
+
+        ##clear
+        for key, value in globals().items():
+            if key == "fval" or "grad_crop":
+                continue
+            del globals()[key]
+            gc.collect()
         return fval, grad_crop
 
     # Parallel FWI objective function
@@ -82,7 +95,8 @@ if __name__ == "__main__":
         for i in range(geometry.nsrc):
             fval += futures[i].result()[0]
             grad += futures[i].result()[1]
-
+        del futures
+        gc.collect()
         return fval, grad
 
     # Wrapper for scipy optimizer: x is current model in squared slowness [s^2/km^2]
@@ -96,6 +110,7 @@ if __name__ == "__main__":
         
         # Evaluate objective function 
         fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+        # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
         return fval, grad.flatten().astype(np.float64)    # scipy expects double precision vector
     # Start Dask cluster
     start=time.time()
@@ -110,10 +125,10 @@ if __name__ == "__main__":
     v=v[::sample,::sample,::sample]
     shape = (v.shape[0], v.shape[1], v.shape[2])      # Number of grid points (nx, nz).
     model1 = Model(vp=v, origin=origin, shape=shape, spacing=spacing,
-                    space_order=2, nbl=nbl, bcs="damp")
-    filter_sigma = (20, 20, 20 )
+                    space_order=6, nbl=nbl, bcs="damp")
+    filter_sigma = (5, 5, 5 )
     model0 = Model(vp=v, origin=origin, shape=shape, spacing=spacing,
-                    space_order=2, nbl=nbl, bcs="damp", grid = model1.grid)
+                    space_order=6, nbl=nbl, bcs="damp", grid = model1.grid)
     print("filter_sigma:",filter_sigma)
     gaussian_smooth(model0.vp, sigma=filter_sigma)
 
@@ -130,15 +145,15 @@ if __name__ == "__main__":
     src_coordinates = np.empty((nsources, 3))
     src_coordinates[:, 0] = np.repeat(np.linspace(0, model1.domain_size[0], num=point_s),point_s)
     src_coordinates[:, 1] = np.tile(np.linspace(0, model1.domain_size[0], num=point_s),point_s)
-    src_coordinates[:, 2] = 20.# Source depth is 20m
+    src_coordinates[:, 2] = 2.# Source depth is 20m
 
     # Initialize receivers for synthetic and imaging data
-    point_r=20
+    point_r=10
     nreceivers = point_r*point_r
     rec_coordinates = np.empty((nreceivers, 3))
     rec_coordinates[:, 0] = np.repeat(np.linspace(spacing[0], model1.domain_size[0] - spacing[0], num=point_r),point_r)
     rec_coordinates[:, 1] = np.tile(np.linspace(spacing[0], model1.domain_size[0] - spacing[0], num=point_r),point_r) 
-    rec_coordinates[:, 2] = 20.# Receiver depth
+    rec_coordinates[:, 2] = 2.# Receiver depth
     # Set up geometry objects for observed and predicted data
     geometry1 = AcquisitionGeometry(model1, rec_coordinates, src_coordinates, t0, tn, f0=f0, src_type='Ricker')
     geometry0 = AcquisitionGeometry(model0, rec_coordinates, src_coordinates, t0, tn, f0=f0, src_type='Ricker')
@@ -147,7 +162,7 @@ if __name__ == "__main__":
         cluster = LocalCUDACluster(threads_per_worker=2, death_timeout=600) 
     else:
         from distributed import LocalCluster
-        cluster = LocalCluster(n_workers=nsources, death_timeout=600)
+        cluster = LocalCluster(n_workers=30, death_timeout=600)
     
     client = Client(cluster)
 
@@ -175,16 +190,18 @@ if __name__ == "__main__":
     
     # Callback to track model error
     model_error = []
-    i=0
     def fwi_callback(xk):
-        vp = model1.vp.data[model1.nbl:-model1.nbl, model1.nbl:-model1.nbl, model1.nbl:-model1.nbl]
-        m = 1.0 / (vp.reshape(-1).astype(np.float64))**2
+        m = 1.0 / (model1.vp.data[model1.nbl:-model1.nbl, model1.nbl:-model1.nbl, model1.nbl:-model1.nbl].copy().reshape(-1).astype(np.float64))**2
         model_error.append(np.linalg.norm((xk - m)/m))
-        plt.figure()
-        xk0=1.0/np.sqrt(xk)
-        plot_image(xk0.reshape(model1.shape)[3],cmap="cividis")
-        plt.savefig("data/devito/FWI/test_result/some_result/v_update{}".format(len(model_error)-1))
         print(time.time()-start,"s")
+        if (len(model_error)-1)%1==0:
+            plt.figure()
+            xk0=1.0/np.sqrt(xk)
+            plot_image(xk0.reshape(model1.shape)[3],cmap="cividis")
+            plt.savefig("/home/pengyaoguang/data/devito/FWI/test_result/some_result/v_update{}".format(len(model_error)-1))
+            plt.close()
+        del m
+        gc.collect()
 
     # Box contraints
     vmin = 1.8    # do not allow velocities slower than water
@@ -203,33 +220,58 @@ if __name__ == "__main__":
     from scipy import optimize
 
     # FWI with L-BFGS
-    ftol = 0.00001
-    maxiter = 2
-    result = optimize.minimize(loss, m0, args=(model0, geometry0, d_obs), method='L-BFGS-B', jac=True, 
-        callback=fwi_callback, bounds=bounds, options={'ftol':ftol, 'maxiter':maxiter, 'disp':True})
-
+    
+    iter_all=50
+    for i in range(iter_all):
+        ftol = 0.00001
+        maxiter = 1
+        result = optimize.minimize(loss, m0, args=(model0, geometry0, d_obs), method='L-BFGS-B', jac=True, 
+            callback=fwi_callback, bounds=bounds, options={'ftol':ftol, 'maxiter':maxiter, 'disp':True})
+        m0=result["x"].copy()
+        # plot v_update
+        vp = 1.0/np.sqrt(result['x'].reshape(model1.shape))
+        plt.figure()
+        plot_image(vp[3],cmap="cividis")
+        plt.savefig("/home/pengyaoguang/data/devito/FWI/test_result/v_update1.png")
+        plt.close()
+        # save v_update
+        sio.savemat("/home/pengyaoguang/data/devito/FWI/test_result/v_update.mat",{"v":vp})
+        # Plot model error
+        plt.figure()
+        plt.plot(range(1, len(model_error)+1), model_error); plt.xlabel('Iteration number'); plt.ylabel('L2-model error')
+        plt.savefig("/home/pengyaoguang/data/devito/FWI/test_result/loss.png")
+        plt.close()
+        # print time
+        end=time.time()
+        print(end-start,"s")
+        del result,vp
+        gc.collect()
+        
     # Check termination criteria
     # assert np.isclose(result['fun'], ftol) or result['nit'] == maxiter
-
     # Plot FWI result
     vp = 1.0/np.sqrt(result['x'].reshape(model1.shape))
-    sio.savemat("/home/pengyaoguang/data/devito/FWI/test_result/v_real.mat",{"v":model1.vp.data[model1.nbl:-model1.nbl, model1.nbl:-model1.nbl, model1.nbl:-model1.nbl]})
-    plt.figure()
-    plot_image(model1.vp.data[model1.nbl:-model1.nbl, model1.nbl:-model1.nbl, model1.nbl:-model1.nbl][3], cmap="cividis")
-    plt.savefig("/home/pengyaoguang/data/devito/FWI/test_result/v_real.png")
     plt.figure()
     plot_image(vp[3],cmap="cividis")
     plt.savefig("/home/pengyaoguang/data/devito/FWI/test_result/v_update1.png")
     sio.savemat("/home/pengyaoguang/data/devito/FWI/test_result/v_update.mat",{"v":vp})
 
+
+    sio.savemat("/home/pengyaoguang/data/devito/FWI/test_result/v_real.mat",{"v":model1.vp.data[model1.nbl:-model1.nbl, model1.nbl:-model1.nbl, model1.nbl:-model1.nbl]})
+    plt.figure()
+    plot_image(model1.vp.data[model1.nbl:-model1.nbl, model1.nbl:-model1.nbl, model1.nbl:-model1.nbl][3], cmap="cividis")
+    plt.savefig("/home/pengyaoguang/data/devito/FWI/test_result/v_real.png")
+    
+
     
 
     # Plot model error
     plt.figure()
-    plt.plot(range(1, result['nit']+1), model_error); plt.xlabel('Iteration number'); plt.ylabel('L2-model error')
+    plt.plot(range(1, len(model_error)+1), model_error); plt.xlabel('Iteration number'); plt.ylabel('L2-model error')
     plt.savefig("/home/pengyaoguang/data/devito/FWI/test_result/loss.png")
     end=time.time()
     print(end-start,"s")
+    print()
 
     #load data
 # v_view=sio.loadmat("/home/pengyaoguang/data/devito/FWI/test_result/v_update.mat")["v"]

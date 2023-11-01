@@ -1,0 +1,61 @@
+Filename: /home/pengyaoguang/1325/Devito/Devito/mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   107 585.1602 MiB 585.1602 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+   108                                             def loss(x, model, geometry, d_obs):
+   109                                                 
+   110                                                 # Convert x to velocity
+   111 585.1602 MiB   0.0000 MiB           1           v_curr = 1.0/np.sqrt(x.reshape(model.shape))
+   112                                                 
+   113                                                 # Overwrite current velocity in geometry (don't update boundary region)
+   114 589.6445 MiB   4.4844 MiB           1           model.update('vp', v_curr.reshape(model.shape))
+   115                                                 
+   116                                                 # Evaluate objective function 
+   117 690.3828 MiB 100.7383 MiB           1           fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+   118                                                 # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
+   119 690.3828 MiB   0.0000 MiB           1           return fval, grad.flatten().astype(np.float64)    # scipy expects double precision vector
+
+
+Filename: /home/pengyaoguang/1325/Devito/Devito/mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   107 691.6211 MiB 691.6211 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+   108                                             def loss(x, model, geometry, d_obs):
+   109                                                 
+   110                                                 # Convert x to velocity
+   111 691.6211 MiB   0.0000 MiB           1           v_curr = 1.0/np.sqrt(x.reshape(model.shape))
+   112                                                 
+   113                                                 # Overwrite current velocity in geometry (don't update boundary region)
+   114 691.6211 MiB   0.0000 MiB           1           model.update('vp', v_curr.reshape(model.shape))
+   115                                                 
+   116                                                 # Evaluate objective function 
+   117 748.3672 MiB  56.7461 MiB           1           fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+   118                                                 # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
+   119 748.4062 MiB   0.0391 MiB           1           return fval, grad.flatten().astype(np.float64)    # scipy expects double precision vector
+
+
+
+    85 691.6211 MiB   0.0000 MiB          26           for i in range(geometry.nsrc):
+    86                                         
+    87                                                     # Geometry for current shot
+    88 691.6211 MiB   0.0000 MiB          50               geometry_i = AcquisitionGeometry(model, geometry.rec_positions, geometry.src_positions[i,:], 
+    89 691.6211 MiB   0.0000 MiB          25                   geometry.t0, geometry.tn, f0=geometry.f0, src_type=geometry.src_type)
+    90                                                     
+    91                                                     # Call serial FWI objective function for each shot location
+    92 691.6211 MiB   0.0000 MiB          25               futures.append(client.submit(fwi_objective_single_shot, model, geometry_i, d_obs[i]))
+    93                                                     
+    94                                                 # Wait for all workers to finish and collect function values and gradients
+    95 748.3477 MiB  56.7266 MiB           1           wait(futures)
+    96 748.3477 MiB   0.0000 MiB           1           print(sys.getsizeof(futures))
+    97 748.3477 MiB   0.0000 MiB           1           fval = 0.0
+    98 748.3477 MiB   0.0000 MiB           1           grad = np.zeros(model.shape)
+    99 748.3477 MiB   0.0000 MiB          26           for i in range(geometry.nsrc):
+   100 748.3477 MiB   0.0000 MiB          25               fval += futures[i].result()[0]
+   101 748.3477 MiB   0.0000 MiB          25               grad += futures[i].result()[1]
+   102 748.3477 MiB   0.0000 MiB           1           del futures
+   103 748.3672 MiB   0.0195 MiB           1           gc.collect()
+   104 748.3672 MiB   0.0000 MiB           1           return fval, grad
+
+

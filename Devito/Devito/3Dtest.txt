@@ -1,160 +1,136 @@
 nohup: ignoring input
-filter_sigma: (20, 20, 20)
-Operator `Forward` ran in 0.23 s
-Operator `Forward` ran in 0.73 s
+filter_sigma: (5, 5, 5)
+Operator `Forward` ran in 0.27 s
 Operator `Forward` ran in 0.33 s
-Operator `Forward` ran in 0.28 s
-Operator `Forward` ran in 0.30 s
-Operator `Forward` ran in 0.64 s
-Operator `Forward` ran in 0.35 s
-Operator `Forward` ran in 0.53 s
-Operator `Forward` ran in 0.49 s
-Operator `Forward` ran in 0.45 s
-Operator `Forward` ran in 1.22 s
-Operator `Forward` ran in 0.72 s
-Operator `Forward` ran in 0.47 s
+Operator `Forward` ran in 0.26 s
+Operator `Forward` ran in 0.29 s
+Operator `Forward` ran in 0.42 s
+Operator `Forward` ran in 0.44 s
+Operator `Forward` ran in 1.26 s
 Operator `Forward` ran in 0.58 s
-Operator `Forward` ran in 0.31 s
-Operator `Forward` ran in 1.47 s
-Operator `Forward` ran in 1.02 s
-Operator `Forward` ran in 1.16 s
-Operator `Forward` ran in 0.87 s
-Operator `Forward` ran in 1.34 s
-Operator `Forward` ran in 0.22 s
-Operator `Forward` ran in 0.21 s
-Operator `Forward` ran in 0.22 s
-Operator `Forward` ran in 0.22 s
+Operator `Forward` ran in 0.71 s
+Operator `Forward` ran in 0.53 s
+Operator `Forward` ran in 1.35 s
+Operator `Forward` ran in 1.40 s
+Operator `Forward` ran in 1.37 s
+Operator `Forward` ran in 1.29 s
+Operator `Forward` ran in 0.80 s
+Operator `Forward` ran in 1.39 s
+Operator `Forward` ran in 1.37 s
+Operator `Forward` ran in 1.22 s
+Operator `Forward` ran in 1.15 s
+Operator `Forward` ran in 0.45 s
 Operator `Forward` ran in 0.30 s
-Operator `Forward` ran in 2.13 s
-Operator `Forward` ran in 2.25 s
-Operator `Forward` ran in 3.02 s
-Operator `Forward` ran in 2.98 s
-Operator `Forward` ran in 2.21 s
-Operator `Forward` ran in 2.14 s
-Operator `Forward` ran in 2.70 s
-Operator `Forward` ran in 2.43 s
-Operator `Forward` ran in 3.02 s
-Operator `Forward` ran in 2.30 s
-Operator `Forward` ran in 3.48 s
-Operator `Forward` ran in 2.15 s
-Operator `Forward` ran in 2.02 s
-Operator `Forward` ran in 3.81 s
-Operator `Forward` ran in 3.71 s
-Operator `Forward` ran in 5.20 s
-Operator `Forward` ran in 3.69 s
-Operator `Forward` ran in 3.43 s
-Operator `Forward` ran in 4.89 s
-Operator `Forward` ran in 4.04 s
+Operator `Forward` ran in 0.31 s
+Operator `Forward` ran in 0.27 s
+Operator `Forward` ran in 0.27 s
+Operator `Forward` ran in 0.28 s
+Operator `Forward` ran in 3.75 s
+Operator `Forward` ran in 3.52 s
+Operator `Forward` ran in 4.36 s
+Operator `Forward` ran in 4.33 s
+Operator `Forward` ran in 3.59 s
+Operator `Forward` ran in 5.04 s
+Operator `Forward` ran in 4.97 s
 Operator `Forward` ran in 3.89 s
-Operator `Forward` ran in 4.41 s
-Operator `Forward` ran in 4.24 s
-Operator `Forward` ran in 4.40 s
-Operator `Forward` ran in 4.12 s
-Operator `Gradient` ran in 0.51 s
-Operator `Gradient` ran in 0.45 s
-Operator `Gradient` ran in 0.50 s
-Operator `Gradient` ran in 0.96 s
-Operator `Gradient` ran in 0.71 s
-Operator `Gradient` ran in 0.83 s
-Operator `Gradient` ran in 1.14 s
-Operator `Gradient` ran in 1.94 s
-Operator `Gradient` ran in 1.07 s
-Operator `Gradient` ran in 1.43 s
-Operator `Gradient` ran in 1.86 s
-Operator `Gradient` ran in 1.90 s
-Operator `Gradient` ran in 2.52 s
-Operator `Gradient` ran in 2.57 s
-Operator `Gradient` ran in 2.82 s
-Operator `Gradient` ran in 2.49 s
-Operator `Gradient` ran in 2.78 s
-Operator `Gradient` ran in 4.47 s
-Operator `Gradient` ran in 2.75 s
-Operator `Gradient` ran in 2.74 s
-Operator `Gradient` ran in 1.93 s
-Operator `Gradient` ran in 4.36 s
-Operator `Gradient` ran in 3.48 s
-Operator `Gradient` ran in 3.95 s
-Operator `Gradient` ran in 2.45 s
-Operator `Forward` ran in 4.77 s
-Operator `Forward` ran in 4.37 s
-Operator `Forward` ran in 5.68 s
-Operator `Forward` ran in 5.19 s
-Operator `Forward` ran in 4.43 s
-Operator `Forward` ran in 5.45 s
+Operator `Forward` ran in 3.85 s
+Operator `Forward` ran in 4.21 s
+Operator `Forward` ran in 4.20 s
+Operator `Forward` ran in 5.88 s
+Operator `Forward` ran in 6.34 s
+Operator `Forward` ran in 4.18 s
+Operator `Forward` ran in 4.18 s
+Operator `Forward` ran in 8.04 s
+Operator `Forward` ran in 7.82 s
+Operator `Forward` ran in 7.56 s
+Operator `Forward` ran in 6.41 s
+Operator `Forward` ran in 7.29 s
+Operator `Forward` ran in 7.01 s
+Operator `Forward` ran in 7.55 s
+Operator `Forward` ran in 6.96 s
 Operator `Forward` ran in 6.43 s
-Operator `Forward` ran in 6.15 s
-Operator `Forward` ran in 4.72 s
-Operator `Forward` ran in 6.46 s
-Operator `Forward` ran in 4.90 s
-Operator `Forward` ran in 8.65 s
-Operator `Forward` ran in 8.57 s
-Operator `Forward` ran in 6.71 s
-Operator `Forward` ran in 8.97 s
-Operator `Forward` ran in 10.29 s
-Operator `Forward` ran in 9.95 s
-Operator `Forward` ran in 9.92 s
-Operator `Forward` ran in 10.07 s
-Operator `Forward` ran in 10.16 s
-Operator `Forward` ran in 9.55 s
-Operator `Forward` ran in 9.85 s
-Operator `Forward` ran in 9.64 s
-Operator `Forward` ran in 10.03 s
-Operator `Forward` ran in 9.99 s
-Operator `Gradient` ran in 3.71 s
-Operator `Gradient` ran in 4.33 s
-Operator `Gradient` ran in 4.86 s
-Operator `Gradient` ran in 5.31 s
-Operator `Gradient` ran in 6.72 s
-Operator `Gradient` ran in 6.79 s
-Operator `Gradient` ran in 6.52 s
-Operator `Gradient` ran in 8.64 s
-Operator `Gradient` ran in 5.22 s
-Operator `Gradient` ran in 6.43 s
-Operator `Gradient` ran in 5.24 s
-Operator `Gradient` ran in 5.80 s
-Operator `Gradient` ran in 11.58 s
-Operator `Gradient` ran in 5.91 s
-Operator `Gradient` ran in 5.96 s
-Operator `Gradient` ran in 6.10 s
-Operator `Gradient` ran in 6.21 s
-Operator `Gradient` ran in 10.19 s
-Operator `Gradient` ran in 11.64 s
-Operator `Gradient` ran in 11.32 s
-Operator `Gradient` ran in 8.28 s
-Operator `Gradient` ran in 12.34 s
-Operator `Gradient` ran in 10.88 s
-Operator `Gradient` ran in 7.25 s
-Operator `Gradient` ran in 7.04 s
-Traceback (most recent call last):
-  File "/home/pengyaoguang/1325/Devito/Devito/mul_3DFWI.py", line 208, in <module>
-    result = optimize.minimize(loss, m0, args=(model0, geometry0, d_obs), method='L-BFGS-B', jac=True,
-  File "/home/pengyaoguang/.conda/envs/pytorch3.9/lib/python3.9/site-packages/scipy/optimize/_minimize.py", line 710, in minimize
-    res = _minimize_lbfgsb(fun, x0, args, jac, bounds,
-  File "/home/pengyaoguang/.conda/envs/pytorch3.9/lib/python3.9/site-packages/scipy/optimize/_lbfgsb_py.py", line 367, in _minimize_lbfgsb
-    if _call_callback_maybe_halt(callback, intermediate_result):
-  File "/home/pengyaoguang/.conda/envs/pytorch3.9/lib/python3.9/site-packages/scipy/optimize/_optimize.py", line 175, in _call_callback_maybe_halt
-    callback(res)
-  File "/home/pengyaoguang/.conda/envs/pytorch3.9/lib/python3.9/site-packages/scipy/optimize/_optimize.py", line 150, in wrapped_callback
-    return callback(np.copy(res.x))
-  File "/home/pengyaoguang/1325/Devito/Devito/mul_3DFWI.py", line 186, in fwi_callback
-    plt.savefig("data/devito/FWI/test_result/some_result/v_update{}".format(len(model_error)-1))
-  File "/home/pengyaoguang/.conda/envs/pytorch3.9/lib/python3.9/site-packages/matplotlib/pyplot.py", line 1023, in savefig
-    res = fig.savefig(*args, **kwargs)
-  File "/home/pengyaoguang/.conda/envs/pytorch3.9/lib/python3.9/site-packages/matplotlib/figure.py", line 3343, in savefig
-    self.canvas.print_figure(fname, **kwargs)
-  File "/home/pengyaoguang/.conda/envs/pytorch3.9/lib/python3.9/site-packages/matplotlib/backend_bases.py", line 2366, in print_figure
-    result = print_method(
-  File "/home/pengyaoguang/.conda/envs/pytorch3.9/lib/python3.9/site-packages/matplotlib/backend_bases.py", line 2232, in <lambda>
-    print_method = functools.wraps(meth)(lambda *args, **kwargs: meth(
-  File "/home/pengyaoguang/.conda/envs/pytorch3.9/lib/python3.9/site-packages/matplotlib/backends/backend_agg.py", line 509, in print_png
-    self._print_pil(filename_or_obj, "png", pil_kwargs, metadata)
-  File "/home/pengyaoguang/.conda/envs/pytorch3.9/lib/python3.9/site-packages/matplotlib/backends/backend_agg.py", line 458, in _print_pil
-    mpl.image.imsave(
-  File "/home/pengyaoguang/.conda/envs/pytorch3.9/lib/python3.9/site-packages/matplotlib/image.py", line 1689, in imsave
-    image.save(fname, **pil_kwargs)
-  File "/home/pengyaoguang/.conda/envs/pytorch3.9/lib/python3.9/site-packages/PIL/Image.py", line 2429, in save
-    fp = builtins.open(filename, "w+b")
-FileNotFoundError: [Errno 2] No such file or directory: 'data/devito/FWI/test_result/some_result/v_update0.png'
+Operator `Forward` ran in 6.37 s
+Operator `Gradient` ran in 2.86 s
+Operator `Gradient` ran in 4.62 s
+Operator `Gradient` ran in 6.09 s
+Operator `Gradient` ran in 7.22 s
+Operator `Gradient` ran in 6.22 s
+Operator `Gradient` ran in 7.14 s
+Operator `Gradient` ran in 8.26 s
+Operator `Gradient` ran in 5.97 s
+Operator `Gradient` ran in 7.56 s
+Operator `Gradient` ran in 8.77 s
+Operator `Gradient` ran in 8.09 s
+Operator `Gradient` ran in 5.71 s
+Operator `Gradient` ran in 9.86 s
+Operator `Gradient` ran in 8.97 s
+Operator `Gradient` ran in 5.18 s
+Operator `Gradient` ran in 6.22 s
+Operator `Gradient` ran in 4.89 s
+Operator `Gradient` ran in 6.30 s
+Operator `Gradient` ran in 9.83 s
+Operator `Gradient` ran in 7.98 s
+Operator `Gradient` ran in 6.35 s
+Operator `Gradient` ran in 2.44 s
+Operator `Gradient` ran in 6.51 s
+Operator `Gradient` ran in 4.26 s
+Operator `Gradient` ran in 2.37 s
+Operator `Forward` ran in 6.08 s
+Operator `Forward` ran in 5.88 s
+Operator `Forward` ran in 6.96 s
+Operator `Forward` ran in 6.36 s
+Operator `Forward` ran in 6.69 s
+Operator `Forward` ran in 8.30 s
+Operator `Forward` ran in 8.21 s
+Operator `Forward` ran in 7.15 s
+Operator `Forward` ran in 7.44 s
+Operator `Forward` ran in 9.56 s
+Operator `Forward` ran in 8.04 s
+Operator `Forward` ran in 5.93 s
+Operator `Forward` ran in 7.29 s
+Operator `Forward` ran in 8.90 s
+Operator `Forward` ran in 7.51 s
+Operator `Forward` ran in 6.99 s
+Operator `Forward` ran in 13.90 s
+Operator `Forward` ran in 10.93 s
+Operator `Forward` ran in 11.94 s
+Operator `Forward` ran in 12.25 s
+Operator `Forward` ran in 11.63 s
+Operator `Forward` ran in 10.01 s
+Operator `Forward` ran in 12.12 s
+Operator `Forward` ran in 12.00 s
+Operator `Forward` ran in 11.62 s
+Operator `Gradient` ran in 3.49 s
+Operator `Gradient` ran in 6.00 s
+Operator `Gradient` ran in 7.89 s
+Operator `Gradient` ran in 10.15 s
+Operator `Gradient` ran in 7.80 s
+Operator `Gradient` ran in 9.87 s
+Operator `Gradient` ran in 9.54 s
+Operator `Gradient` ran in 9.91 s
+Operator `Gradient` ran in 8.78 s
+Operator `Gradient` ran in 13.91 s
+Operator `Gradient` ran in 8.31 s
+Operator `Gradient` ran in 8.44 s
+Operator `Gradient` ran in 13.37 s
+Operator `Gradient` ran in 7.93 s
+Operator `Gradient` ran in 8.51 s
+Operator `Gradient` ran in 14.12 s
+Operator `Gradient` ran in 15.68 s
+Operator `Gradient` ran in 8.93 s
+Operator `Gradient` ran in 8.90 s
+Operator `Gradient` ran in 14.68 s
+Operator `Gradient` ran in 9.39 s
+Operator `Gradient` ran in 14.94 s
+Operator `Gradient` ran in 14.60 s
+Operator `Gradient` ran in 12.66 s
+Operator `Gradient` ran in 8.90 s
+312
+312
+79.51352858543396 s
+79.72654891014099 s
+79.87003874778748 s
+
 RUNNING THE L-BFGS-B CODE
 
            * * *
@@ -164,6 +140,26 @@ Machine precision = 2.220D-16
 
 At X0         0 variables are exactly at the bounds
 
-At iterate    0    f=  1.55812D+05    |proj g|=  2.52356D-01
+At iterate    0    f=  9.17772D+03    |proj g|=  2.72538D-01
 
-At iterate    1    f=  5.71415D+04    |proj g|=  2.93017D-01
+At iterate    1    f=  7.61884D+03    |proj g|=  2.93017D-01
+
+           * * *
+
+Tit   = total number of iterations
+Tnf   = total number of function evaluations
+Tnint = total number of segments explored during Cauchy searches
+Skip  = number of BFGS updates skipped
+Nact  = number of active bounds at final generalized Cauchy point
+Projg = norm of the final projected gradient
+F     = final function value
+
+           * * *
+
+   N    Tit     Tnf  Tnint  Skip  Nact     Projg        F
+15625      1      2  15145     0 15144   2.930D-01   7.619D+03
+  F =   7618.8435787306316     
+
+STOP: TOTAL NO. of ITERATIONS REACHED LIMIT                 
+mprof: Sampling memory every 0.1s
+running new process

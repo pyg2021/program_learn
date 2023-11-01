@@ -2,8 +2,8 @@
 param = {'t0': 0.,
          'tn': 1000.,              # Simulation last 1 second (1000 ms)
          'f0': 0.010,              # Source peak frequency is 10Hz (0.010 kHz)
-         'nshots': 5,              # Number of shots to create gradient from
-         'shape': (100, 100, 100),      # Number of grid points (nx, nz).
+         'nshots': 25,              # Number of shots to create gradient from
+         'shape': (30, 30, 30),      # Number of grid points (nx, nz).
          'spacing': (10., 10., 10.),    # Grid spacing in m. The domain size is now 1km by 1km.
          'origin': (0, 0, 0),         # Need origin to define relative source and receiver locations.
          'nbl': 20,
@@ -35,17 +35,19 @@ def get_true_model():
     a simple circle so we can easily see what is going on.
     '''
     v=sio.loadmat("/home/pengyaoguang/data/shengli/data_all/floed_v0.mat")['v']
+    v=v[:30,:30,:30]
     return Model(vp=v, origin=param['origin'], shape=param['shape'], spacing=param['spacing'],
-                  space_order=4, nbl=param['nbl'], bcs="damp")
+                  space_order=6, nbl=param['nbl'], bcs="damp")
 
 def get_initial_model():
     '''The initial guess for the subsurface model.
     '''
     # Make sure both model are on the same grid
     grid = get_true_model().grid
-    v=sio.loadmat("/home/pengyaoguang/data/shengli/data_all/floed_v0.mat")['v']
+    v=sio.loadmat("/home/pengyaoguang/data/shengli/data_all/salt_v0.mat")['v']
+    v=v[:30,:30,:30]
     M0=Model(vp=v, origin=param['origin'], shape=param['shape'], spacing=param['spacing'],
-                  space_order=4, nbl=param['nbl'], bcs="damp")
+                    space_order=6, nbl=param['nbl'], bcs="damp",grid=grid)
     gaussian_smooth(M0.vp, sigma=param['filter_sigma'])
     return M0
 
@@ -77,14 +79,14 @@ def dump_model(filename, model):
 def load_shot_data(shot_id, dt):
     ''' Load shot data from disk, resampling to the model time step.
     '''
-    pkl = pickle.load(open("shot_%d.p"%shot_id, "rb"))
+    pkl = pickle.load(open("/home/pengyaoguang/data/devito/FWI/improved_FWI/shot_%d.p"%shot_id, "rb"))
     
     return pkl['geometry'], pkl['rec'].resample(dt)
 
 def dump_shot_data(shot_id, rec, geometry):
     ''' Dump shot data to disk.
     '''
-    pickle.dump({'rec':rec, 'geometry': geometry}, open('shot_%d.p'%shot_id, "wb"))
+    pickle.dump({'rec':rec, 'geometry': geometry}, open('/home/pengyaoguang/data/devito/FWI/improved_FWI/shot_%d.p'%shot_id, "wb"))
     
 def generate_shotdata_i(param):
     """ Inversion crime alert! Here the worker is creating the
@@ -92,7 +94,7 @@ def generate_shotdata_i(param):
         the worker would be reading seismic data from disk.
     """
     # Reconstruct objects
-    with open("arguments.pkl", "rb") as cp_file:
+    with open("/home/pengyaoguang/data/devito/FWI/improved_FWI/arguments.pkl", "rb") as cp_file:
         cp = pickle.load(cp_file)
         
     solver = cp['solver']
@@ -107,7 +109,7 @@ def generate_shotdata_i(param):
 def generate_shotdata(solver):
     # Pick devito objects (save on disk)
     cp = {'solver': solver}
-    with open("arguments.pkl", "wb") as cp_file:
+    with open("/home/pengyaoguang/data/devito/FWI/improved_FWI/arguments.pkl", "wb") as cp_file:
         pickle.dump(cp, cp_file) 
 
     work = [dict(param) for i in range(param['nshots'])]
@@ -162,7 +164,7 @@ def fwi_gradient_i(param):
     src_positions, rec = load_shot_data(param['shot_id'], dt)
 
     # Set up solver -- load the solver used above in the generation of the syntethic data.    
-    with open("arguments.pkl", "rb") as cp_file:
+    with open("/home/pengyaoguang/data/devito/FWI/improved_FWI/arguments.pkl", "rb") as cp_file:
         cp = pickle.load(cp_file)
     solver = cp['solver']
     
@@ -171,8 +173,10 @@ def fwi_gradient_i(param):
     solver.geometry.resample(dt)
 
     # Compute simulated data and full forward wavefield u0
+
+    # d, u0 = solver.forward(vp=model0.vp,save=True)[0:2]
     d, u0 = solver.forward(vp=model0.vp, dt=dt, save=True)[0:2]
-        
+    
     # Compute the data misfit (residual) and objective function
     residual = Receiver(name='rec', grid=model0.grid,
                         time_range=solver.geometry.time_axis,
@@ -197,7 +201,7 @@ def fwi_gradient_i(param):
 def fwi_gradient(model, param):
     # Dump a copy of the current model for the workers
     # to pick up when they are ready.
-    param['model'] = "model_0.p"
+    param['model'] = "/home/pengyaoguang/data/devito/FWI/improved_FWI/model_0.p"
     dump_model(param['model'], wrap_model(model))
 
     # Define work list
@@ -222,7 +226,7 @@ if __name__=="__main__":
     from examples.seismic import plot_shotrecord
 
     # Client setup
-    cluster = LocalCluster(n_workers=5, death_timeout=600)
+    cluster = LocalCluster(n_workers=25, death_timeout=600)
     c = Client(cluster)
 
     # Generate shot data.
@@ -241,7 +245,7 @@ if __name__=="__main__":
                                 param['t0'], param['tn'], src_type='Ricker',
                                 f0=param['f0'])
     # Set up solver
-    solver = AcousticWaveSolver(true_model, geometry, space_order=4)
+    solver = AcousticWaveSolver(true_model, geometry, space_order=6)
     generate_shotdata(solver)
     print(time.time()-start,"s")
 
@@ -260,7 +264,7 @@ if __name__=="__main__":
         relative_error.append(np.linalg.norm((x-true_m)/true_m))
 
     # FWI with L-BFGS
-    ftol = 0.1
+    ftol = 0.0001
     maxiter = 1
 
     def fwi(model, param, ftol=ftol, maxiter=maxiter):
@@ -286,7 +290,7 @@ if __name__=="__main__":
 
     model0 = get_initial_model()
     plt.figure()
-    plot_image(true_model.vp.data[50],cmap="cividis")
+    plot_image(true_model.vp.data[10],cmap="cividis")
     plt.savefig("/home/pengyaoguang/data/devito/FWI/test_result/improved_v_start.png")
     # Baby steps
     result = fwi(model0, param)
@@ -302,9 +306,9 @@ if __name__=="__main__":
     slices = tuple(slice(param['nbl'],-param['nbl']) for _ in range(3))
     vp = 1.0/np.sqrt(result['x'].reshape(true_model.shape))
     plt.figure()
-    plot_image(true_model.vp.data[slices][50],cmap="cividis")
+    plot_image(true_model.vp.data[slices][10],cmap="cividis")
     plt.savefig("/home/pengyaoguang/data/devito/FWI/test_result/improved_v_real.png")
     plt.figure()
-    plot_image(vp[50], cmap="cividis")
+    plot_image(vp[10], cmap="cividis")
     plt.savefig("/home/pengyaoguang/data/devito/FWI/test_result/improved_v_update.png")
     print(time.time()-start,"s")

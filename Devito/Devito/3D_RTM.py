@@ -16,7 +16,7 @@ preset = 'layers-isotropic'  # A simple but cheap model (recommended)
 if preset == 'layers-isotropic':
     def create_model(grid=None):
         return demo_model('layers-isotropic', origin=(0., 0., 0. ), shape=(101, 101, 101),
-                          spacing=(10., 10., 10.), space_order=8, nbl=20, grid=grid, nlayers=2)
+                          spacing=(10., 10., 10.), space_order=8, nbl=20, grid=grid, nlayers=5)
     filter_sigma = (1, 1, 1 )
     nshots = 200
     nreceivers = 100
