@@ -76,3 +76,4 @@ class  Model_FCRN(nn.Module):
         group1 = self.group1(layer1)
         
         return self.final(group1)
+    

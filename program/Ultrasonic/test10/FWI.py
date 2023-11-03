@@ -11,7 +11,7 @@ import os
 import time 
 start = time.time()
 # os.environ["CUDA_VISIBLE_DEVICES"] = '0'
-device = torch.device('cuda:1' if torch.cuda.is_available()
+device = torch.device('cuda:0' if torch.cuda.is_available()
                       else 'cpu')
 c=1
 # ny = 600

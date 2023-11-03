@@ -190,7 +190,7 @@ for i in range(27):
     # # 单边谱
     fft_data_new=fft_data_new+fft_amp1
 fft_amp1=fft_data_new
-# plt.figure()
+plt.figure()
 max=np.max(fft_amp1[10:10006])
 plt.plot(freq1[10:1000], fft_amp1[10:1000]/max,label='real_data_filter',linestyle='-.')
 plt.title(' spectrum single-sided')
