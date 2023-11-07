@@ -91,10 +91,7 @@ plt.close()
 for i in range(epoch):
     optimizer.zero_grad()
     y_1=model(x)
-    if epoch<10000:
-        loss=loss_1(y_1,y)+1*loss_1(torch.clamp(y_1,1.8,7),y_1)
-    else:
-        loss=loss_1(y_1,y)+100*loss_1(torch.clamp(y_1,1.8,8),y_1)
+    loss=loss_1(y_1,y)+1*loss_1(torch.clamp(y_1,1.8,7),y_1)
     loss.backward()
     optimizer.step()
     scheduler.step()
@@ -108,3 +105,4 @@ for i in range(epoch):
         plt.close()
         sio.savemat("/home/pengyaoguang/data/3D_net_result/v_updata.mat",{"v":model(x).cpu().detach()[0,0]})
 ##2023年11月6日23:17
+##2023年11月7日10:03
