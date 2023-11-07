@@ -56,38 +56,34 @@ class net(nn.Module):
 seed=20
 # torch.manual_seed(seed)
 # torch.cuda.manual_seed_all(seed)
-device="cuda:2"
-v=sio.loadmat("/home/pengyaoguang/data/3D_net_result/floed_v0.mat")["v"]
-y=v.reshape(1,1,v.shape[0],v.shape[1],v.shape[2])
-y=torch.from_numpy(y).float().to(device)
+device="cuda"
+# v=sio.loadmat("/home/pengyaoguang/data/3D_net_result/floed_v0.mat")["v"]
+# y=v.reshape(1,1,v.shape[0],v.shape[1],v.shape[2])
+# y=torch.from_numpy(y).float().to(device)
 
-R=sio.loadmat("/home/pengyaoguang/data/3D_net_result/RTM_easy1022.mat")["RTM"][10:110,10:110,10:110]
-plt.figure()
-plt.imshow(R[:,50,:].T)
-plt.colorbar()
-plt.savefig("/home/pengyaoguang/data/3D_net_result/RTM.png")
-v_smooth=1/gaussian_filter(1/v,sigma=3)
-v_smooth=v_smooth.reshape(1,1,R.shape[0],R.shape[1],R.shape[2])
-x=np.zeros((1,1,R.shape[0],R.shape[1],R.shape[2]))
-R=R.reshape(1,1,R.shape[0],R.shape[1],R.shape[2])
-x[:,0,:,:,:]=R
-# x[:,1,:,:,:]=v_smooth
-x=torch.from_numpy(x).float().to(device)
-model=net(1,1).to("cuda:2")
+# R=sio.loadmat("/home/pengyaoguang/data/3D_net_result/RTM_easy1022.mat")["RTM"][10:110,10:110,10:110]
+# plt.figure()
+# plt.imshow(R[:,50,:].T)
+# plt.colorbar()
+# plt.savefig("/home/pengyaoguang/data/3D_net_result/RTM.png")
+# v_smooth=1/gaussian_filter(1/v,sigma=3)
+# v_smooth=v_smooth.reshape(1,1,R.shape[0],R.shape[1],R.shape[2])
+# x=np.zeros((1,1,R.shape[0],R.shape[1],R.shape[2]))
+# R=R.reshape(1,1,R.shape[0],R.shape[1],R.shape[2])
+# x[:,0,:,:,:]=R
+# # x[:,1,:,:,:]=v_smooth
+# x=torch.from_numpy(x).float().to(device)
+
+x=torch.randn(150,1,100,100,100).to(device)
+y=2*x
+y=y.to(device)
+model=net(1,1).to(device)
+model=nn.parallel.DataParallel(model)
+nn.DataParallel
 epoch=20000
 optimizer = torch.optim.AdamW(model.parameters(),lr=1e-2)
 scheduler=torch.optim.lr_scheduler.StepLR(optimizer,step_size=2000,gamma=0.8)
 loss_1=torch.nn.L1Loss()
-plt.figure()
-plt.imshow(y.cpu().detach()[0,0,50,:,:].T)
-plt.colorbar()
-plt.savefig("/home/pengyaoguang/data/3D_net_result/v_real.png")
-plt.close()
-plt.figure()
-plt.imshow(v_smooth[0,0,50,:,:].T)
-plt.colorbar()
-plt.savefig("/home/pengyaoguang/data/3D_net_result/v_smooth.png")
-plt.close()
 for i in range(epoch):
     optimizer.zero_grad()
     y_1=model(x)
@@ -101,10 +97,3 @@ for i in range(epoch):
     print(i,loss)
     if i%50==0:
         print(time.time()-start,"s")
-        plt.figure()
-        plt.imshow(model(x).cpu().detach()[0,0,50,:,:].T)
-        plt.colorbar()
-        plt.savefig("/home/pengyaoguang/data/3D_net_result/v_updata.png")
-        plt.close()
-        sio.savemat("/home/pengyaoguang/data/3D_net_result/v_updata.mat",{"v":model(x).cpu().detach()[0,0]})
-##2023年11月6日23:17
