@@ -27,10 +27,10 @@ class net(nn.Module):
         self.conv3d=nn.Conv3d(in_channels, out_channels, 3, 1, 1)
         self.batch=nn.BatchNorm3d(out_channels)
         self.pool=nn.MaxPool3d(2,2)
-        self.conv1=conv_net(self.in_channels,self.out_channels)
-        self.conv2=conv_net(self.out_channels,self.out_channels)
+        self.conv1=conv_net(self.in_channels,6)
+        self.conv2=conv_net(6,6)
+        self.conv3=conv_net(6,self.out_channels)
     def forward(self,input):
-        print(input.shape)
         # x=self.conv3d(input)
         # print(x.shape)
         # x=self.batch(x)
@@ -38,12 +38,24 @@ class net(nn.Module):
         # x=self.pool(x)
         # print(x.shape)
         x=self.conv1(input)
-        x=self.conv2(input)
+        x=self.conv2(x)
+        x=self.conv3(x)
         return x
 
-x=torch.ones(100,1, 100,150,200).to("cuda")
+x=torch.ones(1,1, 100,150,200).to("cuda")
+label=x*2
 model=net(1,1).to("cuda")
-# print(net())
 y=model(x)
-# print(y)
+optimizer=torch.optim.Adam(model.parameters(),lr=1e-3)
+loss_L=torch.nn.L1Loss()
+
+epoch=5000
+for i in range(epoch):
+    optimizer.zero_grad()
+    output=model(x)
+    loss=loss_L(output,label)
+    loss.backward()
+    optimizer.step()
+    print(loss)
+torch.save()
 print(time.time()-start,"s")
