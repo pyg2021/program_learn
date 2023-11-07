@@ -106,4 +106,4 @@ for i in range(epoch):
         sio.savemat("/home/pengyaoguang/data/3D_net_result/v_updata.mat",{"v":model(x).cpu().detach()[0,0]})
 ##2023年11月6日23:17
 ##2023年11月7日10:03
-##test
+##test1
