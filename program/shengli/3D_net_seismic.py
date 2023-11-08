@@ -79,7 +79,7 @@ y=2*x
 y=y.to(device)
 model=net(1,1).to(device)
 model=nn.parallel.DataParallel(model)
-nn.DataParallel
+# nn.DataParallel
 epoch=20000
 optimizer = torch.optim.AdamW(model.parameters(),lr=1e-2)
 scheduler=torch.optim.lr_scheduler.StepLR(optimizer,step_size=2000,gamma=0.8)

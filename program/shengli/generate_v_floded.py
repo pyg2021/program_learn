@@ -40,7 +40,7 @@ for epoch in range(5000):
         v=v+random.uniform(0.4,0.8)
     # v=v+random.uniform(1,1.5)
     data[j,k,math.floor(data_10[i,j,k]):]=v
-    scipy.io.savemat("/home/pengyaoguang/work_space/program/shengli/data_all/floed_v{}.mat".format(epoch), {'v':data})
+    scipy.io.savemat("/home/pengyaoguang/data/3D_v_model/v{}.mat".format(epoch), {'v':data})
     # plt.show()
     # plt.savefig('program/shengli/floded_data/{}.png'.format(epoch))
     # plt.figure()

@@ -11,22 +11,22 @@ import scipy.io as sio
 
 start=time.time()
 # Enable model presets here:
-preset = 'layers-isotropic'  # A simple but cheap model (recommended)
-# Standard preset with a simple two-layer model
-if preset == 'layers-isotropic':
-    def create_model(grid=None):
-        return demo_model('layers-isotropic', origin=(0., 0., 0. ), shape=(101, 101, 101),
-                          spacing=(10., 10., 10.), nbl=20, grid=grid, nlayers=2)
+# preset = 'layers-isotropic'  # A simple but cheap model (recommended)
+# # Standard preset with a simple two-layer model
+# if preset == 'layers-isotropic':
+#     def create_model(grid=None):
+#         return demo_model('layers-isotropic', origin=(0., 0., 0. ), shape=(101, 101, 101),
+#                           spacing=(10., 10., 10.), nbl=20, grid=grid, nlayers=2)
 
 
 spacing = (10., 10., 10)  # Grid spacing in m. The domain size is now dx=1km, dy=1km, dz=1km
 origin = (0., 0., 0.)  # What is the location of the top left corner (x,y,z). This is necessary to define
  # Define a velocity profile. The velocity is in km/s
 shape = (100 ,100 ,100 )
-v = np.empty(shape, dtype=np.float32)
-v[:, :, :51] = 1.5
-v[:, :, 51:] = 2.5
-# v=sio.loadmat("/home/pengyaoguang/data/shengli/data_all/floed_v0.mat")['v']
+# v = np.empty(shape, dtype=np.float32)
+# v[:, :, :51] = 1.5
+# v[:, :, 51:] = 2.5
+v=sio.loadmat("/home/pengyaoguang/data/3D_v_model/v0.mat")['v']
 sample=1
 v=v[::sample,::sample,::sample]
 shape = (v.shape[0], v.shape[1], v.shape[2])  # Number of grid point (nx, ny, nz)
@@ -38,20 +38,25 @@ plt.savefig("/home/pengyaoguang/data/3D_net_result/v_real.png")
 model = Model(vp=v, origin=origin, shape=shape, spacing=spacing,
                   space_order=6, nbl=20, bcs="damp")
 
-nshots = 2500
+nshots = 100
 nreceivers = 400
 t0 = 0.
 tn = 1000.  # Simulation last 1 second (1000 ms)
-f0 = 0.01  # Source peak frequency is 10Hz (0.010 kHz)
+f0 = 0.015  # Source peak frequency is 10Hz (0.010 kHz)
 #NBVAL_IGNORE_OUTPUT
 from devito import gaussian_smooth
 
 # Create initial model and smooth the boundaries
 model0 = Model(vp=v, origin=origin, shape=shape, spacing=spacing,
                   space_order=4, grid=model.grid, nbl=20, bcs="damp")
-filter_sigma = (5, 5, 5 )
+filter_sigma = (10, 10, 10 )
 gaussian_smooth(model0.vp, sigma=filter_sigma)
+sio.savemat("/home/pengyaoguang/data/3D_v_smooth/v_smooth.mat",{'v':model.vp.data})
 
+plt.figure()
+plt.imshow(model0.vp.data[:,10,:].T)
+plt.colorbar()
+plt.savefig("/home/pengyaoguang/data/3D_net_result/v_smooth.png")
 #NBVAL_IGNORE_OUTPUT
 # Define acquisition geometry: source
 from examples.seismic import AcquisitionGeometry
@@ -83,16 +88,21 @@ plt.savefig("/home/pengyaoguang/data/3D_net_result/4.png")
 from examples.seismic.acoustic import AcousticWaveSolver
 
 solver = AcousticWaveSolver(model, geometry, space_order=4)
-# true_d , _, _ = solver.forward(vp=model.vp)
+true_d , _, _ = solver.forward(vp=model.vp)
 # # Compute initial data with forward operator 
-# smooth_d, _, _ = solver.forward(vp=model0.vp)
+smooth_d, _, _ = solver.forward(vp=model0.vp)
 #NBVAL_IGNORE_OUTPUT
 # Plot shot record for true and smooth velocity model and the difference
-# from examples.seismic import plot_shotrecord
-
-# plot_shotrecord(true_d.data, model, t0, tn)
-# plot_shotrecord(smooth_d.data, model, t0, tn)
-# plot_shotrecord(smooth_d.data - true_d.data, model, t0, tn)
+from examples.seismic import plot_shotrecord
+plt.figure()
+plot_shotrecord(true_d.data, model, t0, tn)
+plt.savefig("/home/pengyaoguang/data/3D_net_result/true_model_seismic_data.png")
+plt.figure()
+plot_shotrecord(smooth_d.data, model, t0, tn)
+plt.savefig("/home/pengyaoguang/data/3D_net_result/smooth_model_seismic_data.png")
+plt.figure()
+plot_shotrecord(smooth_d.data - true_d.data, model, t0, tn)
+plt.savefig("/home/pengyaoguang/data/3D_net_result/re.png")
 
 # Define gradient operator for imaging
 from devito import TimeFunction, Operator, Eq, solve
@@ -128,8 +138,8 @@ def ImagingOperator(model, image):
 
 # Prepare the varying source locations
 source_locations = np.empty((nshots, 3), dtype=np.float32)
-source_locations[:, 0] = np.repeat(np.linspace(0., model.domain_size[0], num=50),50)
-source_locations[:, 1] = np.tile(np.linspace(0., model.domain_size[1], num=50),50)
+source_locations[:, 0] = np.repeat(np.linspace(0., model.domain_size[0], num=10),10)
+source_locations[:, 1] = np.tile(np.linspace(0., model.domain_size[1], num=10),10)
 # source_locations[:, 0] = np.linspace(0., 1000, num=nshots)
 # source_locations[:, 1] = model.domain_size[1]*0.5
 source_locations[:, 2] = 1.
@@ -163,9 +173,8 @@ for i in range(nshots):
                residual=residual)
     end=time.time()
     print(end-start,"s")
-    sio.savemat("/home/pengyaoguang/data/3D_net_result/RTM_easy1106.mat",{"RTM":image.data})
 #NBVAL_IGNORE_OUTPUT
-
+sio.savemat("/home/pengyaoguang/data/3D_RTM/RTM0.mat",{"RTM":image.data})
 from examples.seismic import plot_image
 
 # Plot the inverted image

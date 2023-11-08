@@ -8,8 +8,8 @@ start=time.time()
 x=np.arange(100)
 y=np.arange(100)
 X,Y=np.meshgrid(x,y)
-epoch=0### 三维折叠模型
-while epoch<5000:
+epoch=10000### 三维折叠模型
+while epoch<15000:
     z=0
     # plt.figure()
     ax3 = plt.axes(projection='3d')
@@ -88,7 +88,7 @@ while epoch<5000:
     # np.save("program/shengli/v.bin",data)
     if np.min(Z2)<0:
         continue
-    scipy.io.savemat("/home/pengyaoguang/work_space/program/shengli/data_all/salt_v{}.mat".format(epoch), {'v':data})
+    scipy.io.savemat("/home/pengyaoguang/data/3D_v_model/v{}.mat".format(epoch), {'v':data})
 
 
 

@@ -1,0 +1,12 @@
+nohup: ignoring input
+Imaging source 1 out of 100
+54.02597427368164 s
+Imaging source 2 out of 100
+88.43737077713013 s
+Imaging source 3 out of 100
+121.8567008972168 s
+Imaging source 4 out of 100
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+244.79559707641602 s
+Imaging source 5 out of 100
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping

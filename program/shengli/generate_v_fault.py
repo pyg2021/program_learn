@@ -7,7 +7,7 @@ x=np.arange(100)
 y=np.arange(100)
 X,Y=np.meshgrid(x,y)
 ### 三维折叠模型
-for epoch in range(5000):
+for epoch in range(5000,10000):
     z=0
     # plt.figure()
     ax3 = plt.axes(projection='3d')
@@ -87,7 +87,7 @@ for epoch in range(5000):
                         if k<math.floor(d):
                             data[i,j,k]=data[i,j,0]
     # ax3.plot_surface(x,y,Z1,rstride = 1, cstride = 1,cmap='rainbow')
-    scipy.io.savemat("/home/pengyaoguang/work_space/program/shengli/data_all/fault_v{}.mat".format(epoch), {'v':data})
+    scipy.io.savemat("/home/pengyaoguang/data/3D_v_model/v{}.mat".format(epoch), {'v':data})
     # plt.savefig('program/shengli/fault_data/{}.png'.format(epoch))
     # plt.figure()
     # plt.imshow(data[50,:,:].T, aspect='auto', cmap='jet')
