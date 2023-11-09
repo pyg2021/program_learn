@@ -33,7 +33,7 @@ class net(nn.Module):
         # self.conv3d=nn.Conv3d(in_channels, out_channels, 3, 1, 1)
         # self.batch=nn.BatchNorm3d(out_channels)
         # self.pool=nn.MaxPool3d(2,2)
-        n=6
+        n=16
         self.conv1=conv_net(self.in_channels,n)
         self.conv2=conv_net(n,n)
         self.conv3= conv_net(n,self.out_channels)

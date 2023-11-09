@@ -14,11 +14,12 @@ model.load_state_dict(torch.load("/home/pengyaoguang/data/3D_net_model/modeltest
 
 
 ##data_prepare
-k=10
+k=1
+n=90
 R=sio.loadmat("/home/pengyaoguang/data/3D_RTM/RTM{}".format(k))["RTM"][10:110,10:110,10:110]
 
 plt.figure()
-plt.imshow(R[50].T)
+plt.imshow(R[n].T)
 plt.colorbar()
 plt.savefig("/home/pengyaoguang/data/3D_net_result/RTM_test.png")
 
@@ -28,7 +29,7 @@ label=sio.loadmat("/home/pengyaoguang/data/3D_v_model/v{}".format(k))["v"]
 
 
 plt.figure()
-plt.imshow(label[50].T)
+plt.imshow(label[n].T)
 plt.colorbar()
 plt.savefig("/home/pengyaoguang/data/3D_net_result/v_real_test.png")
 
@@ -37,7 +38,7 @@ label1=label.reshape(1,1,label.shape[0],label.shape[1],label.shape[2])
 label_smooth=1/gaussian_filter(1/label,sigma=10)
 
 plt.figure()
-plt.imshow(label_smooth[50].T)
+plt.imshow(label_smooth[n].T)
 plt.colorbar()
 plt.savefig("/home/pengyaoguang/data/3D_net_result/v_smooth_test.png")
 
@@ -59,6 +60,6 @@ loss=loss_1(y_1,label1)
 print(loss)
 
 plt.figure()
-plt.imshow(y_1.detach().cpu()[0,0,50].T)
+plt.imshow(y_1.detach().cpu()[0,0,n].T)
 plt.colorbar()
 plt.savefig("/home/pengyaoguang/data/3D_net_result/v_updete_test.png")
