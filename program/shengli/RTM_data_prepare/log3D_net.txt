@@ -1,0 +1,2 @@
+nohup: ignoring input
+python: can't open file '/home/pengyaoguang/program_learn/program/shengli/RTM_data_prepare/3D_net.py': [Errno 2] No such file or directory

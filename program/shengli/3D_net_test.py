@@ -8,18 +8,18 @@ import matplotlib.pyplot as plt
 device="cuda"
 model=net(2,1).to(device)
 model=nn.parallel.DataParallel(model)
-model.load_state_dict(torch.load("/home/pengyaoguang/data/3D_net_model/modeltest.pkl"))
+model.load_state_dict(torch.load("/home/pengyaoguang/data/3D_net_model/modeltest2.pkl"))
 
 
 
 
 ##data_prepare
-k=1
-n=90
-R=sio.loadmat("/home/pengyaoguang/data/3D_RTM/RTM{}".format(k))["RTM"][10:110,10:110,10:110]
+k=22
+n=50
+R=sio.loadmat("/home/pengyaoguang/data/3D_RTM/RTM{}".format(k))["RTM"][20:120,20:120,20:120]
 
 plt.figure()
-plt.imshow(R[n].T)
+plt.imshow(R[n].T,cmap="gray")
 plt.colorbar()
 plt.savefig("/home/pengyaoguang/data/3D_net_result/RTM_test.png")
 
@@ -63,3 +63,9 @@ plt.figure()
 plt.imshow(y_1.detach().cpu()[0,0,n].T)
 plt.colorbar()
 plt.savefig("/home/pengyaoguang/data/3D_net_result/v_updete_test.png")
+
+
+plt.figure()
+plt.imshow(y_1.detach().cpu()[0,0,n].T-torch.from_numpy(label[n].T))
+plt.colorbar()
+plt.savefig("/home/pengyaoguang/data/3D_net_result/v_error.png")

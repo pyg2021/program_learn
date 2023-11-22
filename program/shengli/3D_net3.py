@@ -41,8 +41,8 @@ loss_all=[]
 for i in range(epoch):
     optimizer.zero_grad()
     y_1=model(x)
-    # loss=loss_1(y_1,y)+1*loss_1(torch.clamp(y_1,1.5,8),y_1)
-    loss=loss_1(y_1,y)+1*loss_1(torch.clamp(y_1,1.5,8),y_1)+loss_1(y_1[:,:,50,50,:],y[:,:,50,50,:])+loss_1(y_1[:,:,10,50,:],y[:,:,10,50,:])+loss_1(y_1[:,:,50,10,:],y[:,:,50,10,:])
+    loss=loss_1(y_1,y)+1*loss_1(torch.clamp(y_1,1.5,8),y_1)
+    # loss=loss_1(y_1,y)+1*loss_1(torch.clamp(y_1,1.5,8),y_1)+loss_1(y_1[:,:,50,50,:],y[:,:,50,50,:])+loss_1(y_1[:,:,10,50,:],y[:,:,10,50,:])+loss_1(y_1[:,:,50,10,:],y[:,:,50,10,:])
     loss.backward()
     optimizer.step()
     scheduler.step()
@@ -53,17 +53,17 @@ for i in range(epoch):
         plt.figure()
         plt.imshow(model(x).cpu().detach()[0,0,50,:,:].T)
         plt.colorbar()
-        plt.savefig("/home/pengyaoguang/data/3D_net_result/v_updata.png")
+        plt.savefig("/home/pengyaoguang/data/3D_net_result/v_updata3.png")
         plt.close()
-        sio.savemat("/home/pengyaoguang/data/3D_net_result/v_updata.mat",{"v":model(x).cpu().detach()[0,0]})
-        torch.save(model.state_dict(),"/home/pengyaoguang/data/3D_net_model/modeltest2.pkl")
+        sio.savemat("/home/pengyaoguang/data/3D_net_result/v_updata3.mat",{"v":model(x).cpu().detach()[0,0]})
+        torch.save(model.state_dict(),"/home/pengyaoguang/data/3D_net_model/modeltest3.pkl")
 
         plt.figure()
         plt.plot(range(len(loss_all)),loss_all,label="train")
         plt.xlabel("epoch")
         plt.ylabel("loss")
         plt.legend()
-        plt.savefig("/home/pengyaoguang/data/3D_net_result/history2.png")
+        plt.savefig("/home/pengyaoguang/data/3D_net_result/history3.png")
         plt.close()
 
 
