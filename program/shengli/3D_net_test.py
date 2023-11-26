@@ -8,13 +8,13 @@ import matplotlib.pyplot as plt
 device="cuda"
 model=net(2,1).to(device)
 model=nn.parallel.DataParallel(model)
-model.load_state_dict(torch.load("/home/pengyaoguang/data/3D_net_model/modeltest2.pkl"))
+model.load_state_dict(torch.load("/home/pengyaoguang/data/3D_net_model/modeltest3.pkl"))
 
 
 
 
 ##data_prepare
-k=22
+k=60
 n=50
 R=sio.loadmat("/home/pengyaoguang/data/3D_RTM/RTM{}".format(k))["RTM"][20:120,20:120,20:120]
 
