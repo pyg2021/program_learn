@@ -1,0 +1,56 @@
+nohup: ignoring input
+filter_sigma: (5, 5, 5)
+Operator `Forward` ran in 14.48 s
+Operator `Forward` ran in 15.98 s
+Operator `Forward` ran in 16.34 s
+Operator `Forward` ran in 16.35 s
+Operator `Forward` ran in 16.66 s
+Operator `Forward` ran in 16.45 s
+Operator `Forward` ran in 16.79 s
+Operator `Forward` ran in 16.46 s
+Operator `Forward` ran in 16.22 s
+Operator `Forward` ran in 15.90 s
+Operator `Forward` ran in 15.35 s
+Operator `Forward` ran in 21.49 s
+Operator `Forward` ran in 21.73 s
+Operator `Forward` ran in 22.27 s
+Operator `Forward` ran in 22.27 s
+Operator `Forward` ran in 22.08 s
+Operator `Forward` ran in 22.63 s
+Operator `Forward` ran in 22.75 s
+Operator `Forward` ran in 22.10 s
+Operator `Forward` ran in 22.68 s
+Operator `Forward` ran in 21.76 s
+Operator `Forward` ran in 21.77 s
+Operator `Forward` ran in 22.09 s
+Operator `Forward` ran in 22.04 s
+Operator `Forward` ran in 21.40 s
+51.0093777179718
+filter_sigma: (5, 5, 5)
+Operator `Forward` ran in 15.71 s
+Operator `Forward` ran in 15.69 s
+Operator `Forward` ran in 16.60 s
+Operator `Forward` ran in 16.54 s
+Operator `Forward` ran in 17.58 s
+Operator `Forward` ran in 16.72 s
+Operator `Forward` ran in 16.45 s
+Operator `Forward` ran in 16.52 s
+Operator `Forward` ran in 17.18 s
+Operator `Forward` ran in 16.18 s
+Operator `Forward` ran in 16.87 s
+Operator `Forward` ran in 20.42 s
+Operator `Forward` ran in 20.70 s
+Operator `Forward` ran in 20.67 s
+Operator `Forward` ran in 21.52 s
+Operator `Forward` ran in 21.39 s
+Operator `Forward` ran in 21.81 s
+Operator `Forward` ran in 22.39 s
+Operator `Forward` ran in 21.69 s
+Operator `Forward` ran in 22.03 s
+Operator `Forward` ran in 22.22 s
+Operator `Forward` ran in 21.71 s
+Operator `Forward` ran in 22.12 s
+Operator `Forward` ran in 21.55 s
+Operator `Forward` ran in 21.13 s
+/home/pengyaoguang/.conda/envs/pytorch3.9/lib/python3.9/multiprocessing/resource_tracker.py:216: UserWarning: resource_tracker: There appear to be 180 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '

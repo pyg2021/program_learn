@@ -1,0 +1,1755 @@
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   112 531.8594 MiB 531.8594 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+   113                                             def loss(x, model, geometry, d_obs):
+   114 531.8711 MiB   0.0117 MiB           1           fval=[]
+   115 531.8711 MiB   0.0000 MiB           1           grad=[]
+   116 531.8711 MiB   0.0000 MiB           1           del fval,grad
+   117 531.9883 MiB   0.1172 MiB           1           gc.collect()
+   118                                                 # Convert x to velocity
+   119 532.0664 MiB   0.0781 MiB           1           v_curr = 1.0/np.sqrt(x.reshape(model.shape))
+   120                                                 
+   121                                                 # Overwrite current velocity in geometry (don't update boundary region)
+   122 532.0781 MiB   0.0117 MiB           1           model.update('vp', v_curr.reshape(model.shape))
+   123                                                 
+   124                                                 # Evaluate objective function 
+   125 646.0000 MiB 113.9219 MiB           1           fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+   126                                                 # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
+   127 646.0000 MiB   0.0000 MiB           1           return fval, grad.flatten().astype(np.float64)    # scipy expects double precision vector
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   112 646.8555 MiB 646.8555 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+   113                                             def loss(x, model, geometry, d_obs):
+   114 646.8555 MiB   0.0000 MiB           1           fval=[]
+   115 646.8555 MiB   0.0000 MiB           1           grad=[]
+   116 646.8555 MiB   0.0000 MiB           1           del fval,grad
+   117 646.8555 MiB   0.0000 MiB           1           gc.collect()
+   118                                                 # Convert x to velocity
+   119 646.8555 MiB   0.0000 MiB           1           v_curr = 1.0/np.sqrt(x.reshape(model.shape))
+   120                                                 
+   121                                                 # Overwrite current velocity in geometry (don't update boundary region)
+   122 646.8555 MiB   0.0000 MiB           1           model.update('vp', v_curr.reshape(model.shape))
+   123                                                 
+   124                                                 # Evaluate objective function 
+   125 696.1133 MiB  49.2578 MiB           1           fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+   126                                                 # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
+   127 696.2695 MiB   0.1562 MiB           1           return fval, grad.flatten().astype(np.float64)    # scipy expects double precision vector
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   112 704.6250 MiB 704.6250 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+   113                                             def loss(x, model, geometry, d_obs):
+   114 704.6250 MiB   0.0000 MiB           1           fval=[]
+   115 704.6250 MiB   0.0000 MiB           1           grad=[]
+   116 704.6250 MiB   0.0000 MiB           1           del fval,grad
+   117 704.6250 MiB   0.0000 MiB           1           gc.collect()
+   118                                                 # Convert x to velocity
+   119 704.6250 MiB   0.0000 MiB           1           v_curr = 1.0/np.sqrt(x.reshape(model.shape))
+   120                                                 
+   121                                                 # Overwrite current velocity in geometry (don't update boundary region)
+   122 704.6250 MiB   0.0000 MiB           1           model.update('vp', v_curr.reshape(model.shape))
+   123                                                 
+   124                                                 # Evaluate objective function 
+   125 723.7852 MiB  19.1602 MiB           1           fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+   126                                                 # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
+   127 723.7930 MiB   0.0078 MiB           1           return fval, grad.flatten().astype(np.float64)    # scipy expects double precision vector
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   112 723.9062 MiB 723.9062 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+   113                                             def loss(x, model, geometry, d_obs):
+   114 723.9062 MiB   0.0000 MiB           1           fval=[]
+   115 723.9062 MiB   0.0000 MiB           1           grad=[]
+   116 723.9062 MiB   0.0000 MiB           1           del fval,grad
+   117 723.9062 MiB   0.0000 MiB           1           gc.collect()
+   118                                                 # Convert x to velocity
+   119 723.9062 MiB   0.0000 MiB           1           v_curr = 1.0/np.sqrt(x.reshape(model.shape))
+   120                                                 
+   121                                                 # Overwrite current velocity in geometry (don't update boundary region)
+   122 723.9062 MiB   0.0000 MiB           1           model.update('vp', v_curr.reshape(model.shape))
+   123                                                 
+   124                                                 # Evaluate objective function 
+   125 755.5703 MiB  31.6641 MiB           1           fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+   126                                                 # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
+   127 755.5703 MiB   0.0000 MiB           1           return fval, grad.flatten().astype(np.float64)    # scipy expects double precision vector
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   112 756.2109 MiB 756.2109 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+   113                                             def loss(x, model, geometry, d_obs):
+   114 756.2109 MiB   0.0000 MiB           1           fval=[]
+   115 756.2109 MiB   0.0000 MiB           1           grad=[]
+   116 756.2109 MiB   0.0000 MiB           1           del fval,grad
+   117 756.2109 MiB   0.0000 MiB           1           gc.collect()
+   118                                                 # Convert x to velocity
+   119 756.2109 MiB   0.0000 MiB           1           v_curr = 1.0/np.sqrt(x.reshape(model.shape))
+   120                                                 
+   121                                                 # Overwrite current velocity in geometry (don't update boundary region)
+   122 756.2109 MiB   0.0000 MiB           1           model.update('vp', v_curr.reshape(model.shape))
+   123                                                 
+   124                                                 # Evaluate objective function 
+   125 763.3672 MiB   7.1562 MiB           1           fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+   126                                                 # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
+   127 763.3672 MiB   0.0000 MiB           1           return fval, grad.flatten().astype(np.float64)    # scipy expects double precision vector
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   112 763.8125 MiB 763.8125 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+   113                                             def loss(x, model, geometry, d_obs):
+   114 763.8125 MiB   0.0000 MiB           1           fval=[]
+   115 763.8125 MiB   0.0000 MiB           1           grad=[]
+   116 763.8125 MiB   0.0000 MiB           1           del fval,grad
+   117 763.8125 MiB   0.0000 MiB           1           gc.collect()
+   118                                                 # Convert x to velocity
+   119 763.8125 MiB   0.0000 MiB           1           v_curr = 1.0/np.sqrt(x.reshape(model.shape))
+   120                                                 
+   121                                                 # Overwrite current velocity in geometry (don't update boundary region)
+   122 763.8125 MiB   0.0000 MiB           1           model.update('vp', v_curr.reshape(model.shape))
+   123                                                 
+   124                                                 # Evaluate objective function 
+   125 797.7852 MiB  33.9727 MiB           1           fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+   126                                                 # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
+   127 797.7930 MiB   0.0078 MiB           1           return fval, grad.flatten().astype(np.float64)    # scipy expects double precision vector
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   112 797.7930 MiB 797.7930 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+   113                                             def loss(x, model, geometry, d_obs):
+   114 797.7930 MiB   0.0000 MiB           1           fval=[]
+   115 797.7930 MiB   0.0000 MiB           1           grad=[]
+   116 797.7930 MiB   0.0000 MiB           1           del fval,grad
+   117 797.7930 MiB   0.0000 MiB           1           gc.collect()
+   118                                                 # Convert x to velocity
+   119 797.7930 MiB   0.0000 MiB           1           v_curr = 1.0/np.sqrt(x.reshape(model.shape))
+   120                                                 
+   121                                                 # Overwrite current velocity in geometry (don't update boundary region)
+   122 797.8125 MiB   0.0195 MiB           1           model.update('vp', v_curr.reshape(model.shape))
+   123                                                 
+   124                                                 # Evaluate objective function 
+   125 831.4219 MiB  33.6094 MiB           1           fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+   126                                                 # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
+   127 831.4219 MiB   0.0000 MiB           1           return fval, grad.flatten().astype(np.float64)    # scipy expects double precision vector
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   112 831.4219 MiB 831.4219 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+   113                                             def loss(x, model, geometry, d_obs):
+   114 831.4219 MiB   0.0000 MiB           1           fval=[]
+   115 831.4219 MiB   0.0000 MiB           1           grad=[]
+   116 831.4219 MiB   0.0000 MiB           1           del fval,grad
+   117 831.4219 MiB   0.0000 MiB           1           gc.collect()
+   118                                                 # Convert x to velocity
+   119 831.4219 MiB   0.0000 MiB           1           v_curr = 1.0/np.sqrt(x.reshape(model.shape))
+   120                                                 
+   121                                                 # Overwrite current velocity in geometry (don't update boundary region)
+   122 831.4219 MiB   0.0000 MiB           1           model.update('vp', v_curr.reshape(model.shape))
+   123                                                 
+   124                                                 # Evaluate objective function 
+   125 859.5820 MiB  28.1602 MiB           1           fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+   126                                                 # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
+   127 859.5820 MiB   0.0000 MiB           1           return fval, grad.flatten().astype(np.float64)    # scipy expects double precision vector
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   112 859.5820 MiB 859.5820 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+   113                                             def loss(x, model, geometry, d_obs):
+   114 859.5820 MiB   0.0000 MiB           1           fval=[]
+   115 859.5820 MiB   0.0000 MiB           1           grad=[]
+   116 859.5820 MiB   0.0000 MiB           1           del fval,grad
+   117 859.5820 MiB   0.0000 MiB           1           gc.collect()
+   118                                                 # Convert x to velocity
+   119 859.5820 MiB   0.0000 MiB           1           v_curr = 1.0/np.sqrt(x.reshape(model.shape))
+   120                                                 
+   121                                                 # Overwrite current velocity in geometry (don't update boundary region)
+   122 859.5859 MiB   0.0039 MiB           1           model.update('vp', v_curr.reshape(model.shape))
+   123                                                 
+   124                                                 # Evaluate objective function 
+   125 864.9219 MiB   5.3359 MiB           1           fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+   126                                                 # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
+   127 864.9219 MiB   0.0000 MiB           1           return fval, grad.flatten().astype(np.float64)    # scipy expects double precision vector
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   112 864.9219 MiB 864.9219 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+   113                                             def loss(x, model, geometry, d_obs):
+   114 864.9219 MiB   0.0000 MiB           1           fval=[]
+   115 864.9219 MiB   0.0000 MiB           1           grad=[]
+   116 864.9219 MiB   0.0000 MiB           1           del fval,grad
+   117 864.9219 MiB   0.0000 MiB           1           gc.collect()
+   118                                                 # Convert x to velocity
+   119 864.9219 MiB   0.0000 MiB           1           v_curr = 1.0/np.sqrt(x.reshape(model.shape))
+   120                                                 
+   121                                                 # Overwrite current velocity in geometry (don't update boundary region)
+   122 864.9453 MiB   0.0234 MiB           1           model.update('vp', v_curr.reshape(model.shape))
+   123                                                 
+   124                                                 # Evaluate objective function 
+   125 873.2773 MiB   8.3320 MiB           1           fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+   126                                                 # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
+   127 873.2812 MiB   0.0039 MiB           1           return fval, grad.flatten().astype(np.float64)    # scipy expects double precision vector
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   112 873.3281 MiB 873.3281 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+   113                                             def loss(x, model, geometry, d_obs):
+   114 873.3281 MiB   0.0000 MiB           1           fval=[]
+   115 873.3281 MiB   0.0000 MiB           1           grad=[]
+   116 873.3281 MiB   0.0000 MiB           1           del fval,grad
+   117 873.3281 MiB   0.0000 MiB           1           gc.collect()
+   118                                                 # Convert x to velocity
+   119 873.3281 MiB   0.0000 MiB           1           v_curr = 1.0/np.sqrt(x.reshape(model.shape))
+   120                                                 
+   121                                                 # Overwrite current velocity in geometry (don't update boundary region)
+   122 873.3281 MiB   0.0000 MiB           1           model.update('vp', v_curr.reshape(model.shape))
+   123                                                 
+   124                                                 # Evaluate objective function 
+   125 885.4336 MiB  12.1055 MiB           1           fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+   126                                                 # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
+   127 885.4336 MiB   0.0000 MiB           1           return fval, grad.flatten().astype(np.float64)    # scipy expects double precision vector
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   112 885.4336 MiB 885.4336 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+   113                                             def loss(x, model, geometry, d_obs):
+   114 885.4336 MiB   0.0000 MiB           1           fval=[]
+   115 885.4336 MiB   0.0000 MiB           1           grad=[]
+   116 885.4336 MiB   0.0000 MiB           1           del fval,grad
+   117 885.4336 MiB   0.0000 MiB           1           gc.collect()
+   118                                                 # Convert x to velocity
+   119 885.4336 MiB   0.0000 MiB           1           v_curr = 1.0/np.sqrt(x.reshape(model.shape))
+   120                                                 
+   121                                                 # Overwrite current velocity in geometry (don't update boundary region)
+   122 885.4336 MiB   0.0000 MiB           1           model.update('vp', v_curr.reshape(model.shape))
+   123                                                 
+   124                                                 # Evaluate objective function 
+   125 888.2930 MiB   2.8594 MiB           1           fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+   126                                                 # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
+   127 888.2930 MiB   0.0000 MiB           1           return fval, grad.flatten().astype(np.float64)    # scipy expects double precision vector
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   112 888.2969 MiB 888.2969 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+   113                                             def loss(x, model, geometry, d_obs):
+   114 888.2969 MiB   0.0000 MiB           1           fval=[]
+   115 888.2969 MiB   0.0000 MiB           1           grad=[]
+   116 888.2969 MiB   0.0000 MiB           1           del fval,grad
+   117 888.2969 MiB   0.0000 MiB           1           gc.collect()
+   118                                                 # Convert x to velocity
+   119 888.2969 MiB   0.0000 MiB           1           v_curr = 1.0/np.sqrt(x.reshape(model.shape))
+   120                                                 
+   121                                                 # Overwrite current velocity in geometry (don't update boundary region)
+   122 888.3008 MiB   0.0039 MiB           1           model.update('vp', v_curr.reshape(model.shape))
+   123                                                 
+   124                                                 # Evaluate objective function 
+   125 889.4727 MiB   1.1719 MiB           1           fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+   126                                                 # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
+   127 889.4727 MiB   0.0000 MiB           1           return fval, grad.flatten().astype(np.float64)    # scipy expects double precision vector
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   112 889.4727 MiB 889.4727 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+   113                                             def loss(x, model, geometry, d_obs):
+   114 889.4727 MiB   0.0000 MiB           1           fval=[]
+   115 889.4727 MiB   0.0000 MiB           1           grad=[]
+   116 889.4727 MiB   0.0000 MiB           1           del fval,grad
+   117 889.4727 MiB   0.0000 MiB           1           gc.collect()
+   118                                                 # Convert x to velocity
+   119 889.4727 MiB   0.0000 MiB           1           v_curr = 1.0/np.sqrt(x.reshape(model.shape))
+   120                                                 
+   121                                                 # Overwrite current velocity in geometry (don't update boundary region)
+   122 889.4727 MiB   0.0000 MiB           1           model.update('vp', v_curr.reshape(model.shape))
+   123                                                 
+   124                                                 # Evaluate objective function 
+   125 893.7227 MiB   4.2500 MiB           1           fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+   126                                                 # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
+   127 893.7227 MiB   0.0000 MiB           1           return fval, grad.flatten().astype(np.float64)    # scipy expects double precision vector
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   112 893.7227 MiB 893.7227 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+   113                                             def loss(x, model, geometry, d_obs):
+   114 893.7227 MiB   0.0000 MiB           1           fval=[]
+   115 893.7227 MiB   0.0000 MiB           1           grad=[]
+   116 893.7227 MiB   0.0000 MiB           1           del fval,grad
+   117 893.7227 MiB   0.0000 MiB           1           gc.collect()
+   118                                                 # Convert x to velocity
+   119 893.7227 MiB   0.0000 MiB           1           v_curr = 1.0/np.sqrt(x.reshape(model.shape))
+   120                                                 
+   121                                                 # Overwrite current velocity in geometry (don't update boundary region)
+   122 893.7227 MiB   0.0000 MiB           1           model.update('vp', v_curr.reshape(model.shape))
+   123                                                 
+   124                                                 # Evaluate objective function 
+   125 902.9375 MiB   9.2148 MiB           1           fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+   126                                                 # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
+   127 902.9375 MiB   0.0000 MiB           1           return fval, grad.flatten().astype(np.float64)    # scipy expects double precision vector
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   112 902.9492 MiB 902.9492 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+   113                                             def loss(x, model, geometry, d_obs):
+   114 902.9492 MiB   0.0000 MiB           1           fval=[]
+   115 902.9492 MiB   0.0000 MiB           1           grad=[]
+   116 902.9492 MiB   0.0000 MiB           1           del fval,grad
+   117 902.9492 MiB   0.0000 MiB           1           gc.collect()
+   118                                                 # Convert x to velocity
+   119 902.9492 MiB   0.0000 MiB           1           v_curr = 1.0/np.sqrt(x.reshape(model.shape))
+   120                                                 
+   121                                                 # Overwrite current velocity in geometry (don't update boundary region)
+   122 902.9492 MiB   0.0000 MiB           1           model.update('vp', v_curr.reshape(model.shape))
+   123                                                 
+   124                                                 # Evaluate objective function 
+   125 940.6680 MiB  37.7188 MiB           1           fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+   126                                                 # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
+   127 940.6680 MiB   0.0000 MiB           1           return fval, grad.flatten().astype(np.float64)    # scipy expects double precision vector
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   112 940.6680 MiB 940.6680 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+   113                                             def loss(x, model, geometry, d_obs):
+   114 940.6680 MiB   0.0000 MiB           1           fval=[]
+   115 940.6680 MiB   0.0000 MiB           1           grad=[]
+   116 940.6680 MiB   0.0000 MiB           1           del fval,grad
+   117 940.6680 MiB   0.0000 MiB           1           gc.collect()
+   118                                                 # Convert x to velocity
+   119 940.6680 MiB   0.0000 MiB           1           v_curr = 1.0/np.sqrt(x.reshape(model.shape))
+   120                                                 
+   121                                                 # Overwrite current velocity in geometry (don't update boundary region)
+   122 940.6680 MiB   0.0000 MiB           1           model.update('vp', v_curr.reshape(model.shape))
+   123                                                 
+   124                                                 # Evaluate objective function 
+   125 953.6680 MiB  13.0000 MiB           1           fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+   126                                                 # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
+   127 953.6719 MiB   0.0039 MiB           1           return fval, grad.flatten().astype(np.float64)    # scipy expects double precision vector
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   112 953.6719 MiB 953.6719 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+   113                                             def loss(x, model, geometry, d_obs):
+   114 953.6719 MiB   0.0000 MiB           1           fval=[]
+   115 953.6719 MiB   0.0000 MiB           1           grad=[]
+   116 953.6719 MiB   0.0000 MiB           1           del fval,grad
+   117 953.6719 MiB   0.0000 MiB           1           gc.collect()
+   118                                                 # Convert x to velocity
+   119 953.6719 MiB   0.0000 MiB           1           v_curr = 1.0/np.sqrt(x.reshape(model.shape))
+   120                                                 
+   121                                                 # Overwrite current velocity in geometry (don't update boundary region)
+   122 953.6758 MiB   0.0039 MiB           1           model.update('vp', v_curr.reshape(model.shape))
+   123                                                 
+   124                                                 # Evaluate objective function 
+   125 959.8711 MiB   6.1953 MiB           1           fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+   126                                                 # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
+   127 959.8711 MiB   0.0000 MiB           1           return fval, grad.flatten().astype(np.float64)    # scipy expects double precision vector
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   112 959.8711 MiB 959.8711 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+   113                                             def loss(x, model, geometry, d_obs):
+   114 959.8711 MiB   0.0000 MiB           1           fval=[]
+   115 959.8711 MiB   0.0000 MiB           1           grad=[]
+   116 959.8711 MiB   0.0000 MiB           1           del fval,grad
+   117 959.8711 MiB   0.0000 MiB           1           gc.collect()
+   118                                                 # Convert x to velocity
+   119 959.8711 MiB   0.0000 MiB           1           v_curr = 1.0/np.sqrt(x.reshape(model.shape))
+   120                                                 
+   121                                                 # Overwrite current velocity in geometry (don't update boundary region)
+   122 959.8750 MiB   0.0039 MiB           1           model.update('vp', v_curr.reshape(model.shape))
+   123                                                 
+   124                                                 # Evaluate objective function 
+   125 973.7422 MiB  13.8672 MiB           1           fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+   126                                                 # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
+   127 973.7422 MiB   0.0000 MiB           1           return fval, grad.flatten().astype(np.float64)    # scipy expects double precision vector
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   112 973.7422 MiB 973.7422 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+   113                                             def loss(x, model, geometry, d_obs):
+   114 973.7422 MiB   0.0000 MiB           1           fval=[]
+   115 973.7422 MiB   0.0000 MiB           1           grad=[]
+   116 973.7422 MiB   0.0000 MiB           1           del fval,grad
+   117 973.7422 MiB   0.0000 MiB           1           gc.collect()
+   118                                                 # Convert x to velocity
+   119 973.7422 MiB   0.0000 MiB           1           v_curr = 1.0/np.sqrt(x.reshape(model.shape))
+   120                                                 
+   121                                                 # Overwrite current velocity in geometry (don't update boundary region)
+   122 973.7461 MiB   0.0039 MiB           1           model.update('vp', v_curr.reshape(model.shape))
+   123                                                 
+   124                                                 # Evaluate objective function 
+   125 981.2031 MiB   7.4570 MiB           1           fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+   126                                                 # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
+   127 981.2031 MiB   0.0000 MiB           1           return fval, grad.flatten().astype(np.float64)    # scipy expects double precision vector
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   112 981.2031 MiB 981.2031 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+   113                                             def loss(x, model, geometry, d_obs):
+   114 981.2031 MiB   0.0000 MiB           1           fval=[]
+   115 981.2031 MiB   0.0000 MiB           1           grad=[]
+   116 981.2031 MiB   0.0000 MiB           1           del fval,grad
+   117 981.2031 MiB   0.0000 MiB           1           gc.collect()
+   118                                                 # Convert x to velocity
+   119 981.2031 MiB   0.0000 MiB           1           v_curr = 1.0/np.sqrt(x.reshape(model.shape))
+   120                                                 
+   121                                                 # Overwrite current velocity in geometry (don't update boundary region)
+   122 981.2031 MiB   0.0000 MiB           1           model.update('vp', v_curr.reshape(model.shape))
+   123                                                 
+   124                                                 # Evaluate objective function 
+   125 992.1641 MiB  10.9609 MiB           1           fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+   126                                                 # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
+   127 992.1641 MiB   0.0000 MiB           1           return fval, grad.flatten().astype(np.float64)    # scipy expects double precision vector
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   112 992.1641 MiB 992.1641 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+   113                                             def loss(x, model, geometry, d_obs):
+   114 992.1641 MiB   0.0000 MiB           1           fval=[]
+   115 992.1641 MiB   0.0000 MiB           1           grad=[]
+   116 992.1641 MiB   0.0000 MiB           1           del fval,grad
+   117 992.1641 MiB   0.0000 MiB           1           gc.collect()
+   118                                                 # Convert x to velocity
+   119 992.1641 MiB   0.0000 MiB           1           v_curr = 1.0/np.sqrt(x.reshape(model.shape))
+   120                                                 
+   121                                                 # Overwrite current velocity in geometry (don't update boundary region)
+   122 995.0820 MiB   2.9180 MiB           1           model.update('vp', v_curr.reshape(model.shape))
+   123                                                 
+   124                                                 # Evaluate objective function 
+   125 1076.3828 MiB  81.3008 MiB           1           fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+   126                                                 # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
+   127 1076.3828 MiB   0.0000 MiB           1           return fval, grad.flatten().astype(np.float64)    # scipy expects double precision vector
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   112 1076.3828 MiB 1076.3828 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+   113                                             def loss(x, model, geometry, d_obs):
+   114 1076.3828 MiB   0.0000 MiB           1           fval=[]
+   115 1076.3828 MiB   0.0000 MiB           1           grad=[]
+   116 1076.3828 MiB   0.0000 MiB           1           del fval,grad
+   117 1076.1328 MiB  -0.2500 MiB           1           gc.collect()
+   118                                                 # Convert x to velocity
+   119 1076.1328 MiB   0.0000 MiB           1           v_curr = 1.0/np.sqrt(x.reshape(model.shape))
+   120                                                 
+   121                                                 # Overwrite current velocity in geometry (don't update boundary region)
+   122 1076.1328 MiB   0.0000 MiB           1           model.update('vp', v_curr.reshape(model.shape))
+   123                                                 
+   124                                                 # Evaluate objective function 
+   125 1077.6836 MiB   1.5508 MiB           1           fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+   126                                                 # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
+   127 1077.6836 MiB   0.0000 MiB           1           return fval, grad.flatten().astype(np.float64)    # scipy expects double precision vector
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   112 1077.6836 MiB 1077.6836 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+   113                                             def loss(x, model, geometry, d_obs):
+   114 1077.6836 MiB   0.0000 MiB           1           fval=[]
+   115 1077.6836 MiB   0.0000 MiB           1           grad=[]
+   116 1077.6836 MiB   0.0000 MiB           1           del fval,grad
+   117 1077.6836 MiB   0.0000 MiB           1           gc.collect()
+   118                                                 # Convert x to velocity
+   119 1077.6836 MiB   0.0000 MiB           1           v_curr = 1.0/np.sqrt(x.reshape(model.shape))
+   120                                                 
+   121                                                 # Overwrite current velocity in geometry (don't update boundary region)
+   122 1077.6836 MiB   0.0000 MiB           1           model.update('vp', v_curr.reshape(model.shape))
+   123                                                 
+   124                                                 # Evaluate objective function 
+   125 1079.1719 MiB   1.4883 MiB           1           fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+   126                                                 # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
+   127 1079.1719 MiB   0.0000 MiB           1           return fval, grad.flatten().astype(np.float64)    # scipy expects double precision vector
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   112 1079.1719 MiB 1079.1719 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+   113                                             def loss(x, model, geometry, d_obs):
+   114 1079.1719 MiB   0.0000 MiB           1           fval=[]
+   115 1079.1719 MiB   0.0000 MiB           1           grad=[]
+   116 1079.1719 MiB   0.0000 MiB           1           del fval,grad
+   117 1079.1719 MiB   0.0000 MiB           1           gc.collect()
+   118                                                 # Convert x to velocity
+   119 1079.1719 MiB   0.0000 MiB           1           v_curr = 1.0/np.sqrt(x.reshape(model.shape))
+   120                                                 
+   121                                                 # Overwrite current velocity in geometry (don't update boundary region)
+   122 1079.1719 MiB   0.0000 MiB           1           model.update('vp', v_curr.reshape(model.shape))
+   123                                                 
+   124                                                 # Evaluate objective function 
+   125 1080.7305 MiB   1.5586 MiB           1           fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+   126                                                 # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
+   127 1080.7305 MiB   0.0000 MiB           1           return fval, grad.flatten().astype(np.float64)    # scipy expects double precision vector
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   112 1080.7305 MiB 1080.7305 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+   113                                             def loss(x, model, geometry, d_obs):
+   114 1080.7305 MiB   0.0000 MiB           1           fval=[]
+   115 1080.7305 MiB   0.0000 MiB           1           grad=[]
+   116 1080.7305 MiB   0.0000 MiB           1           del fval,grad
+   117 1080.7305 MiB   0.0000 MiB           1           gc.collect()
+   118                                                 # Convert x to velocity
+   119 1080.7305 MiB   0.0000 MiB           1           v_curr = 1.0/np.sqrt(x.reshape(model.shape))
+   120                                                 
+   121                                                 # Overwrite current velocity in geometry (don't update boundary region)
+   122 1080.7305 MiB   0.0000 MiB           1           model.update('vp', v_curr.reshape(model.shape))
+   123                                                 
+   124                                                 # Evaluate objective function 
+   125 1080.7383 MiB   0.0078 MiB           1           fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+   126                                                 # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
+   127 1080.7383 MiB   0.0000 MiB           1           return fval, grad.flatten().astype(np.float64)    # scipy expects double precision vector
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   112 1080.7383 MiB 1080.7383 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+   113                                             def loss(x, model, geometry, d_obs):
+   114 1080.7383 MiB   0.0000 MiB           1           fval=[]
+   115 1080.7383 MiB   0.0000 MiB           1           grad=[]
+   116 1080.7383 MiB   0.0000 MiB           1           del fval,grad
+   117 1080.7383 MiB   0.0000 MiB           1           gc.collect()
+   118                                                 # Convert x to velocity
+   119 1080.7383 MiB   0.0000 MiB           1           v_curr = 1.0/np.sqrt(x.reshape(model.shape))
+   120                                                 
+   121                                                 # Overwrite current velocity in geometry (don't update boundary region)
+   122 1080.7383 MiB   0.0000 MiB           1           model.update('vp', v_curr.reshape(model.shape))
+   123                                                 
+   124                                                 # Evaluate objective function 
+   125 1084.2148 MiB   3.4766 MiB           1           fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+   126                                                 # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
+   127 1084.2148 MiB   0.0000 MiB           1           return fval, grad.flatten().astype(np.float64)    # scipy expects double precision vector
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   112 1084.2148 MiB 1084.2148 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+   113                                             def loss(x, model, geometry, d_obs):
+   114 1084.2148 MiB   0.0000 MiB           1           fval=[]
+   115 1084.2148 MiB   0.0000 MiB           1           grad=[]
+   116 1084.2148 MiB   0.0000 MiB           1           del fval,grad
+   117 1084.2148 MiB   0.0000 MiB           1           gc.collect()
+   118                                                 # Convert x to velocity
+   119 1084.2148 MiB   0.0000 MiB           1           v_curr = 1.0/np.sqrt(x.reshape(model.shape))
+   120                                                 
+   121                                                 # Overwrite current velocity in geometry (don't update boundary region)
+   122 1084.2148 MiB   0.0000 MiB           1           model.update('vp', v_curr.reshape(model.shape))
+   123                                                 
+   124                                                 # Evaluate objective function 
+   125 1084.2148 MiB   0.0000 MiB           1           fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+   126                                                 # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
+   127 1084.2188 MiB   0.0039 MiB           1           return fval, grad.flatten().astype(np.float64)    # scipy expects double precision vector
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   112 1084.2188 MiB 1084.2188 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+   113                                             def loss(x, model, geometry, d_obs):
+   114 1084.2188 MiB   0.0000 MiB           1           fval=[]
+   115 1084.2188 MiB   0.0000 MiB           1           grad=[]
+   116 1084.2188 MiB   0.0000 MiB           1           del fval,grad
+   117 1084.2188 MiB   0.0000 MiB           1           gc.collect()
+   118                                                 # Convert x to velocity
+   119 1084.2188 MiB   0.0000 MiB           1           v_curr = 1.0/np.sqrt(x.reshape(model.shape))
+   120                                                 
+   121                                                 # Overwrite current velocity in geometry (don't update boundary region)
+   122 1084.2188 MiB   0.0000 MiB           1           model.update('vp', v_curr.reshape(model.shape))
+   123                                                 
+   124                                                 # Evaluate objective function 
+   125 1094.0625 MiB   9.8438 MiB           1           fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+   126                                                 # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
+   127 1094.0625 MiB   0.0000 MiB           1           return fval, grad.flatten().astype(np.float64)    # scipy expects double precision vector
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   112 1094.0625 MiB 1094.0625 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+   113                                             def loss(x, model, geometry, d_obs):
+   114 1094.0625 MiB   0.0000 MiB           1           fval=[]
+   115 1094.0625 MiB   0.0000 MiB           1           grad=[]
+   116 1094.0625 MiB   0.0000 MiB           1           del fval,grad
+   117 1094.0625 MiB   0.0000 MiB           1           gc.collect()
+   118                                                 # Convert x to velocity
+   119 1094.0625 MiB   0.0000 MiB           1           v_curr = 1.0/np.sqrt(x.reshape(model.shape))
+   120                                                 
+   121                                                 # Overwrite current velocity in geometry (don't update boundary region)
+   122 1094.0625 MiB   0.0000 MiB           1           model.update('vp', v_curr.reshape(model.shape))
+   123                                                 
+   124                                                 # Evaluate objective function 
+   125 1096.8086 MiB   2.7461 MiB           1           fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+   126                                                 # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
+   127 1096.8125 MiB   0.0039 MiB           1           return fval, grad.flatten().astype(np.float64)    # scipy expects double precision vector
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   112 1096.8125 MiB 1096.8125 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+   113                                             def loss(x, model, geometry, d_obs):
+   114 1096.8125 MiB   0.0000 MiB           1           fval=[]
+   115 1096.8125 MiB   0.0000 MiB           1           grad=[]
+   116 1096.8125 MiB   0.0000 MiB           1           del fval,grad
+   117 1096.8125 MiB   0.0000 MiB           1           gc.collect()
+   118                                                 # Convert x to velocity
+   119 1096.8125 MiB   0.0000 MiB           1           v_curr = 1.0/np.sqrt(x.reshape(model.shape))
+   120                                                 
+   121                                                 # Overwrite current velocity in geometry (don't update boundary region)
+   122 1096.8125 MiB   0.0000 MiB           1           model.update('vp', v_curr.reshape(model.shape))
+   123                                                 
+   124                                                 # Evaluate objective function 
+   125 1100.5586 MiB   3.7461 MiB           1           fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+   126                                                 # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
+   127 1100.5586 MiB   0.0000 MiB           1           return fval, grad.flatten().astype(np.float64)    # scipy expects double precision vector
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   112 1100.5781 MiB 1100.5781 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+   113                                             def loss(x, model, geometry, d_obs):
+   114 1100.5781 MiB   0.0000 MiB           1           fval=[]
+   115 1100.5781 MiB   0.0000 MiB           1           grad=[]
+   116 1100.5781 MiB   0.0000 MiB           1           del fval,grad
+   117 1100.5781 MiB   0.0000 MiB           1           gc.collect()
+   118                                                 # Convert x to velocity
+   119 1100.5781 MiB   0.0000 MiB           1           v_curr = 1.0/np.sqrt(x.reshape(model.shape))
+   120                                                 
+   121                                                 # Overwrite current velocity in geometry (don't update boundary region)
+   122 1100.5781 MiB   0.0000 MiB           1           model.update('vp', v_curr.reshape(model.shape))
+   123                                                 
+   124                                                 # Evaluate objective function 
+   125 1101.5742 MiB   0.9961 MiB           1           fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+   126                                                 # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
+   127 1101.5742 MiB   0.0000 MiB           1           return fval, grad.flatten().astype(np.float64)    # scipy expects double precision vector
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   112 1101.5742 MiB 1101.5742 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+   113                                             def loss(x, model, geometry, d_obs):
+   114 1101.5742 MiB   0.0000 MiB           1           fval=[]
+   115 1101.5742 MiB   0.0000 MiB           1           grad=[]
+   116 1101.5742 MiB   0.0000 MiB           1           del fval,grad
+   117 1101.5742 MiB   0.0000 MiB           1           gc.collect()
+   118                                                 # Convert x to velocity
+   119 1101.5742 MiB   0.0000 MiB           1           v_curr = 1.0/np.sqrt(x.reshape(model.shape))
+   120                                                 
+   121                                                 # Overwrite current velocity in geometry (don't update boundary region)
+   122 1101.5742 MiB   0.0000 MiB           1           model.update('vp', v_curr.reshape(model.shape))
+   123                                                 
+   124                                                 # Evaluate objective function 
+   125 1129.5977 MiB  28.0234 MiB           1           fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+   126                                                 # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
+   127 1129.5977 MiB   0.0000 MiB           1           return fval, grad.flatten().astype(np.float64)    # scipy expects double precision vector
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   112 1129.5977 MiB 1129.5977 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+   113                                             def loss(x, model, geometry, d_obs):
+   114 1129.5977 MiB   0.0000 MiB           1           fval=[]
+   115 1129.5977 MiB   0.0000 MiB           1           grad=[]
+   116 1129.5977 MiB   0.0000 MiB           1           del fval,grad
+   117 1129.5977 MiB   0.0000 MiB           1           gc.collect()
+   118                                                 # Convert x to velocity
+   119 1129.5977 MiB   0.0000 MiB           1           v_curr = 1.0/np.sqrt(x.reshape(model.shape))
+   120                                                 
+   121                                                 # Overwrite current velocity in geometry (don't update boundary region)
+   122 1129.6016 MiB   0.0039 MiB           1           model.update('vp', v_curr.reshape(model.shape))
+   123                                                 
+   124                                                 # Evaluate objective function 
+   125 1172.5898 MiB  42.9883 MiB           1           fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+   126                                                 # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
+   127 1172.5898 MiB   0.0000 MiB           1           return fval, grad.flatten().astype(np.float64)    # scipy expects double precision vector
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   112 1172.5898 MiB 1172.5898 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+   113                                             def loss(x, model, geometry, d_obs):
+   114 1172.5898 MiB   0.0000 MiB           1           fval=[]
+   115 1172.5898 MiB   0.0000 MiB           1           grad=[]
+   116 1172.5898 MiB   0.0000 MiB           1           del fval,grad
+   117 1172.5898 MiB   0.0000 MiB           1           gc.collect()
+   118                                                 # Convert x to velocity
+   119 1172.5898 MiB   0.0000 MiB           1           v_curr = 1.0/np.sqrt(x.reshape(model.shape))
+   120                                                 
+   121                                                 # Overwrite current velocity in geometry (don't update boundary region)
+   122 1172.5898 MiB   0.0000 MiB           1           model.update('vp', v_curr.reshape(model.shape))
+   123                                                 
+   124                                                 # Evaluate objective function 
+   125 1177.9531 MiB   5.3633 MiB           1           fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+   126                                                 # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
+   127 1177.9531 MiB   0.0000 MiB           1           return fval, grad.flatten().astype(np.float64)    # scipy expects double precision vector
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   112 1177.9531 MiB 1177.9531 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+   113                                             def loss(x, model, geometry, d_obs):
+   114 1177.9531 MiB   0.0000 MiB           1           fval=[]
+   115 1177.9531 MiB   0.0000 MiB           1           grad=[]
+   116 1177.9531 MiB   0.0000 MiB           1           del fval,grad
+   117 1177.9531 MiB   0.0000 MiB           1           gc.collect()
+   118                                                 # Convert x to velocity
+   119 1177.9531 MiB   0.0000 MiB           1           v_curr = 1.0/np.sqrt(x.reshape(model.shape))
+   120                                                 
+   121                                                 # Overwrite current velocity in geometry (don't update boundary region)
+   122 1177.9531 MiB   0.0000 MiB           1           model.update('vp', v_curr.reshape(model.shape))
+   123                                                 
+   124                                                 # Evaluate objective function 
+   125 1179.6953 MiB   1.7422 MiB           1           fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+   126                                                 # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
+   127 1179.6953 MiB   0.0000 MiB           1           return fval, grad.flatten().astype(np.float64)    # scipy expects double precision vector
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   112 1179.6953 MiB 1179.6953 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+   113                                             def loss(x, model, geometry, d_obs):
+   114 1179.6953 MiB   0.0000 MiB           1           fval=[]
+   115 1179.6953 MiB   0.0000 MiB           1           grad=[]
+   116 1179.6953 MiB   0.0000 MiB           1           del fval,grad
+   117 1179.6953 MiB   0.0000 MiB           1           gc.collect()
+   118                                                 # Convert x to velocity
+   119 1179.6953 MiB   0.0000 MiB           1           v_curr = 1.0/np.sqrt(x.reshape(model.shape))
+   120                                                 
+   121                                                 # Overwrite current velocity in geometry (don't update boundary region)
+   122 1179.6953 MiB   0.0000 MiB           1           model.update('vp', v_curr.reshape(model.shape))
+   123                                                 
+   124                                                 # Evaluate objective function 
+   125 1179.6953 MiB   0.0000 MiB           1           fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+   126                                                 # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
+   127 1179.6953 MiB   0.0000 MiB           1           return fval, grad.flatten().astype(np.float64)    # scipy expects double precision vector
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   112 1179.6953 MiB 1179.6953 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+   113                                             def loss(x, model, geometry, d_obs):
+   114 1179.6953 MiB   0.0000 MiB           1           fval=[]
+   115 1179.6953 MiB   0.0000 MiB           1           grad=[]
+   116 1179.6953 MiB   0.0000 MiB           1           del fval,grad
+   117 1179.6953 MiB   0.0000 MiB           1           gc.collect()
+   118                                                 # Convert x to velocity
+   119 1179.6953 MiB   0.0000 MiB           1           v_curr = 1.0/np.sqrt(x.reshape(model.shape))
+   120                                                 
+   121                                                 # Overwrite current velocity in geometry (don't update boundary region)
+   122 1179.7812 MiB   0.0859 MiB           1           model.update('vp', v_curr.reshape(model.shape))
+   123                                                 
+   124                                                 # Evaluate objective function 
+   125 1250.6172 MiB  70.8359 MiB           1           fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+   126                                                 # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
+   127 1250.6172 MiB   0.0000 MiB           1           return fval, grad.flatten().astype(np.float64)    # scipy expects double precision vector
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   112 1250.6172 MiB 1250.6172 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+   113                                             def loss(x, model, geometry, d_obs):
+   114 1250.6172 MiB   0.0000 MiB           1           fval=[]
+   115 1250.6172 MiB   0.0000 MiB           1           grad=[]
+   116 1250.6172 MiB   0.0000 MiB           1           del fval,grad
+   117 1250.6172 MiB   0.0000 MiB           1           gc.collect()
+   118                                                 # Convert x to velocity
+   119 1250.6172 MiB   0.0000 MiB           1           v_curr = 1.0/np.sqrt(x.reshape(model.shape))
+   120                                                 
+   121                                                 # Overwrite current velocity in geometry (don't update boundary region)
+   122 1250.6172 MiB   0.0000 MiB           1           model.update('vp', v_curr.reshape(model.shape))
+   123                                                 
+   124                                                 # Evaluate objective function 
+   125 1252.3906 MiB   1.7734 MiB           1           fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+   126                                                 # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
+   127 1252.3906 MiB   0.0000 MiB           1           return fval, grad.flatten().astype(np.float64)    # scipy expects double precision vector
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   112 1252.3945 MiB 1252.3945 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+   113                                             def loss(x, model, geometry, d_obs):
+   114 1252.3945 MiB   0.0000 MiB           1           fval=[]
+   115 1252.3945 MiB   0.0000 MiB           1           grad=[]
+   116 1252.3945 MiB   0.0000 MiB           1           del fval,grad
+   117 1252.3945 MiB   0.0000 MiB           1           gc.collect()
+   118                                                 # Convert x to velocity
+   119 1252.3945 MiB   0.0000 MiB           1           v_curr = 1.0/np.sqrt(x.reshape(model.shape))
+   120                                                 
+   121                                                 # Overwrite current velocity in geometry (don't update boundary region)
+   122 1252.3945 MiB   0.0000 MiB           1           model.update('vp', v_curr.reshape(model.shape))
+   123                                                 
+   124                                                 # Evaluate objective function 
+   125 1252.4219 MiB   0.0273 MiB           1           fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+   126                                                 # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
+   127 1252.4219 MiB   0.0000 MiB           1           return fval, grad.flatten().astype(np.float64)    # scipy expects double precision vector
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   112 1252.4219 MiB 1252.4219 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+   113                                             def loss(x, model, geometry, d_obs):
+   114 1252.4219 MiB   0.0000 MiB           1           fval=[]
+   115 1252.4219 MiB   0.0000 MiB           1           grad=[]
+   116 1252.4219 MiB   0.0000 MiB           1           del fval,grad
+   117 1252.4219 MiB   0.0000 MiB           1           gc.collect()
+   118                                                 # Convert x to velocity
+   119 1252.4219 MiB   0.0000 MiB           1           v_curr = 1.0/np.sqrt(x.reshape(model.shape))
+   120                                                 
+   121                                                 # Overwrite current velocity in geometry (don't update boundary region)
+   122 1252.4219 MiB   0.0000 MiB           1           model.update('vp', v_curr.reshape(model.shape))
+   123                                                 
+   124                                                 # Evaluate objective function 
+   125 1262.3984 MiB   9.9766 MiB           1           fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+   126                                                 # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
+   127 1262.3984 MiB   0.0000 MiB           1           return fval, grad.flatten().astype(np.float64)    # scipy expects double precision vector
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   112 1262.3984 MiB 1262.3984 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+   113                                             def loss(x, model, geometry, d_obs):
+   114 1262.3984 MiB   0.0000 MiB           1           fval=[]
+   115 1262.3984 MiB   0.0000 MiB           1           grad=[]
+   116 1262.3984 MiB   0.0000 MiB           1           del fval,grad
+   117 1262.3984 MiB   0.0000 MiB           1           gc.collect()
+   118                                                 # Convert x to velocity
+   119 1262.3984 MiB   0.0000 MiB           1           v_curr = 1.0/np.sqrt(x.reshape(model.shape))
+   120                                                 
+   121                                                 # Overwrite current velocity in geometry (don't update boundary region)
+   122 1262.3984 MiB   0.0000 MiB           1           model.update('vp', v_curr.reshape(model.shape))
+   123                                                 
+   124                                                 # Evaluate objective function 
+   125 1288.7578 MiB  26.3594 MiB           1           fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+   126                                                 # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
+   127 1288.7812 MiB   0.0234 MiB           1           return fval, grad.flatten().astype(np.float64)    # scipy expects double precision vector
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   112 1288.7812 MiB 1288.7812 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+   113                                             def loss(x, model, geometry, d_obs):
+   114 1288.7812 MiB   0.0000 MiB           1           fval=[]
+   115 1288.7812 MiB   0.0000 MiB           1           grad=[]
+   116 1288.7812 MiB   0.0000 MiB           1           del fval,grad
+   117 1288.7812 MiB   0.0000 MiB           1           gc.collect()
+   118                                                 # Convert x to velocity
+   119 1288.7812 MiB   0.0000 MiB           1           v_curr = 1.0/np.sqrt(x.reshape(model.shape))
+   120                                                 
+   121                                                 # Overwrite current velocity in geometry (don't update boundary region)
+   122 1288.7812 MiB   0.0000 MiB           1           model.update('vp', v_curr.reshape(model.shape))
+   123                                                 
+   124                                                 # Evaluate objective function 
+   125 1294.2070 MiB   5.4258 MiB           1           fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+   126                                                 # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
+   127 1294.2070 MiB   0.0000 MiB           1           return fval, grad.flatten().astype(np.float64)    # scipy expects double precision vector
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   112 1294.2188 MiB 1294.2188 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+   113                                             def loss(x, model, geometry, d_obs):
+   114 1294.2188 MiB   0.0000 MiB           1           fval=[]
+   115 1294.2188 MiB   0.0000 MiB           1           grad=[]
+   116 1294.2188 MiB   0.0000 MiB           1           del fval,grad
+   117 1294.2188 MiB   0.0000 MiB           1           gc.collect()
+   118                                                 # Convert x to velocity
+   119 1294.2188 MiB   0.0000 MiB           1           v_curr = 1.0/np.sqrt(x.reshape(model.shape))
+   120                                                 
+   121                                                 # Overwrite current velocity in geometry (don't update boundary region)
+   122 1294.2188 MiB   0.0000 MiB           1           model.update('vp', v_curr.reshape(model.shape))
+   123                                                 
+   124                                                 # Evaluate objective function 
+   125 1300.8047 MiB   6.5859 MiB           1           fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+   126                                                 # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
+   127 1300.8047 MiB   0.0000 MiB           1           return fval, grad.flatten().astype(np.float64)    # scipy expects double precision vector
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   112 1300.8047 MiB 1300.8047 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+   113                                             def loss(x, model, geometry, d_obs):
+   114 1300.8047 MiB   0.0000 MiB           1           fval=[]
+   115 1300.8047 MiB   0.0000 MiB           1           grad=[]
+   116 1300.8047 MiB   0.0000 MiB           1           del fval,grad
+   117 1300.8047 MiB   0.0000 MiB           1           gc.collect()
+   118                                                 # Convert x to velocity
+   119 1300.8047 MiB   0.0000 MiB           1           v_curr = 1.0/np.sqrt(x.reshape(model.shape))
+   120                                                 
+   121                                                 # Overwrite current velocity in geometry (don't update boundary region)
+   122 1300.8047 MiB   0.0000 MiB           1           model.update('vp', v_curr.reshape(model.shape))
+   123                                                 
+   124                                                 # Evaluate objective function 
+   125 1301.8125 MiB   1.0078 MiB           1           fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+   126                                                 # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
+   127 1301.8125 MiB   0.0000 MiB           1           return fval, grad.flatten().astype(np.float64)    # scipy expects double precision vector
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   112 1301.8125 MiB 1301.8125 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+   113                                             def loss(x, model, geometry, d_obs):
+   114 1301.8125 MiB   0.0000 MiB           1           fval=[]
+   115 1301.8125 MiB   0.0000 MiB           1           grad=[]
+   116 1301.8125 MiB   0.0000 MiB           1           del fval,grad
+   117 1301.8125 MiB   0.0000 MiB           1           gc.collect()
+   118                                                 # Convert x to velocity
+   119 1301.8125 MiB   0.0000 MiB           1           v_curr = 1.0/np.sqrt(x.reshape(model.shape))
+   120                                                 
+   121                                                 # Overwrite current velocity in geometry (don't update boundary region)
+   122 1301.8125 MiB   0.0000 MiB           1           model.update('vp', v_curr.reshape(model.shape))
+   123                                                 
+   124                                                 # Evaluate objective function 
+   125 1307.7109 MiB   5.8984 MiB           1           fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+   126                                                 # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
+   127 1307.7148 MiB   0.0039 MiB           1           return fval, grad.flatten().astype(np.float64)    # scipy expects double precision vector
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   112 1307.7148 MiB 1307.7148 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+   113                                             def loss(x, model, geometry, d_obs):
+   114 1307.7148 MiB   0.0000 MiB           1           fval=[]
+   115 1307.7148 MiB   0.0000 MiB           1           grad=[]
+   116 1307.7148 MiB   0.0000 MiB           1           del fval,grad
+   117 1307.7148 MiB   0.0000 MiB           1           gc.collect()
+   118                                                 # Convert x to velocity
+   119 1307.7148 MiB   0.0000 MiB           1           v_curr = 1.0/np.sqrt(x.reshape(model.shape))
+   120                                                 
+   121                                                 # Overwrite current velocity in geometry (don't update boundary region)
+   122 1307.7188 MiB   0.0039 MiB           1           model.update('vp', v_curr.reshape(model.shape))
+   123                                                 
+   124                                                 # Evaluate objective function 
+   125 1307.7266 MiB   0.0078 MiB           1           fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+   126                                                 # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
+   127 1307.7266 MiB   0.0000 MiB           1           return fval, grad.flatten().astype(np.float64)    # scipy expects double precision vector
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   112 1307.7266 MiB 1307.7266 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+   113                                             def loss(x, model, geometry, d_obs):
+   114 1307.7266 MiB   0.0000 MiB           1           fval=[]
+   115 1307.7266 MiB   0.0000 MiB           1           grad=[]
+   116 1307.7266 MiB   0.0000 MiB           1           del fval,grad
+   117 1307.7266 MiB   0.0000 MiB           1           gc.collect()
+   118                                                 # Convert x to velocity
+   119 1307.7266 MiB   0.0000 MiB           1           v_curr = 1.0/np.sqrt(x.reshape(model.shape))
+   120                                                 
+   121                                                 # Overwrite current velocity in geometry (don't update boundary region)
+   122 1307.7305 MiB   0.0039 MiB           1           model.update('vp', v_curr.reshape(model.shape))
+   123                                                 
+   124                                                 # Evaluate objective function 
+   125 1323.8164 MiB  16.0859 MiB           1           fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+   126                                                 # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
+   127 1323.8164 MiB   0.0000 MiB           1           return fval, grad.flatten().astype(np.float64)    # scipy expects double precision vector
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   112 1323.8164 MiB 1323.8164 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+   113                                             def loss(x, model, geometry, d_obs):
+   114 1323.8164 MiB   0.0000 MiB           1           fval=[]
+   115 1323.8164 MiB   0.0000 MiB           1           grad=[]
+   116 1323.8164 MiB   0.0000 MiB           1           del fval,grad
+   117 1323.8164 MiB   0.0000 MiB           1           gc.collect()
+   118                                                 # Convert x to velocity
+   119 1323.8164 MiB   0.0000 MiB           1           v_curr = 1.0/np.sqrt(x.reshape(model.shape))
+   120                                                 
+   121                                                 # Overwrite current velocity in geometry (don't update boundary region)
+   122 1323.8164 MiB   0.0000 MiB           1           model.update('vp', v_curr.reshape(model.shape))
+   123                                                 
+   124                                                 # Evaluate objective function 
+   125 1341.2070 MiB  17.3906 MiB           1           fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+   126                                                 # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
+   127 1341.2070 MiB   0.0000 MiB           1           return fval, grad.flatten().astype(np.float64)    # scipy expects double precision vector
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   112 1341.2070 MiB 1341.2070 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+   113                                             def loss(x, model, geometry, d_obs):
+   114 1341.2070 MiB   0.0000 MiB           1           fval=[]
+   115 1341.2070 MiB   0.0000 MiB           1           grad=[]
+   116 1341.2070 MiB   0.0000 MiB           1           del fval,grad
+   117 1341.2070 MiB   0.0000 MiB           1           gc.collect()
+   118                                                 # Convert x to velocity
+   119 1341.2070 MiB   0.0000 MiB           1           v_curr = 1.0/np.sqrt(x.reshape(model.shape))
+   120                                                 
+   121                                                 # Overwrite current velocity in geometry (don't update boundary region)
+   122 1341.2148 MiB   0.0078 MiB           1           model.update('vp', v_curr.reshape(model.shape))
+   123                                                 
+   124                                                 # Evaluate objective function 
+   125 1358.2773 MiB  17.0625 MiB           1           fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+   126                                                 # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
+   127 1358.2773 MiB   0.0000 MiB           1           return fval, grad.flatten().astype(np.float64)    # scipy expects double precision vector
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   112 1358.2773 MiB 1358.2773 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+   113                                             def loss(x, model, geometry, d_obs):
+   114 1358.2773 MiB   0.0000 MiB           1           fval=[]
+   115 1358.2773 MiB   0.0000 MiB           1           grad=[]
+   116 1358.2773 MiB   0.0000 MiB           1           del fval,grad
+   117 1358.2852 MiB   0.0078 MiB           1           gc.collect()
+   118                                                 # Convert x to velocity
+   119 1358.2852 MiB   0.0000 MiB           1           v_curr = 1.0/np.sqrt(x.reshape(model.shape))
+   120                                                 
+   121                                                 # Overwrite current velocity in geometry (don't update boundary region)
+   122 1358.2852 MiB   0.0000 MiB           1           model.update('vp', v_curr.reshape(model.shape))
+   123                                                 
+   124                                                 # Evaluate objective function 
+   125 1354.8398 MiB  -3.4453 MiB           1           fval, grad = fwi_objective_multi_shots(model, geometry, d_obs)
+   126                                                 # print(sys.getsizeof(v_curr),sys.getsizeof(grad))
+      25                   geometry.t0, geometry.tn, f0=geometry.f0, src_type=geometry.src_type)
+    95                                                     
+    96                                                     # Call serial FWI objective function for each shot location
+    97 1101.5742 MiB   0.0000 MiB          25               futures.append(client.submit(fwi_objective_single_shot, model, geometry_i, d_obs[i]))
+    98                                                     
+    99                                                 # Wait for all workers to finish and collect function values and gradients
+   100 1129.5430 MiB  27.9688 MiB           1           wait(futures)
+   101 1129.5430 MiB   0.0000 MiB           1           print(sys.getsizeof(futures))
+   102 1129.5430 MiB   0.0000 MiB           1           fval = 0.0
+   103 1129.5430 MiB   0.0000 MiB           1           grad = np.zeros(model.shape)
+   104 1129.5469 MiB   0.0000 MiB          26           for i in range(geometry.nsrc):
+   105 1129.5469 MiB   0.0039 MiB          25               fval += futures[i].result()[0]
+   106 1129.5469 MiB   0.0000 MiB          25               grad += futures[i].result()[1]
+   107 1129.5469 MiB   0.0000 MiB           1           del futures
+   108 1129.5977 MiB   0.0508 MiB           1           gc.collect()
+   109 1129.5977 MiB   0.0000 MiB           1           return fval, grad
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    83 1129.6016 MiB 1129.6016 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+    84                                             def fwi_objective_multi_shots(model, geometry, d_obs):
+    85 1129.6016 MiB   0.0000 MiB           1           fval=[]
+    86 1129.6016 MiB   0.0000 MiB           1           grad=[]
+    87 1129.6016 MiB   0.0000 MiB           1           del fval,grad
+    88 1129.6016 MiB   0.0000 MiB           1           gc.collect()
+    89 1129.6016 MiB   0.0000 MiB           1           futures = []
+    90 1129.6016 MiB   0.0000 MiB          26           for i in range(geometry.nsrc):
+    91                                         
+    92                                                     # Geometry for current shot
+    93 1129.6016 MiB   0.0000 MiB          50               geometry_i = AcquisitionGeometry(model, geometry.rec_positions, geometry.src_positions[i,:], 
+    94 1129.6016 MiB   0.0000 MiB          25                   geometry.t0, geometry.tn, f0=geometry.f0, src_type=geometry.src_type)
+    95                                                     
+    96                                                     # Call serial FWI objective function for each shot location
+    97 1129.6016 MiB   0.0000 MiB          25               futures.append(client.submit(fwi_objective_single_shot, model, geometry_i, d_obs[i]))
+    98                                                     
+    99                                                 # Wait for all workers to finish and collect function values and gradients
+   100 1172.5898 MiB  42.9883 MiB           1           wait(futures)
+   101 1172.5898 MiB   0.0000 MiB           1           print(sys.getsizeof(futures))
+   102 1172.5898 MiB   0.0000 MiB           1           fval = 0.0
+   103 1172.5898 MiB   0.0000 MiB           1           grad = np.zeros(model.shape)
+   104 1172.5898 MiB   0.0000 MiB          26           for i in range(geometry.nsrc):
+   105 1172.5898 MiB   0.0000 MiB          25               fval += futures[i].result()[0]
+   106 1172.5898 MiB   0.0000 MiB          25               grad += futures[i].result()[1]
+   107 1172.5898 MiB   0.0000 MiB           1           del futures
+   108 1172.5898 MiB   0.0000 MiB           1           gc.collect()
+   109 1172.5898 MiB   0.0000 MiB           1           return fval, grad
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    83 1172.5898 MiB 1172.5898 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+    84                                             def fwi_objective_multi_shots(model, geometry, d_obs):
+    85 1172.5898 MiB   0.0000 MiB           1           fval=[]
+    86 1172.5898 MiB   0.0000 MiB           1           grad=[]
+    87 1172.5898 MiB   0.0000 MiB           1           del fval,grad
+    88 1172.5898 MiB   0.0000 MiB           1           gc.collect()
+    89 1172.5898 MiB   0.0000 MiB           1           futures = []
+    90 1172.5898 MiB   0.0000 MiB          26           for i in range(geometry.nsrc):
+    91                                         
+    92                                                     # Geometry for current shot
+    93 1172.5898 MiB   0.0000 MiB          50               geometry_i = AcquisitionGeometry(model, geometry.rec_positions, geometry.src_positions[i,:], 
+    94 1172.5898 MiB   0.0000 MiB          25                   geometry.t0, geometry.tn, f0=geometry.f0, src_type=geometry.src_type)
+    95                                                     
+    96                                                     # Call serial FWI objective function for each shot location
+    97 1172.5898 MiB   0.0000 MiB          25               futures.append(client.submit(fwi_objective_single_shot, model, geometry_i, d_obs[i]))
+    98                                                     
+    99                                                 # Wait for all workers to finish and collect function values and gradients
+   100 1177.9453 MiB   5.3555 MiB           1           wait(futures)
+   101 1177.9453 MiB   0.0000 MiB           1           print(sys.getsizeof(futures))
+   102 1177.9453 MiB   0.0000 MiB           1           fval = 0.0
+   103 1177.9453 MiB   0.0000 MiB           1           grad = np.zeros(model.shape)
+   104 1177.9453 MiB   0.0000 MiB          26           for i in range(geometry.nsrc):
+   105 1177.9453 MiB   0.0000 MiB          25               fval += futures[i].result()[0]
+   106 1177.9453 MiB   0.0000 MiB          25               grad += futures[i].result()[1]
+   107 1177.9453 MiB   0.0000 MiB           1           del futures
+   108 1177.9531 MiB   0.0078 MiB           1           gc.collect()
+   109 1177.9531 MiB   0.0000 MiB           1           return fval, grad
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    83 1177.9531 MiB 1177.9531 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+    84                                             def fwi_objective_multi_shots(model, geometry, d_obs):
+    85 1177.9531 MiB   0.0000 MiB           1           fval=[]
+    86 1177.9531 MiB   0.0000 MiB           1           grad=[]
+    87 1177.9531 MiB   0.0000 MiB           1           del fval,grad
+    88 1177.9531 MiB   0.0000 MiB           1           gc.collect()
+    89 1177.9531 MiB   0.0000 MiB           1           futures = []
+    90 1177.9531 MiB   0.0000 MiB          26           for i in range(geometry.nsrc):
+    91                                         
+    92                                                     # Geometry for current shot
+    93 1177.9531 MiB   0.0000 MiB          50               geometry_i = AcquisitionGeometry(model, geometry.rec_positions, geometry.src_positions[i,:], 
+    94 1177.9531 MiB   0.0000 MiB          25                   geometry.t0, geometry.tn, f0=geometry.f0, src_type=geometry.src_type)
+    95                                                     
+    96                                                     # Call serial FWI objective function for each shot location
+    97 1177.9531 MiB   0.0000 MiB          25               futures.append(client.submit(fwi_objective_single_shot, model, geometry_i, d_obs[i]))
+    98                                                     
+    99                                                 # Wait for all workers to finish and collect function values and gradients
+   100 1179.6953 MiB   1.7422 MiB           1           wait(futures)
+   101 1179.6953 MiB   0.0000 MiB           1           print(sys.getsizeof(futures))
+   102 1179.6953 MiB   0.0000 MiB           1           fval = 0.0
+   103 1179.6953 MiB   0.0000 MiB           1           grad = np.zeros(model.shape)
+   104 1179.6953 MiB   0.0000 MiB          26           for i in range(geometry.nsrc):
+   105 1179.6953 MiB   0.0000 MiB          25               fval += futures[i].result()[0]
+   106 1179.6953 MiB   0.0000 MiB          25               grad += futures[i].result()[1]
+   107 1179.6953 MiB   0.0000 MiB           1           del futures
+   108 1179.6953 MiB   0.0000 MiB           1           gc.collect()
+   109 1179.6953 MiB   0.0000 MiB           1           return fval, grad
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    83 1179.6953 MiB 1179.6953 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+    84                                             def fwi_objective_multi_shots(model, geometry, d_obs):
+    85 1179.6953 MiB   0.0000 MiB           1           fval=[]
+    86 1179.6953 MiB   0.0000 MiB           1           grad=[]
+    87 1179.6953 MiB   0.0000 MiB           1           del fval,grad
+    88 1179.6953 MiB   0.0000 MiB           1           gc.collect()
+    89 1179.6953 MiB   0.0000 MiB           1           futures = []
+    90 1179.6953 MiB   0.0000 MiB          26           for i in range(geometry.nsrc):
+    91                                         
+    92                                                     # Geometry for current shot
+    93 1179.6953 MiB   0.0000 MiB          50               geometry_i = AcquisitionGeometry(model, geometry.rec_positions, geometry.src_positions[i,:], 
+    94 1179.6953 MiB   0.0000 MiB          25                   geometry.t0, geometry.tn, f0=geometry.f0, src_type=geometry.src_type)
+    95                                                     
+    96                                                     # Call serial FWI objective function for each shot location
+    97 1179.6953 MiB   0.0000 MiB          25               futures.append(client.submit(fwi_objective_single_shot, model, geometry_i, d_obs[i]))
+    98                                                     
+    99                                                 # Wait for all workers to finish and collect function values and gradients
+   100 1179.6953 MiB   0.0000 MiB           1           wait(futures)
+   101 1179.6953 MiB   0.0000 MiB           1           print(sys.getsizeof(futures))
+   102 1179.6953 MiB   0.0000 MiB           1           fval = 0.0
+   103 1179.6953 MiB   0.0000 MiB           1           grad = np.zeros(model.shape)
+   104 1179.6953 MiB   0.0000 MiB          26           for i in range(geometry.nsrc):
+   105 1179.6953 MiB   0.0000 MiB          25               fval += futures[i].result()[0]
+   106 1179.6953 MiB   0.0000 MiB          25               grad += futures[i].result()[1]
+   107 1179.6953 MiB   0.0000 MiB           1           del futures
+   108 1179.6953 MiB   0.0000 MiB           1           gc.collect()
+   109 1179.6953 MiB   0.0000 MiB           1           return fval, grad
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    83 1179.7812 MiB 1179.7812 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+    84                                             def fwi_objective_multi_shots(model, geometry, d_obs):
+    85 1179.7812 MiB   0.0000 MiB           1           fval=[]
+    86 1179.7812 MiB   0.0000 MiB           1           grad=[]
+    87 1179.7812 MiB   0.0000 MiB           1           del fval,grad
+    88 1179.7812 MiB   0.0000 MiB           1           gc.collect()
+    89 1179.7812 MiB   0.0000 MiB           1           futures = []
+    90 1179.7812 MiB   0.0000 MiB          26           for i in range(geometry.nsrc):
+    91                                         
+    92                                                     # Geometry for current shot
+    93 1179.7812 MiB   0.0000 MiB          50               geometry_i = AcquisitionGeometry(model, geometry.rec_positions, geometry.src_positions[i,:], 
+    94 1179.7812 MiB   0.0000 MiB          25                   geometry.t0, geometry.tn, f0=geometry.f0, src_type=geometry.src_type)
+    95                                                     
+    96                                                     # Call serial FWI objective function for each shot location
+    97 1179.7812 MiB   0.0000 MiB          25               futures.append(client.submit(fwi_objective_single_shot, model, geometry_i, d_obs[i]))
+    98                                                     
+    99                                                 # Wait for all workers to finish and collect function values and gradients
+   100 1250.5469 MiB  70.7656 MiB           1           wait(futures)
+   101 1250.5469 MiB   0.0000 MiB           1           print(sys.getsizeof(futures))
+   102 1250.5469 MiB   0.0000 MiB           1           fval = 0.0
+   103 1250.5469 MiB   0.0000 MiB           1           grad = np.zeros(model.shape)
+   104 1250.5469 MiB   0.0000 MiB          26           for i in range(geometry.nsrc):
+   105 1250.5469 MiB   0.0000 MiB          25               fval += futures[i].result()[0]
+   106 1250.5469 MiB   0.0000 MiB          25               grad += futures[i].result()[1]
+   107 1250.5469 MiB   0.0000 MiB           1           del futures
+   108 1250.6172 MiB   0.0703 MiB           1           gc.collect()
+   109 1250.6172 MiB   0.0000 MiB           1           return fval, grad
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    83 1250.6172 MiB 1250.6172 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+    84                                             def fwi_objective_multi_shots(model, geometry, d_obs):
+    85 1250.6172 MiB   0.0000 MiB           1           fval=[]
+    86 1250.6172 MiB   0.0000 MiB           1           grad=[]
+    87 1250.6172 MiB   0.0000 MiB           1           del fval,grad
+    88 1250.6172 MiB   0.0000 MiB           1           gc.collect()
+    89 1250.6172 MiB   0.0000 MiB           1           futures = []
+    90 1250.6172 MiB   0.0000 MiB          26           for i in range(geometry.nsrc):
+    91                                         
+    92                                                     # Geometry for current shot
+    93 1250.6172 MiB   0.0000 MiB          50               geometry_i = AcquisitionGeometry(model, geometry.rec_positions, geometry.src_positions[i,:], 
+    94 1250.6172 MiB   0.0000 MiB          25                   geometry.t0, geometry.tn, f0=geometry.f0, src_type=geometry.src_type)
+    95                                                     
+    96                                                     # Call serial FWI objective function for each shot location
+    97 1250.6172 MiB   0.0000 MiB          25               futures.append(client.submit(fwi_objective_single_shot, model, geometry_i, d_obs[i]))
+    98                                                     
+    99                                                 # Wait for all workers to finish and collect function values and gradients
+   100 1252.3789 MiB   1.7617 MiB           1           wait(futures)
+   101 1252.3789 MiB   0.0000 MiB           1           print(sys.getsizeof(futures))
+   102 1252.3789 MiB   0.0000 MiB           1           fval = 0.0
+   103 1252.3789 MiB   0.0000 MiB           1           grad = np.zeros(model.shape)
+   104 1252.3906 MiB   0.0117 MiB          26           for i in range(geometry.nsrc):
+   105 1252.3906 MiB   0.0000 MiB          25               fval += futures[i].result()[0]
+   106 1252.3906 MiB   0.0000 MiB          25               grad += futures[i].result()[1]
+   107 1252.3906 MiB   0.0000 MiB           1           del futures
+   108 1252.3906 MiB   0.0000 MiB           1           gc.collect()
+   109 1252.3906 MiB   0.0000 MiB           1           return fval, grad
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    83 1252.3945 MiB 1252.3945 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+    84                                             def fwi_objective_multi_shots(model, geometry, d_obs):
+    85 1252.3945 MiB   0.0000 MiB           1           fval=[]
+    86 1252.3945 MiB   0.0000 MiB           1           grad=[]
+    87 1252.3945 MiB   0.0000 MiB           1           del fval,grad
+    88 1252.3945 MiB   0.0000 MiB           1           gc.collect()
+    89 1252.3945 MiB   0.0000 MiB           1           futures = []
+    90 1252.3945 MiB   0.0000 MiB          26           for i in range(geometry.nsrc):
+    91                                         
+    92                                                     # Geometry for current shot
+    93 1252.3945 MiB   0.0000 MiB          50               geometry_i = AcquisitionGeometry(model, geometry.rec_positions, geometry.src_positions[i,:], 
+    94 1252.3945 MiB   0.0000 MiB          25                   geometry.t0, geometry.tn, f0=geometry.f0, src_type=geometry.src_type)
+    95                                                     
+    96                                                     # Call serial FWI objective function for each shot location
+    97 1252.3945 MiB   0.0000 MiB          25               futures.append(client.submit(fwi_objective_single_shot, model, geometry_i, d_obs[i]))
+    98                                                     
+    99                                                 # Wait for all workers to finish and collect function values and gradients
+   100 1252.4141 MiB   0.0195 MiB           1           wait(futures)
+   101 1252.4141 MiB   0.0000 MiB           1           print(sys.getsizeof(futures))
+   102 1252.4141 MiB   0.0000 MiB           1           fval = 0.0
+   103 1252.4141 MiB   0.0000 MiB           1           grad = np.zeros(model.shape)
+   104 1252.4141 MiB   0.0000 MiB          26           for i in range(geometry.nsrc):
+   105 1252.4141 MiB   0.0000 MiB          25               fval += futures[i].result()[0]
+   106 1252.4141 MiB   0.0000 MiB          25               grad += futures[i].result()[1]
+   107 1252.4141 MiB   0.0000 MiB           1           del futures
+   108 1252.4219 MiB   0.0078 MiB           1           gc.collect()
+   109 1252.4219 MiB   0.0000 MiB           1           return fval, grad
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    83 1252.4219 MiB 1252.4219 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+    84                                             def fwi_objective_multi_shots(model, geometry, d_obs):
+    85 1252.4219 MiB   0.0000 MiB           1           fval=[]
+    86 1252.4219 MiB   0.0000 MiB           1           grad=[]
+    87 1252.4219 MiB   0.0000 MiB           1           del fval,grad
+    88 1252.4219 MiB   0.0000 MiB           1           gc.collect()
+    89 1252.4219 MiB   0.0000 MiB           1           futures = []
+    90 1252.4219 MiB   0.0000 MiB          26           for i in range(geometry.nsrc):
+    91                                         
+    92                                                     # Geometry for current shot
+    93 1252.4219 MiB   0.0000 MiB          50               geometry_i = AcquisitionGeometry(model, geometry.rec_positions, geometry.src_positions[i,:], 
+    94 1252.4219 MiB   0.0000 MiB          25                   geometry.t0, geometry.tn, f0=geometry.f0, src_type=geometry.src_type)
+    95                                                     
+    96                                                     # Call serial FWI objective function for each shot location
+    97 1252.4219 MiB   0.0000 MiB          25               futures.append(client.submit(fwi_objective_single_shot, model, geometry_i, d_obs[i]))
+    98                                                     
+    99                                                 # Wait for all workers to finish and collect function values and gradients
+   100 1262.3984 MiB   9.9766 MiB           1           wait(futures)
+   101 1262.3984 MiB   0.0000 MiB           1           print(sys.getsizeof(futures))
+   102 1262.3984 MiB   0.0000 MiB           1           fval = 0.0
+   103 1262.3984 MiB   0.0000 MiB           1           grad = np.zeros(model.shape)
+   104 1262.3984 MiB   0.0000 MiB          26           for i in range(geometry.nsrc):
+   105 1262.3984 MiB   0.0000 MiB          25               fval += futures[i].result()[0]
+   106 1262.3984 MiB   0.0000 MiB          25               grad += futures[i].result()[1]
+   107 1262.3984 MiB   0.0000 MiB           1           del futures
+   108 1262.3984 MiB   0.0000 MiB           1           gc.collect()
+   109 1262.3984 MiB   0.0000 MiB           1           return fval, grad
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    83 1262.3984 MiB 1262.3984 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+    84                                             def fwi_objective_multi_shots(model, geometry, d_obs):
+    85 1262.3984 MiB   0.0000 MiB           1           fval=[]
+    86 1262.3984 MiB   0.0000 MiB           1           grad=[]
+    87 1262.3984 MiB   0.0000 MiB           1           del fval,grad
+    88 1262.3984 MiB   0.0000 MiB           1           gc.collect()
+    89 1262.3984 MiB   0.0000 MiB           1           futures = []
+    90 1262.3984 MiB   0.0000 MiB          26           for i in range(geometry.nsrc):
+    91                                         
+    92                                                     # Geometry for current shot
+    93 1262.3984 MiB   0.0000 MiB          50               geometry_i = AcquisitionGeometry(model, geometry.rec_positions, geometry.src_positions[i,:], 
+    94 1262.3984 MiB   0.0000 MiB          25                   geometry.t0, geometry.tn, f0=geometry.f0, src_type=geometry.src_type)
+    95                                                     
+    96                                                     # Call serial FWI objective function for each shot location
+    97 1262.3984 MiB   0.0000 MiB          25               futures.append(client.submit(fwi_objective_single_shot, model, geometry_i, d_obs[i]))
+    98                                                     
+    99                                                 # Wait for all workers to finish and collect function values and gradients
+   100 1288.7500 MiB  26.3516 MiB           1           wait(futures)
+   101 1288.7500 MiB   0.0000 MiB           1           print(sys.getsizeof(futures))
+   102 1288.7500 MiB   0.0000 MiB           1           fval = 0.0
+   103 1288.7500 MiB   0.0000 MiB           1           grad = np.zeros(model.shape)
+   104 1288.7500 MiB   0.0000 MiB          26           for i in range(geometry.nsrc):
+   105 1288.7500 MiB   0.0000 MiB          25               fval += futures[i].result()[0]
+   106 1288.7500 MiB   0.0000 MiB          25               grad += futures[i].result()[1]
+   107 1288.7500 MiB   0.0000 MiB           1           del futures
+   108 1288.7578 MiB   0.0078 MiB           1           gc.collect()
+   109 1288.7578 MiB   0.0000 MiB           1           return fval, grad
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    83 1288.7812 MiB 1288.7812 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+    84                                             def fwi_objective_multi_shots(model, geometry, d_obs):
+    85 1288.7812 MiB   0.0000 MiB           1           fval=[]
+    86 1288.7812 MiB   0.0000 MiB           1           grad=[]
+    87 1288.7812 MiB   0.0000 MiB           1           del fval,grad
+    88 1288.7812 MiB   0.0000 MiB           1           gc.collect()
+    89 1288.7812 MiB   0.0000 MiB           1           futures = []
+    90 1288.7812 MiB   0.0000 MiB          26           for i in range(geometry.nsrc):
+    91                                         
+    92                                                     # Geometry for current shot
+    93 1288.7812 MiB   0.0000 MiB          50               geometry_i = AcquisitionGeometry(model, geometry.rec_positions, geometry.src_positions[i,:], 
+    94 1288.7812 MiB   0.0000 MiB          25                   geometry.t0, geometry.tn, f0=geometry.f0, src_type=geometry.src_type)
+    95                                                     
+    96                                                     # Call serial FWI objective function for each shot location
+    97 1288.7812 MiB   0.0000 MiB          25               futures.append(client.submit(fwi_objective_single_shot, model, geometry_i, d_obs[i]))
+    98                                                     
+    99                                                 # Wait for all workers to finish and collect function values and gradients
+   100 1294.2031 MiB   5.4219 MiB           1           wait(futures)
+   101 1294.2031 MiB   0.0000 MiB           1           print(sys.getsizeof(futures))
+   102 1294.2031 MiB   0.0000 MiB           1           fval = 0.0
+   103 1294.2031 MiB   0.0000 MiB           1           grad = np.zeros(model.shape)
+   104 1294.2031 MiB   0.0000 MiB          26           for i in range(geometry.nsrc):
+   105 1294.2031 MiB   0.0000 MiB          25               fval += futures[i].result()[0]
+   106 1294.2031 MiB   0.0000 MiB          25               grad += futures[i].result()[1]
+   107 1294.2031 MiB   0.0000 MiB           1           del futures
+   108 1294.2070 MiB   0.0039 MiB           1           gc.collect()
+   109 1294.2070 MiB   0.0000 MiB           1           return fval, grad
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    83 1294.2188 MiB 1294.2188 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+    84                                             def fwi_objective_multi_shots(model, geometry, d_obs):
+    85 1294.2188 MiB   0.0000 MiB           1           fval=[]
+    86 1294.2188 MiB   0.0000 MiB           1           grad=[]
+    87 1294.2188 MiB   0.0000 MiB           1           del fval,grad
+    88 1294.2188 MiB   0.0000 MiB           1           gc.collect()
+    89 1294.2188 MiB   0.0000 MiB           1           futures = []
+    90 1294.2188 MiB   0.0000 MiB          26           for i in range(geometry.nsrc):
+    91                                         
+    92                                                     # Geometry for current shot
+    93 1294.2188 MiB   0.0000 MiB          50               geometry_i = AcquisitionGeometry(model, geometry.rec_positions, geometry.src_positions[i,:], 
+    94 1294.2188 MiB   0.0000 MiB          25                   geometry.t0, geometry.tn, f0=geometry.f0, src_type=geometry.src_type)
+    95                                                     
+    96                                                     # Call serial FWI objective function for each shot location
+    97 1294.2188 MiB   0.0000 MiB          25               futures.append(client.submit(fwi_objective_single_shot, model, geometry_i, d_obs[i]))
+    98                                                     
+    99                                                 # Wait for all workers to finish and collect function values and gradients
+   100 1300.8047 MiB   6.5859 MiB           1           wait(futures)
+   101 1300.8047 MiB   0.0000 MiB           1           print(sys.getsizeof(futures))
+   102 1300.8047 MiB   0.0000 MiB           1           fval = 0.0
+   103 1300.8047 MiB   0.0000 MiB           1           grad = np.zeros(model.shape)
+   104 1300.8047 MiB   0.0000 MiB          26           for i in range(geometry.nsrc):
+   105 1300.8047 MiB   0.0000 MiB          25               fval += futures[i].result()[0]
+   106 1300.8047 MiB   0.0000 MiB          25               grad += futures[i].result()[1]
+   107 1300.8047 MiB   0.0000 MiB           1           del futures
+   108 1300.8047 MiB   0.0000 MiB           1           gc.collect()
+   109 1300.8047 MiB   0.0000 MiB           1           return fval, grad
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    83 1300.8047 MiB 1300.8047 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+    84                                             def fwi_objective_multi_shots(model, geometry, d_obs):
+    85 1300.8047 MiB   0.0000 MiB           1           fval=[]
+    86 1300.8047 MiB   0.0000 MiB           1           grad=[]
+    87 1300.8047 MiB   0.0000 MiB           1           del fval,grad
+    88 1300.8047 MiB   0.0000 MiB           1           gc.collect()
+    89 1300.8047 MiB   0.0000 MiB           1           futures = []
+    90 1300.8047 MiB   0.0000 MiB          26           for i in range(geometry.nsrc):
+    91                                         
+    92                                                     # Geometry for current shot
+    93 1300.8047 MiB   0.0000 MiB          50               geometry_i = AcquisitionGeometry(model, geometry.rec_positions, geometry.src_positions[i,:], 
+    94 1300.8047 MiB   0.0000 MiB          25                   geometry.t0, geometry.tn, f0=geometry.f0, src_type=geometry.src_type)
+    95                                                     
+    96                                                     # Call serial FWI objective function for each shot location
+    97 1300.8047 MiB   0.0000 MiB          25               futures.append(client.submit(fwi_objective_single_shot, model, geometry_i, d_obs[i]))
+    98                                                     
+    99                                                 # Wait for all workers to finish and collect function values and gradients
+   100 1301.8125 MiB   1.0078 MiB           1           wait(futures)
+   101 1301.8125 MiB   0.0000 MiB           1           print(sys.getsizeof(futures))
+   102 1301.8125 MiB   0.0000 MiB           1           fval = 0.0
+   103 1301.8125 MiB   0.0000 MiB           1           grad = np.zeros(model.shape)
+   104 1301.8125 MiB   0.0000 MiB          26           for i in range(geometry.nsrc):
+   105 1301.8125 MiB   0.0000 MiB          25               fval += futures[i].result()[0]
+   106 1301.8125 MiB   0.0000 MiB          25               grad += futures[i].result()[1]
+   107 1301.8125 MiB   0.0000 MiB           1           del futures
+   108 1301.8125 MiB   0.0000 MiB           1           gc.collect()
+   109 1301.8125 MiB   0.0000 MiB           1           return fval, grad
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    83 1301.8125 MiB 1301.8125 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+    84                                             def fwi_objective_multi_shots(model, geometry, d_obs):
+    85 1301.8125 MiB   0.0000 MiB           1           fval=[]
+    86 1301.8125 MiB   0.0000 MiB           1           grad=[]
+    87 1301.8125 MiB   0.0000 MiB           1           del fval,grad
+    88 1301.8125 MiB   0.0000 MiB           1           gc.collect()
+    89 1301.8125 MiB   0.0000 MiB           1           futures = []
+    90 1301.8125 MiB   0.0000 MiB          26           for i in range(geometry.nsrc):
+    91                                         
+    92                                                     # Geometry for current shot
+    93 1301.8125 MiB   0.0000 MiB          50               geometry_i = AcquisitionGeometry(model, geometry.rec_positions, geometry.src_positions[i,:], 
+    94 1301.8125 MiB   0.0000 MiB          25                   geometry.t0, geometry.tn, f0=geometry.f0, src_type=geometry.src_type)
+    95                                                     
+    96                                                     # Call serial FWI objective function for each shot location
+    97 1301.8125 MiB   0.0000 MiB          25               futures.append(client.submit(fwi_objective_single_shot, model, geometry_i, d_obs[i]))
+    98                                                     
+    99                                                 # Wait for all workers to finish and collect function values and gradients
+   100 1307.7070 MiB   5.8945 MiB           1           wait(futures)
+   101 1307.7070 MiB   0.0000 MiB           1           print(sys.getsizeof(futures))
+   102 1307.7070 MiB   0.0000 MiB           1           fval = 0.0
+   103 1307.7070 MiB   0.0000 MiB           1           grad = np.zeros(model.shape)
+   104 1307.7070 MiB   0.0000 MiB          26           for i in range(geometry.nsrc):
+   105 1307.7070 MiB   0.0000 MiB          25               fval += futures[i].result()[0]
+   106 1307.7070 MiB   0.0000 MiB          25               grad += futures[i].result()[1]
+   107 1307.7070 MiB   0.0000 MiB           1           del futures
+   108 1307.7109 MiB   0.0039 MiB           1           gc.collect()
+   109 1307.7109 MiB   0.0000 MiB           1           return fval, grad
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    83 1307.7188 MiB 1307.7188 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+    84                                             def fwi_objective_multi_shots(model, geometry, d_obs):
+    85 1307.7188 MiB   0.0000 MiB           1           fval=[]
+    86 1307.7188 MiB   0.0000 MiB           1           grad=[]
+    87 1307.7188 MiB   0.0000 MiB           1           del fval,grad
+    88 1307.7188 MiB   0.0000 MiB           1           gc.collect()
+    89 1307.7188 MiB   0.0000 MiB           1           futures = []
+    90 1307.7188 MiB   0.0000 MiB          26           for i in range(geometry.nsrc):
+    91                                         
+    92                                                     # Geometry for current shot
+    93 1307.7188 MiB   0.0000 MiB          50               geometry_i = AcquisitionGeometry(model, geometry.rec_positions, geometry.src_positions[i,:], 
+    94 1307.7188 MiB   0.0000 MiB          25                   geometry.t0, geometry.tn, f0=geometry.f0, src_type=geometry.src_type)
+    95                                                     
+    96                                                     # Call serial FWI objective function for each shot location
+    97 1307.7188 MiB   0.0000 MiB          25               futures.append(client.submit(fwi_objective_single_shot, model, geometry_i, d_obs[i]))
+    98                                                     
+    99                                                 # Wait for all workers to finish and collect function values and gradients
+   100 1307.7266 MiB   0.0078 MiB           1           wait(futures)
+   101 1307.7266 MiB   0.0000 MiB           1           print(sys.getsizeof(futures))
+   102 1307.7266 MiB   0.0000 MiB           1           fval = 0.0
+   103 1307.7266 MiB   0.0000 MiB           1           grad = np.zeros(model.shape)
+   104 1307.7266 MiB   0.0000 MiB          26           for i in range(geometry.nsrc):
+   105 1307.7266 MiB   0.0000 MiB          25               fval += futures[i].result()[0]
+   106 1307.7266 MiB   0.0000 MiB          25               grad += futures[i].result()[1]
+   107 1307.7266 MiB   0.0000 MiB           1           del futures
+   108 1307.7266 MiB   0.0000 MiB           1           gc.collect()
+   109 1307.7266 MiB   0.0000 MiB           1           return fval, grad
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    83 1307.7305 MiB 1307.7305 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+    84                                             def fwi_objective_multi_shots(model, geometry, d_obs):
+    85 1307.7305 MiB   0.0000 MiB           1           fval=[]
+    86 1307.7305 MiB   0.0000 MiB           1           grad=[]
+    87 1307.7305 MiB   0.0000 MiB           1           del fval,grad
+    88 1307.7305 MiB   0.0000 MiB           1           gc.collect()
+    89 1307.7305 MiB   0.0000 MiB           1           futures = []
+    90 1307.7305 MiB   0.0000 MiB          26           for i in range(geometry.nsrc):
+    91                                         
+    92                                                     # Geometry for current shot
+    93 1307.7305 MiB   0.0000 MiB          50               geometry_i = AcquisitionGeometry(model, geometry.rec_positions, geometry.src_positions[i,:], 
+    94 1307.7305 MiB   0.0000 MiB          25                   geometry.t0, geometry.tn, f0=geometry.f0, src_type=geometry.src_type)
+    95                                                     
+    96                                                     # Call serial FWI objective function for each shot location
+    97 1307.7305 MiB   0.0000 MiB          25               futures.append(client.submit(fwi_objective_single_shot, model, geometry_i, d_obs[i]))
+    98                                                     
+    99                                                 # Wait for all workers to finish and collect function values and gradients
+   100 1323.8164 MiB  16.0859 MiB           1           wait(futures)
+   101 1323.8164 MiB   0.0000 MiB           1           print(sys.getsizeof(futures))
+   102 1323.8164 MiB   0.0000 MiB           1           fval = 0.0
+   103 1323.8164 MiB   0.0000 MiB           1           grad = np.zeros(model.shape)
+   104 1323.8164 MiB   0.0000 MiB          26           for i in range(geometry.nsrc):
+   105 1323.8164 MiB   0.0000 MiB          25               fval += futures[i].result()[0]
+   106 1323.8164 MiB   0.0000 MiB          25               grad += futures[i].result()[1]
+   107 1323.8164 MiB   0.0000 MiB           1           del futures
+   108 1323.8164 MiB   0.0000 MiB           1           gc.collect()
+   109 1323.8164 MiB   0.0000 MiB           1           return fval, grad
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    83 1323.8164 MiB 1323.8164 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+    84                                             def fwi_objective_multi_shots(model, geometry, d_obs):
+    85 1323.8164 MiB   0.0000 MiB           1           fval=[]
+    86 1323.8164 MiB   0.0000 MiB           1           grad=[]
+    87 1323.8164 MiB   0.0000 MiB           1           del fval,grad
+    88 1323.8164 MiB   0.0000 MiB           1           gc.collect()
+    89 1323.8164 MiB   0.0000 MiB           1           futures = []
+    90 1323.8164 MiB   0.0000 MiB          26           for i in range(geometry.nsrc):
+    91                                         
+    92                                                     # Geometry for current shot
+    93 1323.8164 MiB   0.0000 MiB          50               geometry_i = AcquisitionGeometry(model, geometry.rec_positions, geometry.src_positions[i,:], 
+    94 1323.8164 MiB   0.0000 MiB          25                   geometry.t0, geometry.tn, f0=geometry.f0, src_type=geometry.src_type)
+    95                                                     
+    96                                                     # Call serial FWI objective function for each shot location
+    97 1323.8164 MiB   0.0000 MiB          25               futures.append(client.submit(fwi_objective_single_shot, model, geometry_i, d_obs[i]))
+    98                                                     
+    99                                                 # Wait for all workers to finish and collect function values and gradients
+   100 1341.1914 MiB  17.3750 MiB           1           wait(futures)
+   101 1341.1914 MiB   0.0000 MiB           1           print(sys.getsizeof(futures))
+   102 1341.1914 MiB   0.0000 MiB           1           fval = 0.0
+   103 1341.1914 MiB   0.0000 MiB           1           grad = np.zeros(model.shape)
+   104 1341.1953 MiB   0.0000 MiB          26           for i in range(geometry.nsrc):
+   105 1341.1953 MiB   0.0000 MiB          25               fval += futures[i].result()[0]
+   106 1341.1953 MiB   0.0039 MiB          25               grad += futures[i].result()[1]
+   107 1341.1953 MiB   0.0000 MiB           1           del futures
+   108 1341.2070 MiB   0.0117 MiB           1           gc.collect()
+   109 1341.2070 MiB   0.0000 MiB           1           return fval, grad
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    83 1341.2148 MiB 1341.2148 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+    84                                             def fwi_objective_multi_shots(model, geometry, d_obs):
+    85 1341.2148 MiB   0.0000 MiB           1           fval=[]
+    86 1341.2148 MiB   0.0000 MiB           1           grad=[]
+    87 1341.2148 MiB   0.0000 MiB           1           del fval,grad
+    88 1341.2148 MiB   0.0000 MiB           1           gc.collect()
+    89 1341.2148 MiB   0.0000 MiB           1           futures = []
+    90 1341.2148 MiB   0.0000 MiB          26           for i in range(geometry.nsrc):
+    91                                         
+    92                                                     # Geometry for current shot
+    93 1341.2148 MiB   0.0000 MiB          50               geometry_i = AcquisitionGeometry(model, geometry.rec_positions, geometry.src_positions[i,:], 
+    94 1341.2148 MiB   0.0000 MiB          25                   geometry.t0, geometry.tn, f0=geometry.f0, src_type=geometry.src_type)
+    95                                                     
+    96                                                     # Call serial FWI objective function for each shot location
+    97 1341.2148 MiB   0.0000 MiB          25               futures.append(client.submit(fwi_objective_single_shot, model, geometry_i, d_obs[i]))
+    98                                                     
+    99                                                 # Wait for all workers to finish and collect function values and gradients
+   100 1358.2773 MiB  17.0625 MiB           1           wait(futures)
+   101 1358.2773 MiB   0.0000 MiB           1           print(sys.getsizeof(futures))
+   102 1358.2773 MiB   0.0000 MiB           1           fval = 0.0
+   103 1358.2773 MiB   0.0000 MiB           1           grad = np.zeros(model.shape)
+   104 1358.2773 MiB   0.0000 MiB          26           for i in range(geometry.nsrc):
+   105 1358.2773 MiB   0.0000 MiB          25               fval += futures[i].result()[0]
+   106 1358.2773 MiB   0.0000 MiB          25               grad += futures[i].result()[1]
+   107 1358.2773 MiB   0.0000 MiB           1           del futures
+   108 1358.2773 MiB   0.0000 MiB           1           gc.collect()
+   109 1358.2773 MiB   0.0000 MiB           1           return fval, grad
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    83 1358.2852 MiB 1358.2852 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+    84                                             def fwi_objective_multi_shots(model, geometry, d_obs):
+    85 1358.2852 MiB   0.0000 MiB           1           fval=[]
+    86 1358.2852 MiB   0.0000 MiB           1           grad=[]
+    87 1358.2852 MiB   0.0000 MiB           1           del fval,grad
+    88 1358.2852 MiB   0.0000 MiB           1           gc.collect()
+    89 1358.2852 MiB   0.0000 MiB           1           futures = []
+    90 1358.3203 MiB   0.0000 MiB          26           for i in range(geometry.nsrc):
+    91                                         
+    92                                                     # Geometry for current shot
+    93 1358.3203 MiB   0.0352 MiB          50               geometry_i = AcquisitionGeometry(model, geometry.rec_positions, geometry.src_positions[i,:], 
+    94 1358.3203 MiB   0.0000 MiB          25                   geometry.t0, geometry.tn, f0=geometry.f0, src_type=geometry.src_type)
+    95                                                     
+    96                                                     # Call serial FWI objective function for each shot location
+    97 1358.3203 MiB   0.0000 MiB          25               futures.append(client.submit(fwi_objective_single_shot, model, geometry_i, d_obs[i]))
+    98                                                     
+    99                                                 # Wait for all workers to finish and collect function values and gradients
+   100 1354.8281 MiB  -3.4922 MiB           1           wait(futures)
+   101 1354.8281 MiB   0.0000 MiB           1           print(sys.getsizeof(futures))
+   102 1354.8281 MiB   0.0000 MiB           1           fval = 0.0
+   103 1354.8281 MiB   0.0000 MiB           1           grad = np.zeros(model.shape)
+   104 1354.8320 MiB   0.0000 MiB          26           for i in range(geometry.nsrc):
+   105 1354.8320 MiB   0.0039 MiB          25               fval += futures[i].result()[0]
+   106 1354.8320 MiB   0.0000 MiB          25               grad += futures[i].result()[1]
+   107 1354.8320 MiB   0.0000 MiB           1           del futures
+   108 1354.8398 MiB   0.0078 MiB           1           gc.collect()
+   109 1354.8398 MiB   0.0000 MiB           1           return fval, grad
+
+
+Filename: mul_3DFWIcopy.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    83 1354.8398 MiB 1354.8398 MiB           1       @profile(precision=4,stream=open('memory_profiler.log','w+'))
+    84                                             def fwi_objective_multi_shots(model, geometry, d_obs):
+    85 1354.8398 MiB   0.0000 MiB           1           fval=[]
+    86 1354.8398 MiB   0.0000 MiB           1           grad=[]
+    87 1354.8398 MiB   0.0000 MiB           1           del fval,grad
+    88 1354.8398 MiB   0.0000 MiB           1           gc.collect()
+    89 1354.8398 MiB   0.0000 MiB           1           futures = []
+    90 1354.8398 MiB   0.0000 MiB          26           for i in range(geometry.nsrc):
+    91                                         
+    92                                                     # Geometry for current shot
+    93 1354.8398 MiB   0.0000 MiB          50               geometry_i = AcquisitionGeometry(model, geometry.rec_positions, geometry.src_positions[i,:], 
+    94 1354.8398 MiB   0.0000 MiB          25                   geometry.t0, geometry.tn, f0=geometry.f0, src_type=geometry.src_type)
+    95                                                     
+    96                                                     # Call serial FWI objective function for each shot location
+    97 1354.8398 MiB   0.0000 MiB          25               futures.append(client.submit(fwi_objective_single_shot, model, geometry_i, d_obs[i]))
+    98                                                     
+    99                                                 # Wait for all workers to finish and collect function values and gradients
+   100 1363.5820 MiB   8.7422 MiB           1           wait(futures)
+   101 1363.5820 MiB   0.0000 MiB           1           print(sys.getsizeof(futures))
+   102 1363.5820 MiB   0.0000 MiB           1           fval = 0.0

@@ -121,7 +121,7 @@ if __name__ == "__main__":
     origin = (0, 0 ,0)         # Need origin to define relative source and receiver locations.
     nbl = 20
     sample=4
-    v=sio.loadmat("/home/pengyaoguang/data/shengli/data_all/salt_v0.mat")['v']
+    v=sio.loadmat("/home/pengyaoguang/data/3D_v_model/v0.mat")['v']
     v=v[::sample,::sample,::sample]
     shape = (v.shape[0], v.shape[1], v.shape[2])      # Number of grid points (nx, nz).
     model1 = Model(vp=v, origin=origin, shape=shape, spacing=spacing,

@@ -48,7 +48,10 @@ if __name__ == "__main__":
         return shots
     # Serial FWI objective function
     def fwi_objective_single_shot(model, geometry, d_obs):
-
+        fval=[]
+        grad_crop=[]
+        del fval,grad_crop
+        gc.collect()
         # Devito objects for gradient and data residual
         grad = Function(name="grad", grid=model.grid)
         residual = Receiver(name='rec', grid=model.grid,
@@ -79,7 +82,10 @@ if __name__ == "__main__":
     # Parallel FWI objective functions
     @profile(precision=4,stream=open('memory_profiler.log','w+'))
     def fwi_objective_multi_shots(model, geometry, d_obs):
-
+        fval=[]
+        grad=[]
+        del fval,grad
+        gc.collect()
         futures = []
         for i in range(geometry.nsrc):
 
@@ -105,7 +111,10 @@ if __name__ == "__main__":
     # Wrapper for scipy optimizer: x is current model in squared slowness [s^2/km^2]
     @profile(precision=4,stream=open('memory_profiler.log','w+'))
     def loss(x, model, geometry, d_obs):
-        
+        fval=[]
+        grad=[]
+        del fval,grad
+        gc.collect()
         # Convert x to velocity
         v_curr = 1.0/np.sqrt(x.reshape(model.shape))
         
@@ -127,7 +136,7 @@ if __name__ == "__main__":
     origin = (0, 0 ,0)         # Need origin to define relative source and receiver locations.
     nbl = 20
     sample=4
-    v=sio.loadmat("/home/pengyaoguang/data/shengli/data_all/salt_v0.mat")['v']
+    v=sio.loadmat("/home/pengyaoguang/data/3D_v_model/v14981.mat")['v']
     v=v[::sample,::sample,::sample]
     shape = (v.shape[0], v.shape[1], v.shape[2])      # Number of grid points (nx, nz).
     model1 = Model(vp=v, origin=origin, shape=shape, spacing=spacing,
@@ -229,8 +238,8 @@ if __name__ == "__main__":
     
     iter_all=1
     for i in range(iter_all):
-        ftol = 0.00001
-        maxiter = 1
+        ftol = 0.000001
+        maxiter = 100
         result = optimize.minimize(loss, m0, args=(model0, geometry0, d_obs), method='L-BFGS-B', jac=True, 
             callback=fwi_callback, bounds=bounds, options={'ftol':ftol, 'maxiter':maxiter, 'disp':True})
         m0=result["x"].copy()
@@ -269,8 +278,6 @@ if __name__ == "__main__":
     plt.savefig("/home/pengyaoguang/data/devito/FWI/test_result/v_real.png")
     
 
-    
-
     # Plot model error
     plt.figure()
     plt.plot(range(1, len(model_error)+1), model_error); plt.xlabel('Iteration number'); plt.ylabel('L2-model error')
@@ -279,7 +286,7 @@ if __name__ == "__main__":
     print(end-start,"s")
     print()
 
-    #load data
+#load data
 # v_view=sio.loadmat("/home/pengyaoguang/data/devito/FWI/test_result/v_update.mat")["v"]
 # plt.figure()
 # plot_image(v_view[50],cmap="cividis")
