@@ -11,18 +11,15 @@ class conv_net(nn.Module):
         super(conv_net,self).__init__()
         self.conv0=nn.Sequential(nn.Conv3d(in_channels,in_channels,3,1,1),
                                  nn.BatchNorm3d(in_channels),
+                                 nn.ReLU(inplace=True),
                                  )
         self.conv1=nn.Sequential(nn.Conv3d(in_channels,out_channels,3,1,1),
                                  nn.BatchNorm3d(out_channels),
+                                 nn.ReLU(inplace=True),
                                  )
-                                #  nn.MaxPool3d(2,(1,1,2),ceil_mode=True))
-        self.conv2=nn.Sequential(nn.Conv3d(out_channels,out_channels,3,1,1),
-                                 nn.BatchNorm3d(out_channels),
-                                 nn.ReLU(inplace=True),)
     def forward(self,input):
         x=self.conv0(input)
         x=self.conv1(x)
-        x=self.conv2(x)
         return x
 
 class net(nn.Module):
@@ -34,19 +31,22 @@ class net(nn.Module):
         # self.conv3d=nn.Conv3d(in_channels, out_channels, 3, 1, 1)
         # self.batch=nn.BatchNorm3d(out_channels)
         # self.pool=nn.MaxPool3d(2,2)
-        n=200
-        self.conv1=conv_net(self.in_channels,in_channels)
-        self.conv2=conv_net(in_channels,n)
-        self.down=nn.Sequential(nn.Conv3d(n,n,3,(1,1,2),(1,1,0)),
-                                nn.Conv3d(n,n,(5,5,26),1,(2,2,0)),
-                                 nn.BatchNorm3d(n),
+        filter=[64,128,256,512,1024]
+        self.conv1=conv_net(self.in_channels,filter[0])
+        self.conv2=conv_net(filter[0],filter[1])
+        self.down=nn.Sequential(nn.Conv3d(filter[1],filter[1],3,(1,1,2),(1,1,0)),
+                                nn.Conv3d(filter[1],filter[2],(5,5,26),1,(2,2,0)),
+                                 nn.BatchNorm3d(filter[2]),
                                  nn.ReLU(inplace=True),
                                  )
-        self.conv3= conv_net(n,self.out_channels)
-        self.conv4=nn.Sequential(nn.Conv3d(out_channels,out_channels,3,1,1),
+        self.conv3= conv_net(filter[2],filter[1])
+
+        self.conv4= conv_net(filter[1],filter[0])
+        self.conv5= conv_net(filter[0],in_channels)
+        self.conv6=nn.Sequential(nn.Conv3d(in_channels,out_channels,3,1,1),
                                  nn.ReLU(inplace=True),
                                  )
-        self.conv5=nn.Sequential(nn.Conv3d(out_channels,out_channels,3,1,1),
+        self.conv7=nn.Sequential(nn.Conv3d(out_channels,out_channels,3,1,1),
                                  nn.ReLU(inplace=True),)
     def forward(self,input):
         x=self.conv1(input)
@@ -55,6 +55,8 @@ class net(nn.Module):
         x=self.conv3(x)
         x=self.conv4(x)
         x=self.conv5(x)
+        x=self.conv6(x)
+        x=self.conv7(x)
         return x
 
 # device='cuda'
