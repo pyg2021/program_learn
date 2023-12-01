@@ -30,7 +30,8 @@ class net(nn.Module):
         self.conv1=conv_net(self.in_channels,filter[0])
         self.conv2=conv_net(filter[0],filter[1])
         self.down=nn.Sequential(nn.Conv3d(filter[1],filter[2],3,1,1),
-                                 nn.BatchNorm3d(filter[2]),
+                                #  nn.BatchNorm3d(filter[2]),
+                                 nn.InstanceNorm3d(filter[2]),
                                  nn.ReLU(inplace=True),
                                  )
         self.conv3= conv_net(filter[2],filter[1])

@@ -5,17 +5,17 @@ import scipy.io as sio
 import numpy as np
 from scipy.ndimage import gaussian_filter
 import matplotlib.pyplot as plt
-device="cuda:2"
+device="cuda"
 model=net(2,1).to(device)
-# model=nn.parallel.DataParallel(model)
+model=nn.parallel.DataParallel(model)
 model.load_state_dict(torch.load("/home/pengyaoguang/data/3D_net_model/modeltest4_2.pkl"))
 
 
 
 
 ##data_prepare
-k=2
-n=20
+k=0
+n=50
 R=sio.loadmat("/home/pengyaoguang/data/3D_RTM/RTM{}".format(k))["RTM"][20:120,20:120,20:120]
 
 plt.figure()

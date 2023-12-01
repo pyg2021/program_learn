@@ -24,11 +24,11 @@ y=torch.from_numpy(y).float().to(device)
 
 model=net(2,1).to(device)
 model=nn.parallel.DataParallel(model)
-
+# model.load_state_dict(torch.load("/home/pengyaoguang/data/3D_net_model/modeltest4_2.pkl"))
 
 epoch=20000
 optimizer = torch.optim.AdamW(model.parameters(),lr=1e-2)
-scheduler=torch.optim.lr_scheduler.StepLR(optimizer,step_size=1000,gamma=0.8)
+scheduler=torch.optim.lr_scheduler.StepLR(optimizer,step_size=1500,gamma=0.8)
 loss_1=torch.nn.L1Loss()
 plt.figure()
 plt.imshow(y.cpu().detach()[0,0,50,:,:].T)
