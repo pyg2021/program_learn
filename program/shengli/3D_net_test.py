@@ -6,16 +6,19 @@ import numpy as np
 from scipy.ndimage import gaussian_filter
 import matplotlib.pyplot as plt
 from DataLoad import DataLoad
+import os 
+os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID" 
+os.environ['CUDA_VISIBLE_DEVICES'] = "1,2,3"
 device="cuda"
 model=net(2,1).to(device)
 model=nn.parallel.DataParallel(model)
-model.load_state_dict(torch.load("/home/pengyaoguang/data/3D_net_model/modeltest4_4.pkl"))
+model.load_state_dict(torch.load("/home/pengyaoguang/data/3D_net_model/modeltest5.pkl"))
 
 
 
 
 ##data_prepare
-k=66
+k=10006
 n=50
 R=sio.loadmat("/home/pengyaoguang/data/3D_RTM/RTM{}".format(k))["RTM"][20:120,20:120,20:120]
 

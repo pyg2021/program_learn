@@ -17,7 +17,8 @@ start=time.time()
 ##data_prepare
 BatchSize=20
 device="cuda"
-x,y=DataLoad(60)
+x,y=DataLoad(0,59)
+
 train_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(y).float())
 train_loader = data_utils.DataLoader(train_data,batch_size=BatchSize,shuffle=True)
 # x=torch.from_numpy(x).float().to(device)

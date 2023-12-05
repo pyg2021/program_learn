@@ -66,7 +66,7 @@ class unetUp(nn.Module):
         offset1 = (outputs2.size()[2]-inputs1.size()[2])
         offset2 = (outputs2.size()[3]-inputs1.size()[3])
         padding=[offset2//2,(offset2+1)//2,offset1//2,(offset1+1)//2]
-        # Skip and concatenate 
+        # Skip and concatenate
         outputs1 = F.pad(inputs1, padding)
         return self.conv(torch.cat([outputs1, outputs2], 1))
 
