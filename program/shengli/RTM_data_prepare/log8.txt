@@ -1,0 +1,2007 @@
+nohup: ignoring input
+Imaging source 1 out of 100
+63.258578300476074 s
+Imaging source 2 out of 100
+104.50701785087585 s
+Imaging source 3 out of 100
+144.1011564731598 s
+Imaging source 4 out of 100
+193.83812642097473 s
+Imaging source 5 out of 100
+235.5199065208435 s
+Imaging source 6 out of 100
+275.5873992443085 s
+Imaging source 7 out of 100
+320.04046988487244 s
+Imaging source 8 out of 100
+359.30849266052246 s
+Imaging source 9 out of 100
+398.8273878097534 s
+Imaging source 10 out of 100
+439.04662561416626 s
+Imaging source 11 out of 100
+477.88985228538513 s
+Imaging source 12 out of 100
+522.6167316436768 s
+Imaging source 13 out of 100
+566.3375949859619 s
+Imaging source 14 out of 100
+620.3865258693695 s
+Imaging source 15 out of 100
+661.4750707149506 s
+Imaging source 16 out of 100
+701.8872263431549 s
+Imaging source 17 out of 100
+742.5620908737183 s
+Imaging source 18 out of 100
+791.3509063720703 s
+Imaging source 19 out of 100
+835.37362241745 s
+Imaging source 20 out of 100
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+904.9313714504242 s
+Imaging source 21 out of 100
+950.7184159755707 s
+Imaging source 22 out of 100
+989.9099097251892 s
+Imaging source 23 out of 100
+1028.0425601005554 s
+Imaging source 24 out of 100
+1066.9083333015442 s
+Imaging source 25 out of 100
+1106.0577445030212 s
+Imaging source 26 out of 100
+1147.7744991779327 s
+Imaging source 27 out of 100
+1188.993277311325 s
+Imaging source 28 out of 100
+1237.408457517624 s
+Imaging source 29 out of 100
+1275.5236899852753 s
+Imaging source 30 out of 100
+1322.160507440567 s
+Imaging source 31 out of 100
+1363.885401725769 s
+Imaging source 32 out of 100
+1405.9035844802856 s
+Imaging source 33 out of 100
+1447.8910126686096 s
+Imaging source 34 out of 100
+1500.3613567352295 s
+Imaging source 35 out of 100
+1547.2401428222656 s
+Imaging source 36 out of 100
+1586.2775049209595 s
+Imaging source 37 out of 100
+1624.3965978622437 s
+Imaging source 38 out of 100
+1663.3824172019958 s
+Imaging source 39 out of 100
+1705.1781487464905 s
+Imaging source 40 out of 100
+1748.6916253566742 s
+Imaging source 41 out of 100
+1795.430510520935 s
+Imaging source 42 out of 100
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+1899.4411993026733 s
+Imaging source 43 out of 100
+1937.5805177688599 s
+Imaging source 44 out of 100
+1975.69304728508 s
+Imaging source 45 out of 100
+2014.207304239273 s
+Imaging source 46 out of 100
+2052.7116651535034 s
+Imaging source 47 out of 100
+2091.101931333542 s
+Imaging source 48 out of 100
+2134.41997051239 s
+Imaging source 49 out of 100
+2176.992124080658 s
+Imaging source 50 out of 100
+2223.4997630119324 s
+Imaging source 51 out of 100
+2264.1440789699554 s
+Imaging source 52 out of 100
+2308.5839812755585 s
+Imaging source 53 out of 100
+2349.3907449245453 s
+Imaging source 54 out of 100
+2391.6276757717133 s
+Imaging source 55 out of 100
+2433.825930595398 s
+Imaging source 56 out of 100
+2484.720457792282 s
+Imaging source 57 out of 100
+2532.246826648712 s
+Imaging source 58 out of 100
+2572.7181646823883 s
+Imaging source 59 out of 100
+2613.478785276413 s
+Imaging source 60 out of 100
+2663.0538330078125 s
+Imaging source 61 out of 100
+2706.578145265579 s
+Imaging source 62 out of 100
+2749.7955751419067 s
+Imaging source 63 out of 100
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+2816.0118770599365 s
+Imaging source 64 out of 100
+2863.1416451931 s
+Imaging source 65 out of 100
+2901.8747837543488 s
+Imaging source 66 out of 100
+2941.0907032489777 s
+Imaging source 67 out of 100
+2980.288460969925 s
+Imaging source 68 out of 100
+3019.09535074234 s
+Imaging source 69 out of 100
+3058.687276363373 s
+Imaging source 70 out of 100
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+3115.9277431964874 s
+Imaging source 71 out of 100
+3166.8307569026947 s
+Imaging source 72 out of 100
+3208.115649700165 s
+Imaging source 73 out of 100
+3251.4487841129303 s
+Imaging source 74 out of 100
+3294.8312685489655 s
+Imaging source 75 out of 100
+3336.6396758556366 s
+Imaging source 76 out of 100
+3377.1205821037292 s
+Imaging source 77 out of 100
+3417.9961411952972 s
+Imaging source 78 out of 100
+3466.5063903331757 s
+Imaging source 79 out of 100
+3509.235736846924 s
+Imaging source 80 out of 100
+3550.8414041996 s
+Imaging source 81 out of 100
+3596.287750005722 s
+Imaging source 82 out of 100
+3635.7125372886658 s
+Imaging source 83 out of 100
+3675.257928609848 s
+Imaging source 84 out of 100
+3714.9929778575897 s
+Imaging source 85 out of 100
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+3761.883188724518 s
+Imaging source 86 out of 100
+3801.918632745743 s
+Imaging source 87 out of 100
+3843.6814069747925 s
+Imaging source 88 out of 100
+3893.0635130405426 s
+Imaging source 89 out of 100
+3934.319084405899 s
+Imaging source 90 out of 100
+3974.064953804016 s
+Imaging source 91 out of 100
+4030.5925583839417 s
+Imaging source 92 out of 100
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+4088.5947065353394 s
+Imaging source 93 out of 100
+4127.167384386063 s
+Imaging source 94 out of 100
+4166.223046779633 s
+Imaging source 95 out of 100
+4205.716372489929 s
+Imaging source 96 out of 100
+4245.212486028671 s
+Imaging source 97 out of 100
+4284.918758630753 s
+Imaging source 98 out of 100
+4329.769066810608 s
+Imaging source 99 out of 100
+4372.829627752304 s
+Imaging source 100 out of 100
+4420.685757637024 s
+Imaging source 1 out of 100
+4489.19247674942 s
+Imaging source 2 out of 100
+4527.383736371994 s
+Imaging source 3 out of 100
+4566.3449873924255 s
+Imaging source 4 out of 100
+4606.147006511688 s
+Imaging source 5 out of 100
+4652.911341190338 s
+Imaging source 6 out of 100
+4695.567236185074 s
+Imaging source 7 out of 100
+4733.886595726013 s
+Imaging source 8 out of 100
+4772.645901441574 s
+Imaging source 9 out of 100
+4812.50839471817 s
+Imaging source 10 out of 100
+4861.6240670681 s
+Imaging source 11 out of 100
+4904.361887931824 s
+Imaging source 12 out of 100
+4944.141988992691 s
+Imaging source 13 out of 100
+4993.656296253204 s
+Imaging source 14 out of 100
+5030.69517326355 s
+Imaging source 15 out of 100
+5067.636619091034 s
+Imaging source 16 out of 100
+5104.724990129471 s
+Imaging source 17 out of 100
+5141.893271446228 s
+Imaging source 18 out of 100
+5180.543201684952 s
+Imaging source 19 out of 100
+5219.746139764786 s
+Imaging source 20 out of 100
+5266.769432783127 s
+Imaging source 21 out of 100
+5305.0853843688965 s
+Imaging source 22 out of 100
+5344.3644807338715 s
+Imaging source 23 out of 100
+5392.69162273407 s
+Imaging source 24 out of 100
+5432.904785871506 s
+Imaging source 25 out of 100
+5472.464700937271 s
+Imaging source 26 out of 100
+5512.139912843704 s
+Imaging source 27 out of 100
+5557.86819767952 s
+Imaging source 28 out of 100
+5597.935061454773 s
+Imaging source 29 out of 100
+5644.7826545238495 s
+Imaging source 30 out of 100
+5680.6520228385925 s
+Imaging source 31 out of 100
+5716.519165277481 s
+Imaging source 32 out of 100
+5752.377945661545 s
+Imaging source 33 out of 100
+5789.127876520157 s
+Imaging source 34 out of 100
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+5831.569056987762 s
+Imaging source 35 out of 100
+5868.486922979355 s
+Imaging source 36 out of 100
+5905.853204011917 s
+Imaging source 37 out of 100
+5950.835961818695 s
+Imaging source 38 out of 100
+5989.673270702362 s
+Imaging source 39 out of 100
+6027.083029985428 s
+Imaging source 40 out of 100
+6066.059938907623 s
+Imaging source 41 out of 100
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+6146.998399734497 s
+Imaging source 42 out of 100
+6185.2140781879425 s
+Imaging source 43 out of 100
+6223.429077863693 s
+Imaging source 44 out of 100
+6259.790333509445 s
+Imaging source 45 out of 100
+6295.82630443573 s
+Imaging source 46 out of 100
+6339.42590880394 s
+Imaging source 47 out of 100
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+6380.825416088104 s
+Imaging source 48 out of 100
+6421.340688705444 s
+Imaging source 49 out of 100
+6464.698387861252 s
+Imaging source 50 out of 100
+6504.036970615387 s
+Imaging source 51 out of 100
+6549.399958372116 s
+Imaging source 52 out of 100
+6589.219472885132 s
+Imaging source 53 out of 100
+6629.878719091415 s
+Imaging source 54 out of 100
+6669.190021276474 s
+Imaging source 55 out of 100
+6707.367261171341 s
+Imaging source 56 out of 100
+6752.279019832611 s
+Imaging source 57 out of 100
+6790.674919366837 s
+Imaging source 58 out of 100
+6835.175647974014 s
+Imaging source 59 out of 100
+6871.089074373245 s
+Imaging source 60 out of 100
+6907.123182058334 s
+Imaging source 61 out of 100
+6943.24547123909 s
+Imaging source 62 out of 100
+6988.669514656067 s
+Imaging source 63 out of 100
+7033.726968765259 s
+Imaging source 64 out of 100
+7086.942231416702 s
+Imaging source 65 out of 100
+7126.642502307892 s
+Imaging source 66 out of 100
+7165.054464817047 s
+Imaging source 67 out of 100
+7212.796334505081 s
+Imaging source 68 out of 100
+7253.275170087814 s
+Imaging source 69 out of 100
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+7301.386225223541 s
+Imaging source 70 out of 100
+7351.432411432266 s
+Imaging source 71 out of 100
+7390.490247488022 s
+Imaging source 72 out of 100
+7429.632739305496 s
+Imaging source 73 out of 100
+7470.583456516266 s
+Imaging source 74 out of 100
+7514.476803064346 s
+Imaging source 75 out of 100
+7558.251786708832 s
+Imaging source 76 out of 100
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+7626.653437376022 s
+Imaging source 77 out of 100
+7669.498343467712 s
+Imaging source 78 out of 100
+7706.189465522766 s
+Imaging source 79 out of 100
+7741.860892772675 s
+Imaging source 80 out of 100
+7778.982366800308 s
+Imaging source 81 out of 100
+7825.8545253276825 s
+Imaging source 82 out of 100
+7869.840733766556 s
+Imaging source 83 out of 100
+7910.2021048069 s
+Imaging source 84 out of 100
+7952.070060253143 s
+Imaging source 85 out of 100
+7989.214769363403 s
+Imaging source 86 out of 100
+8025.910627126694 s
+Imaging source 87 out of 100
+8062.743139028549 s
+Imaging source 88 out of 100
+8099.010150909424 s
+Imaging source 89 out of 100
+8144.154522418976 s
+Imaging source 90 out of 100
+8188.346812009811 s
+Imaging source 91 out of 100
+8236.52303814888 s
+Imaging source 92 out of 100
+8275.265631198883 s
+Imaging source 93 out of 100
+8319.866419553757 s
+Imaging source 94 out of 100
+8359.399802923203 s
+Imaging source 95 out of 100
+8399.599217891693 s
+Imaging source 96 out of 100
+8438.955300331116 s
+Imaging source 97 out of 100
+8487.619089126587 s
+Imaging source 98 out of 100
+8528.805498361588 s
+Imaging source 99 out of 100
+8572.270237922668 s
+Imaging source 100 out of 100
+8610.85089969635 s
+Imaging source 1 out of 100
+8669.55884194374 s
+Imaging source 2 out of 100
+8708.57788181305 s
+Imaging source 3 out of 100
+8750.761122226715 s
+Imaging source 4 out of 100
+8791.615796327591 s
+Imaging source 5 out of 100
+8833.298331022263 s
+Imaging source 6 out of 100
+8869.665201425552 s
+Imaging source 7 out of 100
+8907.4448492527 s
+Imaging source 8 out of 100
+8944.601835012436 s
+Imaging source 9 out of 100
+8984.643589019775 s
+Imaging source 10 out of 100
+9026.000847816467 s
+Imaging source 11 out of 100
+9084.234734773636 s
+Imaging source 12 out of 100
+9130.170416116714 s
+Imaging source 13 out of 100
+9168.123703241348 s
+Imaging source 14 out of 100
+9205.604655504227 s
+Imaging source 15 out of 100
+9243.301833152771 s
+Imaging source 16 out of 100
+9280.856444835663 s
+Imaging source 17 out of 100
+9326.12317109108 s
+Imaging source 18 out of 100
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+9395.883783578873 s
+Imaging source 19 out of 100
+9441.76797413826 s
+Imaging source 20 out of 100
+9481.054715156555 s
+Imaging source 21 out of 100
+9520.697081804276 s
+Imaging source 22 out of 100
+9570.675801753998 s
+Imaging source 23 out of 100
+9615.451350212097 s
+Imaging source 24 out of 100
+9658.210455417633 s
+Imaging source 25 out of 100
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+9754.392977714539 s
+Imaging source 26 out of 100
+9797.463095903397 s
+Imaging source 27 out of 100
+9834.79394865036 s
+Imaging source 28 out of 100
+9872.36705827713 s
+Imaging source 29 out of 100
+9909.782537460327 s
+Imaging source 30 out of 100
+9947.519770383835 s
+Imaging source 31 out of 100
+9984.863036632538 s
+Imaging source 32 out of 100
+10032.345186710358 s
+Imaging source 33 out of 100
+10079.203486204147 s
+Imaging source 34 out of 100
+10116.021923303604 s
+Imaging source 35 out of 100
+10154.234031915665 s
+Imaging source 36 out of 100
+10194.549911022186 s
+Imaging source 37 out of 100
+10234.921793222427 s
+Imaging source 38 out of 100
+10275.104345560074 s
+Imaging source 39 out of 100
+10315.323050737381 s
+Imaging source 40 out of 100
+10355.358746767044 s
+Imaging source 41 out of 100
+10406.218108177185 s
+Imaging source 42 out of 100
+10443.526399850845 s
+Imaging source 43 out of 100
+10480.94675207138 s
+Imaging source 44 out of 100
+10517.785033941269 s
+Imaging source 45 out of 100
+10555.388715028763 s
+Imaging source 46 out of 100
+10594.365380048752 s
+Imaging source 47 out of 100
+10643.86343383789 s
+Imaging source 48 out of 100
+10690.13487625122 s
+Imaging source 49 out of 100
+10732.257098197937 s
+Imaging source 50 out of 100
+10768.684824943542 s
+Imaging source 51 out of 100
+10806.095355987549 s
+Imaging source 52 out of 100
+10843.97043299675 s
+Imaging source 53 out of 100
+10885.670649766922 s
+Imaging source 54 out of 100
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+10934.031518220901 s
+Imaging source 55 out of 100
+10980.383030176163 s
+Imaging source 56 out of 100
+11019.637966632843 s
+Imaging source 57 out of 100
+11062.221907138824 s
+Imaging source 58 out of 100
+11103.975031614304 s
+Imaging source 59 out of 100
+11144.719309329987 s
+Imaging source 60 out of 100
+11185.453807353973 s
+Imaging source 61 out of 100
+11234.371780395508 s
+Imaging source 62 out of 100
+11281.15933227539 s
+Imaging source 63 out of 100
+11320.777507543564 s
+Imaging source 64 out of 100
+11360.853772640228 s
+Imaging source 65 out of 100
+11416.581529855728 s
+Imaging source 66 out of 100
+11458.05808019638 s
+Imaging source 67 out of 100
+11496.917785644531 s
+Imaging source 68 out of 100
+11545.645763158798 s
+Imaging source 69 out of 100
+11592.464450836182 s
+Imaging source 70 out of 100
+11631.32731294632 s
+Imaging source 71 out of 100
+11670.904273986816 s
+Imaging source 72 out of 100
+11716.235710859299 s
+Imaging source 73 out of 100
+11757.041536569595 s
+Imaging source 74 out of 100
+11796.653497695923 s
+Imaging source 75 out of 100
+11849.12346792221 s
+Imaging source 76 out of 100
+11900.255685806274 s
+Imaging source 77 out of 100
+11936.55171084404 s
+Imaging source 78 out of 100
+11973.001337766647 s
+Imaging source 79 out of 100
+12009.437822341919 s
+Imaging source 80 out of 100
+12045.890458106995 s
+Imaging source 81 out of 100
+12082.596431732178 s
+Imaging source 82 out of 100
+12125.766805648804 s
+Imaging source 83 out of 100
+12171.471273422241 s
+Imaging source 84 out of 100
+12210.38388800621 s
+Imaging source 85 out of 100
+12252.73286485672 s
+Imaging source 86 out of 100
+12292.763917684555 s
+Imaging source 87 out of 100
+12332.64697098732 s
+Imaging source 88 out of 100
+12372.483552455902 s
+Imaging source 89 out of 100
+12421.90707230568 s
+Imaging source 90 out of 100
+12462.227424621582 s
+Imaging source 91 out of 100
+12507.158860206604 s
+Imaging source 92 out of 100
+12545.556312084198 s
+Imaging source 93 out of 100
+12583.581059455872 s
+Imaging source 94 out of 100
+12630.575268507004 s
+Imaging source 95 out of 100
+12672.200067043304 s
+Imaging source 96 out of 100
+12713.644105911255 s
+Imaging source 97 out of 100
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+12766.247723579407 s
+Imaging source 98 out of 100
+12809.651779413223 s
+Imaging source 99 out of 100
+12847.9592461586 s
+Imaging source 100 out of 100
+12895.087629795074 s
+Imaging source 1 out of 100
+12957.356945991516 s
+Imaging source 2 out of 100
+12996.322225093842 s
+Imaging source 3 out of 100
+13035.76390004158 s
+Imaging source 4 out of 100
+13078.12526512146 s
+Imaging source 5 out of 100
+13116.484189748764 s
+Imaging source 6 out of 100
+13161.78702378273 s
+Imaging source 7 out of 100
+13201.786931753159 s
+Imaging source 8 out of 100
+13240.785792827606 s
+Imaging source 9 out of 100
+13279.644431114197 s
+Imaging source 10 out of 100
+13330.776866197586 s
+Imaging source 11 out of 100
+13377.555362224579 s
+Imaging source 12 out of 100
+13415.9741897583 s
+Imaging source 13 out of 100
+13454.594345331192 s
+Imaging source 14 out of 100
+13493.633581638336 s
+Imaging source 15 out of 100
+13543.550758361816 s
+Imaging source 16 out of 100
+13583.555013179779 s
+Imaging source 17 out of 100
+13624.49937748909 s
+Imaging source 18 out of 100
+13669.587745189667 s
+Imaging source 19 out of 100
+13708.091452598572 s
+Imaging source 20 out of 100
+13745.20447587967 s
+Imaging source 21 out of 100
+13787.182717323303 s
+Imaging source 22 out of 100
+13832.082693099976 s
+Imaging source 23 out of 100
+13873.659874677658 s
+Imaging source 24 out of 100
+13911.913022518158 s
+Imaging source 25 out of 100
+13959.183358430862 s
+Imaging source 26 out of 100
+13998.81771349907 s
+Imaging source 27 out of 100
+14039.568189144135 s
+Imaging source 28 out of 100
+14079.83527970314 s
+Imaging source 29 out of 100
+14118.470251321793 s
+Imaging source 30 out of 100
+14156.354261636734 s
+Imaging source 31 out of 100
+14194.237804889679 s
+Imaging source 32 out of 100
+14252.834990024567 s
+Imaging source 33 out of 100
+14292.075410366058 s
+Imaging source 34 out of 100
+14331.635239362717 s
+Imaging source 35 out of 100
+14378.669899702072 s
+Imaging source 36 out of 100
+14419.673365592957 s
+Imaging source 37 out of 100
+14459.510000705719 s
+Imaging source 38 out of 100
+14498.516834259033 s
+Imaging source 39 out of 100
+14549.599208593369 s
+Imaging source 40 out of 100
+14595.64290881157 s
+Imaging source 41 out of 100
+14635.318224191666 s
+Imaging source 42 out of 100
+14676.820845842361 s
+Imaging source 43 out of 100
+14718.333323478699 s
+Imaging source 44 out of 100
+14758.713187932968 s
+Imaging source 45 out of 100
+14797.827996730804 s
+Imaging source 46 out of 100
+14840.660088777542 s
+Imaging source 47 out of 100
+14884.406261444092 s
+Imaging source 48 out of 100
+14922.14662861824 s
+Imaging source 49 out of 100
+14961.047485589981 s
+Imaging source 50 out of 100
+15000.660047531128 s
+Imaging source 51 out of 100
+15050.649238348007 s
+Imaging source 52 out of 100
+15092.184410333633 s
+Imaging source 53 out of 100
+15132.023938894272 s
+Imaging source 54 out of 100
+15177.884506464005 s
+Imaging source 55 out of 100
+15214.51064658165 s
+Imaging source 56 out of 100
+15251.01750779152 s
+Imaging source 57 out of 100
+15287.732697725296 s
+Imaging source 58 out of 100
+15324.416136264801 s
+Imaging source 59 out of 100
+15366.219484567642 s
+Imaging source 60 out of 100
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+15412.40155673027 s
+Imaging source 61 out of 100
+15459.911551713943 s
+Imaging source 62 out of 100
+15498.564579725266 s
+Imaging source 63 out of 100
+15546.478570222855 s
+Imaging source 64 out of 100
+15587.746536970139 s
+Imaging source 65 out of 100
+15628.79697394371 s
+Imaging source 66 out of 100
+15668.708079099655 s
+Imaging source 67 out of 100
+15711.479457378387 s
+Imaging source 68 out of 100
+15757.118745326996 s
+Imaging source 69 out of 100
+15793.897925376892 s
+Imaging source 70 out of 100
+15831.376194000244 s
+Imaging source 71 out of 100
+15879.221189260483 s
+Imaging source 72 out of 100
+15919.182612419128 s
+Imaging source 73 out of 100
+15955.668134450912 s
+Imaging source 74 out of 100
+15991.834097623825 s
+Imaging source 75 out of 100
+16036.25783753395 s
+Imaging source 76 out of 100
+16075.207570314407 s
+Imaging source 77 out of 100
+16115.890785694122 s
+Imaging source 78 out of 100
+16153.961698055267 s
+Imaging source 79 out of 100
+16191.59604883194 s
+Imaging source 80 out of 100
+16228.82557606697 s
+Imaging source 81 out of 100
+16279.308693647385 s
+Imaging source 82 out of 100
+16325.799870967865 s
+Imaging source 83 out of 100
+16361.816064834595 s
+Imaging source 84 out of 100
+16398.39608693123 s
+Imaging source 85 out of 100
+16436.191586256027 s
+Imaging source 86 out of 100
+16472.805939674377 s
+Imaging source 87 out of 100
+16509.485134124756 s
+Imaging source 88 out of 100
+16548.16722536087 s
+Imaging source 89 out of 100
+16598.170801877975 s
+Imaging source 90 out of 100
+16648.500307798386 s
+Imaging source 91 out of 100
+16686.201088666916 s
+Imaging source 92 out of 100
+16722.531596183777 s
+Imaging source 93 out of 100
+16759.445913553238 s
+Imaging source 94 out of 100
+16797.513256788254 s
+Imaging source 95 out of 100
+16846.4540207386 s
+Imaging source 96 out of 100
+16887.975081920624 s
+Imaging source 97 out of 100
+16933.687643051147 s
+Imaging source 98 out of 100
+16973.093600988388 s
+Imaging source 99 out of 100
+17020.615530252457 s
+Imaging source 100 out of 100
+17061.078565120697 s
+Imaging source 1 out of 100
+17122.659586191177 s
+Imaging source 2 out of 100
+17161.161860704422 s
+Imaging source 3 out of 100
+17202.397282361984 s
+Imaging source 4 out of 100
+17240.29025888443 s
+Imaging source 5 out of 100
+17278.289559602737 s
+Imaging source 6 out of 100
+17316.734343767166 s
+Imaging source 7 out of 100
+17359.122624397278 s
+Imaging source 8 out of 100
+17398.845594644547 s
+Imaging source 9 out of 100
+17439.111877441406 s
+Imaging source 10 out of 100
+17484.61190390587 s
+Imaging source 11 out of 100
+17528.359915733337 s
+Imaging source 12 out of 100
+17570.175236701965 s
+Imaging source 13 out of 100
+17611.077540159225 s
+Imaging source 14 out of 100
+17651.076068401337 s
+Imaging source 15 out of 100
+17698.361921072006 s
+Imaging source 16 out of 100
+17739.908960342407 s
+Imaging source 17 out of 100
+17782.35155940056 s
+Imaging source 18 out of 100
+17820.25079727173 s
+Imaging source 19 out of 100
+17856.568408489227 s
+Imaging source 20 out of 100
+17893.16134285927 s
+Imaging source 21 out of 100
+17931.368084669113 s
+Imaging source 22 out of 100
+17982.189488887787 s
+Imaging source 23 out of 100
+18023.4649143219 s
+Imaging source 24 out of 100
+18071.86296391487 s
+Imaging source 25 out of 100
+18109.910686016083 s
+Imaging source 26 out of 100
+18147.70071387291 s
+Imaging source 27 out of 100
+18185.410990715027 s
+Imaging source 28 out of 100
+18223.084256649017 s
+Imaging source 29 out of 100
+18260.84952068329 s
+Imaging source 30 out of 100
+18302.085557222366 s
+Imaging source 31 out of 100
+18349.56265282631 s
+Imaging source 32 out of 100
+18396.50610589981 s
+Imaging source 33 out of 100
+18435.976857185364 s
+Imaging source 34 out of 100
+18475.321081399918 s
+Imaging source 35 out of 100
+18521.81329369545 s
+Imaging source 36 out of 100
+18563.378774642944 s
+Imaging source 37 out of 100
+18602.64271044731 s
+Imaging source 38 out of 100
+18641.775354385376 s
+Imaging source 39 out of 100
+18685.80568432808 s
+Imaging source 40 out of 100
+18723.47190952301 s
+Imaging source 41 out of 100
+18779.47824406624 s
+Imaging source 42 out of 100
+18820.370295763016 s
+Imaging source 43 out of 100
+18860.083552837372 s
+Imaging source 44 out of 100
+18899.64394378662 s
+Imaging source 45 out of 100
+18953.300381183624 s
+Imaging source 46 out of 100
+18999.257836818695 s
+Imaging source 47 out of 100
+19038.87140274048 s
+Imaging source 48 out of 100
+19080.701226234436 s
+Imaging source 49 out of 100
+19125.254587888718 s
+Imaging source 50 out of 100
+19163.134247779846 s
+Imaging source 51 out of 100
+19200.97929739952 s
+Imaging source 52 out of 100
+19242.599595308304 s
+Imaging source 53 out of 100
+19289.828368902206 s
+Imaging source 54 out of 100
+19340.848179101944 s
+Imaging source 55 out of 100
+19382.43237876892 s
+Imaging source 56 out of 100
+19423.175129652023 s
+Imaging source 57 out of 100
+19471.24462747574 s
+Imaging source 58 out of 100
+19514.559756040573 s
+Imaging source 59 out of 100
+19552.984807491302 s
+Imaging source 60 out of 100
+19598.02685403824 s
+Imaging source 61 out of 100
+19636.33336687088 s
+Imaging source 62 out of 100
+19674.895096063614 s
+Imaging source 63 out of 100
+19717.12506699562 s
+Imaging source 64 out of 100
+19760.389325380325 s
+Imaging source 65 out of 100
+19809.53742623329 s
+Imaging source 66 out of 100
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+19860.258873939514 s
+Imaging source 67 out of 100
+19904.898319721222 s
+Imaging source 68 out of 100
+19943.046540498734 s
+Imaging source 69 out of 100
+19983.116096496582 s
+Imaging source 70 out of 100
+20023.675157546997 s
+Imaging source 71 out of 100
+20062.121643781662 s
+Imaging source 72 out of 100
+20102.103350162506 s
+Imaging source 73 out of 100
+20142.037094593048 s
+Imaging source 74 out of 100
+20198.82067322731 s
+Imaging source 75 out of 100
+20236.920056819916 s
+Imaging source 76 out of 100
+20275.470757484436 s
+Imaging source 77 out of 100
+20316.617929935455 s
+Imaging source 78 out of 100
+20359.33465409279 s
+Imaging source 79 out of 100
+20399.550199747086 s
+Imaging source 80 out of 100
+20437.964047431946 s
+Imaging source 81 out of 100
+20475.896723508835 s
+Imaging source 82 out of 100
+20517.597200393677 s
+Imaging source 83 out of 100
+20553.959751605988 s
+Imaging source 84 out of 100
+20590.154443502426 s
+Imaging source 85 out of 100
+20626.54627609253 s
+Imaging source 86 out of 100
+20662.84928202629 s
+Imaging source 87 out of 100
+20701.823508024216 s
+Imaging source 88 out of 100
+20747.399260520935 s
+Imaging source 89 out of 100
+20792.167422533035 s
+Imaging source 90 out of 100
+20829.701041460037 s
+Imaging source 91 out of 100
+20867.588026046753 s
+Imaging source 92 out of 100
+20905.353300333023 s
+Imaging source 93 out of 100
+20943.286221265793 s
+Imaging source 94 out of 100
+20984.177104473114 s
+Imaging source 95 out of 100
+21024.547239780426 s
+Imaging source 96 out of 100
+21068.69965338707 s
+Imaging source 97 out of 100
+21105.591559886932 s
+Imaging source 98 out of 100
+21141.964915037155 s
+Imaging source 99 out of 100
+21178.489540100098 s
+Imaging source 100 out of 100
+21220.254142284393 s
+Imaging source 1 out of 100
+21279.942959070206 s
+Imaging source 2 out of 100
+21317.7354285717 s
+Imaging source 3 out of 100
+21354.60286641121 s
+Imaging source 4 out of 100
+21390.222058296204 s
+Imaging source 5 out of 100
+21425.29097557068 s
+Imaging source 6 out of 100
+21460.47085428238 s
+Imaging source 7 out of 100
+21496.10402059555 s
+Imaging source 8 out of 100
+21542.20169019699 s
+Imaging source 9 out of 100
+21584.449899435043 s
+Imaging source 10 out of 100
+21619.943744182587 s
+Imaging source 11 out of 100
+21656.102876663208 s
+Imaging source 12 out of 100
+21692.258254289627 s
+Imaging source 13 out of 100
+21728.52378797531 s
+Imaging source 14 out of 100
+21765.096022367477 s
+Imaging source 15 out of 100
+21804.45772409439 s
+Imaging source 16 out of 100
+21846.83430290222 s
+Imaging source 17 out of 100
+21881.925275564194 s
+Imaging source 18 out of 100
+21918.8646838665 s
+Imaging source 19 out of 100
+21962.274436473846 s
+Imaging source 20 out of 100
+22003.70081782341 s
+Imaging source 21 out of 100
+22042.83746957779 s
+Imaging source 22 out of 100
+22080.934790611267 s
+Imaging source 23 out of 100
+22130.985390901566 s
+Imaging source 24 out of 100
+22168.41037797928 s
+Imaging source 25 out of 100
+22206.663288593292 s
+Imaging source 26 out of 100
+22244.650763511658 s
+Imaging source 27 out of 100
+22291.57708311081 s
+Imaging source 28 out of 100
+22331.994002342224 s
+Imaging source 29 out of 100
+22369.877391576767 s
+Imaging source 30 out of 100
+22406.83139181137 s
+Imaging source 31 out of 100
+22450.734810113907 s
+Imaging source 32 out of 100
+22487.86972951889 s
+Imaging source 33 out of 100
+22524.03887319565 s
+Imaging source 34 out of 100
+22560.653952121735 s
+Imaging source 35 out of 100
+22606.45766401291 s
+Imaging source 36 out of 100
+22646.919384002686 s
+Imaging source 37 out of 100
+22686.91445326805 s
+Imaging source 38 out of 100
+22730.04525065422 s
+Imaging source 39 out of 100
+22766.475528240204 s
+Imaging source 40 out of 100
+22811.934915304184 s
+Imaging source 41 out of 100
+22851.32487344742 s
+Imaging source 42 out of 100
+22891.062992572784 s
+Imaging source 43 out of 100
+22928.215007305145 s
+Imaging source 44 out of 100
+22976.46113038063 s
+Imaging source 45 out of 100
+23020.874836683273 s
+Imaging source 46 out of 100
+23058.306099176407 s
+Imaging source 47 out of 100
+23096.794701576233 s
+Imaging source 48 out of 100
+23144.457898139954 s
+Imaging source 49 out of 100
+23186.03724551201 s
+Imaging source 50 out of 100
+23225.312294721603 s
+Imaging source 51 out of 100
+23263.86284661293 s
+Imaging source 52 out of 100
+23307.767242193222 s
+Imaging source 53 out of 100
+23345.48925805092 s
+Imaging source 54 out of 100
+23387.363826990128 s
+Imaging source 55 out of 100
+23426.972723007202 s
+Imaging source 56 out of 100
+23464.12602710724 s
+Imaging source 57 out of 100
+23501.407236099243 s
+Imaging source 58 out of 100
+23538.900918245316 s
+Imaging source 59 out of 100
+23583.554539203644 s
+Imaging source 60 out of 100
+23620.92065358162 s
+Imaging source 61 out of 100
+23658.585418224335 s
+Imaging source 62 out of 100
+23694.702902317047 s
+Imaging source 63 out of 100
+23731.88924431801 s
+Imaging source 64 out of 100
+23768.921414852142 s
+Imaging source 65 out of 100
+23807.52552294731 s
+Imaging source 66 out of 100
+23851.93314576149 s
+Imaging source 67 out of 100
+23886.873445034027 s
+Imaging source 68 out of 100
+23922.644072294235 s
+Imaging source 69 out of 100
+23957.93637895584 s
+Imaging source 70 out of 100
+23993.299235343933 s
+Imaging source 71 out of 100
+24028.750477075577 s
+Imaging source 72 out of 100
+24064.29251217842 s
+Imaging source 73 out of 100
+24106.09287214279 s
+Imaging source 74 out of 100
+24142.80688214302 s
+Imaging source 75 out of 100
+24180.336850881577 s
+Imaging source 76 out of 100
+24217.725787639618 s
+Imaging source 77 out of 100
+24265.405100107193 s
+Imaging source 78 out of 100
+24306.3904876709 s
+Imaging source 79 out of 100
+24345.086067199707 s
+Imaging source 80 out of 100
+24383.117122888565 s
+Imaging source 81 out of 100
+24427.078922748566 s
+Imaging source 82 out of 100
+24481.38020467758 s
+Imaging source 83 out of 100
+24529.97122859955 s
+Imaging source 84 out of 100
+24567.903355121613 s
+Imaging source 85 out of 100
+24604.47208595276 s
+Imaging source 86 out of 100
+24642.391585350037 s
+Imaging source 87 out of 100
+24689.789742708206 s
+Imaging source 88 out of 100
+24733.19344830513 s
+Imaging source 89 out of 100
+24770.333194494247 s
+Imaging source 90 out of 100
+24811.297120332718 s
+Imaging source 91 out of 100
+24849.81880927086 s
+Imaging source 92 out of 100
+24886.816329717636 s
+Imaging source 93 out of 100
+24922.277678728104 s
+Imaging source 94 out of 100
+24958.993514299393 s
+Imaging source 95 out of 100
+25001.139338970184 s
+Imaging source 96 out of 100
+25036.33551621437 s
+Imaging source 97 out of 100
+25071.72535085678 s
+Imaging source 98 out of 100
+25107.004798173904 s
+Imaging source 99 out of 100
+25157.165786743164 s
+Imaging source 100 out of 100
+25197.865429878235 s
+Imaging source 1 out of 100
+25256.89058971405 s
+Imaging source 2 out of 100
+25292.34906220436 s
+Imaging source 3 out of 100
+25327.733286619186 s
+Imaging source 4 out of 100
+25363.211827754974 s
+Imaging source 5 out of 100
+25398.629513025284 s
+Imaging source 6 out of 100
+25434.511916399002 s
+Imaging source 7 out of 100
+25478.940123081207 s
+Imaging source 8 out of 100
+25528.9064514637 s
+Imaging source 9 out of 100
+25567.11281490326 s
+Imaging source 10 out of 100
+25604.625262260437 s
+Imaging source 11 out of 100
+25652.056703329086 s
+Imaging source 12 out of 100
+25692.222687721252 s
+Imaging source 13 out of 100
+25730.962244272232 s
+Imaging source 14 out of 100
+25768.98748898506 s
+Imaging source 15 out of 100
+25817.59494137764 s
+Imaging source 16 out of 100
+25852.77979707718 s
+Imaging source 17 out of 100
+25889.81703567505 s
+Imaging source 18 out of 100
+25926.232792139053 s
+Imaging source 19 out of 100
+25974.646108865738 s
+Imaging source 20 out of 100
+26011.053278446198 s
+Imaging source 21 out of 100
+26046.861057281494 s
+Imaging source 22 out of 100
+26085.608872890472 s
+Imaging source 23 out of 100
+26129.015313863754 s
+Imaging source 24 out of 100
+26175.973675727844 s
+Imaging source 25 out of 100
+26213.926793575287 s
+Imaging source 26 out of 100
+26250.496320724487 s
+Imaging source 27 out of 100
+26287.150623321533 s
+Imaging source 28 out of 100
+26323.789356470108 s
+Imaging source 29 out of 100
+26360.545781850815 s
+Imaging source 30 out of 100
+26402.231614351273 s
+Imaging source 31 out of 100
+26438.802796125412 s
+Imaging source 32 out of 100
+26475.31201004982 s
+Imaging source 33 out of 100
+26512.846616983414 s
+Imaging source 34 out of 100
+26552.927196264267 s
+Imaging source 35 out of 100
+26593.631428718567 s
+Imaging source 36 out of 100
+26634.382486343384 s
+Imaging source 37 out of 100
+26675.565576553345 s
+Imaging source 38 out of 100
+26711.930949687958 s
+Imaging source 39 out of 100
+26748.376539468765 s
+Imaging source 40 out of 100
+26786.86550617218 s
+Imaging source 41 out of 100
+26824.532778978348 s
+Imaging source 42 out of 100
+26862.6042034626 s
+Imaging source 43 out of 100
+26910.383448123932 s
+Imaging source 44 out of 100
+26954.63931775093 s
+Imaging source 45 out of 100
+26991.82032251358 s
+Imaging source 46 out of 100
+27040.230017900467 s
+Imaging source 47 out of 100
+27080.783927440643 s
+Imaging source 48 out of 100
+27119.308841228485 s
+Imaging source 49 out of 100
+27158.482734441757 s
+Imaging source 50 out of 100
+27202.521420955658 s
+Imaging source 51 out of 100
+27246.963951587677 s
+Imaging source 52 out of 100
+27285.04886841774 s
+Imaging source 53 out of 100
+27324.07605957985 s
+Imaging source 54 out of 100
+27369.771973371506 s
+Imaging source 55 out of 100
+27410.47633433342 s
+Imaging source 56 out of 100
+27447.73063969612 s
+Imaging source 57 out of 100
+27484.931082487106 s
+Imaging source 58 out of 100
+27527.6855840683 s
+Imaging source 59 out of 100
+27565.311266183853 s
+Imaging source 60 out of 100
+27605.98607993126 s
+Imaging source 61 out of 100
+27647.382071495056 s
+Imaging source 62 out of 100
+27686.42848610878 s
+Imaging source 63 out of 100
+27724.10979127884 s
+Imaging source 64 out of 100
+27762.41195321083 s
+Imaging source 65 out of 100
+27821.408113718033 s
+Imaging source 66 out of 100
+27856.921300411224 s
+Imaging source 67 out of 100
+27894.769065856934 s
+Imaging source 68 out of 100
+27939.855987548828 s
+Imaging source 69 out of 100
+27979.330216169357 s
+Imaging source 70 out of 100
+28026.72526574135 s
+Imaging source 71 out of 100
+28067.08724474907 s
+Imaging source 72 out of 100
+28106.410629034042 s
+Imaging source 73 out of 100
+28148.998087882996 s
+Imaging source 74 out of 100
+28187.196370363235 s
+Imaging source 75 out of 100
+28225.761438131332 s
+Imaging source 76 out of 100
+28271.384808540344 s
+Imaging source 77 out of 100
+28310.496186733246 s
+Imaging source 78 out of 100
+28349.34276676178 s
+Imaging source 79 out of 100
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+28390.896438121796 s
+Imaging source 80 out of 100
+28433.206364154816 s
+Imaging source 81 out of 100
+28470.918853521347 s
+Imaging source 82 out of 100
+28512.46430206299 s
+Imaging source 83 out of 100
+28552.520355939865 s
+Imaging source 84 out of 100
+28592.15665411949 s
+Imaging source 85 out of 100
+28631.03408432007 s
+Imaging source 86 out of 100
+28669.441910743713 s
+Imaging source 87 out of 100
+28711.51677751541 s
+Imaging source 88 out of 100
+28747.232183218002 s
+Imaging source 89 out of 100
+28782.619760274887 s
+Imaging source 90 out of 100
+28821.988251447678 s
+Imaging source 91 out of 100
+28867.655879735947 s
+Imaging source 92 out of 100
+28903.213621377945 s
+Imaging source 93 out of 100
+28938.87254834175 s
+Imaging source 94 out of 100
+28980.450751304626 s
+Imaging source 95 out of 100
+29017.174964666367 s
+Imaging source 96 out of 100
+29054.224975824356 s
+Imaging source 97 out of 100
+29091.536152362823 s
+Imaging source 98 out of 100
+29127.763306856155 s
+Imaging source 99 out of 100
+29167.77865767479 s
+Imaging source 100 out of 100
+29207.437211036682 s
+Imaging source 1 out of 100
+29271.139264822006 s
+Imaging source 2 out of 100
+29308.1728246212 s
+Imaging source 3 out of 100
+29344.839178800583 s
+Imaging source 4 out of 100
+29385.730929851532 s
+Imaging source 5 out of 100
+29423.33513045311 s
+Imaging source 6 out of 100
+29460.99036216736 s
+Imaging source 7 out of 100
+29501.91336274147 s
+Imaging source 8 out of 100
+29538.81098461151 s
+Imaging source 9 out of 100
+29577.791078090668 s
+Imaging source 10 out of 100
+29615.04317522049 s
+Imaging source 11 out of 100
+29664.974461317062 s
+Imaging source 12 out of 100
+29702.161470890045 s
+Imaging source 13 out of 100
+29739.663720607758 s
+Imaging source 14 out of 100
+29795.566881418228 s
+Imaging source 15 out of 100
+29834.48856306076 s
+Imaging source 16 out of 100
+29874.18500971794 s
+Imaging source 17 out of 100
+29913.838243961334 s
+Imaging source 18 out of 100
+29962.91709446907 s
+Imaging source 19 out of 100
+30004.693611383438 s
+Imaging source 20 out of 100
+30043.525141716003 s
+Imaging source 21 out of 100
+30081.477242946625 s
+Imaging source 22 out of 100
+30126.92492365837 s
+Imaging source 23 out of 100
+30167.43981862068 s
+Imaging source 24 out of 100
+30207.30991244316 s
+Imaging source 25 out of 100
+30249.970638513565 s
+Imaging source 26 out of 100
+30293.67138004303 s
+Imaging source 27 out of 100
+30336.971028089523 s
+Imaging source 28 out of 100
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+30389.723408460617 s
+Imaging source 29 out of 100
+30435.03786253929 s
+Imaging source 30 out of 100
+30474.650831460953 s
+Imaging source 31 out of 100
+30523.728811740875 s
+Imaging source 32 out of 100
+30565.676703453064 s
+Imaging source 33 out of 100
+30606.04634284973 s
+Imaging source 34 out of 100
+30646.337507009506 s
+Imaging source 35 out of 100
+30684.702452659607 s
+Imaging source 36 out of 100
+30727.434991121292 s
+Imaging source 37 out of 100
+30766.391188383102 s
+Imaging source 38 out of 100
+30803.9203248024 s
+Imaging source 39 out of 100
+30845.610268592834 s
+Imaging source 40 out of 100
+30886.286855220795 s
+Imaging source 41 out of 100
+30925.771553754807 s
+Imaging source 42 out of 100
+30977.037021160126 s
+Imaging source 43 out of 100
+31022.497410297394 s
+Imaging source 44 out of 100
+31062.275444984436 s
+Imaging source 45 out of 100
+31104.37229704857 s
+Imaging source 46 out of 100
+31155.802229881287 s
+Imaging source 47 out of 100
+31193.809576511383 s
+Imaging source 48 out of 100
+31231.88260126114 s
+Imaging source 49 out of 100
+31270.035143613815 s
+Imaging source 50 out of 100
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+31314.897772073746 s
+Imaging source 51 out of 100
+31354.397064208984 s
+Imaging source 52 out of 100
+31394.717566251755 s
+Imaging source 53 out of 100
+31444.440945863724 s
+Imaging source 54 out of 100
+31485.94105195999 s
+Imaging source 55 out of 100
+31526.682492017746 s
+Imaging source 56 out of 100
+31584.207903862 s
+Imaging source 57 out of 100
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+31635.14035654068 s
+Imaging source 58 out of 100
+31673.10213947296 s
+Imaging source 59 out of 100
+31711.097272872925 s
+Imaging source 60 out of 100
+31749.138913869858 s
+Imaging source 61 out of 100
+31787.36903834343 s
+Imaging source 62 out of 100
+31826.947232723236 s
+Imaging source 63 out of 100
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+31890.412923574448 s
+Imaging source 64 out of 100
+31939.12016224861 s
+Imaging source 65 out of 100
+31978.304341316223 s
+Imaging source 66 out of 100
+32017.03995656967 s
+Imaging source 67 out of 100
+32062.685297489166 s
+Imaging source 68 out of 100
+32104.361680984497 s
+Imaging source 69 out of 100
+32144.809596061707 s
+Imaging source 70 out of 100
+32184.491295337677 s
+Imaging source 71 out of 100
+32228.566743135452 s
+Imaging source 72 out of 100
+32273.486757993698 s
+Imaging source 73 out of 100
+32311.660959243774 s
+Imaging source 74 out of 100
+32349.48417854309 s
+Imaging source 75 out of 100
+32387.85392856598 s
+Imaging source 76 out of 100
+32426.130417108536 s
+Imaging source 77 out of 100
+32464.294242858887 s
+Imaging source 78 out of 100
+32505.198774576187 s
+Imaging source 79 out of 100
+32561.76390004158 s
+Imaging source 80 out of 100
+32600.68696832657 s
+Imaging source 81 out of 100
+32638.364516973495 s
+Imaging source 82 out of 100
+32676.19163966179 s
+Imaging source 83 out of 100
+32714.18137383461 s
+Imaging source 84 out of 100
+32752.32723712921 s
+Imaging source 85 out of 100
+32804.47535610199 s
+Imaging source 86 out of 100
+32854.788311719894 s
+Imaging source 87 out of 100
+32895.47194623947 s
+Imaging source 88 out of 100
+32936.11787772179 s
+Imaging source 89 out of 100
+32986.08482670784 s
+Imaging source 90 out of 100
+33028.87029385567 s
+Imaging source 91 out of 100
+33070.20379638672 s
+Imaging source 92 out of 100
+33110.831884384155 s
+Imaging source 93 out of 100
+33156.88149571419 s
+Imaging source 94 out of 100
+33197.54752492905 s
+Imaging source 95 out of 100
+33242.98839855194 s
+Imaging source 96 out of 100
+33280.88233208656 s
+Imaging source 97 out of 100
+33318.98855686188 s
+Imaging source 98 out of 100
+33357.479659080505 s
+Imaging source 99 out of 100
+33400.01308655739 s
+Imaging source 100 out of 100
+33443.89581799507 s
+Imaging source 1 out of 100
+33503.980999946594 s
+Imaging source 2 out of 100
+33544.666424274445 s
+Imaging source 3 out of 100
+33585.445132255554 s
+Imaging source 4 out of 100
+33626.30517196655 s
+Imaging source 5 out of 100
+33680.16271042824 s
+Imaging source 6 out of 100
+33727.72141337395 s
+Imaging source 7 out of 100
+33768.439883470535 s
+Imaging source 8 out of 100
+33810.42249083519 s
+Imaging source 9 out of 100
+33856.01278090477 s
+Imaging source 10 out of 100
+33901.45135450363 s
+Imaging source 11 out of 100
+33945.59776902199 s
+Imaging source 12 out of 100
+33989.026495695114 s
+Imaging source 13 out of 100
+34043.569101810455 s
+Imaging source 14 out of 100
+34091.87635087967 s
+Imaging source 15 out of 100
+34133.81003189087 s
+Imaging source 16 out of 100
+34175.249140024185 s
+Imaging source 17 out of 100
+34228.56445431709 s
+Imaging source 18 out of 100
+34273.53656029701 s
+Imaging source 19 out of 100
+34316.489656448364 s
+Imaging source 20 out of 100
+34359.92858791351 s
+Imaging source 21 out of 100
+34406.774723529816 s
+Imaging source 22 out of 100
+34447.54693746567 s
+Imaging source 23 out of 100
+34496.26699090004 s
+Imaging source 24 out of 100
+34540.97877860069 s
+Imaging source 25 out of 100
+34581.020892858505 s
+Imaging source 26 out of 100
+34622.1680021286 s
+Imaging source 27 out of 100
+34676.689898729324 s
+Imaging source 28 out of 100
+34724.04670906067 s
+Imaging source 29 out of 100
+34765.36617541313 s
+Imaging source 30 out of 100
+34810.79742217064 s
+Imaging source 31 out of 100
+34855.68954873085 s
+Imaging source 32 out of 100
+34897.42680358887 s
+Imaging source 33 out of 100
+34939.42924976349 s
+Imaging source 34 out of 100
+34987.36025762558 s
+Imaging source 35 out of 100
+35035.92006897926 s
+Imaging source 36 out of 100
+35076.67515850067 s
+Imaging source 37 out of 100
+35119.34690785408 s
+Imaging source 38 out of 100
+35171.50918626785 s
+Imaging source 39 out of 100
+35226.17662072182 s
+Imaging source 40 out of 100
+35269.6715362072 s
+Imaging source 41 out of 100
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+35314.64591383934 s
+Imaging source 42 out of 100
+35362.62273955345 s
+Imaging source 43 out of 100
+35403.14681982994 s
+Imaging source 44 out of 100
+35453.17479515076 s
+Imaging source 45 out of 100
+35497.25511479378 s
+Imaging source 46 out of 100
+35540.35857272148 s
+Imaging source 47 out of 100
+35584.55482673645 s
+Imaging source 48 out of 100
+35633.33992624283 s
+Imaging source 49 out of 100
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+35684.59006690979 s
+Imaging source 50 out of 100
+35726.86626625061 s
+Imaging source 51 out of 100
+35770.952018260956 s
+Imaging source 52 out of 100
+35821.78009438515 s
+Imaging source 53 out of 100
+35867.03985404968 s
+Imaging source 54 out of 100
+35910.36016488075 s
+Imaging source 55 out of 100
+35953.41835331917 s
+Imaging source 56 out of 100
+36017.97724366188 s
+Imaging source 57 out of 100
+36059.50043296814 s
+Imaging source 58 out of 100
+36102.40945291519 s
+Imaging source 59 out of 100
+36145.65301632881 s
+Imaging source 60 out of 100
+36198.2314183712 s
+Imaging source 61 out of 100
+36244.29139447212 s
+Imaging source 62 out of 100
+36288.67710161209 s
+Imaging source 63 out of 100
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+36347.20571613312 s
+Imaging source 64 out of 100
+36396.24490356445 s
+Imaging source 65 out of 100
+36436.72143340111 s
+Imaging source 66 out of 100
+36476.29719257355 s
+Imaging source 67 out of 100
+36515.93740153313 s
+Imaging source 68 out of 100
+36555.890305519104 s
+Imaging source 69 out of 100
+36602.72074961662 s
+Imaging source 70 out of 100
+36645.49902200699 s
+Imaging source 71 out of 100
+36696.68441200256 s
+Imaging source 72 out of 100
+36736.54501056671 s
+Imaging source 73 out of 100
+36776.779831409454 s
+Imaging source 74 out of 100
+36816.87170481682 s
+Imaging source 75 out of 100
+36856.60576224327 s
+Imaging source 76 out of 100
+36896.48626923561 s
+Imaging source 77 out of 100
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+36962.071870565414 s
+Imaging source 78 out of 100
+37011.23354148865 s
+Imaging source 79 out of 100
+37050.91329240799 s
+Imaging source 80 out of 100
+37093.450278520584 s
+Imaging source 81 out of 100
+37141.42507529259 s
+Imaging source 82 out of 100
+37181.684556245804 s
+Imaging source 83 out of 100
+37232.349677324295 s
+Imaging source 84 out of 100
+37276.66508483887 s
+Imaging source 85 out of 100
+37326.298988342285 s
+Imaging source 86 out of 100
+37370.089616537094 s
+Imaging source 87 out of 100
+37411.45578932762 s
+Imaging source 88 out of 100
+37452.292397499084 s
+Imaging source 89 out of 100
+37494.57646155357 s
+Imaging source 90 out of 100
+37534.757350206375 s
+Imaging source 91 out of 100
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+37576.13305234909 s
+Imaging source 92 out of 100
+37622.910620212555 s
+Imaging source 93 out of 100
+37665.95415353775 s
+Imaging source 94 out of 100
+37708.203097343445 s
+Imaging source 95 out of 100
+37757.71578669548 s
+Imaging source 96 out of 100
+37801.33444237709 s
+Imaging source 97 out of 100
+37844.73221349716 s
+Imaging source 98 out of 100
+37901.92003035545 s
+Imaging source 99 out of 100
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+37950.964141368866 s
+Imaging source 100 out of 100
+37993.95532798767 s
+Imaging source 1 out of 100
+38054.89398765564 s
+Imaging source 2 out of 100
+38092.974996089935 s
+Imaging source 3 out of 100
+38132.13835120201 s
+Imaging source 4 out of 100
+38174.62397480011 s
+Imaging source 5 out of 100
+38222.095988988876 s
+Imaging source 6 out of 100
+38263.004152059555 s
+Imaging source 7 out of 100
+38304.26803326607 s
+Imaging source 8 out of 100
+38351.45502758026 s
+Imaging source 9 out of 100
+38393.10056376457 s
+Imaging source 10 out of 100
+38433.72783279419 s
+Imaging source 11 out of 100
+38473.47974538803 s
+Imaging source 12 out of 100
+38523.93570756912 s
+Imaging source 13 out of 100
+38570.93655371666 s
+Imaging source 14 out of 100
+38610.830333948135 s
+Imaging source 15 out of 100
+38649.543063402176 s
+Imaging source 16 out of 100
+38687.966277360916 s
+Imaging source 17 out of 100
+38726.45721888542 s
+Imaging source 18 out of 100
+38766.78647232056 s
+Imaging source 19 out of 100
+38809.864562273026 s
+Imaging source 20 out of 100
+38858.88901042938 s
+Imaging source 21 out of 100
+38899.45029234886 s
+Imaging source 22 out of 100
+38937.4230260849 s
+Imaging source 23 out of 100
+38975.78837442398 s
+Imaging source 24 out of 100
+39014.39440989494 s
+Imaging source 25 out of 100
+39051.89901590347 s
+Imaging source 26 out of 100
+39091.322239398956 s
+Imaging source 27 out of 100
+39139.136513233185 s
+Imaging source 28 out of 100
+39179.71402692795 s
+Imaging source 29 out of 100
+39232.70679974556 s
+Imaging source 30 out of 100
+39275.91885590553 s
+Imaging source 31 out of 100
+39317.04116654396 s
+Imaging source 32 out of 100
+39365.71244478226 s
+Imaging source 33 out of 100
+39407.729573726654 s
+Imaging source 34 out of 100
+39453.29027175903 s
+Imaging source 35 out of 100
+39491.98139715195 s
+Imaging source 36 out of 100
+39531.26638293266 s
+Imaging source 37 out of 100
+39574.87219262123 s
+Imaging source 38 out of 100
+39621.77797150612 s
+Imaging source 39 out of 100
+39670.49470949173 s
+Imaging source 40 out of 100
+39726.07071375847 s
+Imaging source 41 out of 100
+39770.72954416275 s
+Imaging source 42 out of 100
+39807.896049022675 s
+Imaging source 43 out of 100
+39844.74020624161 s
+Imaging source 44 out of 100
+39882.211230516434 s
+Imaging source 45 out of 100
+39921.23964881897 s
+Imaging source 46 out of 100
+39965.23992609978 s
+Imaging source 47 out of 100
+40011.06903386116 s
+Imaging source 48 out of 100
+40058.26740527153 s
+Imaging source 49 out of 100
+40100.717441082 s
+Imaging source 50 out of 100
+40140.05572986603 s
+Imaging source 51 out of 100
+40185.75881147385 s
+Imaging source 52 out of 100
+40224.75141787529 s
+Imaging source 53 out of 100
+40263.53461408615 s
+Imaging source 54 out of 100
+40315.029724121094 s
+Imaging source 55 out of 100
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+40407.04063749313 s
+Imaging source 56 out of 100
+40446.03994727135 s
+Imaging source 57 out of 100
+40486.21318221092 s
+Imaging source 58 out of 100
+40526.749148368835 s
+Imaging source 59 out of 100
+40576.84199690819 s
+Imaging source 60 out of 100
+40629.2796587944 s
+Imaging source 61 out of 100
+40688.329516887665 s
+Imaging source 62 out of 100
+40728.42153096199 s
+Imaging source 63 out of 100
+40773.1229197979 s
+Imaging source 64 out of 100
+40812.992377758026 s
+Imaging source 65 out of 100
+40856.33195710182 s
+Imaging source 66 out of 100
+40899.363805532455 s
+Imaging source 67 out of 100
+40940.62383174896 s
+Imaging source 68 out of 100
+40979.86733531952 s
+Imaging source 69 out of 100
+41020.13799571991 s
+Imaging source 70 out of 100
+41065.69164800644 s
+Imaging source 71 out of 100
+41104.616097688675 s
+Imaging source 72 out of 100
+41159.57062411308 s
+Imaging source 73 out of 100
+41199.00807595253 s
+Imaging source 74 out of 100
+41249.01887869835 s
+Imaging source 75 out of 100
+41301.32521867752 s
+Imaging source 76 out of 100
+41347.440672159195 s
+Imaging source 77 out of 100
+41399.951189517975 s
+Imaging source 78 out of 100
+41439.06638264656 s
+Imaging source 79 out of 100
+41478.22187900543 s
+Imaging source 80 out of 100
+41517.5475423336 s
+Imaging source 81 out of 100
+41559.03225064278 s
+Imaging source 82 out of 100
+41602.33033871651 s
+Imaging source 83 out of 100
+41644.71132135391 s
+Imaging source 84 out of 100
+41690.783420324326 s
+Imaging source 85 out of 100
+41738.05479264259 s
+Imaging source 86 out of 100
+41791.87659621239 s
+Imaging source 87 out of 100
+41858.055760622025 s
+Imaging source 88 out of 100
+41898.36718797684 s
+Imaging source 89 out of 100

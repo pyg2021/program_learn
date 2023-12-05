@@ -5,16 +5,17 @@ import scipy.io as sio
 import numpy as np
 from scipy.ndimage import gaussian_filter
 import matplotlib.pyplot as plt
+from DataLoad import DataLoad
 device="cuda"
 model=net(2,1).to(device)
 model=nn.parallel.DataParallel(model)
-model.load_state_dict(torch.load("/home/pengyaoguang/data/3D_net_model/modeltest4_2.pkl"))
+model.load_state_dict(torch.load("/home/pengyaoguang/data/3D_net_model/modeltest4_4.pkl"))
 
 
 
 
 ##data_prepare
-k=0
+k=66
 n=50
 R=sio.loadmat("/home/pengyaoguang/data/3D_RTM/RTM{}".format(k))["RTM"][20:120,20:120,20:120]
 
@@ -53,6 +54,11 @@ x[:,1]=label_smooth1
 x=torch.from_numpy(x).float().to(device)
 label1=torch.from_numpy(label1).float().to(device)
 
+# device="cuda"
+# x,y=DataLoad(2)
+# x=torch.from_numpy(x).float().to(device)
+# y=torch.from_numpy(y).float().to(device)
+# label1=y
 
 loss_1=torch.nn.L1Loss()
 y_1=model(x)

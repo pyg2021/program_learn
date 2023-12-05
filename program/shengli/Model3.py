@@ -10,7 +10,7 @@ class conv_net(nn.Module):
     def __init__(self,in_channels, out_channels, is_batchnorm=True):
         super(conv_net,self).__init__()
         self.conv1=nn.Sequential(nn.Conv3d(in_channels,out_channels,3,1,1),
-                                 nn.BatchNorm3d(out_channels),
+                                 nn.InstanceNorm3d(out_channels),
                                  nn.ReLU(inplace=True),
                                  )
     def forward(self,input):
