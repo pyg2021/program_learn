@@ -412,3 +412,11 @@ Imaging source 5 out of 100
 Imaging source 6 out of 100
 8987.876893997192 s
 Imaging source 7 out of 100
+9026.001115083694 s
+Imaging source 8 out of 100
+9063.902067422867 s
+Imaging source 9 out of 100
+9108.374127388 s
+Imaging source 10 out of 100
+9148.187346220016 s
+Imaging source 11 out of 100
