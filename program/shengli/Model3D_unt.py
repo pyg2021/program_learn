@@ -4,7 +4,7 @@ import numpy as np
 from torch.nn import functional as F
 
 class DoubleConv(nn.Module):
-    def __init__(self, in_channels, out_channels, bath_normal=False):
+    def __init__(self, in_channels, out_channels, batch_normal=False):
         super(DoubleConv, self).__init__()
         channels = out_channels // 2
         if in_channels > out_channels:
@@ -17,7 +17,7 @@ class DoubleConv(nn.Module):
             nn.Conv3d(channels, out_channels, kernel_size=3, stride=1, padding=1),
             nn.ReLU(True)
         ]
-        if bath_normal:
+        if batch_normal:
             layers.insert(1, nn.InstanceNorm3d(channels))
             layers.insert(len(layers) - 1, nn.InstanceNorm3d(out_channels))
 
@@ -65,21 +65,22 @@ class LastConv(nn.Module):
     def forward(self, x):
         return self.conv(x)
 
-class UNet3D(nn.Module):
+class net(nn.Module):
     def __init__(self, in_channels, num_classes=2, batch_normal=False, bilinear=True):
-        super(UNet3D, self).__init__()
+        super(net, self).__init__()
         self.in_channels = in_channels
         self.batch_normal = batch_normal
         self.bilinear = bilinear
+        fiter=[64,128,256,512]
+        
+        self.inputs = DoubleConv(in_channels, fiter[0], self.batch_normal)
+        self.down_1 = DownSampling(fiter[0], fiter[1], self.batch_normal)
+        self.down_2 = DownSampling(fiter[1], fiter[2], self.batch_normal)
+        self.down_3 = DownSampling(fiter[2], fiter[3], self.batch_normal)
 
-        self.inputs = DoubleConv(in_channels, 64, self.batch_normal)
-        self.down_1 = DownSampling(64, 128, self.batch_normal)
-        self.down_2 = DownSampling(128, 256, self.batch_normal)
-        self.down_3 = DownSampling(256, 512, self.batch_normal)
-
-        self.up_1 = UpSampling(512, 256, self.batch_normal, self.bilinear)
-        self.up_2 = UpSampling(256, 128, self.batch_normal, self.bilinear)
-        self.up_3 = UpSampling(128, 64, self.batch_normal, self.bilinear)
+        self.up_1 = UpSampling(fiter[3], fiter[2], self.batch_normal, self.bilinear)
+        self.up_2 = UpSampling(fiter[2], fiter[1], self.batch_normal, self.bilinear)
+        self.up_3 = UpSampling(fiter[1], fiter[0], self.batch_normal, self.bilinear)
         self.outputs = LastConv(64, num_classes)
 
     def forward(self, x):
@@ -96,10 +97,10 @@ class UNet3D(nn.Module):
         return x
 
 
-device='cuda:3'
-model=UNet3D(2,1).to(device)
-# model=nn.parallel.DataParallel(model)
-x=np.ones((4,2,100,100,100))
-x=torch.from_numpy(x).float().to(device)
-y=model(x)
-print(y.shape)
+# device='cuda:3'
+# model=net(2,1).to(device)
+# # model=nn.parallel.DataParallel(model)
+# x=np.ones((1,2,100,100,100))
+# x=torch.from_numpy(x).float().to(device)
+# y=model(x)
+# print(y.shape)
