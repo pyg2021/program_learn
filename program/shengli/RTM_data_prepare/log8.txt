@@ -370,3 +370,45 @@ Imaging source 84 out of 100
 Imaging source 85 out of 100
 8099.334706544876 s
 Imaging source 86 out of 100
+8139.68280339241 s
+Imaging source 87 out of 100
+8190.255474328995 s
+Imaging source 88 out of 100
+8231.222158193588 s
+Imaging source 89 out of 100
+8271.110597133636 s
+Imaging source 90 out of 100
+8310.802739620209 s
+Imaging source 91 out of 100
+8357.213223934174 s
+Imaging source 92 out of 100
+8396.370918273926 s
+Imaging source 93 out of 100
+8438.23933005333 s
+Imaging source 94 out of 100
+8477.74218082428 s
+Imaging source 95 out of 100
+8517.796246528625 s
+Imaging source 96 out of 100
+8568.56579875946 s
+Imaging source 97 out of 100
+8611.245707035065 s
+Imaging source 98 out of 100
+8652.416328907013 s
+Imaging source 99 out of 100
+8697.696195840836 s
+Imaging source 100 out of 100
+8737.769430398941 s
+Imaging source 1 out of 100
+8795.089670181274 s
+Imaging source 2 out of 100
+8832.783364534378 s
+Imaging source 3 out of 100
+8870.670662879944 s
+Imaging source 4 out of 100
+8908.603527545929 s
+Imaging source 5 out of 100
+8949.466102838516 s
+Imaging source 6 out of 100
+8987.876893997192 s
+Imaging source 7 out of 100
