@@ -11,15 +11,15 @@ from DataLoad import DataLoad
 from Model3D_unt import net
 import os 
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID" 
-os.environ['CUDA_VISIBLE_DEVICES'] = "0,1,2"
+os.environ['CUDA_VISIBLE_DEVICES'] = "0,1,2,3"
 start=time.time()
 
 ##data_prepare
-BatchSize=12
+BatchSize=16
 device="cuda"
-x_1,y_1=DataLoad(0,0+19)
-x_2,y_2=DataLoad(5000,5000+19)
-x_3,y_3=DataLoad(10000,10000+19)
+x_1,y_1=DataLoad(0,0+99)
+x_2,y_2=DataLoad(5000,5000+99)
+x_3,y_3=DataLoad(10000,10000+99)
 # x=np.zeros((x_1.shape[0]+x_2.shape[0]+x_3.shape[0],2,100,100,100))
 # y=np.zeros((y_1.shape[0]+y_2.shape[0]+y_3.shape[0],1,100,100,100))
 x=np.concatenate((x_1,x_2,x_3),axis=0)
@@ -42,7 +42,7 @@ model=nn.parallel.DataParallel(model)
 
 epoch=10000
 optimizer = torch.optim.AdamW(model.parameters(),lr=1e-3)
-scheduler=torch.optim.lr_scheduler.StepLR(optimizer,step_size=600,gamma=0.8)
+scheduler=torch.optim.lr_scheduler.StepLR(optimizer,step_size=800,gamma=0.8)
 loss_1=torch.nn.L1Loss()
 # plt.figure()
 # plt.imshow(y.cpu().detach()[0,0,50,:,:].T)
@@ -72,15 +72,15 @@ for epoch_i in range(epoch):
         plt.figure()
         plt.imshow(model(x).cpu().detach()[0,0,50,:,:].T)
         plt.colorbar()
-        plt.savefig("/home/pengyaoguang/data/3D_net_result/v_updata6_3.png")
+        plt.savefig("/home/pengyaoguang/data/3D_net_result/v_updata6_4.png")
         plt.close()
         sio.savemat("/home/pengyaoguang/data/3D_net_result/v_updata6.mat",{"v":model(x).cpu().detach()[0,0]})
-        torch.save(model.state_dict(),"/home/pengyaoguang/data/3D_net_model/modeltest6_3.pkl")
+        torch.save(model.state_dict(),"/home/pengyaoguang/data/3D_net_model/modeltest6_4.pkl")
 
         plt.figure()
         plt.imshow(y.cpu().detach()[0,0,50,:,:].T)
         plt.colorbar()
-        plt.savefig("/home/pengyaoguang/data/3D_net_result/v_real6_3.png")
+        plt.savefig("/home/pengyaoguang/data/3D_net_result/v_real6_4.png")
         plt.close()
 
         plt.figure()
@@ -88,7 +88,6 @@ for epoch_i in range(epoch):
         plt.xlabel("epoch")
         plt.ylabel("loss")
         plt.legend()
-        plt.savefig("/home/pengyaoguang/data/3D_net_result/history6_3.png")
+        plt.savefig("/home/pengyaoguang/data/3D_net_result/history6_4.png")
         plt.close()
 
-#loss:0.030079282820224762
