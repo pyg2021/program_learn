@@ -8,18 +8,18 @@ import matplotlib.pyplot as plt
 from DataLoad import DataLoad
 import os 
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID" 
-os.environ['CUDA_VISIBLE_DEVICES'] = "1"
+os.environ['CUDA_VISIBLE_DEVICES'] = "0"
 device="cuda"
 model=net(2,1,True,True).to(device)
 model=nn.parallel.DataParallel(model)
-model.load_state_dict(torch.load("/home/pengyaoguang/data/3D_net_model/modeltest6_2.pkl"))
+model.load_state_dict(torch.load("/home/pengyaoguang/data/3D_net_model/modeltest6_3.pkl"))
 
 
 
 
 ##data_prepare
-k=5015
-n=50
+k=5030
+n=70
 R=sio.loadmat("/home/pengyaoguang/data/3D_RTM/RTM{}".format(k))["RTM"][20:120,20:120,20:120]
 
 plt.figure()
@@ -33,7 +33,7 @@ label=sio.loadmat("/home/pengyaoguang/data/3D_v_model/v{}".format(k))["v"]
 
 
 plt.figure()
-plt.imshow(label[n].T)
+plt.imshow(label[n].T,vmin=2,vmax=5)
 plt.colorbar()
 plt.savefig("/home/pengyaoguang/data/3D_net_result/v_real_test.png")
 
@@ -42,7 +42,7 @@ label1=label.reshape(1,1,label.shape[0],label.shape[1],label.shape[2])
 label_smooth=1/gaussian_filter(1/label,sigma=10)
 
 plt.figure()
-plt.imshow(label_smooth[n].T)
+plt.imshow(label_smooth[n].T,vmin=2,vmax=5)
 plt.colorbar()
 plt.savefig("/home/pengyaoguang/data/3D_net_result/v_smooth_test.png")
 
@@ -69,7 +69,7 @@ loss=loss_1(y_1,label1)
 print(loss)
 
 plt.figure()
-plt.imshow(y_1.detach().cpu()[0,0,n].T)
+plt.imshow(y_1.detach().cpu()[0,0,n].T,vmin=2,vmax=5)
 plt.colorbar()
 plt.savefig("/home/pengyaoguang/data/3D_net_result/v_updete_test.png")
 
