@@ -15,18 +15,15 @@ os.environ['CUDA_VISIBLE_DEVICES'] = "0,2"
 start=time.time()
 
 ##data_prepare
-BatchSize=8
+BatchSize=12
 device="cuda"
-x_1,y_1=DataLoad(0,0+10)
-x_2,y_2=DataLoad(5000,5000+0)
-x_3,y_3=DataLoad(10000,10000+0)
+x_1,y_1=DataLoad(0,0+99)
+x_2,y_2=DataLoad(5000,5000+99)
+x_3,y_3=DataLoad(10000,10000+99)
 # x=np.zeros((x_1.shape[0]+x_2.shape[0]+x_3.shape[0],2,100,100,100))
 # y=np.zeros((y_1.shape[0]+y_2.shape[0]+y_3.shape[0],1,100,100,100))
 x=np.concatenate((x_1,x_2,x_3),axis=0)
 y=np.concatenate((y_1,y_2,y_3),axis=0)
-
-
-# x,y=DataLoad(10000,10000+0)
 
 
 train_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(y).float())
@@ -34,9 +31,9 @@ train_loader = data_utils.DataLoader(train_data,batch_size=BatchSize,shuffle=Tru
 # x=torch.from_numpy(x).float().to(device)
 # y=torch.from_numpy(y).float().to(device)
 
-x_1,y_1=DataLoad(100,100+0)
-x_2,y_2=DataLoad(5009,5009+0)
-x_3,y_3=DataLoad(10009,10009+0)
+x_1,y_1=DataLoad(100,100+19)
+x_2,y_2=DataLoad(5100,5099+19)
+x_3,y_3=DataLoad(10100,10100+19)
 x=np.concatenate((x_1,x_2,x_3),axis=0)
 y=np.concatenate((y_1,y_2,y_3),axis=0)
 test_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(y).float())
@@ -48,7 +45,7 @@ model=nn.parallel.DataParallel(model)
 
 epoch=10000
 optimizer = torch.optim.AdamW(model.parameters(),lr=1e-3)
-scheduler=torch.optim.lr_scheduler.StepLR(optimizer,step_size=800,gamma=0.8)
+scheduler=torch.optim.lr_scheduler.StepLR(optimizer,step_size=1000,gamma=0.8)
 loss_1=torch.nn.L1Loss()
 # plt.figure()
 # plt.imshow(y.cpu().detach()[0,0,50,:,:].T)
@@ -102,8 +99,8 @@ for epoch_i in range(epoch):
         plt.close()
 
         plt.figure()
-        plt.plot(range(len(loss_all)-10),loss_all[10:],label="train")
-        plt.plot(range(len(test_loss_all)-10),test_loss_all[10:],label="test")
+        plt.plot(range(len(loss_all)-40),loss_all[40:],label="train")
+        plt.plot(range(len(test_loss_all)-40),test_loss_all[40:],label="test")
         plt.xlabel("epoch")
         plt.ylabel("loss")
         plt.legend()
