@@ -18,3 +18,7 @@ Imaging source 8 out of 100
 Imaging source 9 out of 100
 401.6798470020294 s
 Imaging source 10 out of 100
+443.0350031852722 s
+Imaging source 11 out of 100
+484.3780794143677 s
+Imaging source 12 out of 100
