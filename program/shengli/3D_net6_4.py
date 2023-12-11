@@ -11,15 +11,15 @@ from DataLoad import DataLoad
 from Model3D_unt import net
 import os 
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID" 
-os.environ['CUDA_VISIBLE_DEVICES'] = "0,2"
+os.environ['CUDA_VISIBLE_DEVICES'] = "0,1,2,3"
 start=time.time()
 
 ##data_prepare
-BatchSize=12
+BatchSize=16
 device="cuda"
-x_1,y_1=DataLoad(0,0+99)
-x_2,y_2=DataLoad(5000,5000+99)
-x_3,y_3=DataLoad(10000,10000+99)
+x_1,y_1=DataLoad(0,0+80)
+x_2,y_2=DataLoad(5000,5000+70)
+x_3,y_3=DataLoad(10000,10000+50)
 # x=np.zeros((x_1.shape[0]+x_2.shape[0]+x_3.shape[0],2,100,100,100))
 # y=np.zeros((y_1.shape[0]+y_2.shape[0]+y_3.shape[0],1,100,100,100))
 x=np.concatenate((x_1,x_2,x_3),axis=0)
@@ -31,9 +31,9 @@ train_loader = data_utils.DataLoader(train_data,batch_size=BatchSize,shuffle=Tru
 # x=torch.from_numpy(x).float().to(device)
 # y=torch.from_numpy(y).float().to(device)
 
-x_1,y_1=DataLoad(100,100+19)
-x_2,y_2=DataLoad(5100,5099+19)
-x_3,y_3=DataLoad(10100,10100+19)
+x_1,y_1=DataLoad(81,90)
+x_2,y_2=DataLoad(5000+71,5000+81)
+x_3,y_3=DataLoad(10000+51,10000+61)
 x=np.concatenate((x_1,x_2,x_3),axis=0)
 y=np.concatenate((y_1,y_2,y_3),axis=0)
 test_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(y).float())
@@ -83,7 +83,7 @@ for epoch_i in range(epoch):
     test_loss_all.append(test_loss)
     print(' epoch: ',epoch_i," train_loss: ",epoch_loss," test_loss: ",test_loss)
     if epoch_i%50==0 and epoch_i>=40:
-        print(time.time()-start,"s")
+        print((time.time()-start)/60,"s")
         plt.figure()
         plt.imshow(model(x).cpu().detach()[0,0,50,:,:].T)
         plt.colorbar()
