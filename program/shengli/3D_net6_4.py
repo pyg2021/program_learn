@@ -15,11 +15,11 @@ os.environ['CUDA_VISIBLE_DEVICES'] = "0,1,2,3"
 start=time.time()
 
 ##data_prepare
-BatchSize=16
+BatchSize=8
 device="cuda"
-x_1,y_1=DataLoad(0,0+80)
-x_2,y_2=DataLoad(5000,5000+70)
-x_3,y_3=DataLoad(10000,10000+50)
+x_1,y_1=DataLoad(0,0+99)
+x_2,y_2=DataLoad(5000,5000+99)
+x_3,y_3=DataLoad(10000,10000+99)
 # x=np.zeros((x_1.shape[0]+x_2.shape[0]+x_3.shape[0],2,100,100,100))
 # y=np.zeros((y_1.shape[0]+y_2.shape[0]+y_3.shape[0],1,100,100,100))
 x=np.concatenate((x_1,x_2,x_3),axis=0)
@@ -31,9 +31,9 @@ train_loader = data_utils.DataLoader(train_data,batch_size=BatchSize,shuffle=Tru
 # x=torch.from_numpy(x).float().to(device)
 # y=torch.from_numpy(y).float().to(device)
 
-x_1,y_1=DataLoad(81,90)
-x_2,y_2=DataLoad(5000+71,5000+81)
-x_3,y_3=DataLoad(10000+51,10000+61)
+x_1,y_1=DataLoad(100,119)
+x_2,y_2=DataLoad(5000+100,5000+110)
+x_3,y_3=DataLoad(10000+100,10000+110)
 x=np.concatenate((x_1,x_2,x_3),axis=0)
 y=np.concatenate((y_1,y_2,y_3),axis=0)
 test_number=y.shape[0]

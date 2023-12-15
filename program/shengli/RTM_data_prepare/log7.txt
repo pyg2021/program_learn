@@ -1,2 +1,91 @@
 nohup: ignoring input
 Imaging source 1 out of 100
+44.780479431152344 s
+Imaging source 2 out of 100
+75.70268058776855 s
+Imaging source 3 out of 100
+109.52746677398682 s
+Imaging source 4 out of 100
+142.3798725605011 s
+Imaging source 5 out of 100
+177.9926745891571 s
+Imaging source 6 out of 100
+217.03510689735413 s
+Imaging source 7 out of 100
+255.23825430870056 s
+Imaging source 8 out of 100
+288.17023181915283 s
+Imaging source 9 out of 100
+326.62153697013855 s
+Imaging source 10 out of 100
+364.09001874923706 s
+Imaging source 11 out of 100
+398.74498319625854 s
+Imaging source 12 out of 100
+436.85315012931824 s
+Imaging source 13 out of 100
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+477.4075515270233 s
+Imaging source 14 out of 100
+517.6298434734344 s
+Imaging source 15 out of 100
+548.880809545517 s
+Imaging source 16 out of 100
+580.2966709136963 s
+Imaging source 17 out of 100
+619.6288044452667 s
+Imaging source 18 out of 100
+654.7229566574097 s
+Imaging source 19 out of 100
+689.539525270462 s
+Imaging source 20 out of 100
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+729.7289226055145 s
+Imaging source 21 out of 100
+769.4186472892761 s
+Imaging source 22 out of 100
+801.0920040607452 s
+Imaging source 23 out of 100
+832.3665680885315 s
+Imaging source 24 out of 100
+868.2310948371887 s
+Imaging source 25 out of 100
+904.2353510856628 s
+Imaging source 26 out of 100
+938.6923632621765 s
+Imaging source 27 out of 100
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+978.9473490715027 s
+Imaging source 28 out of 100
+1018.583615064621 s
+Imaging source 29 out of 100
+1049.5524384975433 s
+Imaging source 30 out of 100
+1080.1783952713013 s
+Imaging source 31 out of 100
+1116.185073852539 s
+Imaging source 32 out of 100
+1151.0731320381165 s
+Imaging source 33 out of 100
+1185.690334558487 s
+Imaging source 34 out of 100
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+1223.4862723350525 s
+Imaging source 35 out of 100
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+1261.8626363277435 s
+Imaging source 36 out of 100
+1293.2625904083252 s
+Imaging source 37 out of 100
+1324.6247804164886 s
+Imaging source 38 out of 100
+1362.6607494354248 s
+Imaging source 39 out of 100
+1397.245795249939 s
+Imaging source 40 out of 100
+1431.0743498802185 s
+Imaging source 41 out of 100
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+1473.3927869796753 s
+Imaging source 42 out of 100
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping

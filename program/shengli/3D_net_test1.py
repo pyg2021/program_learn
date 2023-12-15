@@ -7,7 +7,6 @@ from scipy.ndimage import gaussian_filter
 import matplotlib.pyplot as plt
 from DataLoad import DataLoad
 import os 
-from mayavi import mlab
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID" 
 os.environ['CUDA_VISIBLE_DEVICES'] = "0"
 device="cuda"
@@ -15,20 +14,16 @@ model=net(2,1,True,True).to(device)
 model=nn.parallel.DataParallel(model)
 model.load_state_dict(torch.load("/home/pengyaoguang/data/3D_net_model/modeltest6_4.pkl"))
 
-
-
-m=0
+m=1
 ##data_prepare
-k=115
-n=70
+k=5105
+n=50
 R=sio.loadmat("/home/pengyaoguang/data/3D_RTM/RTM{}".format(k))["RTM"][20:120,20:120,20:120]
-
 vmax=np.max(R)
 plt.figure()
 plt.imshow(R[n].T/vmax,cmap="gray")
 plt.colorbar()
 plt.savefig("/home/pengyaoguang/data/3D_net_result/RTM_test{}.png".format(m))
-
 
 R1=R.reshape(1,1,R.shape[0],R.shape[1],R.shape[2])
 label=sio.loadmat("/home/pengyaoguang/data/3D_v_model/v{}".format(k))["v"]
@@ -80,3 +75,5 @@ plt.figure()
 plt.imshow(y_1.detach().cpu()[0,0,n].T-torch.from_numpy(label[n].T))
 plt.colorbar()
 plt.savefig("/home/pengyaoguang/data/3D_net_result/v_error{}.png".format(m))
+
+sio.savemat("/home/pengyaoguang/data/3D_net_result/3D_result{}.mat".format(m),{'RTM':R,'v_real':label,'v_update':y_1.detach().cpu()[0,0],'v_smooth':label_smooth})
