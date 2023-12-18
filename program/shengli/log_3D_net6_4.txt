@@ -1,4 +1,6 @@
 nohup: ignoring input
+<<<<<<< HEAD
+=======
  epoch:  0  train_loss:  3.8512584347473946  test_loss:  2.2427433729171753
  epoch:  1  train_loss:  1.7424460806344684  test_loss:  1.41603422164917
  epoch:  2  train_loss:  1.0979581773281097  test_loss:  0.9026797811190287
@@ -3505,3 +3507,4 @@ nohup: ignoring input
  epoch:  3435  train_loss:  0.0128823967013312  test_loss:  0.04805408914883932
  epoch:  3436  train_loss:  0.012855621924819914  test_loss:  0.05366842417667309
  epoch:  3437  train_loss:  0.012936838240803857  test_loss:  0.04793918908884128
+>>>>>>> 02c6aa4144f7a0b10f1510fcb48edbb231f63352
