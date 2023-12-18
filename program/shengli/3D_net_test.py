@@ -7,20 +7,19 @@ from scipy.ndimage import gaussian_filter
 import matplotlib.pyplot as plt
 from DataLoad import DataLoad
 import os 
-from mayavi import mlab
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID" 
-os.environ['CUDA_VISIBLE_DEVICES'] = "0"
+os.environ['CUDA_VISIBLE_DEVICES'] = "2"
 device="cuda"
 model=net(2,1,True,True).to(device)
 model=nn.parallel.DataParallel(model)
-model.load_state_dict(torch.load("/home/pengyaoguang/data/3D_net_model/modeltest6_4.pkl"))
+model.load_state_dict(torch.load("/home/pengyaoguang/data/3D_net_model/modeltest6_5.pkl"))
 
 
 
 m=0
 ##data_prepare
-k=115
-n=70
+k=10108
+n=50
 R=sio.loadmat("/home/pengyaoguang/data/3D_RTM/RTM{}".format(k))["RTM"][20:120,20:120,20:120]
 
 vmax=np.max(R)
