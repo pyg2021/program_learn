@@ -1,3 +1,4 @@
+#通过平层去预测断层以及褶皱层
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -17,21 +18,19 @@ start=time.time()
 ##data_prepare
 BatchSize=8
 device="cuda"
-x_1,y_1=DataLoad(0,0+99)
-x_2,y_2=DataLoad(5000,5000+99)
-x_3,y_3=DataLoad(10000,10000+99)
-# x=np.zeros((x_1.shape[0]+x_2.shape[0]+x_3.shape[0],2,100,100,100))
-# y=np.zeros((y_1.shape[0]+y_2.shape[0]+y_3.shape[0],1,100,100,100))
-x=np.concatenate((x_1,x_2,x_3),axis=0)
-y=np.concatenate((y_1,y_2,y_3),axis=0)
-
+# x_1,y_1=DataLoad(0,0+99)
+# x_2,y_2=DataLoad(5000,5000+99)
+# x_3,y_3=DataLoad(10000,10000+99)
+# x=np.concatenate((x_1,x_2,x_3),axis=0)
+# y=np.concatenate((y_1,y_2,y_3),axis=0)
+x,y=DataLoad(0,0+99)
 trian_number=y.shape[0]
 train_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(y).float())
 train_loader = data_utils.DataLoader(train_data,batch_size=BatchSize,shuffle=True)
 # x=torch.from_numpy(x).float().to(device)
 # y=torch.from_numpy(y).float().to(device)
 
-x_1,y_1=DataLoad(100,119)
+x_1,y_1=DataLoad(100,110)
 x_2,y_2=DataLoad(5000+100,5000+110)
 x_3,y_3=DataLoad(10000+100,10000+110)
 x=np.concatenate((x_1,x_2,x_3),axis=0)
@@ -42,7 +41,6 @@ test_loader = data_utils.DataLoader(test_data,batch_size=BatchSize,shuffle=True)
 
 model=net(2,1,True,True).to(device)
 model=nn.parallel.DataParallel(model)
-# model.load_state_dict(torch.load("/home/pengyaoguang/data/3D_net_model/modeltest6_3.pkl"))
 
 epoch=10000
 optimizer = torch.optim.AdamW(model.parameters(),lr=1e-3)
@@ -94,15 +92,15 @@ for epoch_i in range(epoch):
         plt.figure()
         plt.imshow(model(x).cpu().detach()[0,0,50,:,:].T)
         plt.colorbar()
-        plt.savefig("/home/pengyaoguang/data/3D_net_result/v_updata6_4.png")
+        plt.savefig("/home/pengyaoguang/data/3D_net_result/v_updata6_5.png")
         plt.close()
         sio.savemat("/home/pengyaoguang/data/3D_net_result/v_updata6.mat",{"v":model(x).cpu().detach()[0,0]})
-        torch.save(model.state_dict(),"/home/pengyaoguang/data/3D_net_model/modeltest6_4.pkl")
+        torch.save(model.state_dict(),"/home/pengyaoguang/data/3D_net_model/modeltest6_5.pkl")
 
         plt.figure()
         plt.imshow(y.cpu().detach()[0,0,50,:,:].T)
         plt.colorbar()
-        plt.savefig("/home/pengyaoguang/data/3D_net_result/v_real6_4.png")
+        plt.savefig("/home/pengyaoguang/data/3D_net_result/v_real6_5.png")
         plt.close()
 
         plt.figure()
@@ -111,6 +109,6 @@ for epoch_i in range(epoch):
         plt.xlabel("epoch")
         plt.ylabel("loss")
         plt.legend()
-        plt.savefig("/home/pengyaoguang/data/3D_net_result/history6_4.png")
+        plt.savefig("/home/pengyaoguang/data/3D_net_result/history6_5.png")
         plt.close()
 

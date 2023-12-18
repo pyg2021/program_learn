@@ -10,7 +10,7 @@ import time
 import scipy.io as sio
 
 start=time.time()
-for j in range(10072,10000+120):
+for j in range(10000+110,10000+120):
     spacing = (10., 10., 10)  # Grid spacing in m. The domain size is now dx=1km, dy=1km, dz=1km
     origin = (0., 0., 0.)  # What is the location of the top left corner (x,y,z). This is necessary to define
     # Define a velocity profile. The velocity is in km/s
@@ -36,7 +36,7 @@ for j in range(10072,10000+120):
                     space_order=4, grid=model.grid, nbl=20, bcs="damp")
     filter_sigma = (10, 10, 10 )
     gaussian_smooth(model0.vp, sigma=filter_sigma)
-    sio.savemat("/home/pengyaoguang/data/3D_v_smooth/v{}_smooth.mat".format(j),{'v':model.vp.data})
+    # sio.savemat("/home/pengyaoguang/data/3D_v_smooth/v{}_smooth.mat".format(j),{'v':model.vp.data})
     #NBVAL_IGNORE_OUTPUT
     # Define acquisition geometry: source
     from examples.seismic import AcquisitionGeometry
@@ -136,6 +136,6 @@ for j in range(10072,10000+120):
         end=time.time()
         print(end-start,"s")
         #NBVAL_IGNORE_OUTPUT
-        sio.savemat("/home/pengyaoguang/data/3D_RTM/RTM{}.mat".format(j),{"RTM":image.data})
+    sio.savemat("/home/pengyaoguang/data/3D_RTM/RTM{}.mat".format(j),{"RTM":image.data})
 
 
