@@ -136,6 +136,6 @@ for j in range(10000+110,10000+120):
         end=time.time()
         print(end-start,"s")
         #NBVAL_IGNORE_OUTPUT
-    sio.savemat("/home/pengyaoguang/data/3D_RTM/RTM{}.mat".format(j),{"RTM":image.data})
+        sio.savemat("/home/pengyaoguang/data/3D_RTM/RTM{}.mat".format(j),{"RTM":image.data})
 
 
