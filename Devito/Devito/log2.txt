@@ -1,0 +1,19 @@
+nohup: ignoring input
+some information:
+ nshots: 25 nreceivers: 400 fwi_iterations: 100
+filter_sigma: (10, 10, 10)
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Objective value is 2332.790827 at iteration 1
+loss: 2332.790827430179
+356.22805285453796 s
+/home/pengyaoguang/1325/Devito/Devito/3D_FWI2.py:246: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show()
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Objective value is 2314.102903 at iteration 2
+loss: 2314.102902660877
+686.3793671131134 s
+/home/pengyaoguang/1325/Devito/Devito/3D_FWI2.py:246: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show()
