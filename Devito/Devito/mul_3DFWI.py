@@ -120,13 +120,13 @@ if __name__ == "__main__":
     spacing = (10., 10. ,10)    # Grid spacing in m. The domain size is now 1km by 1km.
     origin = (0, 0 ,0)         # Need origin to define relative source and receiver locations.
     nbl = 20
-    sample=4
+    sample=1
     v=sio.loadmat("/home/pengyaoguang/data/3D_v_model/v0.mat")['v']
     v=v[::sample,::sample,::sample]
     shape = (v.shape[0], v.shape[1], v.shape[2])      # Number of grid points (nx, nz).
     model1 = Model(vp=v, origin=origin, shape=shape, spacing=spacing,
                     space_order=6, nbl=nbl, bcs="damp")
-    filter_sigma = (5, 5, 5 )
+    filter_sigma = (10, 10, 10 )
     model0 = Model(vp=v, origin=origin, shape=shape, spacing=spacing,
                     space_order=6, nbl=nbl, bcs="damp", grid = model1.grid)
     print("filter_sigma:",filter_sigma)
@@ -137,7 +137,7 @@ if __name__ == "__main__":
     # Set up acquisiton geometry
     t0 = 0.
     tn = 1000. 
-    f0 = 0.010
+    f0 = 0.015
 
     # Set up source geometry, but define 5 sources instead of just one.
     point_s=5
@@ -145,7 +145,7 @@ if __name__ == "__main__":
     src_coordinates = np.empty((nsources, 3))
     src_coordinates[:, 0] = np.repeat(np.linspace(0, model1.domain_size[0], num=point_s),point_s)
     src_coordinates[:, 1] = np.tile(np.linspace(0, model1.domain_size[0], num=point_s),point_s)
-    src_coordinates[:, 2] = 2.# Source depth is 20m
+    src_coordinates[:, 2] = 1.# Source depth is 20m
 
     # Initialize receivers for synthetic and imaging data
     point_r=10
@@ -153,7 +153,7 @@ if __name__ == "__main__":
     rec_coordinates = np.empty((nreceivers, 3))
     rec_coordinates[:, 0] = np.repeat(np.linspace(spacing[0], model1.domain_size[0] - spacing[0], num=point_r),point_r)
     rec_coordinates[:, 1] = np.tile(np.linspace(spacing[0], model1.domain_size[0] - spacing[0], num=point_r),point_r) 
-    rec_coordinates[:, 2] = 2.# Receiver depth
+    rec_coordinates[:, 2] = 1.# Receiver depth
     # Set up geometry objects for observed and predicted data
     geometry1 = AcquisitionGeometry(model1, rec_coordinates, src_coordinates, t0, tn, f0=f0, src_type='Ricker')
     geometry0 = AcquisitionGeometry(model0, rec_coordinates, src_coordinates, t0, tn, f0=f0, src_type='Ricker')
@@ -174,7 +174,7 @@ if __name__ == "__main__":
     # Plot shot no. 3 of 5
     plt.figure()
     plot_shotrecord(d_obs[2].data, model1, t0, tn)
-    plt.savefig("/home/pengyaoguang/data/devito/FWI/test_result/shot.png")
+    plt.savefig("/home/pengyaoguang/data/3D_FWI/shot.png")
 
     from devito import Function
     from examples.seismic import Receiver
@@ -198,7 +198,7 @@ if __name__ == "__main__":
             plt.figure()
             xk0=1.0/np.sqrt(xk)
             plot_image(xk0.reshape(model1.shape)[3],cmap="cividis")
-            plt.savefig("/home/pengyaoguang/data/devito/FWI/test_result/some_result/v_update{}".format(len(model_error)-1))
+            plt.savefig("/home/pengyaoguang/data/3D_FWI/result/v_update{}".format(len(model_error)-1))
             plt.close()
         del m
         gc.collect()
@@ -210,10 +210,10 @@ if __name__ == "__main__":
 
     # Initial guess
     v0 = model0.vp.data[model0.nbl:-model0.nbl, model0.nbl:-model0.nbl, model0.nbl:-model0.nbl]
-    sio.savemat("/home/pengyaoguang/data/devito/FWI/test_result/v_start.mat",{"v":v0})
+    sio.savemat("/home/pengyaoguang/data/3D_FWI/v_start.mat",{"v":v0})
     plt.figure()
     plot_image(v0[3],cmap="cividis")
-    plt.savefig("/home/pengyaoguang/data/devito/FWI/test_result/v_start.png")
+    plt.savefig("/home/pengyaoguang/data/3D_FWI/v_start.png")
     m0 = 1.0 / (v0.reshape(-1).astype(np.float64))**2
 
 
@@ -232,14 +232,14 @@ if __name__ == "__main__":
         vp = 1.0/np.sqrt(result['x'].reshape(model1.shape))
         plt.figure()
         plot_image(vp[3],cmap="cividis")
-        plt.savefig("/home/pengyaoguang/data/devito/FWI/test_result/v_update1.png")
+        plt.savefig("/home/pengyaoguang/data/3D_FWI/v_update.png")
         plt.close()
         # save v_update
-        sio.savemat("/home/pengyaoguang/data/devito/FWI/test_result/v_update.mat",{"v":vp})
+        sio.savemat("/home/pengyaoguang/data/3D_FWI/v_update.mat",{"v":vp})
         # Plot model error
         plt.figure()
         plt.plot(range(1, len(model_error)+1), model_error); plt.xlabel('Iteration number'); plt.ylabel('L2-model error')
-        plt.savefig("/home/pengyaoguang/data/devito/FWI/test_result/loss.png")
+        plt.savefig("/home/pengyaoguang/data/3D_FWI/loss.png")
         plt.close()
         # print time
         end=time.time()
@@ -253,14 +253,14 @@ if __name__ == "__main__":
     vp = 1.0/np.sqrt(result['x'].reshape(model1.shape))
     plt.figure()
     plot_image(vp[3],cmap="cividis")
-    plt.savefig("/home/pengyaoguang/data/devito/FWI/test_result/v_update1.png")
-    sio.savemat("/home/pengyaoguang/data/devito/FWI/test_result/v_update.mat",{"v":vp})
+    plt.savefig("/home/pengyaoguang/data/3D_FWI/v_update.png")
+    sio.savemat("/home/pengyaoguang/data/3D_FWI/v_update.mat",{"v":vp})
 
 
-    sio.savemat("/home/pengyaoguang/data/devito/FWI/test_result/v_real.mat",{"v":model1.vp.data[model1.nbl:-model1.nbl, model1.nbl:-model1.nbl, model1.nbl:-model1.nbl]})
+    sio.savemat("/home/pengyaoguang/data/3D_FWI/v_real.mat",{"v":model1.vp.data[model1.nbl:-model1.nbl, model1.nbl:-model1.nbl, model1.nbl:-model1.nbl]})
     plt.figure()
     plot_image(model1.vp.data[model1.nbl:-model1.nbl, model1.nbl:-model1.nbl, model1.nbl:-model1.nbl][3], cmap="cividis")
-    plt.savefig("/home/pengyaoguang/data/devito/FWI/test_result/v_real.png")
+    plt.savefig("/home/pengyaoguang/data/3D_FWI/v_real.png")
     
 
     
@@ -268,7 +268,7 @@ if __name__ == "__main__":
     # Plot model error
     plt.figure()
     plt.plot(range(1, len(model_error)+1), model_error); plt.xlabel('Iteration number'); plt.ylabel('L2-model error')
-    plt.savefig("/home/pengyaoguang/data/devito/FWI/test_result/loss.png")
+    plt.savefig("/home/pengyaoguang/data/3D_FWI/loss.png")
     end=time.time()
     print(end-start,"s")
     print()
