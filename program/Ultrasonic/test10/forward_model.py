@@ -112,10 +112,10 @@ for i in range(1):
     from scipy.signal import butter, lfilter
     from scipy.io import wavfile
     y_real_0_filter = y_real_0
-    b, a = butter(4, 0.01, btype="highpass")
-    y_real_0_filter = lfilter(b, a, y_real_0)
-    b, a = butter(4, 0.05, btype="lowpass")
-    y_real_0_filter = lfilter(b, a, y_real_0_filter)
+    # b, a = butter(4, 0.01, btype="highpass")
+    # y_real_0_filter = lfilter(b, a, y_real_0)
+    # b, a = butter(4, 0.05, btype="lowpass")
+    # y_real_0_filter = lfilter(b, a, y_real_0_filter)
     plt.figure()
     plt.plot(t,y_real_0_filter,label='real_wave_filter')
     plt.legend()
