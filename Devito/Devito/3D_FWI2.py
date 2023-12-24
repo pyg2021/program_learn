@@ -10,7 +10,7 @@ configuration['log-level'] = 'WARNING'
 
 nshots = 25  # Number of shots to create gradient from
 nreceivers = 400  # Number of receiver locations per shot 
-fwi_iterations = 100  # Number of outer FWI iterations
+fwi_iterations = 1000  # Number of outer FWI iterations
 print("some information:\n","nshots:",nshots,"nreceivers:",nreceivers,"fwi_iterations:",fwi_iterations)
 #NBVAL_IGNORE_OUTPUT
 from examples.seismic import demo_model, plot_velocity, plot_perturbation
@@ -35,6 +35,7 @@ gaussian_smooth(model0.vp, sigma=filter_sigma)
 # plot_velocity(model)
 # plot_velocity(model0)
 # plot_perturbation(model0, model)
+model0.vp.data[:]=sio.loadmat("/home/pengyaoguang/data/3D_FWI/v_update5115_50.mat")["v"]
 sio.savemat("/home/pengyaoguang/data/3D_FWI/v_start{}.mat".format(m),{"v":model0.vp.data})
 plt.figure()
 v_update=model0.vp.data[tuple(slice(model0.nbl, -model0.nbl) for _ in range(3))]
