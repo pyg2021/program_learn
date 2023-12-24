@@ -1,0 +1,307 @@
+nohup: ignoring input
+some information:
+ nshots: 25 nreceivers: 400 fwi_iterations: 1000
+filter_sigma: (10, 10, 10)
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Objective value is 32.008815 at iteration 1
+loss: 32.00881515342209
+341.17722630500793 s
+/home/pengyaoguang/1325/Devito/Devito/3D_FWI2.py:247: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show()
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Objective value is 31.777478 at iteration 2
+loss: 31.777477804312248
+666.1034309864044 s
+/home/pengyaoguang/1325/Devito/Devito/3D_FWI2.py:247: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show()
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Objective value is 31.542325 at iteration 3
+loss: 31.542325144313764
+999.0939228534698 s
+/home/pengyaoguang/1325/Devito/Devito/3D_FWI2.py:247: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show()
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Objective value is 30.987709 at iteration 4
+loss: 30.987708832605925
+1342.9146432876587 s
+/home/pengyaoguang/1325/Devito/Devito/3D_FWI2.py:247: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show()
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Objective value is 30.766313 at iteration 5
+loss: 30.76631342234508
+1686.1696848869324 s
+/home/pengyaoguang/1325/Devito/Devito/3D_FWI2.py:247: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show()
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Objective value is 30.558798 at iteration 6
+loss: 30.55879803927288
+2041.8566074371338 s
+/home/pengyaoguang/1325/Devito/Devito/3D_FWI2.py:247: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show()
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Objective value is 22.727047 at iteration 7
+loss: 22.727047348736335
+2381.9612855911255 s
+/home/pengyaoguang/1325/Devito/Devito/3D_FWI2.py:247: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show()
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Objective value is 22.436831 at iteration 8
+loss: 22.436830824103758
+2706.7893617153168 s
+/home/pengyaoguang/1325/Devito/Devito/3D_FWI2.py:247: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show()
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Objective value is 22.300078 at iteration 9
+loss: 22.300077879704183
+3043.2358541488647 s
+/home/pengyaoguang/1325/Devito/Devito/3D_FWI2.py:247: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show()
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Objective value is 21.925161 at iteration 10
+loss: 21.9251607427166
+3384.152405977249 s
+/home/pengyaoguang/1325/Devito/Devito/3D_FWI2.py:247: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show()
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Objective value is 20.541784 at iteration 11
+loss: 20.54178422407699
+3715.9499232769012 s
+/home/pengyaoguang/1325/Devito/Devito/3D_FWI2.py:247: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show()
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Objective value is 19.465631 at iteration 12
+loss: 19.46563119693797
+4056.4851009845734 s
+/home/pengyaoguang/1325/Devito/Devito/3D_FWI2.py:247: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show()
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Objective value is 18.637259 at iteration 13
+loss: 18.637259104280936
+4389.220242500305 s
+/home/pengyaoguang/1325/Devito/Devito/3D_FWI2.py:247: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show()
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Objective value is 17.998057 at iteration 14
+loss: 17.99805694657711
+4713.0337126255035 s
+/home/pengyaoguang/1325/Devito/Devito/3D_FWI2.py:247: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show()
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Objective value is 17.459417 at iteration 15
+loss: 17.459416994674868
+5050.508295059204 s
+/home/pengyaoguang/1325/Devito/Devito/3D_FWI2.py:247: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show()
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Objective value is 18.106800 at iteration 16
+loss: 18.106800263617018
+5380.844521760941 s
+/home/pengyaoguang/1325/Devito/Devito/3D_FWI2.py:247: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show()
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Objective value is 22.309426 at iteration 17
+loss: 22.309425567074456
+5719.502151727676 s
+/home/pengyaoguang/1325/Devito/Devito/3D_FWI2.py:247: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show()
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Objective value is 20.613634 at iteration 18
+loss: 20.613633549413358
+6051.029715061188 s
+/home/pengyaoguang/1325/Devito/Devito/3D_FWI2.py:247: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show()
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Objective value is 19.200980 at iteration 19
+/home/pengyaoguang/1325/Devito/Devito/3D_FWI2.py:230: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`). Consider using `matplotlib.pyplot.close()`.
+  plt.figure()
+loss: 19.20098027264732
+6382.121799945831 s
+/home/pengyaoguang/1325/Devito/Devito/3D_FWI2.py:242: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`). Consider using `matplotlib.pyplot.close()`.
+  plt.figure()
+/home/pengyaoguang/1325/Devito/Devito/3D_FWI2.py:247: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show()
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Objective value is 18.027004 at iteration 20
+loss: 18.02700401114906
+6705.441769838333 s
+/home/pengyaoguang/1325/Devito/Devito/3D_FWI2.py:247: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show()
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Objective value is 17.066754 at iteration 21
+loss: 17.066753642075362
+7047.68342590332 s
+/home/pengyaoguang/1325/Devito/Devito/3D_FWI2.py:247: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show()
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Objective value is 16.342762 at iteration 22
+loss: 16.34276179688031
+7380.301653623581 s
+/home/pengyaoguang/1325/Devito/Devito/3D_FWI2.py:247: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show()
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Objective value is 20.123409 at iteration 23
+loss: 20.12340927044211
+7722.266152143478 s
+/home/pengyaoguang/1325/Devito/Devito/3D_FWI2.py:247: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show()
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Objective value is 17.513773 at iteration 24
+loss: 17.513773376919715
+8055.137112617493 s
+/home/pengyaoguang/1325/Devito/Devito/3D_FWI2.py:247: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show()
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Objective value is 15.876958 at iteration 25
+loss: 15.876958403729683
+8386.426219701767 s
+/home/pengyaoguang/1325/Devito/Devito/3D_FWI2.py:247: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show()
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Objective value is 79.244431 at iteration 26
+loss: 79.24443107449704
+8709.689702749252 s
+/home/pengyaoguang/1325/Devito/Devito/3D_FWI2.py:247: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show()
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Objective value is 65.638260 at iteration 27
+loss: 65.63825989710506
+9051.522092580795 s
+/home/pengyaoguang/1325/Devito/Devito/3D_FWI2.py:247: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show()
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Objective value is 52.917174 at iteration 28
+loss: 52.91717380029599
+9384.366654396057 s
+/home/pengyaoguang/1325/Devito/Devito/3D_FWI2.py:247: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show()
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Objective value is 41.216728 at iteration 29
+loss: 41.21672810547365
+9722.761595010757 s
+/home/pengyaoguang/1325/Devito/Devito/3D_FWI2.py:247: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show()
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Objective value is 30.734058 at iteration 30
+loss: 30.73405849719417
+10064.31536245346 s
+/home/pengyaoguang/1325/Devito/Devito/3D_FWI2.py:247: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show()
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Objective value is 22.139880 at iteration 31
+loss: 22.13988008423823
+10387.86756849289 s
+/home/pengyaoguang/1325/Devito/Devito/3D_FWI2.py:247: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show()
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Objective value is 16.831469 at iteration 32
+loss: 16.831468792240038
+10726.130130767822 s
+/home/pengyaoguang/1325/Devito/Devito/3D_FWI2.py:247: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show()
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Objective value is 14.773712 at iteration 33
+loss: 14.77371153248302
+11058.034228563309 s
+/home/pengyaoguang/1325/Devito/Devito/3D_FWI2.py:247: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show()
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Objective value is 20.115293 at iteration 34
+loss: 20.115293200835936
+11398.266025066376 s
+/home/pengyaoguang/1325/Devito/Devito/3D_FWI2.py:247: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show()
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Objective value is 18.144442 at iteration 35
+loss: 18.1444421514961
+11729.612671136856 s
+/home/pengyaoguang/1325/Devito/Devito/3D_FWI2.py:247: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show()
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Objective value is 16.602154 at iteration 36
+loss: 16.602153581617678
+12069.49071764946 s
+/home/pengyaoguang/1325/Devito/Devito/3D_FWI2.py:247: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show()
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Objective value is 15.391827 at iteration 37
+loss: 15.391827220457575
+12390.651998758316 s
+/home/pengyaoguang/1325/Devito/Devito/3D_FWI2.py:247: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show()
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Objective value is 14.397800 at iteration 38
+loss: 14.397800159025278
+12734.872902393341 s
+/home/pengyaoguang/1325/Devito/Devito/3D_FWI2.py:247: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show()
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Objective value is 15.845932 at iteration 39
+loss: 15.845931713448605
+13069.32887673378 s
+/home/pengyaoguang/1325/Devito/Devito/3D_FWI2.py:247: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show()
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
