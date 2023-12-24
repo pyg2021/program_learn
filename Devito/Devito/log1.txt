@@ -1,1 +1,5 @@
 nohup: ignoring input
+some information:
+ nshots: 25 nreceivers: 400 fwi_iterations: 100
+filter_sigma: (10, 10, 10)
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
