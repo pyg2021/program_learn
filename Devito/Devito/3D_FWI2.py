@@ -35,16 +35,15 @@ gaussian_smooth(model0.vp, sigma=filter_sigma)
 # plot_velocity(model)
 # plot_velocity(model0)
 # plot_perturbation(model0, model)
-model0.vp.data[:]=sio.loadmat("/home/pengyaoguang/data/3D_FWI/v_update5115_50.mat")["v"]
 sio.savemat("/home/pengyaoguang/data/3D_FWI/v_start{}.mat".format(m),{"v":model0.vp.data})
 plt.figure()
 v_update=model0.vp.data[tuple(slice(model0.nbl, -model0.nbl) for _ in range(3))]
-plt.imshow(v_update[n].T)
+plt.imshow(v_update[n].T,vmin=1.8,vmax=6)
 plt.colorbar()
 plt.savefig("/home/pengyaoguang/data/3D_FWI/v_start{}_{}.png".format(m,n))
 plt.figure()
 v_update=model.vp.data[tuple(slice(model.nbl, -model.nbl) for _ in range(3))]
-plt.imshow(v_update[n].T)
+plt.imshow(v_update[n].T,vmin=1.8,vmax=6)
 plt.colorbar()
 plt.savefig("/home/pengyaoguang/data/3D_FWI/v_real{}_{}.png".format(m,n))
 assert model.grid == model0.grid
@@ -59,7 +58,7 @@ f0 = 0.015
 # First, position source centrally in all dimensions, then set depth
 src_coordinates = np.empty((1, 3))
 src_coordinates[0, :] = np.array(model.domain_size) * .5
-src_coordinates[0, -1] = 20.  # Depth is 20m
+src_coordinates[0, -1] = 10.  # Depth is 20m
 
 
 # Define acquisition geometry: receivers
@@ -229,7 +228,7 @@ for i in range(0, fwi_iterations):
     # Plot inverted velocity model
     plt.figure()
     v_update=model0.vp.data[tuple(slice(model.nbl, -model.nbl) for _ in range(3))]
-    plt.imshow(v_update[n].T)
+    plt.imshow(v_update[n].T,vmin=1.8,vmax=6)
     plt.colorbar()
     plt.savefig("/home/pengyaoguang/data/3D_FWI/result2/v_update{}_{}_{}model.png".format(i,m,n))
     sio.savemat("/home/pengyaoguang/data/3D_FWI/v_update{}_{}.mat".format(m,n),{"v":model0.vp.data})
@@ -246,5 +245,5 @@ for i in range(0, fwi_iterations):
     plt.title('Convergence')
     plt.show()
     plt.savefig("/home/pengyaoguang/data/3D_FWI/history{}_{}.png".format(m,n))
-    sio.savemat("/home/pengyaoguang/data/3D_FWI/history{}_{}.mat".format(m,n))
+    sio.savemat("/home/pengyaoguang/data/3D_FWI/history{}_{}.mat".format(m,n),{'h':history})
 # sio.savemat("/home/pengyaoguang/data/3D_FWI/v1.mat",{"v":model0.vp.data})
