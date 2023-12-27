@@ -10,13 +10,15 @@ configuration['log-level'] = 'WARNING'
 
 nshots = 25  # Number of shots to create gradient from
 nreceivers = 400  # Number of receiver locations per shot 
-fwi_iterations = 100  # Number of outer FWI iterations
+fwi_iterations = 1000  # Number of outer FWI iterations
 print("some information:\n","nshots:",nshots,"nreceivers:",nreceivers,"fwi_iterations:",fwi_iterations)
 #NBVAL_IGNORE_OUTPUT
 from examples.seismic import demo_model, plot_velocity, plot_perturbation
 
+m=118
+n=50
 # Define true and initial model
-v=sio.loadmat("/home/pengyaoguang/data/shengli/data_all/floed_v0.mat")['v']
+v=sio.loadmat("/home/pengyaoguang/data/3D_v_model/v{}.mat".format(m))['v']
 origin=(0., 0., 0. )
 shape=(100, 100, 100)
 spacing=(10., 10., 10.)
@@ -33,17 +35,17 @@ gaussian_smooth(model0.vp, sigma=filter_sigma)
 # plot_velocity(model)
 # plot_velocity(model0)
 # plot_perturbation(model0, model)
-sio.savemat("/home/pengyaoguang/data/devito/FWI/v_smooth.mat",{"v":model0.vp.data})
+sio.savemat("/home/pengyaoguang/data/3D_FWI/v_start{}.mat".format(m),{"v":model0.vp.data})
 plt.figure()
 v_update=model0.vp.data[tuple(slice(model0.nbl, -model0.nbl) for _ in range(3))]
-plt.imshow(v_update[50].T)
+plt.imshow(v_update[n].T,vmin=1.8,vmax=6)
 plt.colorbar()
-plt.savefig("/home/pengyaoguang/data/devito/FWI/start_model.png")
+plt.savefig("/home/pengyaoguang/data/3D_FWI/v_start{}_{}.png".format(m,n))
 plt.figure()
 v_update=model.vp.data[tuple(slice(model.nbl, -model.nbl) for _ in range(3))]
-plt.imshow(v_update[50].T)
+plt.imshow(v_update[n].T,vmin=1.8,vmax=6)
 plt.colorbar()
-plt.savefig("/home/pengyaoguang/data/devito/FWI/real_model.png")
+plt.savefig("/home/pengyaoguang/data/3D_FWI/v_real{}_{}.png".format(m,n))
 assert model.grid == model0.grid
 assert model.vp.grid == model0.vp.grid
 
@@ -52,11 +54,11 @@ assert model.vp.grid == model0.vp.grid
 from examples.seismic import AcquisitionGeometry
 t0 = 0.
 tn = 1000. 
-f0 = 0.010
+f0 = 0.015
 # First, position source centrally in all dimensions, then set depth
 src_coordinates = np.empty((1, 3))
 src_coordinates[0, :] = np.array(model.domain_size) * .5
-src_coordinates[0, -1] = 20.  # Depth is 20m
+src_coordinates[0, -1] = 10.  # Depth is 20m
 
 
 # Define acquisition geometry: receivers
@@ -65,7 +67,7 @@ src_coordinates[0, -1] = 20.  # Depth is 20m
 rec_coordinates = np.empty((nreceivers, 3))
 rec_coordinates[:, 1] = np.repeat(np.linspace(20, model.domain_size[0], num=20), 20)
 rec_coordinates[:, 0] = np.tile(np.linspace(20, model.domain_size[1], num=20), 20)
-rec_coordinates[:, 2] = 30.
+rec_coordinates[:, 2] = 1.
 
 # Geometry
 
@@ -98,7 +100,7 @@ source_locations = np.empty((nshots, 3), dtype=np.float32)
 
 source_locations[:, 0] = np.repeat(np.linspace(20, model.domain_size[0], num=5), 5)
 source_locations[:, 1] = np.tile(np.linspace(20, model.domain_size[1], num=5), 5)
-source_locations[:, -1] = 30.
+source_locations[:, -1] = 10.
 
 # plot_velocity(model, source=source_locations)
 from devito import Eq, Operator
@@ -182,7 +184,7 @@ def fwi_gradient(vp_in):
 
 from sympy import Min, Max
 # Define bounding box constraints on the solution.
-def update_with_box(vp, alpha, dm, vmin=1.8, vmax=9):
+def update_with_box(vp, alpha, dm, vmin=1.8, vmax=8):
     """
     Apply gradient update in-place to vp with box constraint
 
@@ -226,24 +228,21 @@ for i in range(0, fwi_iterations):
     # Plot inverted velocity model
     plt.figure()
     v_update=model0.vp.data[tuple(slice(model.nbl, -model.nbl) for _ in range(3))]
-    plt.imshow(v_update[50].T)
+    plt.imshow(v_update[n].T,vmin=1.8,vmax=6)
     plt.colorbar()
-    plt.savefig("/home/pengyaoguang/data/devito/FWI/updated{}_model.png".format(i))
+    plt.savefig("/home/pengyaoguang/data/3D_FWI/result2/v_update{}_{}_{}model.png".format(i,m,n))
+    sio.savemat("/home/pengyaoguang/data/3D_FWI/v_update{}_{}.mat".format(m,n),{"v":model0.vp.data})
     plt.close()
     print("loss:",phi)
     end=time.time()
     print(end-start,"s")
-    
 
-#NBVAL_SKIP
-import matplotlib.pyplot as plt
-
-# Plot objective function decrease
-plt.figure()
-plt.loglog(history)
-plt.xlabel('Iteration number')
-plt.ylabel('Misift value Phi')
-plt.title('Convergence')
-plt.show()
-plt.savefig("/home/pengyaoguang/data/devito/FWI/history.png")
-sio.savemat("/home/pengyaoguang/data/devito/FWI/v.mat",{"v":model0.vp.data})
+    # Plot objective function decrease
+    plt.figure()
+    plt.loglog(history)
+    plt.xlabel('Iteration number')
+    plt.ylabel('Misift value Phi')
+    plt.title('Convergence')
+    plt.show()
+    plt.savefig("/home/pengyaoguang/data/3D_FWI/history{}_{}.png".format(m,n))
+# sio.savemat("/home/pengyaoguang/data/3D_FWI/v1.mat",{"v":model0.vp.data})

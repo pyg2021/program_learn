@@ -10,7 +10,7 @@ configuration['log-level'] = 'WARNING'
 
 nshots = 25  # Number of shots to create gradient from
 nreceivers = 400  # Number of receiver locations per shot 
-fwi_iterations = 100  # Number of outer FWI iterations
+fwi_iterations = 1000  # Number of outer FWI iterations
 print("some information:\n","nshots:",nshots,"nreceivers:",nreceivers,"fwi_iterations:",fwi_iterations)
 #NBVAL_IGNORE_OUTPUT
 from examples.seismic import demo_model, plot_velocity, plot_perturbation
