@@ -15,7 +15,7 @@ print("some information:\n","nshots:",nshots,"nreceivers:",nreceivers,"fwi_itera
 #NBVAL_IGNORE_OUTPUT
 from examples.seismic import demo_model, plot_velocity, plot_perturbation
 
-m=5115
+m=10108
 n=50
 # Define true and initial model
 v=sio.loadmat("/home/pengyaoguang/data/3D_v_model/v{}.mat".format(m))['v']
@@ -246,4 +246,5 @@ for i in range(0, fwi_iterations):
     plt.title('Convergence')
     plt.show()
     plt.savefig("/home/pengyaoguang/data/3D_FWI/history{}_{}.png".format(m,n))
+    sio.savemat("/home/pengyaoguang/data/3D_FWI/history{}_{}.mat".format(m,n))
 # sio.savemat("/home/pengyaoguang/data/3D_FWI/v1.mat",{"v":model0.vp.data})
