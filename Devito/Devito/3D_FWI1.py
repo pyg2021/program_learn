@@ -243,7 +243,7 @@ for i in range(0, fwi_iterations):
     plt.xlabel('Iteration number')
     plt.ylabel('Misift value Phi')
     plt.title('Convergence')
-    plt.show()
+    # plt.show()
     plt.savefig("/home/pengyaoguang/data/3D_FWI/history{}_{}.png".format(m,n))
     sio.savemat("/home/pengyaoguang/data/3D_FWI/history{}_{}.mat".format(m,n),{'h':history})
 # sio.savemat("/home/pengyaoguang/data/3D_FWI/v1.mat",{"v":model0.vp.data})
