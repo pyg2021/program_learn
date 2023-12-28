@@ -1,5 +1,5 @@
 if __name__ == "__main__":
-    USE_GPU_AWARE_DASK = False
+    USE_GPU_AWARE_DASK = True
     from examples.seismic import demo_model,Model
     import matplotlib.pyplot as plt
     from devito import configuration
@@ -121,7 +121,7 @@ if __name__ == "__main__":
     origin = (0, 0 ,0)         # Need origin to define relative source and receiver locations.
     nbl = 20
     sample=1
-    v=sio.loadmat("/home/pengyaoguang/data/3D_v_model/v0.mat")['v']
+    v=sio.loadmat("../../../data/3D_v_model/v0.mat")['v']
     v=v[::sample,::sample,::sample]
     shape = (v.shape[0], v.shape[1], v.shape[2])      # Number of grid points (nx, nz).
     model1 = Model(vp=v, origin=origin, shape=shape, spacing=spacing,
@@ -145,7 +145,7 @@ if __name__ == "__main__":
     src_coordinates = np.empty((nsources, 3))
     src_coordinates[:, 0] = np.repeat(np.linspace(0, model1.domain_size[0], num=point_s),point_s)
     src_coordinates[:, 1] = np.tile(np.linspace(0, model1.domain_size[0], num=point_s),point_s)
-    src_coordinates[:, 2] = 1.# Source depth is 20m
+    src_coordinates[:, 2] = 10.# Source depth is 20m
 
     # Initialize receivers for synthetic and imaging data
     point_r=10
@@ -159,10 +159,10 @@ if __name__ == "__main__":
     geometry0 = AcquisitionGeometry(model0, rec_coordinates, src_coordinates, t0, tn, f0=f0, src_type='Ricker')
     if USE_GPU_AWARE_DASK:
         from dask_cuda import LocalCUDACluster
-        cluster = LocalCUDACluster(threads_per_worker=2, death_timeout=600) 
+        cluster = LocalCUDACluster(threads_per_worker=3, death_timeout=600) 
     else:
         from distributed import LocalCluster
-        cluster = LocalCluster(n_workers=30, death_timeout=600)
+        cluster = LocalCluster(n_workers=60, death_timeout=600)
     
     client = Client(cluster)
 
@@ -174,7 +174,7 @@ if __name__ == "__main__":
     # Plot shot no. 3 of 5
     plt.figure()
     plot_shotrecord(d_obs[2].data, model1, t0, tn)
-    plt.savefig("/home/pengyaoguang/data/3D_FWI/shot.png")
+    plt.savefig("../../../data/3D_FWI/shot.png")
 
     from devito import Function
     from examples.seismic import Receiver
@@ -185,7 +185,7 @@ if __name__ == "__main__":
     # Plot 
     # plt.figure()
     # plot_image(g.reshape(model1.shape)[50], vmin=-6e3, vmax=6e3, cmap="cividis")
-    # plt.savefig("/home/pengyaoguang/data/devito/FWI/test_result/grad_test.png")
+    # plt.savefig("../../../data/devito/FWI/test_result/grad_test.png")
 
     
     # Callback to track model error
@@ -198,7 +198,7 @@ if __name__ == "__main__":
             plt.figure()
             xk0=1.0/np.sqrt(xk)
             plot_image(xk0.reshape(model1.shape)[3],cmap="cividis")
-            plt.savefig("/home/pengyaoguang/data/3D_FWI/result/v_update{}".format(len(model_error)-1))
+            plt.savefig("../../../data/3D_FWI/result/v_update{}".format(len(model_error)-1))
             plt.close()
         del m
         gc.collect()
@@ -210,10 +210,10 @@ if __name__ == "__main__":
 
     # Initial guess
     v0 = model0.vp.data[model0.nbl:-model0.nbl, model0.nbl:-model0.nbl, model0.nbl:-model0.nbl]
-    sio.savemat("/home/pengyaoguang/data/3D_FWI/v_start.mat",{"v":v0})
+    sio.savemat("../../../data/3D_FWI/v_start.mat",{"v":v0})
     plt.figure()
     plot_image(v0[3],cmap="cividis")
-    plt.savefig("/home/pengyaoguang/data/3D_FWI/v_start.png")
+    plt.savefig("../../../data/3D_FWI/v_start.png")
     m0 = 1.0 / (v0.reshape(-1).astype(np.float64))**2
 
 
@@ -232,14 +232,14 @@ if __name__ == "__main__":
         vp = 1.0/np.sqrt(result['x'].reshape(model1.shape))
         plt.figure()
         plot_image(vp[3],cmap="cividis")
-        plt.savefig("/home/pengyaoguang/data/3D_FWI/v_update.png")
+        plt.savefig("../../../data/3D_FWI/v_update.png")
         plt.close()
         # save v_update
-        sio.savemat("/home/pengyaoguang/data/3D_FWI/v_update.mat",{"v":vp})
+        sio.savemat("../../../data/3D_FWI/v_update.mat",{"v":vp})
         # Plot model error
         plt.figure()
         plt.plot(range(1, len(model_error)+1), model_error); plt.xlabel('Iteration number'); plt.ylabel('L2-model error')
-        plt.savefig("/home/pengyaoguang/data/3D_FWI/loss.png")
+        plt.savefig("../../../data/3D_FWI/loss.png")
         plt.close()
         # print time
         end=time.time()
@@ -253,14 +253,14 @@ if __name__ == "__main__":
     vp = 1.0/np.sqrt(result['x'].reshape(model1.shape))
     plt.figure()
     plot_image(vp[3],cmap="cividis")
-    plt.savefig("/home/pengyaoguang/data/3D_FWI/v_update.png")
-    sio.savemat("/home/pengyaoguang/data/3D_FWI/v_update.mat",{"v":vp})
+    plt.savefig("../../../data/3D_FWI/v_update.png")
+    sio.savemat("../../../data/3D_FWI/v_update.mat",{"v":vp})
 
 
-    sio.savemat("/home/pengyaoguang/data/3D_FWI/v_real.mat",{"v":model1.vp.data[model1.nbl:-model1.nbl, model1.nbl:-model1.nbl, model1.nbl:-model1.nbl]})
+    sio.savemat("../../../data/3D_FWI/v_real.mat",{"v":model1.vp.data[model1.nbl:-model1.nbl, model1.nbl:-model1.nbl, model1.nbl:-model1.nbl]})
     plt.figure()
     plot_image(model1.vp.data[model1.nbl:-model1.nbl, model1.nbl:-model1.nbl, model1.nbl:-model1.nbl][3], cmap="cividis")
-    plt.savefig("/home/pengyaoguang/data/3D_FWI/v_real.png")
+    plt.savefig("../../../data/3D_FWI/v_real.png")
     
 
     
@@ -268,13 +268,14 @@ if __name__ == "__main__":
     # Plot model error
     plt.figure()
     plt.plot(range(1, len(model_error)+1), model_error); plt.xlabel('Iteration number'); plt.ylabel('L2-model error')
-    plt.savefig("/home/pengyaoguang/data/3D_FWI/loss.png")
+    plt.close()
+    plt.savefig("../../../data/3D_FWI/loss.png")
     end=time.time()
     print(end-start,"s")
     print()
 
     #load data
-# v_view=sio.loadmat("/home/pengyaoguang/data/devito/FWI/test_result/v_update.mat")["v"]
+# v_view=sio.loadmat("../../../data/devito/FWI/test_result/v_update.mat")["v"]
 # plt.figure()
 # plot_image(v_view[50],cmap="cividis")
-# plt.savefig("/home/pengyaoguang/data/devito/FWI/test_result/v_view.png")
+# plt.savefig("../../../data/devito/FWI/test_result/v_view.png")

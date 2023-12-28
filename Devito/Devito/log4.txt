@@ -1,0 +1,6 @@
+nohup: ignoring input
+filter_sigma: (10, 10, 10)
+/home/yaoguang/anaconda3/envs/pytorch/lib/python3.9/site-packages/distributed/client.py:3163: UserWarning: Sending large graph of size 26.80 MiB.
+This may cause some slowdown.
+Consider scattering data ahead of time and using futures.
+  warnings.warn(
