@@ -35,7 +35,7 @@ gaussian_smooth(model0.vp, sigma=filter_sigma)
 # plot_velocity(model)
 # plot_velocity(model0)
 # plot_perturbation(model0, model)
-model.vp.data=sio.loadmat("../../../data/3D_FWI/v_update{}_{}.mat".format(m,n))["v"]
+model0.vp.data[:]=sio.loadmat("../../../data/3D_FWI/v_update{}_{}.mat".format(m,n))["v"]
 sio.savemat("../../../data/3D_FWI/v_start{}.mat".format(m),{"v":model0.vp.data})
 plt.figure()
 v_update=model0.vp.data[tuple(slice(model0.nbl, -model0.nbl) for _ in range(3))]

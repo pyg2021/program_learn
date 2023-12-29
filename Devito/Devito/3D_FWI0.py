@@ -23,10 +23,10 @@ origin=(0., 0., 0. )
 shape=(100, 100, 100)
 spacing=(10., 10., 10.)
 model = Model(vp=v, origin=origin, shape=shape, spacing=spacing,
-                  space_order=4, nbl=20, bcs="damp")
+                  space_order=6, nbl=20, bcs="damp")
 
 model0 = Model(vp=v, origin=origin, shape=shape, spacing=spacing,
-                  space_order=4, nbl=20, grid=model.grid,bcs="damp")
+                  space_order=6, nbl=20, grid=model.grid,bcs="damp")
 
 from devito import gaussian_smooth
 filter_sigma = (10, 10, 10 )
@@ -35,7 +35,7 @@ gaussian_smooth(model0.vp, sigma=filter_sigma)
 # plot_velocity(model)
 # plot_velocity(model0)
 # plot_perturbation(model0, model)
-model.vp.data=sio.loadmat("../../../data/3D_FWI/v_update{}_{}.mat".format(m,n))["v"]
+# model0.vp.data[:]=sio.loadmat("../../../data/3D_FWI/v_update{}_{}.mat".format(m,n))["v"]
 sio.savemat("../../../data/3D_FWI/v_start{}.mat".format(m),{"v":model0.vp.data})
 plt.figure()
 v_update=model0.vp.data[tuple(slice(model0.nbl, -model0.nbl) for _ in range(3))]
@@ -85,7 +85,7 @@ geometry = AcquisitionGeometry(model, rec_coordinates, src_coordinates, t0, tn, 
 # Compute synthetic data with forward operator 
 from examples.seismic.acoustic import AcousticWaveSolver
 
-solver = AcousticWaveSolver(model, geometry, space_order=4)
+solver = AcousticWaveSolver(model, geometry, space_order=6)
 # true_d, _, _ = solver.forward(vp=model.vp)
 # # Compute initial data with forward operator 
 # smooth_d, _, _ = solver.forward(vp=model0.vp)

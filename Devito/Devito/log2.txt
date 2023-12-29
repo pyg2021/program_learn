@@ -2,7 +2,31 @@ nohup: ignoring input
 some information:
  nshots: 25 nreceivers: 400 fwi_iterations: 1000
 filter_sigma: (10, 10, 10)
-Traceback (most recent call last):
-  File "/home/yaoguang/program_learn/Devito/Devito/3D_FWI2.py", line 38, in <module>
-    model.vp.data=sio.loadmat("../../../data/3D_FWI/v_update{}_{}.mat".format(m,n))["v"]
-AttributeError: can't set attribute
+111111
+Objective value is 61.696508 at iteration 1
+loss: 61.69650752703653
+1072.9718179702759 s
+Objective value is 62.440195 at iteration 2
+loss: 62.440195054364914
+2164.107280254364 s
+Objective value is 60.950412 at iteration 3
+loss: 60.9504115118565
+3340.7755134105682 s
+Objective value is 59.845933 at iteration 4
+loss: 59.845933280652545
+4437.901084899902 s
+Objective value is 59.011146 at iteration 5
+loss: 59.01114576765585
+5537.351040124893 s
+Objective value is 58.868379 at iteration 6
+loss: 58.86837926928595
+6736.597303152084 s
+Objective value is 56.128428 at iteration 7
+loss: 56.12842807326355
+7848.067148923874 s
+Objective value is 53.800011 at iteration 8
+loss: 53.80001125130393
+9027.39040184021 s
+Objective value is 51.824610 at iteration 9
+loss: 51.82460970025781
+10219.085184812546 s

@@ -1,5 +1,5 @@
 if __name__ == "__main__":
-    USE_GPU_AWARE_DASK = True
+    USE_GPU_AWARE_DASK = False
     from examples.seismic import demo_model,Model
     import matplotlib.pyplot as plt
     from devito import configuration
@@ -159,7 +159,7 @@ if __name__ == "__main__":
     geometry0 = AcquisitionGeometry(model0, rec_coordinates, src_coordinates, t0, tn, f0=f0, src_type='Ricker')
     if USE_GPU_AWARE_DASK:
         from dask_cuda import LocalCUDACluster
-        cluster = LocalCUDACluster(threads_per_worker=2, death_timeout=600) 
+        cluster = LocalCUDACluster(threads_per_worker=4, death_timeout=600) 
     else:
         from distributed import LocalCluster
         cluster = LocalCluster(n_workers=10, death_timeout=600)

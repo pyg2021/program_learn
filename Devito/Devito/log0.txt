@@ -2,3 +2,36 @@ nohup: ignoring input
 some information:
  nshots: 25 nreceivers: 400 fwi_iterations: 1000
 filter_sigma: (10, 10, 10)
+Objective value is 3598.279122 at iteration 1
+loss: 3598.279122299738
+916.2047941684723 s
+Objective value is 3533.729655 at iteration 2
+loss: 3533.729655487752
+1830.624769449234 s
+Objective value is 3464.983969 at iteration 3
+loss: 3464.98396922223
+2664.8734788894653 s
+Objective value is 3391.203228 at iteration 4
+loss: 3391.2032281503925
+3572.6910095214844 s
+Objective value is 3311.273621 at iteration 5
+loss: 3311.2736209237733
+4431.118087053299 s
+Objective value is 3223.661785 at iteration 6
+loss: 3223.66178492899
+5317.608210325241 s
+Objective value is 3126.143570 at iteration 7
+loss: 3126.143569572224
+6220.5724675655365 s
+Objective value is 3015.283476 at iteration 8
+loss: 3015.2834757147016
+7123.4170644283295 s
+Objective value is 2885.301011 at iteration 9
+loss: 2885.3010111631497
+8000.536438941956 s
+Objective value is 2726.644754 at iteration 10
+loss: 2726.6447536327023
+8780.046263217926 s
+Objective value is 2520.025431 at iteration 11
+loss: 2520.0254306395395
+9640.694264650345 s
