@@ -2,54 +2,7 @@ nohup: ignoring input
 some information:
  nshots: 25 nreceivers: 400 fwi_iterations: 1000
 filter_sigma: (10, 10, 10)
-Objective value is 7417.589576 at iteration 1
-loss: 7417.589575586102
-948.6677689552307 s
-Objective value is 7311.217210 at iteration 2
-loss: 7311.217209768285
-1847.316255569458 s
-Objective value is 7200.147725 at iteration 3
-loss: 7200.147725421015
-2841.9328882694244 s
-Objective value is 7083.695290 at iteration 4
-loss: 7083.695289533833
-3803.8096277713776 s
-Objective value is 6960.974621 at iteration 5
-loss: 6960.974621018699
-4720.48640871048 s
-Objective value is 6830.908461 at iteration 6
-loss: 6830.908461177154
-5618.259164810181 s
-Objective value is 6692.077304 at iteration 7
-loss: 6692.077304351404
-6510.2121250629425 s
-Objective value is 6542.644782 at iteration 8
-loss: 6542.644782388521
-7409.779082536697 s
-Objective value is 6380.111377 at iteration 9
-loss: 6380.111377145478
-8334.525867938995 s
-Objective value is 6200.939562 at iteration 10
-loss: 6200.93956207484
-9235.453346729279 s
-Objective value is 5999.911411 at iteration 11
-loss: 5999.911411268007
-10141.289086818695 s
-Objective value is 5768.691148 at iteration 12
-loss: 5768.691147906975
-11042.342378139496 s
-Objective value is 5496.644461 at iteration 13
-loss: 5496.644460667121
-11936.067313194275 s
-Objective value is 5182.416807 at iteration 14
-loss: 5182.4168068148065
-12821.337320566177 s
-Objective value is 4803.107076 at iteration 15
-loss: 4803.107076489276
-13713.304472208023 s
-Objective value is 4299.912634 at iteration 16
-loss: 4299.912633919275
-14590.66669845581 s
-Objective value is 3617.212772 at iteration 17
-loss: 3617.2127718026227
-15493.202239274979 s
+Traceback (most recent call last):
+  File "/home/yaoguang/program_learn/Devito/Devito/3D_FWI2.py", line 38, in <module>
+    model.vp.data=sio.loadmat("../../../data/3D_FWI/v_update{}_{}.mat".format(m,n))["v"]
+AttributeError: can't set attribute

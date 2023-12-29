@@ -1,6 +1,90 @@
 nohup: ignoring input
 filter_sigma: (10, 10, 10)
-/home/yaoguang/anaconda3/envs/pytorch/lib/python3.9/site-packages/distributed/client.py:3163: UserWarning: Sending large graph of size 26.80 MiB.
+/home/yaoguang/anaconda3/envs/pytorch/lib/python3.9/site-packages/distributed/client.py:3163: UserWarning: Sending large graph of size 24.74 MiB.
 This may cause some slowdown.
 Consider scattering data ahead of time and using futures.
   warnings.warn(
+Operator `Forward` ran in 7.45 s
+Operator `Forward` ran in 7.76 s
+Operator `Forward` ran in 7.81 s
+Operator `Forward` ran in 7.41 s
+Operator `Forward` ran in 7.40 s
+Operator `Forward` ran in 7.54 s
+Operator `Forward` ran in 7.35 s
+Operator `Forward` ran in 7.35 s
+Operator `Forward` ran in 7.35 s
+Operator `Forward` ran in 7.37 s
+Operator `Forward` ran in 7.48 s
+Operator `Forward` ran in 7.29 s
+Operator `Forward` ran in 7.42 s
+Operator `Forward` ran in 7.33 s
+Operator `Forward` ran in 7.44 s
+/home/yaoguang/anaconda3/envs/pytorch/lib/python3.9/site-packages/examples/seismic/plotting.py:134: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+/home/yaoguang/anaconda3/envs/pytorch/lib/python3.9/site-packages/examples/seismic/plotting.py:160: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+/home/yaoguang/anaconda3/envs/pytorch/lib/python3.9/site-packages/distributed/client.py:3163: UserWarning: Sending large graph of size 26.90 MiB.
+This may cause some slowdown.
+Consider scattering data ahead of time and using futures.
+  warnings.warn(
+Operator `Forward` ran in 7.91 s
+Operator `Forward` ran in 8.55 s
+Operator `Forward` ran in 8.14 s
+Operator `Forward` ran in 8.26 s
+Operator `Gradient` ran in 14.32 s
+Operator `Gradient` ran in 14.27 s
+Operator `Gradient` ran in 14.80 s
+Operator `Gradient` ran in 15.47 s
+Operator `Forward` ran in 7.90 s
+Operator `Forward` ran in 8.40 s
+Operator `Forward` ran in 8.02 s
+Operator `Forward` ran in 8.11 s
+Operator `Gradient` ran in 14.57 s
+Operator `Gradient` ran in 15.02 s
+Operator `Gradient` ran in 15.10 s
+Operator `Gradient` ran in 14.49 s
+Operator `Forward` ran in 7.66 s
+Operator `Forward` ran in 7.84 s
+Operator `Forward` ran in 8.16 s
+Operator `Forward` ran in 8.08 s
+Operator `Gradient` ran in 14.52 s
+Operator `Gradient` ran in 14.65 s
+Operator `Gradient` ran in 14.37 s
+Operator `Gradient` ran in 15.66 s
+Operator `Forward` ran in 7.55 s
+Operator `Forward` ran in 7.77 s
+Operator `Forward` ran in 8.15 s
+Operator `Forward` ran in 8.31 s
+Operator `Gradient` ran in 14.59 s
+Operator `Gradient` ran in 14.75 s
+Operator `Gradient` ran in 14.37 s
+Operator `Gradient` ran in 14.68 s
+Operator `Forward` ran in 6.42 s
+Operator `Gradient` ran in 11.10 s
+/home/yaoguang/anaconda3/envs/pytorch/lib/python3.9/site-packages/distributed/client.py:3163: UserWarning: Sending large graph of size 26.90 MiB.
+This may cause some slowdown.
+Consider scattering data ahead of time and using futures.
+  warnings.warn(
+Operator `Forward` ran in 12.49 s
+Operator `Forward` ran in 12.43 s
+Operator `Forward` ran in 12.25 s
+Operator `Forward` ran in 12.28 s
+Operator `Gradient` ran in 22.84 s
+Operator `Gradient` ran in 22.56 s
+Operator `Gradient` ran in 23.43 s
+Operator `Forward` ran in 12.50 s
+Operator `Forward` ran in 12.43 s
+Operator `Forward` ran in 12.67 s
+Operator `Forward` ran in 12.44 s
+Operator `Gradient` ran in 23.08 s
+Operator `Gradient` ran in 22.95 s
+Operator `Gradient` ran in 22.82 s
+Operator `Gradient` ran in 22.08 s
+Operator `Forward` ran in 12.42 s
+Operator `Forward` ran in 12.32 s
+Operator `Forward` ran in 12.57 s
+Operator `Forward` ran in 12.29 s
+Operator `Gradient` ran in 22.85 s
+Operator `Gradient` ran in 23.55 s
+Operator `Gradient` ran in 23.02 s
+Operator `Gradient` ran in 22.74 s

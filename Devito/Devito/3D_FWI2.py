@@ -35,17 +35,20 @@ gaussian_smooth(model0.vp, sigma=filter_sigma)
 # plot_velocity(model)
 # plot_velocity(model0)
 # plot_perturbation(model0, model)
+model.vp.data=sio.loadmat("../../../data/3D_FWI/v_update{}_{}.mat".format(m,n))["v"]
 sio.savemat("../../../data/3D_FWI/v_start{}.mat".format(m),{"v":model0.vp.data})
 plt.figure()
 v_update=model0.vp.data[tuple(slice(model0.nbl, -model0.nbl) for _ in range(3))]
 plt.imshow(v_update[n].T,vmin=1.8,vmax=6)
 plt.colorbar()
 plt.savefig("../../../data/3D_FWI/v_start{}_{}.png".format(m,n))
+plt.close()
 plt.figure()
 v_update=model.vp.data[tuple(slice(model.nbl, -model.nbl) for _ in range(3))]
 plt.imshow(v_update[n].T,vmin=1.8,vmax=6)
 plt.colorbar()
 plt.savefig("../../../data/3D_FWI/v_real{}_{}.png".format(m,n))
+plt.close()
 assert model.grid == model0.grid
 assert model.vp.grid == model0.vp.grid
 
@@ -246,4 +249,5 @@ for i in range(0, fwi_iterations):
     # plt.show()
     plt.savefig("../../../data/3D_FWI/history{}_{}.png".format(m,n))
     sio.savemat("../../../data/3D_FWI/history{}_{}.mat".format(m,n),{'h':history})
+    plt.close()
 # sio.savemat("../../../data/3D_FWI/v1.mat",{"v":model0.vp.data})

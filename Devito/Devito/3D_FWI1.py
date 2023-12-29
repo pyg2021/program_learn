@@ -18,7 +18,7 @@ from examples.seismic import demo_model, plot_velocity, plot_perturbation
 m=5100
 n=50
 # Define true and initial model
-v=sio.loadmat("/home/pengyaoguang/data/3D_v_model/v{}.mat".format(m))['v']
+v=sio.loadmat("../../../data/3D_v_model/v{}.mat".format(m))['v']
 origin=(0., 0., 0. )
 shape=(100, 100, 100)
 spacing=(10., 10., 10.)
@@ -35,17 +35,20 @@ gaussian_smooth(model0.vp, sigma=filter_sigma)
 # plot_velocity(model)
 # plot_velocity(model0)
 # plot_perturbation(model0, model)
-sio.savemat("/home/pengyaoguang/data/3D_FWI/v_start{}.mat".format(m),{"v":model0.vp.data})
+model.vp.data=sio.loadmat("../../../data/3D_FWI/v_update{}_{}.mat".format(m,n))["v"]
+sio.savemat("../../../data/3D_FWI/v_start{}.mat".format(m),{"v":model0.vp.data})
 plt.figure()
 v_update=model0.vp.data[tuple(slice(model0.nbl, -model0.nbl) for _ in range(3))]
 plt.imshow(v_update[n].T,vmin=1.8,vmax=6)
 plt.colorbar()
-plt.savefig("/home/pengyaoguang/data/3D_FWI/v_start{}_{}.png".format(m,n))
+plt.savefig("../../../data/3D_FWI/v_start{}_{}.png".format(m,n))
+plt.close()
 plt.figure()
 v_update=model.vp.data[tuple(slice(model.nbl, -model.nbl) for _ in range(3))]
 plt.imshow(v_update[n].T,vmin=1.8,vmax=6)
 plt.colorbar()
-plt.savefig("/home/pengyaoguang/data/3D_FWI/v_real{}_{}.png".format(m,n))
+plt.savefig("../../../data/3D_FWI/v_real{}_{}.png".format(m,n))
+plt.close()
 assert model.grid == model0.grid
 assert model.vp.grid == model0.vp.grid
 
@@ -78,7 +81,7 @@ geometry = AcquisitionGeometry(model, rec_coordinates, src_coordinates, t0, tn, 
 # plt.figure()
 # plot_velocity(model, source=geometry.src_positions,
 #               receiver=geometry.rec_positions[:, :])
-# plt.savefig("/home/pengyaoguang/1325/Devito/Devito/result/source_rec_model.png")
+# plt.savefig("../../../1325/Devito/Devito/result/source_rec_model.png")
 # Compute synthetic data with forward operator 
 from examples.seismic.acoustic import AcousticWaveSolver
 
@@ -169,17 +172,17 @@ def fwi_gradient(vp_in):
 # # Plot the FWI gradient
 # plt.figure()
 # plot_image(-update.data[50], vmin=-1e4, vmax=1e4, cmap="jet")
-# plt.savefig("/home/pengyaoguang/data/devito/FWI/test_update_data.png")
+# plt.savefig("../../../data/devito/FWI/test_update_data.png")
 # # Plot the difference between the true and initial model.
 # # This is not known in practice as only the initial model is provided.
 # plt.figure()
 # plot_image(model0.vp.data[50] - model.vp.data[50], vmin=-1e-1, vmax=1e-1, cmap="jet")
-# plt.savefig("/home/pengyaoguang/data/devito/FWI/test_v_error.png")
+# plt.savefig("../../../data/devito/FWI/test_v_error.png")
 # # Show what the update does to the model
 # plt.figure()
 # alpha = .5 / mmax(update)
 # plot_image(model0.vp.data[50][20:120,20:120] + alpha*update.data[50][20:120,20:120],cmap="jet")
-# plt.savefig("/home/pengyaoguang/data/devito/FWI/test_v_update.png")
+# plt.savefig("../../../data/devito/FWI/test_v_update.png")
 
 
 from sympy import Min, Max
@@ -230,8 +233,8 @@ for i in range(0, fwi_iterations):
     v_update=model0.vp.data[tuple(slice(model.nbl, -model.nbl) for _ in range(3))]
     plt.imshow(v_update[n].T,vmin=1.8,vmax=6)
     plt.colorbar()
-    plt.savefig("/home/pengyaoguang/data/3D_FWI/result2/v_update{}_{}_{}model.png".format(i,m,n))
-    sio.savemat("/home/pengyaoguang/data/3D_FWI/v_update{}_{}.mat".format(m,n),{"v":model0.vp.data})
+    plt.savefig("../../../data/3D_FWI/result2/v_update{}_{}_{}model.png".format(i,m,n))
+    sio.savemat("../../../data/3D_FWI/v_update{}_{}.mat".format(m,n),{"v":model0.vp.data})
     plt.close()
     print("loss:",phi)
     end=time.time()
@@ -244,6 +247,7 @@ for i in range(0, fwi_iterations):
     plt.ylabel('Misift value Phi')
     plt.title('Convergence')
     # plt.show()
-    plt.savefig("/home/pengyaoguang/data/3D_FWI/history{}_{}.png".format(m,n))
-    sio.savemat("/home/pengyaoguang/data/3D_FWI/history{}_{}.mat".format(m,n),{'h':history})
-# sio.savemat("/home/pengyaoguang/data/3D_FWI/v1.mat",{"v":model0.vp.data})
+    plt.savefig("../../../data/3D_FWI/history{}_{}.png".format(m,n))
+    sio.savemat("../../../data/3D_FWI/history{}_{}.mat".format(m,n),{'h':history})
+    plt.close()
+# sio.savemat("../../../data/3D_FWI/v1.mat",{"v":model0.vp.data})

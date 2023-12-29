@@ -125,7 +125,7 @@ if __name__ == "__main__":
     v=v[::sample,::sample,::sample]
     shape = (v.shape[0], v.shape[1], v.shape[2])      # Number of grid points (nx, nz).
     model1 = Model(vp=v, origin=origin, shape=shape, spacing=spacing,
-                    space_order=6, nbl=nbl, bcs="damp")
+                    space_order=4, nbl=nbl, bcs="damp")
     filter_sigma = (10, 10, 10 )
     model0 = Model(vp=v, origin=origin, shape=shape, spacing=spacing,
                     space_order=6, nbl=nbl, bcs="damp", grid = model1.grid)
@@ -159,10 +159,10 @@ if __name__ == "__main__":
     geometry0 = AcquisitionGeometry(model0, rec_coordinates, src_coordinates, t0, tn, f0=f0, src_type='Ricker')
     if USE_GPU_AWARE_DASK:
         from dask_cuda import LocalCUDACluster
-        cluster = LocalCUDACluster(threads_per_worker=3, death_timeout=600) 
+        cluster = LocalCUDACluster(threads_per_worker=2, death_timeout=600) 
     else:
         from distributed import LocalCluster
-        cluster = LocalCluster(n_workers=60, death_timeout=600)
+        cluster = LocalCluster(n_workers=10, death_timeout=600)
     
     client = Client(cluster)
 
