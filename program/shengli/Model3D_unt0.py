@@ -90,7 +90,6 @@ class net(nn.Module):
         x4 = self.down_3(x3)
 
         x5 = self.up_1(x4, x3)
-        print(x5.shape)
         x6 = self.up_2(x5, x2)
         x7 = self.up_3(x6, x1)
         x = self.outputs(x7)
@@ -98,10 +97,10 @@ class net(nn.Module):
         return x
 
 
-device='cuda:0'
-model=net(2,1).to(device)
-# model=nn.parallel.DataParallel(model)
-x=np.ones((1,2,100,100,100))
-x=torch.from_numpy(x).float().to(device)
-y=model(x)
-print(y.shape)
+# device='cuda:0'
+# model=net(2,1).to(device)
+# # model=nn.parallel.DataParallel(model)
+# x=np.ones((1,2,100,100,100))
+# x=torch.from_numpy(x).float().to(device)
+# y=model(x)
+# print(y.shape)
