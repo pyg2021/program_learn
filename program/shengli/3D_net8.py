@@ -16,28 +16,28 @@ os.environ['CUDA_VISIBLE_DEVICES'] = "1,2,3"
 start=time.time()
 
 ##data_prepare
-BatchSize=10
+BatchSize=6
 device="cuda"
-x_1,y_1=DataLoad(0,0+40)
+x_1,y_1=DataLoad(0,0+15)
 x,y=x_1,y_1
 trian_number=y.shape[0]
 train_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(y).float())
 train_loader = data_utils.DataLoader(train_data,batch_size=BatchSize,shuffle=True)
 
-x_1,y_1=DataLoad(100,100+10)
+x_1,y_1=DataLoad(100,100+19)
 x,y=x_1,y_1
 test_number=y.shape[0]
 test_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(y).float())
 test_loader = data_utils.DataLoader(test_data,batch_size=BatchSize,shuffle=True)
 
 
-x_1,y_1=DataLoad(5000,5000+40)
+x_1,y_1=DataLoad(5000,5000+15)
 x,y=x_1,y_1
 trian_number=y.shape[0]
 train_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(y).float())
 train_loader_2 = data_utils.DataLoader(train_data,batch_size=BatchSize,shuffle=True)
 
-x_1,y_1=DataLoad(5100,5100+10)
+x_1,y_1=DataLoad(5100,5100+19)
 x,y=x_1,y_1
 test_number=y.shape[0]
 test_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(y).float())
@@ -75,7 +75,8 @@ class EWC:
         for data, target in dataloader:
             data, target = data.to(self.device), target.to(self.device)
             self.model.zero_grad()
-            output = self.model(data)
+            output = F.log_softmax(self.model(data), dim=1)
+            target=  F.log_softmax(target, dim=1)
             # output=output.reshape(output.shape[0],output.shape[2]*output.shape[3]*output.shape[4])
             # target=target.reshape(target.shape[0],target.shape[2]*target.shape[3]*target.shape[4])
             # loss = F.nll_loss(output, target)
