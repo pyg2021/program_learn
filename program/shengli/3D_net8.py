@@ -176,17 +176,17 @@ def test(model,test_loader,loss_1,device,fig=0):
     print(" test_loss: ",test_loss)
 epoch=1000
 optimizer = torch.optim.AdamW(model.parameters(),lr=1e-3)
-scheduler=torch.optim.lr_scheduler.StepLR(optimizer,step_size=200,gamma=0.8)
+scheduler=torch.optim.lr_scheduler.StepLR(optimizer,step_size=300,gamma=0.6)
 loss_1=torch.nn.L1Loss()
-train(model,train_loader,test_loader,2,device,optimizer,scheduler,loss_1,save_number=1)
+train(model,train_loader,test_loader,2000,device,optimizer,scheduler,loss_1,save_number=1)
 test(model,test_loader,loss_1,device)
 test(model,test_loader_2,loss_1,device)
 ewc=EWC(model, train_loader, device)
 
 
 optimizer = torch.optim.AdamW(model.parameters(),lr=1e-3)
-scheduler=torch.optim.lr_scheduler.StepLR(optimizer,step_size=200,gamma=0.8)
-train(model,train_loader_2,test_loader_2,2,device,optimizer,scheduler,loss_1,ewc=ewc,ewc_lambda=1000,save_number=2)
+scheduler=torch.optim.lr_scheduler.StepLR(optimizer,step_size=300,gamma=0.6)
+train(model,train_loader_2,test_loader_2,2000,device,optimizer,scheduler,loss_1,ewc=ewc,ewc_lambda=1000,save_number=2)
 ewc_2=EWC(model,train_loader_2,device)
 test(model,test_loader,loss_1,device)
 test(model,test_loader_2,loss_1,device)
