@@ -12,11 +12,11 @@ from DataLoad import DataLoad
 from Model3D_unt0 import net
 import os 
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID" 
-os.environ['CUDA_VISIBLE_DEVICES'] = "1,2,3"
+os.environ['CUDA_VISIBLE_DEVICES'] = "0,1,2,3"
 start=time.time()
 
 ##data_prepare
-BatchSize=6
+BatchSize=16
 device="cuda"
 x_1,y_1=DataLoad(0,0+15)
 x,y=x_1,y_1
@@ -24,20 +24,20 @@ trian_number=y.shape[0]
 train_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(y).float())
 train_loader = data_utils.DataLoader(train_data,batch_size=BatchSize,shuffle=True)
 
-x_1,y_1=DataLoad(100,100+19)
+x_1,y_1=DataLoad(100,100+15)
 x,y=x_1,y_1
 test_number=y.shape[0]
 test_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(y).float())
 test_loader = data_utils.DataLoader(test_data,batch_size=BatchSize,shuffle=True)
 
 
-x_1,y_1=DataLoad(5000,5000+15)
+x_1,y_1=DataLoad(10000,10000+15)
 x,y=x_1,y_1
 trian_number=y.shape[0]
 train_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(y).float())
 train_loader_2 = data_utils.DataLoader(train_data,batch_size=BatchSize,shuffle=True)
 
-x_1,y_1=DataLoad(5100,5100+19)
+x_1,y_1=DataLoad(10100,10100+15)
 x,y=x_1,y_1
 test_number=y.shape[0]
 test_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(y).float())
@@ -46,10 +46,7 @@ test_loader_2 = data_utils.DataLoader(test_data,batch_size=BatchSize,shuffle=Tru
 model=net(2,1,True,True).to(device)
 model=nn.parallel.DataParallel(model)
 
-epoch=1000
-optimizer = torch.optim.AdamW(model.parameters(),lr=1e-3)
-scheduler=torch.optim.lr_scheduler.StepLR(optimizer,step_size=100,gamma=0.6)
-loss_1=torch.nn.L1Loss()
+
 # plt.figure()
 # plt.imshow(y.cpu().detach()[0,0,50,:,:].T)
 # plt.colorbar()
@@ -98,7 +95,7 @@ class EWC:
                 loss += _loss.sum()
         return loss * (self.importance / 2)
 
-def train(model,train_loader,test_loader,epoch,device,optimizer,scheduler,loss_1,ewc=None, ewc_lambda=0.5):
+def train(model,train_loader,test_loader,epoch,device,optimizer,scheduler,loss_1,ewc=None, ewc_lambda=0.5,save_number=0):
     loss_all=[]
     test_loss_all=[]
     for epoch_i in range(epoch):
@@ -137,20 +134,20 @@ def train(model,train_loader,test_loader,epoch,device,optimizer,scheduler,loss_1
         test_loss=test_loss/sum_2
         test_loss_all.append(test_loss)
         print(' epoch: ',epoch_i," train_loss: ",epoch_loss," test_loss: ",test_loss)
-        if epoch_i%50==0 and epoch_i>=40:
+        if epoch_i%100==0 and epoch_i>=40:
             print((time.time()-start)/60,"min")
             plt.figure()
             plt.imshow(model(x).cpu().detach()[0,0,50,:,:].T)
             plt.colorbar()
-            plt.savefig("/home/pengyaoguang/data/3D_net_result/v_updata8_2.png")
+            plt.savefig("/home/pengyaoguang/data/3D_net_result/v_updata8_{}.png".format(save_number))
             plt.close()
-            sio.savemat("/home/pengyaoguang/data/3D_net_result/v_updata6.mat",{"v":model(x).cpu().detach()[0,0]})
-            torch.save(model.state_dict(),"/home/pengyaoguang/data/3D_net_model/modeltest8_2.pkl")
+            sio.savemat("/home/pengyaoguang/data/3D_net_result/v_updata8_{}.mat".format(save_number),{"v":model(x).cpu().detach()[0,0]})
+            torch.save(model.state_dict(),"/home/pengyaoguang/data/3D_net_model/modeltest8_{}.pkl".format(save_number))
 
             plt.figure()
             plt.imshow(y.cpu().detach()[0,0,50,:,:].T)
             plt.colorbar()
-            plt.savefig("/home/pengyaoguang/data/3D_net_result/v_real8_2.png")
+            plt.savefig("/home/pengyaoguang/data/3D_net_result/v_real8_{}.png".format(save_number))
             plt.close()
 
             plt.figure()
@@ -159,13 +156,40 @@ def train(model,train_loader,test_loader,epoch,device,optimizer,scheduler,loss_1
             plt.xlabel("epoch")
             plt.ylabel("loss")
             plt.legend()
-            plt.savefig("/home/pengyaoguang/data/3D_net_result/history8_2.png")
+            plt.savefig("/home/pengyaoguang/data/3D_net_result/history8_{}.png".format(save_number))
             plt.close()
-
-train(model,train_loader,test_loader,200,device,optimizer,scheduler,loss_1)
+def test(model,test_loader,loss_1,device,fig=0):
+    test_loss_all=[]
+    test_loss=0
+    sum_2=0
+    with torch.no_grad():
+        model.eval()
+        for j,(x,y) in enumerate(test_loader):
+            sum_2+=1
+            x=x.to(device)
+            y=y.to(device)
+            y_1=model(x)
+            loss=loss_1(y_1,y)+2*loss_1(torch.clamp(y_1,1.5,8),y_1)
+            test_loss+=loss.detach().cpu().item()
+    test_loss=test_loss/sum_2
+    test_loss_all.append(test_loss)
+    print(" test_loss: ",test_loss)
+epoch=1000
+optimizer = torch.optim.AdamW(model.parameters(),lr=1e-3)
+scheduler=torch.optim.lr_scheduler.StepLR(optimizer,step_size=200,gamma=0.8)
+loss_1=torch.nn.L1Loss()
+train(model,train_loader,test_loader,2,device,optimizer,scheduler,loss_1,save_number=1)
+test(model,test_loader,loss_1,device)
+test(model,test_loader_2,loss_1,device)
 ewc=EWC(model, train_loader, device)
-train(model,train_loader_2,test_loader_2,200,device,optimizer,scheduler,loss_1,ewc=ewc,ewc_lambda=1000)
+
+
+optimizer = torch.optim.AdamW(model.parameters(),lr=1e-3)
+scheduler=torch.optim.lr_scheduler.StepLR(optimizer,step_size=200,gamma=0.8)
+train(model,train_loader_2,test_loader_2,2,device,optimizer,scheduler,loss_1,ewc=ewc,ewc_lambda=1000,save_number=2)
 ewc_2=EWC(model,train_loader_2,device)
-train(model,train_loader,test_loader,1,device,optimizer,scheduler,loss_1,ewc=ewc_2,ewc_lambda=10000)
-train(model,train_loader_2,test_loader_2,1,device,optimizer,scheduler,loss_1,ewc=ewc,ewc_lambda=10000)
+test(model,test_loader,loss_1,device)
+test(model,test_loader_2,loss_1,device)
+# test(model,test_loader,loss_1,device)
+# test(model,test_loader_2,loss_1,device)
 # train(model,train_loader_2,test_loader,1,device,optimizer,scheduler,loss_1)
