@@ -12,11 +12,11 @@ from DataLoad import DataLoad
 from Model3D_unt0 import net
 import os 
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID" 
-os.environ['CUDA_VISIBLE_DEVICES'] = "0,1,2,3"
+os.environ['CUDA_VISIBLE_DEVICES'] = "0,2,3"
 start=time.time()
 
 ##data_prepare
-BatchSize=16
+BatchSize=8
 device="cuda"
 x_1,y_1=DataLoad(0,0+45)
 x,y=x_1,y_1
@@ -192,4 +192,6 @@ model.load_state_dict(torch.load("/home/pengyaoguang/data/3D_net_model/modeltest
 optimizer = torch.optim.AdamW(model.parameters(),lr=1e-3)
 scheduler=torch.optim.lr_scheduler.StepLR(optimizer,step_size=300,gamma=0.6)
 loss_1=torch.nn.L1Loss()
-train(model,train_loader_2,test_loader_2,2,device,optimizer,scheduler,loss_1,save_number=9)
+train(model,train_loader_2,test_loader_2,2000,device,optimizer,scheduler,loss_1,save_number=9)
+test(model,test_loader,loss_1,device,10)
+test(model,test_loader_2,loss_1,device,11)
