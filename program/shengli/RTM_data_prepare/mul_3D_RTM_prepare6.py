@@ -15,7 +15,14 @@ for j in range(100,120):
     origin = (0., 0., 0.)  # What is the location of the top left corner (x,y,z). This is necessary to define
     # Define a velocity profile. The velocity is in km/s
     shape = (100 ,100 ,100 )
-    v=sio.loadmat("/home/pengyaoguang/data/3D_v_model/v{}.mat".format(j))['v']
+    # v=sio.loadmat("/home/pengyaoguang/data/3D_v_model/v{}.mat".format(j))['v']
+    v=sio.loadmat("/home/pengyaoguang/data/3D_v/Overthrust_vel.mat")['vel'][::2,::8,::8][:,:100,:100]
+    p=np.zeros((100,100,100))
+    p[:,:,:]=v[0,0,0]
+    p[6:100,:,:]=v
+    v=p.swapaxes(0,2)
+
+
     sample=1
     v=v[::sample,::sample,::sample]
     shape = (v.shape[0], v.shape[1], v.shape[2])  # Number of grid point (nx, ny, nz)
