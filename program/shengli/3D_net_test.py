@@ -7,20 +7,34 @@ from scipy.ndimage import gaussian_filter
 import matplotlib.pyplot as plt
 from DataLoad import DataLoad
 import os 
+from skimage.metrics import structural_similarity as ssim
+
+
+
+def ssim_metric(target: object, prediction: object, win_size: int=21):
+    cur_ssim = ssim(
+        target,
+        prediction,
+        win_size=win_size,
+        data_range=target.max() - target.min(),
+    )
+    return cur_ssim
+
+
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID" 
 os.environ['CUDA_VISIBLE_DEVICES'] = "3"
 device="cuda"
 model=net(2,1,True,True).to(device)
 model=nn.parallel.DataParallel(model)
-model.load_state_dict(torch.load("/home/pengyaoguang/data/3D_net_model/modeltest8_9.pkl"))
+model.load_state_dict(torch.load("/home/pengyaoguang/data/3D_net_model/modeltest8_6.pkl"))
 
 
 #10012_20
 #10_50
-m=4
+m=5
 ##data_prepare
-k=10
-n=50
+k=10012
+n=20
 R=sio.loadmat("/home/pengyaoguang/data/3D_RTM/RTM{}".format(k))["RTM"][20:120,20:120,20:120]
 
 vmax=np.max(R)
@@ -66,15 +80,19 @@ label1=torch.from_numpy(label1).float().to(device)
 # label1=y
 
 loss_1=torch.nn.L1Loss()
+loss_2=torch.nn.MSELoss()
 y_1=model(x)
 loss=loss_1(y_1,label1)
 print(loss)
-
+l1=loss_2(y_1,label1)
+g=torch.zeros_like(y_1)
+l2=loss_2(g,label1)
+print("relative_error:",l1/l2)
 plt.figure()
 plt.imshow(y_1.detach().cpu()[0,0,n].T,vmin=2,vmax=5)
 plt.colorbar()
 plt.savefig("/home/pengyaoguang/data/3D_net_result/v_updete_test{}.png".format(m))
-
+print('ssim',ssim_metric(label,y_1.detach().cpu()[0,0].numpy()))
 
 plt.figure()
 plt.imshow(y_1.detach().cpu()[0,0,n].T-torch.from_numpy(label[n].T))
