@@ -35,16 +35,16 @@ m=5
 ##data_prepare
 k=15000
 n=50
-# R=sio.loadmat("/home/pengyaoguang/data/3D_RTM/RTM{}".format(k))["RTM"][20:120,20:120,20:120]
+R=sio.loadmat("/home/pengyaoguang/data/3D_RTM/RTM{}".format(k))["RTM"][20:120,20:120,20:120]
 
-# vmax=np.max(R)
-# plt.figure()
-# plt.imshow(R[n].T/vmax,cmap="gray")
-# plt.colorbar()
-# plt.savefig("/home/pengyaoguang/data/3D_net_result/RTM_test{}.png".format(m))
+vmax=np.max(R)
+plt.figure()
+plt.imshow(R[n].T/vmax,cmap="gray")
+plt.colorbar()
+plt.savefig("/home/pengyaoguang/data/3D_net_result/RTM_test{}.png".format(m))
 
 
-# R1=R.reshape(1,1,R.shape[0],R.shape[1],R.shape[2])
+R1=R.reshape(1,1,R.shape[0],R.shape[1],R.shape[2])
 label=sio.loadmat("/home/pengyaoguang/data/3D_v/v{}".format(k))["v"]
 
 
