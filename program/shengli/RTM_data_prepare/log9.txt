@@ -204,3 +204,9 @@ Imaging source 1 out of 100
 Imaging source 2 out of 100
 4283.068843603134 s
 Imaging source 3 out of 100
+4318.460500001907 s
+Imaging source 4 out of 100
+4354.370811700821 s
+Imaging source 5 out of 100
+4390.60687994957 s
+Imaging source 6 out of 100
