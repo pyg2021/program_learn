@@ -10,12 +10,12 @@ import time
 import scipy.io as sio
 
 start=time.time()
-for j in range(15000+0,15000+120):
+for j in range(15000+2,15000+120):
     spacing = (10., 10., 10)  # Grid spacing in m. The domain size is now dx=1km, dy=1km, dz=1km
     origin = (0., 0., 0.)  # What is the location of the top left corner (x,y,z). This is necessary to define
     # Define a velocity profile. The velocity is in km/s
     shape = (100 ,100 ,100 )
-    v=sio.loadmat("/home/pengyaoguang/data/3D_v/v{}.mat".format(j))['v']
+    v=sio.loadmat("/home/pengyaoguang/data/3D_v_model/v{}.mat".format(j))['v']
     sample=1
     v=v[::sample,::sample,::sample]
     shape = (v.shape[0], v.shape[1], v.shape[2])  # Number of grid point (nx, ny, nz)
