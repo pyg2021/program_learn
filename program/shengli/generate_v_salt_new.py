@@ -9,8 +9,8 @@ start=time.time()
 x=np.arange(100)
 y=np.arange(100)
 X,Y=np.meshgrid(x,y)
-epoch=10000### 三维折叠模型
-while epoch<15000:
+epoch=15000### 三维折叠模型
+while epoch<15120:
     z=0
     # plt.figure()
     ax3 = plt.axes(projection='3d')
@@ -45,9 +45,9 @@ while epoch<15000:
     data[j,k,math.floor(data_10[i,j,k]):]=v
     
     ## 盐丘模型
-    a=random.uniform(10,30)
-    xref=random.uniform(0,100)
-    yref=random.uniform(0,100)
+    a=random.uniform(40,80)
+    xref=random.uniform(20,80)
+    yref=random.uniform(20,80)
     # xref=50
     # yref=50
     sx=random.uniform(7.4,18)
@@ -89,7 +89,7 @@ while epoch<15000:
     # np.save("program/shengli/v.bin",data)
     if np.min(Z2)<0:
         continue
-    scipy.io.savemat("/home/pengyaoguang/data/3D_v_model/v{}.mat".format(epoch), {'v':data})
+    scipy.io.savemat("/home/pengyaoguang/data/3D_v/v{}.mat".format(epoch), {'v':data})
 
 
 
