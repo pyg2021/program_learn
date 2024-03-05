@@ -1,5 +1,5 @@
 import scipy.io as sio
-vel=sio.loadmat("data/3D_v/Overthrust_vel.mat")["vel"]
+vel=sio.loadmat("data/3D_v/Overthrust_vel.mat")["vel"]/1000
 m=20000
 for i in range(2):
     if i==0:
