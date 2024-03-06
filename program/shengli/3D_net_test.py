@@ -1,5 +1,5 @@
 import torch
-from Model3D_unt0 import net
+from Model3D_unt import net
 import torch.nn as nn
 import scipy.io as sio
 import numpy as np
@@ -26,14 +26,14 @@ os.environ['CUDA_VISIBLE_DEVICES'] = "3"
 device="cuda"
 model=net(2,1,True,True).to(device)
 model=nn.parallel.DataParallel(model)
-model.load_state_dict(torch.load("/home/pengyaoguang/data/3D_net_model/modeltest8_6.pkl"))
+model.load_state_dict(torch.load("/home/pengyaoguang/data/3D_net_model/modeltest6_4.pkl"))
 
 
 #10012_20
 #10_50
 m=5
 ##data_prepare
-k=15000
+k=100
 n=50
 R=sio.loadmat("/home/pengyaoguang/data/3D_RTM/RTM{}".format(k))["RTM"][20:120,20:120,20:120]
 
@@ -45,7 +45,7 @@ plt.savefig("/home/pengyaoguang/data/3D_net_result/RTM_test{}.png".format(m))
 
 
 R1=R.reshape(1,1,R.shape[0],R.shape[1],R.shape[2])
-label=sio.loadmat("/home/pengyaoguang/data/3D_v/v{}".format(k))["v"]
+label=sio.loadmat("/home/pengyaoguang/data/3D_v_model/v{}".format(k))["v"]
 
 
 plt.figure()

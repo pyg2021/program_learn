@@ -12,13 +12,13 @@ from DataLoad import DataLoad
 from Model3D_unt import net
 import os 
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID" 
-os.environ['CUDA_VISIBLE_DEVICES'] = "0,1,2"
+os.environ['CUDA_VISIBLE_DEVICES'] = "1,2,3"
 start=time.time()
 
 ##data_prepare
-BatchSize=12
+BatchSize=5
 device="cuda"
-x_1,y_1=DataLoad(0,0+35)
+x_1,y_1=DataLoad(0,0+1)
 x,y=x_1,y_1
 trian_number=y.shape[0]
 train_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(y).float())
@@ -31,7 +31,7 @@ test_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(
 test_loader = data_utils.DataLoader(test_data,batch_size=BatchSize,shuffle=True)
 
 
-x_1,y_1=DataLoad(15000,15000+15)
+x_1,y_1=DataLoad(15000,15000+1)
 x,y=x_1,y_1
 trian_number=y.shape[0]
 train_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(y).float())
@@ -79,7 +79,7 @@ class EWC:
             # target=target.reshape(target.shape[0],target.shape[2]*target.shape[3]*target.shape[4])
             # loss = F.nll_loss(output, target)
             loss_1=torch.nn.L1Loss()
-            loss = loss_1(output, target)
+            loss = loss_1(output, target)+2*loss_1(torch.clamp(output,1.5,8),output)
             loss.backward()
 
             for n, p in self.model.named_parameters():
@@ -113,7 +113,7 @@ def train(model,train_loader,test_loader,epoch,device,optimizer,scheduler,loss_1
             if ewc is not None:
                 ewc_loss = ewc.penalty(model)
                 loss += ewc_lambda * ewc_loss
-                print('ewc:',ewc_lambda * ewc_loss)
+                print(ewc_lambda * ewc_loss)
             loss.backward()
             optimizer.step()
             scheduler.step()
@@ -137,7 +137,6 @@ def train(model,train_loader,test_loader,epoch,device,optimizer,scheduler,loss_1
         test_loss_all.append(test_loss)
         print(' epoch: ',epoch_i," train_loss: ",epoch_loss," test_loss: ",test_loss)
         test(model,train_loader_1,loss_1,device)
-        test(model,train_loader_2,loss_1,device)
         if epoch_i%100==0 and epoch_i>=40:
             print((time.time()-start)/60,"min")
             plt.figure()
@@ -179,24 +178,11 @@ def test(model,test_loader,loss_1,device,save_number=0):
     test_loss_all.append(test_loss)
     print(" test_loss: ",test_loss)
 
-
-    # plt.figure()
-    # plt.imshow(model(x).cpu().detach()[0,0,50,:,:].T)
-    # plt.colorbar()
-    # plt.savefig("/home/pengyaoguang/data/3D_net_result/v_updata8_{}.png".format(save_number))
-    # plt.close()
-    # sio.savemat("/home/pengyaoguang/data/3D_net_result/v_updata8_{}.mat".format(save_number),{"v":model(x).cpu().detach()[0,0]})
-
-    # plt.figure()
-    # plt.imshow(y.cpu().detach()[0,0,50,:,:].T)
-    # plt.colorbar()
-    # plt.savefig("/home/pengyaoguang/data/3D_net_result/v_real8_{}.png".format(save_number))
-    # plt.close()
-
-optimizer = torch.optim.AdamW(model.parameters(),lr=1e-3)
-scheduler=torch.optim.lr_scheduler.StepLR(optimizer,step_size=300,gamma=0.6)
+model.load_state_dict(torch.load("/home/pengyaoguang/data/3D_net_model/modeltest8_12.pkl"))
+# optimizer = torch.optim.AdamW(model.parameters(),lr=1e-2)
+# scheduler=torch.optim.lr_scheduler.StepLR(optimizer,step_size=300,gamma=0.6)
 loss_1=torch.nn.L1Loss()
-# train(model,train_loader_1,test_loader,1000,device,optimizer,scheduler,loss_1,save_number=13)
+# train(model,train_loader,test_loader,20,device,optimizer,scheduler,loss_1,save_number=14)
 test(model,train_loader_1,loss_1,device)
 test(model,train_loader_2,loss_1,device)
 
@@ -206,6 +192,6 @@ ewc=EWC(model, train_loader_1, device)
 optimizer = torch.optim.AdamW(model.parameters(),lr=1e-3)
 scheduler=torch.optim.lr_scheduler.StepLR(optimizer,step_size=300,gamma=0.6)
 loss_1=torch.nn.L1Loss()
-train(model,train_loader_2,test_loader_2,1000,device,optimizer,scheduler,loss_1,save_number=14,ewc=ewc, ewc_lambda=100)
+train(model,train_loader_2,test_loader_2,1000,device,optimizer,scheduler,loss_1,save_number=15,ewc=ewc, ewc_lambda=10)
 test(model,train_loader_1,loss_1,device)
 test(model,train_loader_2,loss_1,device)

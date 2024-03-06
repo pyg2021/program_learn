@@ -12,17 +12,17 @@ from DataLoad import DataLoad
 from Model3D_unt import net
 import os 
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID" 
-os.environ['CUDA_VISIBLE_DEVICES'] = "0,1,2"
+os.environ['CUDA_VISIBLE_DEVICES'] = "1,2,3"
 start=time.time()
 
 ##data_prepare
-BatchSize=12
+BatchSize=5
 device="cuda"
-x_1,y_1=DataLoad(0,0+35)
+x_1,y_1=DataLoad(0,0+1)
 x,y=x_1,y_1
 trian_number=y.shape[0]
 train_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(y).float())
-train_loader_1 = data_utils.DataLoader(train_data,batch_size=BatchSize,shuffle=True)
+train_loader = data_utils.DataLoader(train_data,batch_size=BatchSize,shuffle=True)
 
 x_1,y_1=DataLoad(100,100+15)
 x,y=x_1,y_1
@@ -31,7 +31,7 @@ test_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(
 test_loader = data_utils.DataLoader(test_data,batch_size=BatchSize,shuffle=True)
 
 
-x_1,y_1=DataLoad(15000,15000+15)
+x_1,y_1=DataLoad(15000,15000+1)
 x,y=x_1,y_1
 trian_number=y.shape[0]
 train_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(y).float())
@@ -72,9 +72,8 @@ class EWC:
         for data, target in dataloader:
             data, target = data.to(self.device), target.to(self.device)
             self.model.zero_grad()
-            # output = F.log_softmax(self.model(data), dim=1)
-            # target=  F.log_softmax(target, dim=1)
-            output=self.model(data)
+            output = F.log_softmax(self.model(data), dim=1)
+            target=  F.log_softmax(target, dim=1)
             # output=output.reshape(output.shape[0],output.shape[2]*output.shape[3]*output.shape[4])
             # target=target.reshape(target.shape[0],target.shape[2]*target.shape[3]*target.shape[4])
             # loss = F.nll_loss(output, target)
@@ -113,7 +112,6 @@ def train(model,train_loader,test_loader,epoch,device,optimizer,scheduler,loss_1
             if ewc is not None:
                 ewc_loss = ewc.penalty(model)
                 loss += ewc_lambda * ewc_loss
-                print('ewc:',ewc_lambda * ewc_loss)
             loss.backward()
             optimizer.step()
             scheduler.step()
@@ -136,8 +134,6 @@ def train(model,train_loader,test_loader,epoch,device,optimizer,scheduler,loss_1
         test_loss=test_loss/sum_2
         test_loss_all.append(test_loss)
         print(' epoch: ',epoch_i," train_loss: ",epoch_loss," test_loss: ",test_loss)
-        test(model,train_loader_1,loss_1,device)
-        test(model,train_loader_2,loss_1,device)
         if epoch_i%100==0 and epoch_i>=40:
             print((time.time()-start)/60,"min")
             plt.figure()
@@ -196,16 +192,16 @@ def test(model,test_loader,loss_1,device,save_number=0):
 optimizer = torch.optim.AdamW(model.parameters(),lr=1e-3)
 scheduler=torch.optim.lr_scheduler.StepLR(optimizer,step_size=300,gamma=0.6)
 loss_1=torch.nn.L1Loss()
-# train(model,train_loader_1,test_loader,1000,device,optimizer,scheduler,loss_1,save_number=13)
-test(model,train_loader_1,loss_1,device)
+train(model,train_loader,test_loader,2000,device,optimizer,scheduler,loss_1,save_number=14)
+test(model,train_loader,loss_1,device)
 test(model,train_loader_2,loss_1,device)
 
 
-ewc=EWC(model, train_loader_1, device)
+ewc=EWC(model, train_loader, device)
 
 optimizer = torch.optim.AdamW(model.parameters(),lr=1e-3)
 scheduler=torch.optim.lr_scheduler.StepLR(optimizer,step_size=300,gamma=0.6)
 loss_1=torch.nn.L1Loss()
-train(model,train_loader_2,test_loader_2,1000,device,optimizer,scheduler,loss_1,save_number=14,ewc=ewc, ewc_lambda=100)
-test(model,train_loader_1,loss_1,device)
+train(model,train_loader_2,test_loader_2,2000,device,optimizer,scheduler,loss_1,save_number=15,ewc=ewc, ewc_lambda=100)
+test(model,train_loader,loss_1,device)
 test(model,train_loader_2,loss_1,device)
