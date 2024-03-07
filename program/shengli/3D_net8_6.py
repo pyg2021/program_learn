@@ -8,15 +8,15 @@ import time
 import scipy.io as sio
 import matplotlib.pyplot as plt
 from scipy.ndimage import gaussian_filter
-from DataLoad import DataLoad
+from DataLoad1346 import DataLoad
 from Model3D_unt import net
 import os 
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID" 
-os.environ['CUDA_VISIBLE_DEVICES'] = "0,1,3"
+os.environ['CUDA_VISIBLE_DEVICES'] = "0,1,2"
 start=time.time()
 
 ##data_prepare
-BatchSize=9
+BatchSize=12
 device="cuda"
 x_1,y_1=DataLoad(0,0+35)
 x,y=x_1,y_1
@@ -50,7 +50,7 @@ model=nn.parallel.DataParallel(model)
 # plt.figure()
 # plt.imshow(y.cpu().detach()[0,0,50,:,:].T)
 # plt.colorbar()
-# plt.savefig("/home/pengyaoguang/data/3D_net_result/v_real.png")
+# plt.savefig("/home/yaoguang/data/3D_net_result/v_real.png")
 # plt.close()
 
 # EWC implementation
@@ -143,15 +143,15 @@ def train(model,train_loader,test_loader,epoch,device,optimizer,scheduler,loss_1
             plt.figure()
             plt.imshow(model(x).cpu().detach()[0,0,50,:,:].T)
             plt.colorbar()
-            plt.savefig("/home/pengyaoguang/data/3D_net_result/v_updata8_{}.png".format(save_number))
+            plt.savefig("/home/yaoguang/data/3D_net_result/v_updata8_{}.png".format(save_number))
             plt.close()
-            sio.savemat("/home/pengyaoguang/data/3D_net_result/v_updata8_{}.mat".format(save_number),{"v":model(x).cpu().detach()[0,0]})
-            torch.save(model.state_dict(),"/home/pengyaoguang/data/3D_net_model/modeltest8_{}.pkl".format(save_number))
+            sio.savemat("/home/yaoguang/data/3D_net_result/v_updata8_{}.mat".format(save_number),{"v":model(x).cpu().detach()[0,0]})
+            torch.save(model.state_dict(),"/home/yaoguang/data/3D_net_model/modeltest8_{}.pkl".format(save_number))
 
             plt.figure()
             plt.imshow(y.cpu().detach()[0,0,50,:,:].T)
             plt.colorbar()
-            plt.savefig("/home/pengyaoguang/data/3D_net_result/v_real8_{}.png".format(save_number))
+            plt.savefig("/home/yaoguang/data/3D_net_result/v_real8_{}.png".format(save_number))
             plt.close()
 
             plt.figure()
@@ -160,7 +160,7 @@ def train(model,train_loader,test_loader,epoch,device,optimizer,scheduler,loss_1
             plt.xlabel("epoch")
             plt.ylabel("loss")
             plt.legend()
-            plt.savefig("/home/pengyaoguang/data/3D_net_result/history8_{}.png".format(save_number))
+            plt.savefig("/home/yaoguang/data/3D_net_result/history8_{}.png".format(save_number))
             plt.close()
 def test(model,test_loader,loss_1,device,save_number=0):
     test_loss_all=[]
@@ -183,18 +183,18 @@ def test(model,test_loader,loss_1,device,save_number=0):
     # plt.figure()
     # plt.imshow(model(x).cpu().detach()[0,0,50,:,:].T)
     # plt.colorbar()
-    # plt.savefig("/home/pengyaoguang/data/3D_net_result/v_updata8_{}.png".format(save_number))
+    # plt.savefig("/home/yaoguang/data/3D_net_result/v_updata8_{}.png".format(save_number))
     # plt.close()
-    # sio.savemat("/home/pengyaoguang/data/3D_net_result/v_updata8_{}.mat".format(save_number),{"v":model(x).cpu().detach()[0,0]})
+    # sio.savemat("/home/yaoguang/data/3D_net_result/v_updata8_{}.mat".format(save_number),{"v":model(x).cpu().detach()[0,0]})
 
     # plt.figure()
     # plt.imshow(y.cpu().detach()[0,0,50,:,:].T)
     # plt.colorbar()
-    # plt.savefig("/home/pengyaoguang/data/3D_net_result/v_real8_{}.png".format(save_number))
+    # plt.savefig("/home/yaoguang/data/3D_net_result/v_real8_{}.png".format(save_number))
     # plt.close()
 
 
-model.load_state_dict(torch.load("/home/pengyaoguang/data/3D_net_model/modeltest6_5.pkl"))
+model.load_state_dict(torch.load("/home/yaoguang/data/3D_net_model/modeltest6_5.pkl"))
 optimizer = torch.optim.AdamW(model.parameters(),lr=1e-3)
 scheduler=torch.optim.lr_scheduler.StepLR(optimizer,step_size=300,gamma=0.6)
 loss_1=torch.nn.L1Loss()
@@ -203,11 +203,11 @@ test(model,train_loader_1,loss_1,device)
 test(model,train_loader_2,loss_1,device)
 
 
-ewc=EWC(model, train_loader_1, device)
+# ewc=EWC(model, train_loader_1, device)
 
 optimizer = torch.optim.AdamW(model.parameters(),lr=1e-3)
 scheduler=torch.optim.lr_scheduler.StepLR(optimizer,step_size=300,gamma=0.6)
 loss_1=torch.nn.L1Loss()
-train(model,train_loader_2,test_loader_2,4000,device,optimizer,scheduler,loss_1,save_number=15,ewc=ewc, ewc_lambda=500000)
+train(model,train_loader_2,test_loader_2,4000,device,optimizer,scheduler,loss_1,save_number=15)
 test(model,train_loader_1,loss_1,device)
 test(model,train_loader_2,loss_1,device)

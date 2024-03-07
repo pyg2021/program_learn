@@ -1,0 +1,2434 @@
+nohup: ignoring input
+ test_loss:  0.00524252827744931
+ test_loss:  0.22128219157457352
+ewc: tensor(0., device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.2413, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  0  train_loss:  0.43317171931266785  test_loss:  0.2516908273100853
+ test_loss:  0.25409916415810585
+ test_loss:  0.2956129014492035
+ewc: tensor(0.0445, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0673, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  1  train_loss:  0.36833229660987854  test_loss:  0.22630278021097183
+ test_loss:  0.20264392718672752
+ test_loss:  0.23485934734344482
+ewc: tensor(0.1501, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.1327, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  2  train_loss:  0.37910956144332886  test_loss:  0.18538498878479004
+ test_loss:  0.17995354533195496
+ test_loss:  0.20371724665164948
+ewc: tensor(0.0714, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0394, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  3  train_loss:  0.2595290094614029  test_loss:  0.1650560200214386
+ test_loss:  0.17855869233608246
+ test_loss:  0.18683871626853943
+ewc: tensor(0.0547, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0829, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  4  train_loss:  0.24831974506378174  test_loss:  0.17525414377450943
+ test_loss:  0.1812528371810913
+ test_loss:  0.1774166151881218
+ewc: tensor(0.0864, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0639, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  5  train_loss:  0.2479388266801834  test_loss:  0.15982688963413239
+ test_loss:  0.16635870933532715
+ test_loss:  0.1609700620174408
+ewc: tensor(0.0393, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0331, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  6  train_loss:  0.20382552593946457  test_loss:  0.15899430960416794
+ test_loss:  0.15842168033123016
+ test_loss:  0.15904109925031662
+ewc: tensor(0.0442, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0555, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  7  train_loss:  0.20691905915737152  test_loss:  0.15352638810873032
+ test_loss:  0.1676239613443613
+ test_loss:  0.1562342792749405
+ewc: tensor(0.0534, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0408, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  8  train_loss:  0.20281854271888733  test_loss:  0.15361721813678741
+ test_loss:  0.17273634672164917
+ test_loss:  0.1508159637451172
+ewc: tensor(0.0287, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0260, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  9  train_loss:  0.17526958137750626  test_loss:  0.14532891288399696
+ test_loss:  0.158680597320199
+ test_loss:  0.13948515057563782
+ewc: tensor(0.0321, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0383, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  10  train_loss:  0.17946650832891464  test_loss:  0.15244030952453613
+ test_loss:  0.16257664561271667
+ test_loss:  0.1434633955359459
+ewc: tensor(0.0364, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0287, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  11  train_loss:  0.169238843023777  test_loss:  0.1387239769101143
+ test_loss:  0.14955174550414085
+ test_loss:  0.13964057713747025
+ewc: tensor(0.0222, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0214, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  12  train_loss:  0.1612381935119629  test_loss:  0.13764185458421707
+ test_loss:  0.1529361456632614
+ test_loss:  0.1266234591603279
+ewc: tensor(0.0249, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0269, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  13  train_loss:  0.15443019568920135  test_loss:  0.14444945007562637
+ test_loss:  0.15249831601977348
+ test_loss:  0.12830836325883865
+ewc: tensor(0.0251, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0209, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  14  train_loss:  0.15146619826555252  test_loss:  0.13144905865192413
+ test_loss:  0.148781418800354
+ test_loss:  0.1251235492527485
+ewc: tensor(0.0181, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0185, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  15  train_loss:  0.14521776139736176  test_loss:  0.1309363916516304
+ test_loss:  0.14963402599096298
+ test_loss:  0.12043795362114906
+ewc: tensor(0.0204, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0209, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  16  train_loss:  0.14035095274448395  test_loss:  0.12440220266580582
+ test_loss:  0.1413695178925991
+ test_loss:  0.12075019255280495
+ewc: tensor(0.0191, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0165, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  17  train_loss:  0.13592123985290527  test_loss:  0.140159510076046
+ test_loss:  0.14875848963856697
+ test_loss:  0.12741797417402267
+ewc: tensor(0.0160, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0164, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  18  train_loss:  0.13799498975276947  test_loss:  0.12712939083576202
+ test_loss:  0.13770503550767899
+ test_loss:  0.1297481544315815
+ewc: tensor(0.0172, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0168, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  19  train_loss:  0.14769718796014786  test_loss:  0.13792676478624344
+ test_loss:  0.15258897468447685
+ test_loss:  0.12868990004062653
+ewc: tensor(0.0155, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0148, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  20  train_loss:  0.1414792388677597  test_loss:  0.13594700396060944
+ test_loss:  0.14504218846559525
+ test_loss:  0.12415548041462898
+ewc: tensor(0.0145, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0149, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  21  train_loss:  0.14416121691465378  test_loss:  0.1397174671292305
+ test_loss:  0.1422429345548153
+ test_loss:  0.11973058432340622
+ewc: tensor(0.0151, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0143, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  22  train_loss:  0.13657308369874954  test_loss:  0.12657050788402557
+ test_loss:  0.14176016114652157
+ test_loss:  0.12343993410468102
+ewc: tensor(0.0136, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0144, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  23  train_loss:  0.1331666186451912  test_loss:  0.13810737431049347
+ test_loss:  0.1454898566007614
+ test_loss:  0.11907623708248138
+ewc: tensor(0.0141, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0142, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  24  train_loss:  0.13446608930826187  test_loss:  0.13063789159059525
+ test_loss:  0.1373093891888857
+ test_loss:  0.11680346727371216
+ewc: tensor(0.0147, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0146, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  25  train_loss:  0.1288633681833744  test_loss:  0.1194935031235218
+ test_loss:  0.1320707853883505
+ test_loss:  0.11030306667089462
+ewc: tensor(0.0143, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0137, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  26  train_loss:  0.12332755699753761  test_loss:  0.1264348439872265
+ test_loss:  0.12883701734244823
+ test_loss:  0.1057533472776413
+ewc: tensor(0.0135, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0131, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  27  train_loss:  0.11551610007882118  test_loss:  0.12117178738117218
+ test_loss:  0.1300555020570755
+ test_loss:  0.10117354616522789
+ewc: tensor(0.0132, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0132, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  28  train_loss:  0.11444272473454475  test_loss:  0.12894638627767563
+ test_loss:  0.1447342187166214
+ test_loss:  0.09950612485408783
+ewc: tensor(0.0133, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0131, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  29  train_loss:  0.11423877254128456  test_loss:  0.12692946195602417
+ test_loss:  0.13138515502214432
+ test_loss:  0.10049097239971161
+ewc: tensor(0.0127, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0124, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  30  train_loss:  0.11348484084010124  test_loss:  0.12000684812664986
+ test_loss:  0.129919296130538
+ test_loss:  0.09916403144598007
+ewc: tensor(0.0122, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0124, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  31  train_loss:  0.11146815493702888  test_loss:  0.13067083060741425
+ test_loss:  0.1282393243163824
+ test_loss:  0.09527173638343811
+ewc: tensor(0.0123, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0120, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  32  train_loss:  0.11310634389519691  test_loss:  0.11418735235929489
+ test_loss:  0.13277333229780197
+ test_loss:  0.08854077383875847
+ewc: tensor(0.0117, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0117, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  33  train_loss:  0.10473238676786423  test_loss:  0.12220657989382744
+ test_loss:  0.13265690580010414
+ test_loss:  0.08682010695338249
+ewc: tensor(0.0116, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0116, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  34  train_loss:  0.10593556985259056  test_loss:  0.11826587095856667
+ test_loss:  0.12509004399180412
+ test_loss:  0.09063513204455376
+ewc: tensor(0.0115, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0112, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  35  train_loss:  0.09993695095181465  test_loss:  0.12506896257400513
+ test_loss:  0.13412978127598763
+ test_loss:  0.08987517654895782
+ewc: tensor(0.0116, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0117, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  36  train_loss:  0.1005735881626606  test_loss:  0.12254081666469574
+ test_loss:  0.13219795003533363
+ test_loss:  0.09521274641156197
+ewc: tensor(0.0116, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0115, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  37  train_loss:  0.10574325174093246  test_loss:  0.13077840954065323
+ test_loss:  0.13388951309025288
+ test_loss:  0.09220400080084801
+ewc: tensor(0.0113, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0112, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  38  train_loss:  0.09818040207028389  test_loss:  0.12903086841106415
+ test_loss:  0.1296491827815771
+ test_loss:  0.11006514728069305
+ewc: tensor(0.0118, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0112, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  39  train_loss:  0.1116410382091999  test_loss:  0.14932236820459366
+ test_loss:  0.15398449450731277
+ test_loss:  0.10529876500368118
+ewc: tensor(0.0113, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0115, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  40  train_loss:  0.11675857752561569  test_loss:  0.11477877199649811
+ test_loss:  0.12384168058633804
+ test_loss:  0.09575949609279633
+ewc: tensor(0.0113, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0112, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  41  train_loss:  0.1036178432404995  test_loss:  0.13185212761163712
+ test_loss:  0.1266990564763546
+ test_loss:  0.0899597778916359
+ewc: tensor(0.0113, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0110, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  42  train_loss:  0.09768745675683022  test_loss:  0.1198347806930542
+ test_loss:  0.12792112492024899
+ test_loss:  0.08483938500285149
+ewc: tensor(0.0111, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0113, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  43  train_loss:  0.09360573813319206  test_loss:  0.1309814527630806
+ test_loss:  0.12417933717370033
+ test_loss:  0.08780533075332642
+ewc: tensor(0.0117, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0112, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  44  train_loss:  0.09461930021643639  test_loss:  0.12149718403816223
+ test_loss:  0.1325900685042143
+ test_loss:  0.08890221267938614
+ewc: tensor(0.0111, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0110, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  45  train_loss:  0.09456005319952965  test_loss:  0.13745837658643723
+ test_loss:  0.13349907472729683
+ test_loss:  0.0895594134926796
+ewc: tensor(0.0112, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0111, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  46  train_loss:  0.09681087732315063  test_loss:  0.11848444864153862
+ test_loss:  0.13454744592308998
+ test_loss:  0.08868347108364105
+ewc: tensor(0.0110, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0109, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  47  train_loss:  0.09651754796504974  test_loss:  0.1263263337314129
+ test_loss:  0.13682156801223755
+ test_loss:  0.07770717889070511
+ewc: tensor(0.0109, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0110, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  48  train_loss:  0.08945360779762268  test_loss:  0.12227097153663635
+ test_loss:  0.1314886137843132
+ test_loss:  0.07679182663559914
+ewc: tensor(0.0110, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0108, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  49  train_loss:  0.08816684409976006  test_loss:  0.12224964424967766
+ test_loss:  0.12182420678436756
+ test_loss:  0.07202308997511864
+ewc: tensor(0.0108, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0109, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  50  train_loss:  0.0856998898088932  test_loss:  0.11638462170958519
+ test_loss:  0.13172530382871628
+ test_loss:  0.07021273672580719
+ewc: tensor(0.0109, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0109, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  51  train_loss:  0.0855046920478344  test_loss:  0.1207609549164772
+ test_loss:  0.12866026163101196
+ test_loss:  0.06868611089885235
+ewc: tensor(0.0108, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0109, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  52  train_loss:  0.08252539858222008  test_loss:  0.12045779824256897
+ test_loss:  0.13902128115296364
+ test_loss:  0.07156269624829292
+ewc: tensor(0.0108, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0109, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  53  train_loss:  0.08154883980751038  test_loss:  0.1315903589129448
+ test_loss:  0.1317997332662344
+ test_loss:  0.07547569647431374
+ewc: tensor(0.0111, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0110, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  54  train_loss:  0.08683162927627563  test_loss:  0.11493217572569847
+ test_loss:  0.13989003375172615
+ test_loss:  0.07174348458647728
+ewc: tensor(0.0108, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0109, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  55  train_loss:  0.0841018594801426  test_loss:  0.12842004001140594
+ test_loss:  0.12761872448027134
+ test_loss:  0.07556618377566338
+ewc: tensor(0.0108, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0108, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  56  train_loss:  0.08349176496267319  test_loss:  0.11933442950248718
+ test_loss:  0.14359779469668865
+ test_loss:  0.07880710437893867
+ewc: tensor(0.0110, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0111, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  57  train_loss:  0.0884777382016182  test_loss:  0.13278594613075256
+ test_loss:  0.12521829828619957
+ test_loss:  0.07413964718580246
+ewc: tensor(0.0110, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0110, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  58  train_loss:  0.08877578750252724  test_loss:  0.1138056293129921
+ test_loss:  0.13339343294501305
+ test_loss:  0.0745484046638012
+ewc: tensor(0.0110, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0110, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  59  train_loss:  0.0871393121778965  test_loss:  0.1418309286236763
+ test_loss:  0.15510805696249008
+ test_loss:  0.08297431468963623
+ewc: tensor(0.0110, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0109, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  60  train_loss:  0.09575125202536583  test_loss:  0.12423804774880409
+ test_loss:  0.1162680983543396
+ test_loss:  0.07827042788267136
+ewc: tensor(0.0108, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0111, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  61  train_loss:  0.08892277255654335  test_loss:  0.12632200866937637
+ test_loss:  0.14386993274092674
+ test_loss:  0.0721166804432869
+ewc: tensor(0.0110, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0111, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  62  train_loss:  0.08902565017342567  test_loss:  0.14010102301836014
+ test_loss:  0.1384193543344736
+ test_loss:  0.07974188774824142
+ewc: tensor(0.0109, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0108, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  63  train_loss:  0.08706237375736237  test_loss:  0.11609736829996109
+ test_loss:  0.11888829991221428
+ test_loss:  0.08493302017450333
+ewc: tensor(0.0112, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0108, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  64  train_loss:  0.08960988745093346  test_loss:  0.1376383677124977
+ test_loss:  0.13937082514166832
+ test_loss:  0.08004654571413994
+ewc: tensor(0.0112, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0113, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  65  train_loss:  0.0904616266489029  test_loss:  0.11904516071081161
+ test_loss:  0.1290355920791626
+ test_loss:  0.06728481501340866
+ewc: tensor(0.0111, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0112, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  66  train_loss:  0.08091642707586288  test_loss:  0.11981063708662987
+ test_loss:  0.12303183227777481
+ test_loss:  0.06394576653838158
+ewc: tensor(0.0110, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0111, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  67  train_loss:  0.0812954418361187  test_loss:  0.13527347892522812
+ test_loss:  0.12960051000118256
+ test_loss:  0.07753310352563858
+ewc: tensor(0.0111, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0112, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  68  train_loss:  0.08449322357773781  test_loss:  0.12246869504451752
+ test_loss:  0.13377530872821808
+ test_loss:  0.09225713461637497
+ewc: tensor(0.0120, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0115, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  69  train_loss:  0.09762107580900192  test_loss:  0.14807187020778656
+ test_loss:  0.15572111308574677
+ test_loss:  0.08760051429271698
+ewc: tensor(0.0125, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0127, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  70  train_loss:  0.0980154499411583  test_loss:  0.12759381532669067
+ test_loss:  0.11747396364808083
+ test_loss:  0.0861314982175827
+ewc: tensor(0.0120, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0114, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  71  train_loss:  0.0932345762848854  test_loss:  0.1318861022591591
+ test_loss:  0.14791129529476166
+ test_loss:  0.08951345831155777
+ewc: tensor(0.0117, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0118, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  72  train_loss:  0.09935795143246651  test_loss:  0.1297939494252205
+ test_loss:  0.14463265612721443
+ test_loss:  0.08159376308321953
+ewc: tensor(0.0117, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0118, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  73  train_loss:  0.09291804954409599  test_loss:  0.1255238614976406
+ test_loss:  0.12139066867530346
+ test_loss:  0.08009236678481102
+ewc: tensor(0.0115, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0114, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  74  train_loss:  0.0901346318423748  test_loss:  0.11919522657990456
+ test_loss:  0.1380617767572403
+ test_loss:  0.06943592429161072
+ewc: tensor(0.0112, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0114, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  75  train_loss:  0.08777209743857384  test_loss:  0.12610051780939102
+ test_loss:  0.13693082332611084
+ test_loss:  0.0720418244600296
+ewc: tensor(0.0114, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0114, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  76  train_loss:  0.08267193660140038  test_loss:  0.11952212452888489
+ test_loss:  0.12499706260859966
+ test_loss:  0.07773178070783615
+ewc: tensor(0.0113, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0113, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  77  train_loss:  0.08762845396995544  test_loss:  0.13158556073904037
+ test_loss:  0.13739870861172676
+ test_loss:  0.06871918216347694
+ewc: tensor(0.0113, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0114, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  78  train_loss:  0.07989159598946571  test_loss:  0.12265458330512047
+ test_loss:  0.15111735835671425
+ test_loss:  0.0736541785299778
+ewc: tensor(0.0114, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0112, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  79  train_loss:  0.08184666559100151  test_loss:  0.12934881821274757
+ test_loss:  0.13272558338940144
+ test_loss:  0.07201720401644707
+ewc: tensor(0.0115, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0115, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  80  train_loss:  0.08077361434698105  test_loss:  0.11478834971785545
+ test_loss:  0.1306042242795229
+ test_loss:  0.07057792320847511
+ewc: tensor(0.0111, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0111, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  81  train_loss:  0.0792941078543663  test_loss:  0.1411895453929901
+ test_loss:  0.14751525223255157
+ test_loss:  0.08302848413586617
+ewc: tensor(0.0120, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0113, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  82  train_loss:  0.0938362218439579  test_loss:  0.12601106241345406
+ test_loss:  0.13305828720331192
+ test_loss:  0.06574391201138496
+ewc: tensor(0.0111, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0118, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  83  train_loss:  0.08636195212602615  test_loss:  0.1211196556687355
+ test_loss:  0.12376819364726543
+ test_loss:  0.0834030844271183
+ewc: tensor(0.0118, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0115, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  84  train_loss:  0.08744806051254272  test_loss:  0.14670249819755554
+ test_loss:  0.1501140594482422
+ test_loss:  0.08691303431987762
+ewc: tensor(0.0116, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0115, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  85  train_loss:  0.08888772502541542  test_loss:  0.12218022719025612
+ test_loss:  0.12537798285484314
+ test_loss:  0.06978974491357803
+ewc: tensor(0.0119, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0114, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  86  train_loss:  0.08276642486453056  test_loss:  0.14594008028507233
+ test_loss:  0.15317511931061745
+ test_loss:  0.07204246893525124
+ewc: tensor(0.0117, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0121, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  87  train_loss:  0.08704302087426186  test_loss:  0.13740402087569237
+ test_loss:  0.13420982100069523
+ test_loss:  0.06931202486157417
+ewc: tensor(0.0116, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0114, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  88  train_loss:  0.08161912485957146  test_loss:  0.12504387274384499
+ test_loss:  0.1320396326482296
+ test_loss:  0.06439518555998802
+ewc: tensor(0.0115, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0116, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  89  train_loss:  0.07668695226311684  test_loss:  0.13830533623695374
+ test_loss:  0.14428802952170372
+ test_loss:  0.06455427408218384
+ewc: tensor(0.0114, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0112, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  90  train_loss:  0.07310875877737999  test_loss:  0.11994655430316925
+ test_loss:  0.12735568545758724
+ test_loss:  0.06743388622999191
+ewc: tensor(0.0111, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0111, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  91  train_loss:  0.07477009296417236  test_loss:  0.14190878719091415
+ test_loss:  0.13749304600059986
+ test_loss:  0.0732908695936203
+ewc: tensor(0.0112, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0112, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  92  train_loss:  0.08296971768140793  test_loss:  0.12806088477373123
+ test_loss:  0.14199433848261833
+ test_loss:  0.060531796887516975
+ewc: tensor(0.0112, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0113, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  93  train_loss:  0.07579969242215157  test_loss:  0.12678369507193565
+ test_loss:  0.14131996780633926
+ test_loss:  0.05886651575565338
+ewc: tensor(0.0110, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0109, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  94  train_loss:  0.07120874524116516  test_loss:  0.13955052942037582
+ test_loss:  0.1292842272669077
+ test_loss:  0.06656747311353683
+ewc: tensor(0.0112, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0109, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  95  train_loss:  0.07774283736944199  test_loss:  0.12252214550971985
+ test_loss:  0.13796918094158173
+ test_loss:  0.07335498183965683
+ewc: tensor(0.0109, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0110, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  96  train_loss:  0.0767541192471981  test_loss:  0.13936367630958557
+ test_loss:  0.13789480552077293
+ test_loss:  0.07540217787027359
+ewc: tensor(0.0110, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0107, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  97  train_loss:  0.07910587266087532  test_loss:  0.1201460249722004
+ test_loss:  0.13757119327783585
+ test_loss:  0.06725626811385155
+ewc: tensor(0.0108, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0109, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  98  train_loss:  0.07605771720409393  test_loss:  0.1235901489853859
+ test_loss:  0.12931016460061073
+ test_loss:  0.058213673532009125
+ewc: tensor(0.0109, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0110, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  99  train_loss:  0.07485001534223557  test_loss:  0.1296515315771103
+ test_loss:  0.1354082953184843
+ test_loss:  0.05899345315992832
+ewc: tensor(0.0109, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0110, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  100  train_loss:  0.07189281284809113  test_loss:  0.12375858053565025
+ test_loss:  0.13623666390776634
+ test_loss:  0.06519132480025291
+7.711792882283529 min
+ewc: tensor(0.0109, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0108, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  101  train_loss:  0.0781661719083786  test_loss:  0.12966487556695938
+ test_loss:  0.14144990034401417
+ test_loss:  0.06136063486337662
+ewc: tensor(0.0109, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0108, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  102  train_loss:  0.07069255039095879  test_loss:  0.12724825367331505
+ test_loss:  0.1385111566632986
+ test_loss:  0.06579181924462318
+ewc: tensor(0.0109, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0108, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  103  train_loss:  0.07514950260519981  test_loss:  0.12855299562215805
+ test_loss:  0.1433512046933174
+ test_loss:  0.0674564577639103
+ewc: tensor(0.0110, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0108, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  104  train_loss:  0.07361343130469322  test_loss:  0.12509239837527275
+ test_loss:  0.13553939759731293
+ test_loss:  0.07099029794335365
+ewc: tensor(0.0108, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0107, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  105  train_loss:  0.07716096937656403  test_loss:  0.13166293501853943
+ test_loss:  0.13904623314738274
+ test_loss:  0.0752006359398365
+ewc: tensor(0.0109, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0110, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  106  train_loss:  0.08738749101758003  test_loss:  0.13981854170560837
+ test_loss:  0.1389325186610222
+ test_loss:  0.0677650049328804
+ewc: tensor(0.0112, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0114, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  107  train_loss:  0.07543278113007545  test_loss:  0.12380671128630638
+ test_loss:  0.13420491851866245
+ test_loss:  0.0812249705195427
+ewc: tensor(0.0113, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0110, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  108  train_loss:  0.0903785265982151  test_loss:  0.1361028254032135
+ test_loss:  0.15032564103603363
+ test_loss:  0.07385183498263359
+ewc: tensor(0.0119, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0121, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  109  train_loss:  0.0888281986117363  test_loss:  0.14586105197668076
+ test_loss:  0.138427022844553
+ test_loss:  0.07630343735218048
+ewc: tensor(0.0112, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0117, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  110  train_loss:  0.0891941599547863  test_loss:  0.12439888343214989
+ test_loss:  0.1405002921819687
+ test_loss:  0.0776197724044323
+ewc: tensor(0.0117, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0115, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  111  train_loss:  0.09032543376088142  test_loss:  0.14883752167224884
+ test_loss:  0.1575496457517147
+ test_loss:  0.07757075130939484
+ewc: tensor(0.0120, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0119, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  112  train_loss:  0.0902060754597187  test_loss:  0.12268489971756935
+ test_loss:  0.13144053146243095
+ test_loss:  0.07075252383947372
+ewc: tensor(0.0115, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0119, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  113  train_loss:  0.08345717936754227  test_loss:  0.1352088525891304
+ test_loss:  0.1569821797311306
+ test_loss:  0.074644535779953
+ewc: tensor(0.0120, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0120, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  114  train_loss:  0.08634638413786888  test_loss:  0.14067047834396362
+ test_loss:  0.15030112862586975
+ test_loss:  0.07283242419362068
+ewc: tensor(0.0125, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0118, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  115  train_loss:  0.08488543331623077  test_loss:  0.12745652720332146
+ test_loss:  0.13078169897198677
+ test_loss:  0.06839233636856079
+ewc: tensor(0.0118, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0118, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  116  train_loss:  0.07621772959828377  test_loss:  0.12543120607733727
+ test_loss:  0.13220503367483616
+ test_loss:  0.06903595104813576
+ewc: tensor(0.0120, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0117, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  117  train_loss:  0.07667987793684006  test_loss:  0.1329127550125122
+ test_loss:  0.142687626183033
+ test_loss:  0.07214704900979996
+ewc: tensor(0.0123, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0123, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  118  train_loss:  0.07911741733551025  test_loss:  0.12574825435876846
+ test_loss:  0.13508583419024944
+ test_loss:  0.07103951647877693
+ewc: tensor(0.0118, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0117, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  119  train_loss:  0.0808100551366806  test_loss:  0.13750022277235985
+ test_loss:  0.15269237011671066
+ test_loss:  0.07434773817658424
+ewc: tensor(0.0121, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0120, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  120  train_loss:  0.0847390815615654  test_loss:  0.1304076835513115
+ test_loss:  0.14153536781668663
+ test_loss:  0.07861759141087532
+ewc: tensor(0.0127, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0117, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  121  train_loss:  0.08462852239608765  test_loss:  0.141754150390625
+ test_loss:  0.1340925395488739
+ test_loss:  0.07832619547843933
+ewc: tensor(0.0122, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0132, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  122  train_loss:  0.09085791930556297  test_loss:  0.13851850479841232
+ test_loss:  0.1442459411919117
+ test_loss:  0.06959811970591545
+ewc: tensor(0.0127, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0122, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  123  train_loss:  0.08861709758639336  test_loss:  0.12235461920499802
+ test_loss:  0.13771256990730762
+ test_loss:  0.06242887303233147
+ewc: tensor(0.0119, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0121, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  124  train_loss:  0.07788369059562683  test_loss:  0.13931945711374283
+ test_loss:  0.1474933922290802
+ test_loss:  0.06859998032450676
+ewc: tensor(0.0124, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0135, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  125  train_loss:  0.087704598903656  test_loss:  0.12692128866910934
+ test_loss:  0.127782566472888
+ test_loss:  0.06377817317843437
+ewc: tensor(0.0120, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0123, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  126  train_loss:  0.0759303979575634  test_loss:  0.12704625353217125
+ test_loss:  0.14884599298238754
+ test_loss:  0.06684613972902298
+ewc: tensor(0.0137, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0134, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  127  train_loss:  0.07599623128771782  test_loss:  0.13214505463838577
+ test_loss:  0.1434561088681221
+ test_loss:  0.06391971930861473
+ewc: tensor(0.0127, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0120, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  128  train_loss:  0.07699093595147133  test_loss:  0.12712617963552475
+ test_loss:  0.12989774346351624
+ test_loss:  0.058884147554636
+ewc: tensor(0.0118, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0123, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  129  train_loss:  0.07150789350271225  test_loss:  0.1284153014421463
+ test_loss:  0.14786452054977417
+ test_loss:  0.06009976752102375
+ewc: tensor(0.0123, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0116, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  130  train_loss:  0.07290342450141907  test_loss:  0.1390550211071968
+ test_loss:  0.13836735114455223
+ test_loss:  0.05839611776173115
+ewc: tensor(0.0117, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0117, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  131  train_loss:  0.07053918391466141  test_loss:  0.1182234175503254
+ test_loss:  0.12405299581587315
+ test_loss:  0.06076196767389774
+ewc: tensor(0.0117, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0114, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  132  train_loss:  0.0694199725985527  test_loss:  0.15050629526376724
+ test_loss:  0.1624697931110859
+ test_loss:  0.06689532101154327
+ewc: tensor(0.0113, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0117, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  133  train_loss:  0.07571139931678772  test_loss:  0.12083904072642326
+ test_loss:  0.1273432970046997
+ test_loss:  0.0597002524882555
+ewc: tensor(0.0117, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0114, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  134  train_loss:  0.07219082117080688  test_loss:  0.1344870924949646
+ test_loss:  0.13539299741387367
+ test_loss:  0.05921124294400215
+ewc: tensor(0.0115, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0113, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  135  train_loss:  0.07187071815133095  test_loss:  0.1308833658695221
+ test_loss:  0.14861543849110603
+ test_loss:  0.06489735841751099
+ewc: tensor(0.0115, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0115, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  136  train_loss:  0.07529027760028839  test_loss:  0.12510743737220764
+ test_loss:  0.13378325663506985
+ test_loss:  0.061088697984814644
+ewc: tensor(0.0112, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0117, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  137  train_loss:  0.0746755413711071  test_loss:  0.1306924931704998
+ test_loss:  0.14418236911296844
+ test_loss:  0.05854512006044388
+ewc: tensor(0.0116, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0116, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  138  train_loss:  0.06919063255190849  test_loss:  0.1326768919825554
+ test_loss:  0.1388729214668274
+ test_loss:  0.06846809014678001
+ewc: tensor(0.0122, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0114, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  139  train_loss:  0.07311566546559334  test_loss:  0.1392877921462059
+ test_loss:  0.14689886569976807
+ test_loss:  0.06765625067055225
+ewc: tensor(0.0114, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0116, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  140  train_loss:  0.07778684049844742  test_loss:  0.1352209970355034
+ test_loss:  0.13757582381367683
+ test_loss:  0.06837809458374977
+ewc: tensor(0.0113, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0113, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  141  train_loss:  0.07737888768315315  test_loss:  0.1284034550189972
+ test_loss:  0.1419873982667923
+ test_loss:  0.060321761295199394
+ewc: tensor(0.0115, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0112, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  142  train_loss:  0.07291746512055397  test_loss:  0.12389909103512764
+ test_loss:  0.1328738108277321
+ test_loss:  0.054340073838829994
+ewc: tensor(0.0114, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0112, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  143  train_loss:  0.06747624278068542  test_loss:  0.12416967749595642
+ test_loss:  0.13124528899788857
+ test_loss:  0.05453166179358959
+ewc: tensor(0.0110, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0115, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  144  train_loss:  0.06842641159892082  test_loss:  0.12519948557019234
+ test_loss:  0.14428161457180977
+ test_loss:  0.05786006338894367
+ewc: tensor(0.0112, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0112, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  145  train_loss:  0.06663074344396591  test_loss:  0.13560820370912552
+ test_loss:  0.14288635924458504
+ test_loss:  0.06308695487678051
+ewc: tensor(0.0118, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0113, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  146  train_loss:  0.07161648198962212  test_loss:  0.13397062569856644
+ test_loss:  0.14523937180638313
+ test_loss:  0.0739591121673584
+ewc: tensor(0.0121, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0115, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  147  train_loss:  0.08154148235917091  test_loss:  0.13272974640130997
+ test_loss:  0.16078964993357658
+ test_loss:  0.06649532541632652
+ewc: tensor(0.0118, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0131, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  148  train_loss:  0.07815079763531685  test_loss:  0.1356017366051674
+ test_loss:  0.12682453729212284
+ test_loss:  0.06472184136509895
+ewc: tensor(0.0124, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0117, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  149  train_loss:  0.07543990015983582  test_loss:  0.1273321993649006
+ test_loss:  0.14952800422906876
+ test_loss:  0.06698926538228989
+ewc: tensor(0.0120, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0118, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  150  train_loss:  0.07860484346747398  test_loss:  0.13084623217582703
+ test_loss:  0.14650319702923298
+ test_loss:  0.048624204471707344
+ewc: tensor(0.0113, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0113, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  151  train_loss:  0.06243184767663479  test_loss:  0.12939619272947311
+ test_loss:  0.12822739966213703
+ test_loss:  0.054014189168810844
+ewc: tensor(0.0114, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0112, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  152  train_loss:  0.06285606324672699  test_loss:  0.12835108488798141
+ test_loss:  0.14131803438067436
+ test_loss:  0.048914093524217606
+ewc: tensor(0.0109, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0111, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  153  train_loss:  0.06108373776078224  test_loss:  0.1407570093870163
+ test_loss:  0.1546901986002922
+ test_loss:  0.05189673230051994
+ewc: tensor(0.0112, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0109, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  154  train_loss:  0.05961095541715622  test_loss:  0.12415293976664543
+ test_loss:  0.12905123829841614
+ test_loss:  0.04931103251874447
+ewc: tensor(0.0107, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0108, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  155  train_loss:  0.058648644015192986  test_loss:  0.13115666061639786
+ test_loss:  0.13820649683475494
+ test_loss:  0.04789059981703758
+ewc: tensor(0.0107, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0107, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  156  train_loss:  0.05729708448052406  test_loss:  0.1285904385149479
+ test_loss:  0.14271821081638336
+ test_loss:  0.047069158405065536
+ewc: tensor(0.0108, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0106, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  157  train_loss:  0.05556212738156319  test_loss:  0.12999462708830833
+ test_loss:  0.1365528404712677
+ test_loss:  0.04251232370734215
+ewc: tensor(0.0105, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0105, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  158  train_loss:  0.05452181585133076  test_loss:  0.12847325205802917
+ test_loss:  0.13635890372097492
+ test_loss:  0.04057064838707447
+ewc: tensor(0.0104, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0104, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  159  train_loss:  0.05243272706866264  test_loss:  0.13014301285147667
+ test_loss:  0.14337294548749924
+ test_loss:  0.03950902447104454
+ewc: tensor(0.0103, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0103, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  160  train_loss:  0.049696845933794975  test_loss:  0.1283823549747467
+ test_loss:  0.13905085623264313
+ test_loss:  0.039580272510647774
+ewc: tensor(0.0103, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0102, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  161  train_loss:  0.050398724153637886  test_loss:  0.1281125247478485
+ test_loss:  0.13064329139888287
+ test_loss:  0.03893705829977989
+ewc: tensor(0.0102, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0101, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  162  train_loss:  0.04914052225649357  test_loss:  0.12593799829483032
+ test_loss:  0.141014214605093
+ test_loss:  0.0386537816375494
+ewc: tensor(0.0101, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0101, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  163  train_loss:  0.04824828915297985  test_loss:  0.12936004623770714
+ test_loss:  0.1388204451650381
+ test_loss:  0.03836178593337536
+ewc: tensor(0.0101, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0100, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  164  train_loss:  0.05102887749671936  test_loss:  0.12188367545604706
+ test_loss:  0.13047394156455994
+ test_loss:  0.043044036254286766
+ewc: tensor(0.0100, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0100, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  165  train_loss:  0.05083439499139786  test_loss:  0.13530243933200836
+ test_loss:  0.15197181701660156
+ test_loss:  0.04353171959519386
+ewc: tensor(0.0101, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0100, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  166  train_loss:  0.05247640050947666  test_loss:  0.12003501132130623
+ test_loss:  0.13347645662724972
+ test_loss:  0.039895545691251755
+ewc: tensor(0.0099, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0099, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  167  train_loss:  0.04965826869010925  test_loss:  0.13475379347801208
+ test_loss:  0.1398700438439846
+ test_loss:  0.04361740127205849
+ewc: tensor(0.0099, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0098, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  168  train_loss:  0.0509825199842453  test_loss:  0.11885189637541771
+ test_loss:  0.13163381442427635
+ test_loss:  0.04404416121542454
+ewc: tensor(0.0099, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0097, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  169  train_loss:  0.052592407912015915  test_loss:  0.13549402356147766
+ test_loss:  0.14386695250868797
+ test_loss:  0.040180519223213196
+ewc: tensor(0.0097, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0097, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  170  train_loss:  0.049400342628359795  test_loss:  0.12256554514169693
+ test_loss:  0.1319869477301836
+ test_loss:  0.0414976142346859
+ewc: tensor(0.0096, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0097, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  171  train_loss:  0.051810238510370255  test_loss:  0.13516686856746674
+ test_loss:  0.1440948285162449
+ test_loss:  0.04398694634437561
+ewc: tensor(0.0098, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0097, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  172  train_loss:  0.05338308401405811  test_loss:  0.1285700425505638
+ test_loss:  0.14257312938570976
+ test_loss:  0.046978095546364784
+ewc: tensor(0.0098, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0097, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  173  train_loss:  0.05570026487112045  test_loss:  0.12840536236763
+ test_loss:  0.13860167562961578
+ test_loss:  0.039390336722135544
+ewc: tensor(0.0097, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0097, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  174  train_loss:  0.05151556059718132  test_loss:  0.12891480699181557
+ test_loss:  0.1340444888919592
+ test_loss:  0.04206259921193123
+ewc: tensor(0.0096, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0096, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  175  train_loss:  0.05289113521575928  test_loss:  0.12776907160878181
+ test_loss:  0.1427273489534855
+ test_loss:  0.043536463752388954
+ewc: tensor(0.0097, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0097, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  176  train_loss:  0.0535227507352829  test_loss:  0.13014904409646988
+ test_loss:  0.14059454388916492
+ test_loss:  0.04448613524436951
+ewc: tensor(0.0096, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0096, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  177  train_loss:  0.05420468747615814  test_loss:  0.12272187322378159
+ test_loss:  0.14112582989037037
+ test_loss:  0.05104982294142246
+ewc: tensor(0.0096, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0097, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  178  train_loss:  0.058175913989543915  test_loss:  0.13465895503759384
+ test_loss:  0.13977504521608353
+ test_loss:  0.04589700140058994
+ewc: tensor(0.0098, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0096, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  179  train_loss:  0.05337095819413662  test_loss:  0.13100633770227432
+ test_loss:  0.14106900244951248
+ test_loss:  0.04694068804383278
+ewc: tensor(0.0098, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0099, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  180  train_loss:  0.05507905222475529  test_loss:  0.13195209950208664
+ test_loss:  0.13766072690486908
+ test_loss:  0.04678649269044399
+ewc: tensor(0.0098, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0097, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  181  train_loss:  0.05647379718720913  test_loss:  0.14079352468252182
+ test_loss:  0.1496996097266674
+ test_loss:  0.04595750756561756
+ewc: tensor(0.0097, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0097, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  182  train_loss:  0.056855494156479836  test_loss:  0.12905341386795044
+ test_loss:  0.1371137760579586
+ test_loss:  0.043748943135142326
+ewc: tensor(0.0098, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0098, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  183  train_loss:  0.05551640875637531  test_loss:  0.1343463808298111
+ test_loss:  0.138550266623497
+ test_loss:  0.04002954810857773
+ewc: tensor(0.0096, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0096, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  184  train_loss:  0.050893759354949  test_loss:  0.1306065246462822
+ test_loss:  0.147465318441391
+ test_loss:  0.03771326504647732
+ewc: tensor(0.0095, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0095, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  185  train_loss:  0.05139027535915375  test_loss:  0.12535730376839638
+ test_loss:  0.13431544415652752
+ test_loss:  0.04315890930593014
+ewc: tensor(0.0095, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0096, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  186  train_loss:  0.05150413140654564  test_loss:  0.1338033676147461
+ test_loss:  0.13810578733682632
+ test_loss:  0.042766666039824486
+ewc: tensor(0.0095, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0096, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  187  train_loss:  0.052969448268413544  test_loss:  0.12517136335372925
+ test_loss:  0.13395018316805363
+ test_loss:  0.04193035140633583
+ewc: tensor(0.0096, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0094, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  188  train_loss:  0.050452444702386856  test_loss:  0.13634169101715088
+ test_loss:  0.1459035836160183
+ test_loss:  0.04389561899006367
+ewc: tensor(0.0095, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0095, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  189  train_loss:  0.05585245043039322  test_loss:  0.12657220661640167
+ test_loss:  0.13781339302659035
+ test_loss:  0.0404239185154438
+ewc: tensor(0.0094, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0095, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  190  train_loss:  0.05029376596212387  test_loss:  0.1373060718178749
+ test_loss:  0.1535891406238079
+ test_loss:  0.04303758591413498
+ewc: tensor(0.0095, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0094, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  191  train_loss:  0.05155337229371071  test_loss:  0.12571780383586884
+ test_loss:  0.1333240382373333
+ test_loss:  0.04257817007601261
+ewc: tensor(0.0094, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0094, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  192  train_loss:  0.04980026185512543  test_loss:  0.13528607413172722
+ test_loss:  0.14428645744919777
+ test_loss:  0.04179173707962036
+ewc: tensor(0.0094, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0094, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  193  train_loss:  0.04977454990148544  test_loss:  0.13013559207320213
+ test_loss:  0.1442263014614582
+ test_loss:  0.040192125365138054
+ewc: tensor(0.0094, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0093, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  194  train_loss:  0.04824448935687542  test_loss:  0.13397706300020218
+ test_loss:  0.13407235592603683
+ test_loss:  0.03968273662030697
+ewc: tensor(0.0094, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0093, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  195  train_loss:  0.04907565377652645  test_loss:  0.12929223850369453
+ test_loss:  0.13763008639216423
+ test_loss:  0.03719323128461838
+ewc: tensor(0.0093, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0093, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  196  train_loss:  0.04775761067867279  test_loss:  0.13678061962127686
+ test_loss:  0.1490812860429287
+ test_loss:  0.03758163936436176
+ewc: tensor(0.0093, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0093, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  197  train_loss:  0.04894394800066948  test_loss:  0.12589392066001892
+ test_loss:  0.1299022827297449
+ test_loss:  0.03739115409553051
+ewc: tensor(0.0093, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0092, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  198  train_loss:  0.04749775864183903  test_loss:  0.1391429826617241
+ test_loss:  0.15140101686120033
+ test_loss:  0.04028947651386261
+ewc: tensor(0.0092, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0093, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  199  train_loss:  0.04930919036269188  test_loss:  0.13153430074453354
+ test_loss:  0.13994510099291801
+ test_loss:  0.04081263579428196
+ewc: tensor(0.0093, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0092, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  200  train_loss:  0.05042223073542118  test_loss:  0.1299709714949131
+ test_loss:  0.14014857634902
+ test_loss:  0.03741099871695042
+15.02436270316442 min
+ewc: tensor(0.0092, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0093, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  201  train_loss:  0.04933170601725578  test_loss:  0.1329934522509575
+ test_loss:  0.14362624660134315
+ test_loss:  0.03892876021564007
+ewc: tensor(0.0092, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0092, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  202  train_loss:  0.05096999369561672  test_loss:  0.13152499869465828
+ test_loss:  0.14334527775645256
+ test_loss:  0.041656577959656715
+ewc: tensor(0.0092, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0093, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  203  train_loss:  0.05012662895023823  test_loss:  0.13901341706514359
+ test_loss:  0.13870523497462273
+ test_loss:  0.04381357505917549
+ewc: tensor(0.0092, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0092, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  204  train_loss:  0.05424949713051319  test_loss:  0.12642411142587662
+ test_loss:  0.1358468346297741
+ test_loss:  0.0390506274998188
+ewc: tensor(0.0092, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0092, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  205  train_loss:  0.04778194986283779  test_loss:  0.1329275295138359
+ test_loss:  0.14591431990265846
+ test_loss:  0.04221539944410324
+ewc: tensor(0.0093, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0093, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  206  train_loss:  0.04998289979994297  test_loss:  0.12773748114705086
+ test_loss:  0.13743725791573524
+ test_loss:  0.0516780111938715
+ewc: tensor(0.0094, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0092, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  207  train_loss:  0.058381300419569016  test_loss:  0.12875774130225182
+ test_loss:  0.13267647847533226
+ test_loss:  0.04133160598576069
+ewc: tensor(0.0093, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0092, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  208  train_loss:  0.05051296390593052  test_loss:  0.13529396057128906
+ test_loss:  0.14586985483765602
+ test_loss:  0.04114755243062973
+ewc: tensor(0.0092, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0092, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  209  train_loss:  0.04999364912509918  test_loss:  0.12936652451753616
+ test_loss:  0.13688065111637115
+ test_loss:  0.03998429514467716
+ewc: tensor(0.0092, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0092, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  210  train_loss:  0.04820086248219013  test_loss:  0.13310549408197403
+ test_loss:  0.13886237144470215
+ test_loss:  0.03850165754556656
+ewc: tensor(0.0092, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0092, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  211  train_loss:  0.04609226807951927  test_loss:  0.12469932064414024
+ test_loss:  0.13251113891601562
+ test_loss:  0.03800996579229832
+ewc: tensor(0.0092, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0092, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  212  train_loss:  0.04561479389667511  test_loss:  0.1316021829843521
+ test_loss:  0.1419435665011406
+ test_loss:  0.03818018175661564
+ewc: tensor(0.0091, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0091, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  213  train_loss:  0.04780716635286808  test_loss:  0.12951453775167465
+ test_loss:  0.14161544851958752
+ test_loss:  0.03757130913436413
+ewc: tensor(0.0092, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0092, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  214  train_loss:  0.04653334058821201  test_loss:  0.1278144158422947
+ test_loss:  0.14236247166991234
+ test_loss:  0.03997106850147247
+ewc: tensor(0.0091, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0092, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  215  train_loss:  0.049880288541316986  test_loss:  0.1291014701128006
+ test_loss:  0.13709630258381367
+ test_loss:  0.03800003230571747
+ewc: tensor(0.0092, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0091, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  216  train_loss:  0.04714016802608967  test_loss:  0.13054876029491425
+ test_loss:  0.1412886120378971
+ test_loss:  0.03874576464295387
+ewc: tensor(0.0092, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0091, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  217  train_loss:  0.04837031662464142  test_loss:  0.12898128107190132
+ test_loss:  0.13962016813457012
+ test_loss:  0.040557509288191795
+ewc: tensor(0.0091, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0091, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  218  train_loss:  0.049907002598047256  test_loss:  0.13165518268942833
+ test_loss:  0.13964203745126724
+ test_loss:  0.03932352177798748
+ewc: tensor(0.0091, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0091, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  219  train_loss:  0.049501022323966026  test_loss:  0.12621818482875824
+ test_loss:  0.13139881007373333
+ test_loss:  0.03911912813782692
+ewc: tensor(0.0090, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0090, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  220  train_loss:  0.04982474818825722  test_loss:  0.1361110731959343
+ test_loss:  0.14221779257059097
+ test_loss:  0.038449592888355255
+ewc: tensor(0.0089, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0090, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  221  train_loss:  0.04630072042346001  test_loss:  0.12461329996585846
+ test_loss:  0.1307806372642517
+ test_loss:  0.03942006267607212
+ewc: tensor(0.0090, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0089, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  222  train_loss:  0.04723197594285011  test_loss:  0.131387110799551
+ test_loss:  0.14405106753110886
+ test_loss:  0.03694966994225979
+ewc: tensor(0.0089, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0090, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  223  train_loss:  0.04782736487686634  test_loss:  0.12533234804868698
+ test_loss:  0.14526280760765076
+ test_loss:  0.04153543338179588
+ewc: tensor(0.0090, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0090, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  224  train_loss:  0.050809379667043686  test_loss:  0.13559792935848236
+ test_loss:  0.14258446730673313
+ test_loss:  0.043325114995241165
+ewc: tensor(0.0090, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0090, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  225  train_loss:  0.04869850352406502  test_loss:  0.12162260711193085
+ test_loss:  0.13682666048407555
+ test_loss:  0.04189508780837059
+ewc: tensor(0.0091, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0089, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  226  train_loss:  0.04940424859523773  test_loss:  0.14258207380771637
+ test_loss:  0.14903457835316658
+ test_loss:  0.04534106142818928
+ewc: tensor(0.0090, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0091, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  227  train_loss:  0.0558981467038393  test_loss:  0.1251443214714527
+ test_loss:  0.13441161438822746
+ test_loss:  0.04569580592215061
+ewc: tensor(0.0090, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0090, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  228  train_loss:  0.056101636961102486  test_loss:  0.13125736266374588
+ test_loss:  0.13739649951457977
+ test_loss:  0.04170606844127178
+ewc: tensor(0.0090, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0091, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  229  train_loss:  0.05337981693446636  test_loss:  0.13869258016347885
+ test_loss:  0.14503498747944832
+ test_loss:  0.045266881585121155
+ewc: tensor(0.0090, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0089, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  230  train_loss:  0.05395815521478653  test_loss:  0.12151071429252625
+ test_loss:  0.13198979943990707
+ test_loss:  0.044863009825348854
+ewc: tensor(0.0089, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0089, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  231  train_loss:  0.052728164941072464  test_loss:  0.14119230955839157
+ test_loss:  0.1520840749144554
+ test_loss:  0.04660486616194248
+ewc: tensor(0.0091, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0090, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  232  train_loss:  0.05536178685724735  test_loss:  0.12411901354789734
+ test_loss:  0.13304754346609116
+ test_loss:  0.042743049561977386
+ewc: tensor(0.0090, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0091, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  233  train_loss:  0.052334701642394066  test_loss:  0.1357785388827324
+ test_loss:  0.13923967629671097
+ test_loss:  0.04289603419601917
+ewc: tensor(0.0089, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0089, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  234  train_loss:  0.05212646350264549  test_loss:  0.13062256574630737
+ test_loss:  0.14143700152635574
+ test_loss:  0.03866514563560486
+ewc: tensor(0.0089, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0090, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  235  train_loss:  0.048626793548464775  test_loss:  0.12812863662838936
+ test_loss:  0.13781310617923737
+ test_loss:  0.04107910767197609
+ewc: tensor(0.0090, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0089, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  236  train_loss:  0.04907664284110069  test_loss:  0.13688231259584427
+ test_loss:  0.14837786927819252
+ test_loss:  0.04345390200614929
+ewc: tensor(0.0089, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0088, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  237  train_loss:  0.049991076812148094  test_loss:  0.13359462469816208
+ test_loss:  0.1364421471953392
+ test_loss:  0.04625839367508888
+ewc: tensor(0.0090, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0089, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  238  train_loss:  0.053114622831344604  test_loss:  0.12874849513173103
+ test_loss:  0.13962891325354576
+ test_loss:  0.044708676636219025
+ewc: tensor(0.0089, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0089, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  239  train_loss:  0.05291765369474888  test_loss:  0.12911562994122505
+ test_loss:  0.1394267901778221
+ test_loss:  0.044322868809103966
+ewc: tensor(0.0089, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0089, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  240  train_loss:  0.052251335233449936  test_loss:  0.1339258998632431
+ test_loss:  0.1472056470811367
+ test_loss:  0.045450253412127495
+ewc: tensor(0.0089, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0089, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  241  train_loss:  0.0539286807179451  test_loss:  0.12639641761779785
+ test_loss:  0.1403038240969181
+ test_loss:  0.04449242912232876
+ewc: tensor(0.0090, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0090, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  242  train_loss:  0.05228906124830246  test_loss:  0.138337142765522
+ test_loss:  0.14325834810733795
+ test_loss:  0.043752970173954964
+ewc: tensor(0.0090, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0090, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  243  train_loss:  0.05135955289006233  test_loss:  0.12968362495303154
+ test_loss:  0.14273884147405624
+ test_loss:  0.04548894800245762
+ewc: tensor(0.0090, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0089, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  244  train_loss:  0.05477696470916271  test_loss:  0.13311970233917236
+ test_loss:  0.1401417925953865
+ test_loss:  0.039770180359482765
+ewc: tensor(0.0092, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0091, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  245  train_loss:  0.051623037084937096  test_loss:  0.1293792575597763
+ test_loss:  0.1418749839067459
+ test_loss:  0.03789127245545387
+ewc: tensor(0.0089, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0090, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  246  train_loss:  0.04890599846839905  test_loss:  0.1318049356341362
+ test_loss:  0.14469699934124947
+ test_loss:  0.04095171391963959
+ewc: tensor(0.0089, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0089, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  247  train_loss:  0.04843506962060928  test_loss:  0.13274089992046356
+ test_loss:  0.1402595043182373
+ test_loss:  0.0431606937199831
+ewc: tensor(0.0089, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0088, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  248  train_loss:  0.049499884247779846  test_loss:  0.13119322806596756
+ test_loss:  0.14066959358751774
+ test_loss:  0.04674128443002701
+ewc: tensor(0.0089, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0089, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  249  train_loss:  0.05318065360188484  test_loss:  0.1343313530087471
+ test_loss:  0.14494667574763298
+ test_loss:  0.045033032074570656
+ewc: tensor(0.0089, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0090, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  250  train_loss:  0.05270414799451828  test_loss:  0.12984030693769455
+ test_loss:  0.14512063562870026
+ test_loss:  0.04443817958235741
+ewc: tensor(0.0090, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0089, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  251  train_loss:  0.051941074430942535  test_loss:  0.1344255954027176
+ test_loss:  0.1410548947751522
+ test_loss:  0.04480516538023949
+ewc: tensor(0.0089, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0089, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  252  train_loss:  0.054211970418691635  test_loss:  0.1342422217130661
+ test_loss:  0.14287173002958298
+ test_loss:  0.039158739149570465
+ewc: tensor(0.0089, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0089, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  253  train_loss:  0.052300769835710526  test_loss:  0.12810340523719788
+ test_loss:  0.14204847812652588
+ test_loss:  0.03993863798677921
+ewc: tensor(0.0088, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0090, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  254  train_loss:  0.052207790315151215  test_loss:  0.14076879620552063
+ test_loss:  0.1475926637649536
+ test_loss:  0.041320908814668655
+ewc: tensor(0.0090, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0088, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  255  train_loss:  0.05146661400794983  test_loss:  0.12452519685029984
+ test_loss:  0.1318784598261118
+ test_loss:  0.041950734332203865
+ewc: tensor(0.0088, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0088, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  256  train_loss:  0.04915236681699753  test_loss:  0.14162632077932358
+ test_loss:  0.14539623633027077
+ test_loss:  0.0464871060103178
+ewc: tensor(0.0088, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0089, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  257  train_loss:  0.051705263555049896  test_loss:  0.1303742527961731
+ test_loss:  0.1423504799604416
+ test_loss:  0.046167297288775444
+ewc: tensor(0.0089, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0089, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  258  train_loss:  0.05267348326742649  test_loss:  0.13665993511676788
+ test_loss:  0.14413071051239967
+ test_loss:  0.04267220012843609
+ewc: tensor(0.0089, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0089, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  259  train_loss:  0.05362497642636299  test_loss:  0.1372474655508995
+ test_loss:  0.1508904304355383
+ test_loss:  0.041225651279091835
+ewc: tensor(0.0088, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0088, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  260  train_loss:  0.05142279528081417  test_loss:  0.12936470285058022
+ test_loss:  0.12919469363987446
+ test_loss:  0.0405182559043169
+ewc: tensor(0.0088, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0088, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  261  train_loss:  0.047926124185323715  test_loss:  0.13963531702756882
+ test_loss:  0.15013625472784042
+ test_loss:  0.042614029720425606
+ewc: tensor(0.0088, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0088, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  262  train_loss:  0.04772845841944218  test_loss:  0.12529222667217255
+ test_loss:  0.13619914837181568
+ test_loss:  0.042841460555791855
+ewc: tensor(0.0089, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0088, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  263  train_loss:  0.04933389462530613  test_loss:  0.14050935953855515
+ test_loss:  0.1473725587129593
+ test_loss:  0.0423278845846653
+ewc: tensor(0.0089, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0088, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  264  train_loss:  0.04982545226812363  test_loss:  0.12704040482640266
+ test_loss:  0.13323074951767921
+ test_loss:  0.042730532586574554
+ewc: tensor(0.0088, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0088, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  265  train_loss:  0.049284717068076134  test_loss:  0.14266499876976013
+ test_loss:  0.14938220754265785
+ test_loss:  0.04596388712525368
+ewc: tensor(0.0088, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0088, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  266  train_loss:  0.05442119017243385  test_loss:  0.13054395467042923
+ test_loss:  0.13988935202360153
+ test_loss:  0.03779495880007744
+ewc: tensor(0.0088, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0088, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  267  train_loss:  0.04810287803411484  test_loss:  0.1354919672012329
+ test_loss:  0.14896740391850471
+ test_loss:  0.03468586131930351
+ewc: tensor(0.0088, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0088, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  268  train_loss:  0.0455547459423542  test_loss:  0.13343824446201324
+ test_loss:  0.14652716740965843
+ test_loss:  0.03464082255959511
+ewc: tensor(0.0087, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0087, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  269  train_loss:  0.04501786455512047  test_loss:  0.13380257040262222
+ test_loss:  0.13982738181948662
+ test_loss:  0.034146266989409924
+ewc: tensor(0.0087, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0088, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  270  train_loss:  0.0427241250872612  test_loss:  0.1384463980793953
+ test_loss:  0.14659490063786507
+ test_loss:  0.03505822829902172
+ewc: tensor(0.0087, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0088, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  271  train_loss:  0.04249315336346626  test_loss:  0.13297442346811295
+ test_loss:  0.14559341967105865
+ test_loss:  0.03756744787096977
+ewc: tensor(0.0089, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0088, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  272  train_loss:  0.043906865641474724  test_loss:  0.13842491060495377
+ test_loss:  0.14640142396092415
+ test_loss:  0.04419221170246601
+ewc: tensor(0.0089, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0088, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  273  train_loss:  0.0505653228610754  test_loss:  0.12917587533593178
+ test_loss:  0.14269326254725456
+ test_loss:  0.03737268224358559
+ewc: tensor(0.0088, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0088, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  274  train_loss:  0.04652491956949234  test_loss:  0.14055468887090683
+ test_loss:  0.1408868283033371
+ test_loss:  0.04199419915676117
+ewc: tensor(0.0087, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0087, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  275  train_loss:  0.046459952369332314  test_loss:  0.12856994941830635
+ test_loss:  0.14677726477384567
+ test_loss:  0.04399566352367401
+ewc: tensor(0.0087, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0088, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  276  train_loss:  0.05119282007217407  test_loss:  0.1355367675423622
+ test_loss:  0.1452530324459076
+ test_loss:  0.04070750251412392
+ewc: tensor(0.0088, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0087, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  277  train_loss:  0.04956051707267761  test_loss:  0.13519742339849472
+ test_loss:  0.13961872085928917
+ test_loss:  0.037057582288980484
+ewc: tensor(0.0087, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0087, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  278  train_loss:  0.04697462357580662  test_loss:  0.13276363909244537
+ test_loss:  0.14493577368557453
+ test_loss:  0.03646976500749588
+ewc: tensor(0.0087, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0086, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  279  train_loss:  0.04542912542819977  test_loss:  0.1339331567287445
+ test_loss:  0.1454641856253147
+ test_loss:  0.03447330556809902
+ewc: tensor(0.0086, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0086, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  280  train_loss:  0.04354576766490936  test_loss:  0.12718777731060982
+ test_loss:  0.13799012824892998
+ test_loss:  0.03437200374901295
+ewc: tensor(0.0086, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0087, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  281  train_loss:  0.04592052660882473  test_loss:  0.137328140437603
+ test_loss:  0.15080109983682632
+ test_loss:  0.03249801881611347
+ewc: tensor(0.0086, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0087, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  282  train_loss:  0.04369636811316013  test_loss:  0.1301242560148239
+ test_loss:  0.13627776131033897
+ test_loss:  0.03561650216579437
+ewc: tensor(0.0086, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0086, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  283  train_loss:  0.04481365345418453  test_loss:  0.13807853311300278
+ test_loss:  0.14414525404572487
+ test_loss:  0.037059275433421135
+ewc: tensor(0.0086, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0085, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  284  train_loss:  0.046674562618136406  test_loss:  0.132367555052042
+ test_loss:  0.1361493431031704
+ test_loss:  0.037747353315353394
+ewc: tensor(0.0086, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0085, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  285  train_loss:  0.04405098780989647  test_loss:  0.13749388232827187
+ test_loss:  0.15048561990261078
+ test_loss:  0.039576634764671326
+ewc: tensor(0.0088, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0087, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  286  train_loss:  0.0475971344858408  test_loss:  0.13107912242412567
+ test_loss:  0.13896803930401802
+ test_loss:  0.04027370922267437
+ewc: tensor(0.0087, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0088, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  287  train_loss:  0.04930435121059418  test_loss:  0.1321137621998787
+ test_loss:  0.1466028429567814
+ test_loss:  0.04356744326651096
+ewc: tensor(0.0087, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0086, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  288  train_loss:  0.04851829260587692  test_loss:  0.13823224231600761
+ test_loss:  0.14684738591313362
+ test_loss:  0.04724952392280102
+ewc: tensor(0.0087, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0086, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  289  train_loss:  0.05209648236632347  test_loss:  0.13407807052135468
+ test_loss:  0.1431049108505249
+ test_loss:  0.04995506629347801
+ewc: tensor(0.0087, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0087, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  290  train_loss:  0.05620604380965233  test_loss:  0.1306651011109352
+ test_loss:  0.13871333561837673
+ test_loss:  0.04614634066820145
+ewc: tensor(0.0087, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0086, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  291  train_loss:  0.05338009260594845  test_loss:  0.13877012580633163
+ test_loss:  0.14483514428138733
+ test_loss:  0.044411053881049156
+ewc: tensor(0.0088, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0088, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  292  train_loss:  0.053854767233133316  test_loss:  0.13632190227508545
+ test_loss:  0.14485624432563782
+ test_loss:  0.0433826707303524
+ewc: tensor(0.0086, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0087, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  293  train_loss:  0.0541478656232357  test_loss:  0.1319502331316471
+ test_loss:  0.14375348389148712
+ test_loss:  0.03687008284032345
+ewc: tensor(0.0087, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0088, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  294  train_loss:  0.04870818555355072  test_loss:  0.1349133402109146
+ test_loss:  0.14672691002488136
+ test_loss:  0.037052568048238754
+ewc: tensor(0.0086, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0087, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  295  train_loss:  0.04967261850833893  test_loss:  0.13285062462091446
+ test_loss:  0.1417960338294506
+ test_loss:  0.03705831989645958
+ewc: tensor(0.0086, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0086, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  296  train_loss:  0.047276465222239494  test_loss:  0.1314503699541092
+ test_loss:  0.14127011969685555
+ test_loss:  0.03618123382329941
+ewc: tensor(0.0085, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0087, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  297  train_loss:  0.04551172815263271  test_loss:  0.1354011371731758
+ test_loss:  0.14641765877604485
+ test_loss:  0.04015729762613773
+ewc: tensor(0.0087, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0086, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  298  train_loss:  0.0470932200551033  test_loss:  0.12877223268151283
+ test_loss:  0.13669238612055779
+ test_loss:  0.04246336966753006
+ewc: tensor(0.0086, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0086, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  299  train_loss:  0.05023736506700516  test_loss:  0.14386457204818726
+ test_loss:  0.15047122538089752
+ test_loss:  0.04211873188614845
+ewc: tensor(0.0087, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0087, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  300  train_loss:  0.049420423805713654  test_loss:  0.13214055448770523
+ test_loss:  0.14327694848179817
+ test_loss:  0.03276885114610195
+22.298079307874044 min
+ewc: tensor(0.0086, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0086, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  301  train_loss:  0.04369885288178921  test_loss:  0.12939255684614182
+ test_loss:  0.13800080306828022
+ test_loss:  0.03433844447135925
+ewc: tensor(0.0085, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0085, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  302  train_loss:  0.04177100770175457  test_loss:  0.13843171298503876
+ test_loss:  0.14785148948431015
+ test_loss:  0.034702226519584656
+ewc: tensor(0.0085, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0084, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  303  train_loss:  0.041675860062241554  test_loss:  0.13108180463314056
+ test_loss:  0.1412719115614891
+ test_loss:  0.03416718542575836
+ewc: tensor(0.0084, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0084, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  304  train_loss:  0.04185442626476288  test_loss:  0.1325952112674713
+ test_loss:  0.14059897139668465
+ test_loss:  0.03021979983896017
+ewc: tensor(0.0084, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0084, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  305  train_loss:  0.038792289793491364  test_loss:  0.14060474187135696
+ test_loss:  0.14539971202611923
+ test_loss:  0.029919001273810863
+ewc: tensor(0.0084, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0084, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  306  train_loss:  0.03855283558368683  test_loss:  0.13135910779237747
+ test_loss:  0.14346931502223015
+ test_loss:  0.02959170565009117
+ewc: tensor(0.0084, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0084, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  307  train_loss:  0.03846076317131519  test_loss:  0.13623514026403427
+ test_loss:  0.14443881437182426
+ test_loss:  0.029272896237671375
+ewc: tensor(0.0084, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0083, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  308  train_loss:  0.037733277305960655  test_loss:  0.13214080408215523
+ test_loss:  0.14440789446234703
+ test_loss:  0.029777156189084053
+ewc: tensor(0.0083, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0084, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  309  train_loss:  0.03749084658920765  test_loss:  0.1389423832297325
+ test_loss:  0.1479681320488453
+ test_loss:  0.029971061274409294
+ewc: tensor(0.0083, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0083, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  310  train_loss:  0.03819280490279198  test_loss:  0.1300092115998268
+ test_loss:  0.14041301980614662
+ test_loss:  0.029949133284389973
+ewc: tensor(0.0083, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0083, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  311  train_loss:  0.03778108395636082  test_loss:  0.13738944381475449
+ test_loss:  0.1429583914577961
+ test_loss:  0.02969803288578987
+ewc: tensor(0.0083, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0083, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  312  train_loss:  0.037516038864851  test_loss:  0.13095775991678238
+ test_loss:  0.14245887473225594
+ test_loss:  0.03062556404620409
+ewc: tensor(0.0082, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0083, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  313  train_loss:  0.03881085105240345  test_loss:  0.13095705956220627
+ test_loss:  0.1418837606906891
+ test_loss:  0.029888980090618134
+ewc: tensor(0.0083, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0082, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  314  train_loss:  0.0371454656124115  test_loss:  0.13287506997585297
+ test_loss:  0.13975687883794308
+ test_loss:  0.028227184899151325
+ewc: tensor(0.0082, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0082, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  315  train_loss:  0.03617819584906101  test_loss:  0.13451838493347168
+ test_loss:  0.1464119888842106
+ test_loss:  0.027876083739101887
+ewc: tensor(0.0082, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0082, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  316  train_loss:  0.03651432320475578  test_loss:  0.13646885380148888
+ test_loss:  0.14481793716549873
+ test_loss:  0.027051101438701153
+ewc: tensor(0.0082, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0082, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  317  train_loss:  0.0360447745770216  test_loss:  0.1313588172197342
+ test_loss:  0.13998179137706757
+ test_loss:  0.027490481734275818
+ewc: tensor(0.0082, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0082, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  318  train_loss:  0.03478793613612652  test_loss:  0.1387999951839447
+ test_loss:  0.14796530082821846
+ test_loss:  0.028880263678729534
+ewc: tensor(0.0082, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0082, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  319  train_loss:  0.03605964221060276  test_loss:  0.12931297719478607
+ test_loss:  0.14021198451519012
+ test_loss:  0.02916982863098383
+ewc: tensor(0.0082, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0081, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  320  train_loss:  0.03726071119308472  test_loss:  0.13547392189502716
+ test_loss:  0.14586210623383522
+ test_loss:  0.029174708761274815
+ewc: tensor(0.0081, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0081, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  321  train_loss:  0.03764275647699833  test_loss:  0.1276790201663971
+ test_loss:  0.13898320123553276
+ test_loss:  0.02884621638804674
+ewc: tensor(0.0081, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0081, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  322  train_loss:  0.036615800112485886  test_loss:  0.1406593844294548
+ test_loss:  0.1443985551595688
+ test_loss:  0.03287203051149845
+ewc: tensor(0.0081, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0081, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  323  train_loss:  0.039285773411393166  test_loss:  0.12716400250792503
+ test_loss:  0.14088472351431847
+ test_loss:  0.03080193419009447
+ewc: tensor(0.0081, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0081, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  324  train_loss:  0.03980035148561001  test_loss:  0.1424822136759758
+ test_loss:  0.15217340737581253
+ test_loss:  0.030729375779628754
+ewc: tensor(0.0081, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0081, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  325  train_loss:  0.03865466080605984  test_loss:  0.13018813729286194
+ test_loss:  0.14358500763773918
+ test_loss:  0.029140323400497437
+ewc: tensor(0.0081, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0081, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  326  train_loss:  0.03784233145415783  test_loss:  0.13631956279277802
+ test_loss:  0.1429613120853901
+ test_loss:  0.028118559159338474
+ewc: tensor(0.0081, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0081, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  327  train_loss:  0.03696975111961365  test_loss:  0.12995024025440216
+ test_loss:  0.14226302318274975
+ test_loss:  0.0281372657045722
+ewc: tensor(0.0081, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0081, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  328  train_loss:  0.0365365706384182  test_loss:  0.13751504570245743
+ test_loss:  0.1435040645301342
+ test_loss:  0.02934000175446272
+ewc: tensor(0.0080, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0080, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  329  train_loss:  0.036474233493208885  test_loss:  0.13237525522708893
+ test_loss:  0.1432485431432724
+ test_loss:  0.029139038175344467
+ewc: tensor(0.0080, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0080, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  330  train_loss:  0.03580471687018871  test_loss:  0.1339658722281456
+ test_loss:  0.1444329097867012
+ test_loss:  0.030492662452161312
+ewc: tensor(0.0080, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0080, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  331  train_loss:  0.03786822408437729  test_loss:  0.1295294389128685
+ test_loss:  0.14387496560811996
+ test_loss:  0.029070195741951466
+ewc: tensor(0.0080, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0080, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  332  train_loss:  0.03701852075755596  test_loss:  0.13579260185360909
+ test_loss:  0.14591343700885773
+ test_loss:  0.03113582171499729
+ewc: tensor(0.0080, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0080, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  333  train_loss:  0.03821920044720173  test_loss:  0.1269996576011181
+ test_loss:  0.13812795281410217
+ test_loss:  0.030806143768131733
+ewc: tensor(0.0080, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0080, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  334  train_loss:  0.03816702589392662  test_loss:  0.14327409863471985
+ test_loss:  0.15100516751408577
+ test_loss:  0.03153080586344004
+ewc: tensor(0.0080, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0080, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  335  train_loss:  0.039501843973994255  test_loss:  0.12866920232772827
+ test_loss:  0.13936923816800117
+ test_loss:  0.029211832210421562
+ewc: tensor(0.0080, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0080, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  336  train_loss:  0.03861130401492119  test_loss:  0.13412989675998688
+ test_loss:  0.1470349058508873
+ test_loss:  0.029368731193244457
+ewc: tensor(0.0080, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0080, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  337  train_loss:  0.03778805583715439  test_loss:  0.13779576867818832
+ test_loss:  0.14679160341620445
+ test_loss:  0.031120303086936474
+ewc: tensor(0.0080, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0080, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  338  train_loss:  0.039247648790478706  test_loss:  0.13550764322280884
+ test_loss:  0.14670643582940102
+ test_loss:  0.032073305919766426
+ewc: tensor(0.0080, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0079, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  339  train_loss:  0.03759125992655754  test_loss:  0.13806289434432983
+ test_loss:  0.14416207000613213
+ test_loss:  0.03346847929060459
+ewc: tensor(0.0080, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0080, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  340  train_loss:  0.040650499984622  test_loss:  0.13298358023166656
+ test_loss:  0.14369431138038635
+ test_loss:  0.03075451496988535
+ewc: tensor(0.0080, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0079, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  341  train_loss:  0.03984660096466541  test_loss:  0.13557898625731468
+ test_loss:  0.1488533765077591
+ test_loss:  0.028849638998508453
+ewc: tensor(0.0079, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0079, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  342  train_loss:  0.03835402987897396  test_loss:  0.1357981413602829
+ test_loss:  0.142562348395586
+ test_loss:  0.03160579688847065
+ewc: tensor(0.0079, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0079, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  343  train_loss:  0.038391971960663795  test_loss:  0.12931441143155098
+ test_loss:  0.1448020562529564
+ test_loss:  0.033224258571863174
+ewc: tensor(0.0079, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0080, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  344  train_loss:  0.03969502076506615  test_loss:  0.1390593945980072
+ test_loss:  0.14655636623501778
+ test_loss:  0.03355086036026478
+ewc: tensor(0.0080, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0079, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  345  train_loss:  0.039988234639167786  test_loss:  0.12898699939250946
+ test_loss:  0.1416165605187416
+ test_loss:  0.03158204350620508
+ewc: tensor(0.0079, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0079, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  346  train_loss:  0.038787053897976875  test_loss:  0.1363290399312973
+ test_loss:  0.14727924764156342
+ test_loss:  0.029767511412501335
+ewc: tensor(0.0080, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0079, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  347  train_loss:  0.03782603703439236  test_loss:  0.12996339425444603
+ test_loss:  0.14375852420926094
+ test_loss:  0.03054933249950409
+ewc: tensor(0.0079, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0079, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  348  train_loss:  0.038294875994324684  test_loss:  0.13228922337293625
+ test_loss:  0.14057330787181854
+ test_loss:  0.029498170129954815
+ewc: tensor(0.0079, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0079, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  349  train_loss:  0.03763970546424389  test_loss:  0.13417313992977142
+ test_loss:  0.14490950852632523
+ test_loss:  0.030112632550299168
+ewc: tensor(0.0079, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0079, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  350  train_loss:  0.037176208570599556  test_loss:  0.13184361904859543
+ test_loss:  0.14258291944861412
+ test_loss:  0.03247048147022724
+ewc: tensor(0.0079, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0079, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  351  train_loss:  0.03909522667527199  test_loss:  0.13757044076919556
+ test_loss:  0.14715728908777237
+ test_loss:  0.03287552297115326
+ewc: tensor(0.0079, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0079, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  352  train_loss:  0.03855695389211178  test_loss:  0.13363778591156006
+ test_loss:  0.14508304372429848
+ test_loss:  0.03204069193452597
+ewc: tensor(0.0079, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0079, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  353  train_loss:  0.03890126384794712  test_loss:  0.13610684126615524
+ test_loss:  0.14732563868165016
+ test_loss:  0.030828222632408142
+ewc: tensor(0.0079, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0079, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  354  train_loss:  0.037805262953042984  test_loss:  0.13411929458379745
+ test_loss:  0.14071544259786606
+ test_loss:  0.03273206762969494
+ewc: tensor(0.0079, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0079, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  355  train_loss:  0.04013081081211567  test_loss:  0.13394199684262276
+ test_loss:  0.14777474850416183
+ test_loss:  0.031095086596906185
+ewc: tensor(0.0079, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0079, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  356  train_loss:  0.03844727575778961  test_loss:  0.13260912895202637
+ test_loss:  0.14124817587435246
+ test_loss:  0.029376184567809105
+ewc: tensor(0.0079, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0078, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  357  train_loss:  0.037137968465685844  test_loss:  0.1319974847137928
+ test_loss:  0.14497891068458557
+ test_loss:  0.030387350358068943
+ewc: tensor(0.0079, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0078, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  358  train_loss:  0.03669577278196812  test_loss:  0.1296728439629078
+ test_loss:  0.14009532146155834
+ test_loss:  0.032322702929377556
+ewc: tensor(0.0079, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0078, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  359  train_loss:  0.03759315609931946  test_loss:  0.13229665160179138
+ test_loss:  0.143613301217556
+ test_loss:  0.037068236619234085
+ewc: tensor(0.0079, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0079, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  360  train_loss:  0.04304492101073265  test_loss:  0.13366572558879852
+ test_loss:  0.14316412806510925
+ test_loss:  0.034427715465426445
+ewc: tensor(0.0078, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0079, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  361  train_loss:  0.04208294861018658  test_loss:  0.13175589591264725
+ test_loss:  0.1435081698000431
+ test_loss:  0.030341556295752525
+ewc: tensor(0.0078, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0078, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  362  train_loss:  0.03816401958465576  test_loss:  0.13373754918575287
+ test_loss:  0.14575183391571045
+ test_loss:  0.029644396156072617
+ewc: tensor(0.0078, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0078, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  363  train_loss:  0.0375540554523468  test_loss:  0.13558056950569153
+ test_loss:  0.14369554072618484
+ test_loss:  0.031099898740649223
+ewc: tensor(0.0078, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0078, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  364  train_loss:  0.0375044122338295  test_loss:  0.13253915309906006
+ test_loss:  0.14264152571558952
+ test_loss:  0.03044778760522604
+ewc: tensor(0.0078, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0078, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  365  train_loss:  0.03829684853553772  test_loss:  0.13163839280605316
+ test_loss:  0.14124708622694016
+ test_loss:  0.030585482716560364
+ewc: tensor(0.0078, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0078, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  366  train_loss:  0.03749206103384495  test_loss:  0.13833867758512497
+ test_loss:  0.14642162807285786
+ test_loss:  0.030519962310791016
+ewc: tensor(0.0078, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0078, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  367  train_loss:  0.038597596809268  test_loss:  0.13110337406396866
+ test_loss:  0.14008213207125664
+ test_loss:  0.029678060673177242
+ewc: tensor(0.0078, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0078, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  368  train_loss:  0.0384506955742836  test_loss:  0.13083364814519882
+ test_loss:  0.14400585554540157
+ test_loss:  0.03017815202474594
+ewc: tensor(0.0078, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0078, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  369  train_loss:  0.03809402883052826  test_loss:  0.13231618702411652
+ test_loss:  0.1457909196615219
+ test_loss:  0.029717497527599335
+ewc: tensor(0.0078, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0078, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  370  train_loss:  0.038307711482048035  test_loss:  0.13294710591435432
+ test_loss:  0.14375131204724312
+ test_loss:  0.028046571649610996
+ewc: tensor(0.0078, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0078, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  371  train_loss:  0.03681582026183605  test_loss:  0.13585559651255608
+ test_loss:  0.1464742086827755
+ test_loss:  0.02909846417605877
+ewc: tensor(0.0078, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0078, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  372  train_loss:  0.03555171750485897  test_loss:  0.12835445255041122
+ test_loss:  0.1408792920410633
+ test_loss:  0.03001448418945074
+ewc: tensor(0.0078, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0077, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  373  train_loss:  0.03577900491654873  test_loss:  0.13539808988571167
+ test_loss:  0.14569410309195518
+ test_loss:  0.0322940843179822
+ewc: tensor(0.0078, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0077, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  374  train_loss:  0.038329651579260826  test_loss:  0.12838518992066383
+ test_loss:  0.14146534726023674
+ test_loss:  0.033729820512235165
+ewc: tensor(0.0078, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0078, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  375  train_loss:  0.04148121923208237  test_loss:  0.13710299879312515
+ test_loss:  0.1494714841246605
+ test_loss:  0.02960942778736353
+ewc: tensor(0.0078, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0078, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  376  train_loss:  0.03909813240170479  test_loss:  0.13077528774738312
+ test_loss:  0.13985953852534294
+ test_loss:  0.02785690501332283
+ewc: tensor(0.0077, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0078, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  377  train_loss:  0.03857811540365219  test_loss:  0.13074849545955658
+ test_loss:  0.1464115045964718
+ test_loss:  0.02973789442330599
+ewc: tensor(0.0078, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0078, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  378  train_loss:  0.03774735517799854  test_loss:  0.13735245168209076
+ test_loss:  0.14855797216296196
+ test_loss:  0.03039025515317917
+ewc: tensor(0.0078, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0077, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  379  train_loss:  0.03885302320122719  test_loss:  0.12975509464740753
+ test_loss:  0.13828010112047195
+ test_loss:  0.029692686162889004
+ewc: tensor(0.0078, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0078, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  380  train_loss:  0.0373927541077137  test_loss:  0.14068851619958878
+ test_loss:  0.15301266312599182
+ test_loss:  0.031440154649317265
+ewc: tensor(0.0078, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0078, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  381  train_loss:  0.038421498611569405  test_loss:  0.12694547325372696
+ test_loss:  0.13962675631046295
+ test_loss:  0.029457833617925644
+ewc: tensor(0.0078, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0078, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  382  train_loss:  0.03770565800368786  test_loss:  0.13603045046329498
+ test_loss:  0.14639891125261784
+ test_loss:  0.031621954403817654
+ewc: tensor(0.0077, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0077, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  383  train_loss:  0.038823021575808525  test_loss:  0.13391317427158356
+ test_loss:  0.14553656429052353
+ test_loss:  0.028078719042241573
+ewc: tensor(0.0078, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0077, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  384  train_loss:  0.03683362156152725  test_loss:  0.1326555274426937
+ test_loss:  0.141487717628479
+ test_loss:  0.026138029992580414
+ewc: tensor(0.0077, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0077, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  385  train_loss:  0.03513084352016449  test_loss:  0.13290295749902725
+ test_loss:  0.1457195021212101
+ test_loss:  0.026599351316690445
+ewc: tensor(0.0077, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0077, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  386  train_loss:  0.034212302416563034  test_loss:  0.1274215392768383
+ test_loss:  0.1416417881846428
+ test_loss:  0.028072510845959187
+ewc: tensor(0.0077, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0077, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  387  train_loss:  0.03474288806319237  test_loss:  0.13147902488708496
+ test_loss:  0.14330042526125908
+ test_loss:  0.028173815459012985
+ewc: tensor(0.0077, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0076, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  388  train_loss:  0.0346766896545887  test_loss:  0.12598708271980286
+ test_loss:  0.14200400561094284
+ test_loss:  0.03364073485136032
+ewc: tensor(0.0077, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0077, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  389  train_loss:  0.04001334682106972  test_loss:  0.1391613781452179
+ test_loss:  0.1505979709327221
+ test_loss:  0.030733143910765648
+ewc: tensor(0.0077, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0077, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  390  train_loss:  0.04051597975194454  test_loss:  0.13231973350048065
+ test_loss:  0.14472400769591331
+ test_loss:  0.02895580418407917
+ewc: tensor(0.0077, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0077, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  391  train_loss:  0.0390190165489912  test_loss:  0.13275932520627975
+ test_loss:  0.1446121744811535
+ test_loss:  0.029107805341482162
+ewc: tensor(0.0076, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0077, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  392  train_loss:  0.038070548325777054  test_loss:  0.14248480647802353
+ test_loss:  0.14714453369379044
+ test_loss:  0.03410845063626766
+ewc: tensor(0.0077, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0077, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  393  train_loss:  0.04067924804985523  test_loss:  0.13302987068891525
+ test_loss:  0.14034763723611832
+ test_loss:  0.03517912141978741
+ewc: tensor(0.0077, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0077, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  394  train_loss:  0.042089708149433136  test_loss:  0.13463684171438217
+ test_loss:  0.14622606709599495
+ test_loss:  0.030472327955067158
+ewc: tensor(0.0077, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0077, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  395  train_loss:  0.038175346329808235  test_loss:  0.13601214438676834
+ test_loss:  0.145816620439291
+ test_loss:  0.028851626440882683
+ewc: tensor(0.0077, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0077, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  396  train_loss:  0.03891075775027275  test_loss:  0.1314777210354805
+ test_loss:  0.1448001079261303
+ test_loss:  0.03241735603660345
+ewc: tensor(0.0077, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0078, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  397  train_loss:  0.03916482627391815  test_loss:  0.14128225296735764
+ test_loss:  0.15167121589183807
+ test_loss:  0.035560015588998795
+ewc: tensor(0.0078, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0077, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  398  train_loss:  0.04279176704585552  test_loss:  0.1290573626756668
+ test_loss:  0.13728902488946915
+ test_loss:  0.031004533171653748
+ewc: tensor(0.0077, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0077, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  399  train_loss:  0.040612298995256424  test_loss:  0.13444384187459946
+ test_loss:  0.14598558470606804
+ test_loss:  0.028642828576266766
+ewc: tensor(0.0077, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0077, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  400  train_loss:  0.039907846599817276  test_loss:  0.13440154492855072
+ test_loss:  0.14798284694552422
+ test_loss:  0.030600788071751595
+29.582893892129263 min
+ewc: tensor(0.0077, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0076, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  401  train_loss:  0.03835118003189564  test_loss:  0.12910796701908112
+ test_loss:  0.1420852318406105
+ test_loss:  0.03520289994776249
+ewc: tensor(0.0077, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0077, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  402  train_loss:  0.04333020746707916  test_loss:  0.13979650288820267
+ test_loss:  0.15355460718274117
+ test_loss:  0.0357550960034132
+ewc: tensor(0.0077, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0077, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  403  train_loss:  0.041821202263236046  test_loss:  0.12630242481827736
+ test_loss:  0.14113118313252926
+ test_loss:  0.033169977366924286
+ewc: tensor(0.0077, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0076, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  404  train_loss:  0.03975554555654526  test_loss:  0.13038406893610954
+ test_loss:  0.145871389657259
+ test_loss:  0.03331414796411991
+ewc: tensor(0.0077, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0077, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  405  train_loss:  0.04049370810389519  test_loss:  0.1284821256995201
+ test_loss:  0.14363761618733406
+ test_loss:  0.03330158069729805
+ewc: tensor(0.0077, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0076, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  406  train_loss:  0.04165393114089966  test_loss:  0.130732212215662
+ test_loss:  0.1433865912258625
+ test_loss:  0.030901937745511532
+ewc: tensor(0.0077, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0077, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  407  train_loss:  0.038308434188365936  test_loss:  0.13175003603100777
+ test_loss:  0.13981777429580688
+ test_loss:  0.030922578647732735
+ewc: tensor(0.0076, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0076, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  408  train_loss:  0.03715400584042072  test_loss:  0.13699984923005104
+ test_loss:  0.14632512256503105
+ test_loss:  0.03188055194914341
+ewc: tensor(0.0077, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0076, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  409  train_loss:  0.036971261724829674  test_loss:  0.13480929285287857
+ test_loss:  0.14616639912128448
+ test_loss:  0.035016411915421486
+ewc: tensor(0.0076, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0076, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  410  train_loss:  0.042167920619249344  test_loss:  0.13435159996151924
+ test_loss:  0.14490259438753128
+ test_loss:  0.03579001873731613
+ewc: tensor(0.0077, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0077, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  411  train_loss:  0.04341054894030094  test_loss:  0.13729241490364075
+ test_loss:  0.14431588724255562
+ test_loss:  0.033008234575390816
+ewc: tensor(0.0076, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0077, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  412  train_loss:  0.04291342571377754  test_loss:  0.13456391543149948
+ test_loss:  0.14571315422654152
+ test_loss:  0.028716223314404488
+ewc: tensor(0.0077, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0077, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  413  train_loss:  0.03854631446301937  test_loss:  0.13140186667442322
+ test_loss:  0.14091262593865395
+ test_loss:  0.027644564397633076
+ewc: tensor(0.0076, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0076, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  414  train_loss:  0.03781723976135254  test_loss:  0.13550817966461182
+ test_loss:  0.14847559109330177
+ test_loss:  0.026492401957511902
+ewc: tensor(0.0076, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0076, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  415  train_loss:  0.03589550592005253  test_loss:  0.13191312178969383
+ test_loss:  0.14071976765990257
+ test_loss:  0.027011962607502937
+ewc: tensor(0.0076, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0076, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  416  train_loss:  0.03462640196084976  test_loss:  0.1352727711200714
+ test_loss:  0.1462433971464634
+ test_loss:  0.02861056476831436
+ewc: tensor(0.0076, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0076, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  417  train_loss:  0.03606066107749939  test_loss:  0.13622404634952545
+ test_loss:  0.14575965330004692
+ test_loss:  0.028744841925799847
+ewc: tensor(0.0076, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0076, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  418  train_loss:  0.037211885675787926  test_loss:  0.13566450402140617
+ test_loss:  0.14543328061699867
+ test_loss:  0.027016439475119114
+ewc: tensor(0.0075, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0075, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  419  train_loss:  0.034563472494482994  test_loss:  0.13150346279144287
+ test_loss:  0.14054042100906372
+ test_loss:  0.02681233175098896
+ewc: tensor(0.0075, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0076, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  420  train_loss:  0.03520048409700394  test_loss:  0.13347779586911201
+ test_loss:  0.14744079858064651
+ test_loss:  0.029003964737057686
+ewc: tensor(0.0076, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0075, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  421  train_loss:  0.03565821051597595  test_loss:  0.13493524491786957
+ test_loss:  0.1440644972026348
+ test_loss:  0.029857484623789787
+ewc: tensor(0.0075, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0075, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  422  train_loss:  0.036393240094184875  test_loss:  0.13418715074658394
+ test_loss:  0.149176973849535
+ test_loss:  0.03114574495702982
+ewc: tensor(0.0075, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0075, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  423  train_loss:  0.037171123549342155  test_loss:  0.1309826634824276
+ test_loss:  0.14648854732513428
+ test_loss:  0.029799782671034336
+ewc: tensor(0.0075, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0075, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  424  train_loss:  0.03704453073441982  test_loss:  0.13594621419906616
+ test_loss:  0.1478654444217682
+ test_loss:  0.02999160625040531
+ewc: tensor(0.0075, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0075, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  425  train_loss:  0.03678387962281704  test_loss:  0.13110383599996567
+ test_loss:  0.1422952078282833
+ test_loss:  0.03012537956237793
+ewc: tensor(0.0075, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0075, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  426  train_loss:  0.03712428919970989  test_loss:  0.13336681574583054
+ test_loss:  0.1451965644955635
+ test_loss:  0.02769356407225132
+ewc: tensor(0.0075, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0075, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  427  train_loss:  0.03579181246459484  test_loss:  0.13578589260578156
+ test_loss:  0.14552197977900505
+ test_loss:  0.026455074548721313
+ewc: tensor(0.0075, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0075, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  428  train_loss:  0.03428409993648529  test_loss:  0.1292705461382866
+ test_loss:  0.14334022626280785
+ test_loss:  0.027527261525392532
+ewc: tensor(0.0075, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0075, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  429  train_loss:  0.03439861722290516  test_loss:  0.13579075038433075
+ test_loss:  0.14847848936915398
+ test_loss:  0.029629955999553204
+ewc: tensor(0.0075, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0075, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  430  train_loss:  0.03581116534769535  test_loss:  0.12966172024607658
+ test_loss:  0.14278828725218773
+ test_loss:  0.03043804783374071
+ewc: tensor(0.0075, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0075, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  431  train_loss:  0.03781978413462639  test_loss:  0.13221775740385056
+ test_loss:  0.14470253884792328
+ test_loss:  0.029971526935696602
+ewc: tensor(0.0075, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0075, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  432  train_loss:  0.03718388453125954  test_loss:  0.1347818560898304
+ test_loss:  0.14593318849802017
+ test_loss:  0.03210759907960892
+ewc: tensor(0.0075, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0075, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  433  train_loss:  0.03761710412800312  test_loss:  0.1326870545744896
+ test_loss:  0.14957667887210846
+ test_loss:  0.03316278476268053
+ewc: tensor(0.0075, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0075, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  434  train_loss:  0.04051290079951286  test_loss:  0.13874787464737892
+ test_loss:  0.14610432460904121
+ test_loss:  0.03503863699734211
+ewc: tensor(0.0076, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0076, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  435  train_loss:  0.04394739679992199  test_loss:  0.1346779502928257
+ test_loss:  0.14961446821689606
+ test_loss:  0.032148826867341995
+ewc: tensor(0.0075, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0076, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  436  train_loss:  0.04386720061302185  test_loss:  0.1313285008072853
+ test_loss:  0.14257513359189034
+ test_loss:  0.03803597576916218
+ewc: tensor(0.0077, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0076, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  437  train_loss:  0.044612450525164604  test_loss:  0.14306139945983887
+ test_loss:  0.15123509988188744
+ test_loss:  0.03497476689517498
+ewc: tensor(0.0076, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0076, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  438  train_loss:  0.044097837060689926  test_loss:  0.12758037447929382
+ test_loss:  0.1378178745508194
+ test_loss:  0.035775141790509224
+ewc: tensor(0.0076, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0075, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  439  train_loss:  0.0426230039447546  test_loss:  0.1378539614379406
+ test_loss:  0.14483844861388206
+ test_loss:  0.031683857552707195
+ewc: tensor(0.0076, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0076, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  440  train_loss:  0.03968564048409462  test_loss:  0.13719287514686584
+ test_loss:  0.14949503913521767
+ test_loss:  0.031187856569886208
+ewc: tensor(0.0075, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0075, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  441  train_loss:  0.03899132087826729  test_loss:  0.12852097675204277
+ test_loss:  0.1380183808505535
+ test_loss:  0.029437185265123844
+ewc: tensor(0.0075, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0075, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  442  train_loss:  0.0368203017860651  test_loss:  0.13495377451181412
+ test_loss:  0.15055590495467186
+ test_loss:  0.02952764555811882
+ewc: tensor(0.0075, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0075, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  443  train_loss:  0.03787241876125336  test_loss:  0.13258620351552963
+ test_loss:  0.14512939378619194
+ test_loss:  0.030325274914503098
+ewc: tensor(0.0076, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0075, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  444  train_loss:  0.03660733252763748  test_loss:  0.13307961449027061
+ test_loss:  0.1437001023441553
+ test_loss:  0.03282037563621998
+ewc: tensor(0.0075, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0075, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  445  train_loss:  0.03921842575073242  test_loss:  0.13137182965874672
+ test_loss:  0.1428951770067215
+ test_loss:  0.03046975191682577
+ewc: tensor(0.0075, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0075, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  446  train_loss:  0.03849915601313114  test_loss:  0.13263101130723953
+ test_loss:  0.14482194185256958
+ test_loss:  0.02753455564379692
+ewc: tensor(0.0075, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0074, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  447  train_loss:  0.035718806087970734  test_loss:  0.13805890083312988
+ test_loss:  0.147695604711771
+ test_loss:  0.029910210520029068
+ewc: tensor(0.0075, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0075, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  448  train_loss:  0.038412317633628845  test_loss:  0.12986153736710548
+ test_loss:  0.14352849498391151
+ test_loss:  0.029873997904360294
+ewc: tensor(0.0074, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0074, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  449  train_loss:  0.03652500547468662  test_loss:  0.14192066341638565
+ test_loss:  0.1500862091779709
+ test_loss:  0.03198338858783245
+ewc: tensor(0.0075, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0074, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  450  train_loss:  0.03843941353261471  test_loss:  0.13374417275190353
+ test_loss:  0.14148077741265297
+ test_loss:  0.026832337491214275
+ewc: tensor(0.0074, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0074, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  451  train_loss:  0.03466854803264141  test_loss:  0.1317293420433998
+ test_loss:  0.14451783895492554
+ test_loss:  0.027117437683045864
+ewc: tensor(0.0074, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0074, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  452  train_loss:  0.035937631502747536  test_loss:  0.1360761746764183
+ test_loss:  0.1457783654332161
+ test_loss:  0.02742472756654024
+ewc: tensor(0.0074, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0074, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  453  train_loss:  0.034651048481464386  test_loss:  0.1302632950246334
+ test_loss:  0.14066867716610432
+ test_loss:  0.02831556275486946
+ewc: tensor(0.0074, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0074, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  454  train_loss:  0.03520952723920345  test_loss:  0.13332010805606842
+ test_loss:  0.14545807614922523
+ test_loss:  0.02636146731674671
+ewc: tensor(0.0074, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0074, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  455  train_loss:  0.03311956860125065  test_loss:  0.1311277598142624
+ test_loss:  0.14567077159881592
+ test_loss:  0.026436534710228443
+ewc: tensor(0.0074, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0074, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  456  train_loss:  0.03350714594125748  test_loss:  0.13025551661849022
+ test_loss:  0.14139331877231598
+ test_loss:  0.025536994449794292
+ewc: tensor(0.0074, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0074, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  457  train_loss:  0.032988425344228745  test_loss:  0.13395695015788078
+ test_loss:  0.14818247221410275
+ test_loss:  0.024282021448016167
+ewc: tensor(0.0074, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0074, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  458  train_loss:  0.032451923936605453  test_loss:  0.13357174396514893
+ test_loss:  0.14602001011371613
+ test_loss:  0.023661752231419086
+ewc: tensor(0.0074, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0074, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  459  train_loss:  0.031802043318748474  test_loss:  0.13266277313232422
+ test_loss:  0.1434146761894226
+ test_loss:  0.023491380736231804
+ewc: tensor(0.0073, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0073, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  460  train_loss:  0.030825354158878326  test_loss:  0.1375553160905838
+ test_loss:  0.14580367878079414
+ test_loss:  0.024352693930268288
+ewc: tensor(0.0073, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0073, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  461  train_loss:  0.031425654888153076  test_loss:  0.1355900727212429
+ test_loss:  0.14478623494505882
+ test_loss:  0.02346700895577669
+ewc: tensor(0.0073, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0073, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  462  train_loss:  0.030767124146223068  test_loss:  0.13476692885160446
+ test_loss:  0.14491603896021843
+ test_loss:  0.023126188665628433
+ewc: tensor(0.0073, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0073, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  463  train_loss:  0.030408360064029694  test_loss:  0.1320517584681511
+ test_loss:  0.143321231007576
+ test_loss:  0.02327717561274767
+ewc: tensor(0.0073, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0073, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  464  train_loss:  0.030105765908956528  test_loss:  0.1346602812409401
+ test_loss:  0.14730247855186462
+ test_loss:  0.02356549445539713
+ewc: tensor(0.0073, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0073, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  465  train_loss:  0.030259981751441956  test_loss:  0.13256844133138657
+ test_loss:  0.14281417429447174
+ test_loss:  0.023441790603101254
+ewc: tensor(0.0073, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0073, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  466  train_loss:  0.030177773907780647  test_loss:  0.13435829430818558
+ test_loss:  0.14477470889687538
+ test_loss:  0.023487579077482224
+ewc: tensor(0.0073, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0073, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  467  train_loss:  0.030560345388948917  test_loss:  0.13373739272356033
+ test_loss:  0.1442955881357193
+ test_loss:  0.02306228782981634
+ewc: tensor(0.0073, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0073, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  468  train_loss:  0.03051675483584404  test_loss:  0.13510654121637344
+ test_loss:  0.147481020539999
+ test_loss:  0.023093093186616898
+ewc: tensor(0.0073, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0073, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  469  train_loss:  0.03055766224861145  test_loss:  0.1337609738111496
+ test_loss:  0.1463492214679718
+ test_loss:  0.023169676773250103
+ewc: tensor(0.0073, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0073, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  470  train_loss:  0.03059762343764305  test_loss:  0.13414032012224197
+ test_loss:  0.1437516286969185
+ test_loss:  0.02293048705905676
+ewc: tensor(0.0073, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0073, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  471  train_loss:  0.03008994273841381  test_loss:  0.1322915405035019
+ test_loss:  0.14482394605875015
+ test_loss:  0.022769268602132797
+ewc: tensor(0.0073, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0073, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  472  train_loss:  0.030339794233441353  test_loss:  0.1337411254644394
+ test_loss:  0.14446431957185268
+ test_loss:  0.022706542164087296
+ewc: tensor(0.0073, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0073, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  473  train_loss:  0.029873297549784184  test_loss:  0.13184499740600586
+ test_loss:  0.14506779238581657
+ test_loss:  0.022865701466798782
+ewc: tensor(0.0073, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0073, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  474  train_loss:  0.029963511042296886  test_loss:  0.13336746394634247
+ test_loss:  0.1445998065173626
+ test_loss:  0.022772309370338917
+ewc: tensor(0.0073, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0073, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  475  train_loss:  0.030370485968887806  test_loss:  0.1319682039320469
+ test_loss:  0.14639980345964432
+ test_loss:  0.022342576645314693
+ewc: tensor(0.0073, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0073, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  476  train_loss:  0.03057018108665943  test_loss:  0.13381613045930862
+ test_loss:  0.1464412361383438
+ test_loss:  0.02288945112377405
+ewc: tensor(0.0073, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0073, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  477  train_loss:  0.030987950041890144  test_loss:  0.13394109159708023
+ test_loss:  0.14357104152441025
+ test_loss:  0.023160756565630436
+ewc: tensor(0.0073, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0073, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  478  train_loss:  0.03050101175904274  test_loss:  0.132816880941391
+ test_loss:  0.1470913402736187
+ test_loss:  0.023236166685819626
+ewc: tensor(0.0073, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0073, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  479  train_loss:  0.03160847444087267  test_loss:  0.1337398663163185
+ test_loss:  0.14652716740965843
+ test_loss:  0.02384661976248026
+ewc: tensor(0.0073, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0073, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  480  train_loss:  0.03241978958249092  test_loss:  0.13203314691781998
+ test_loss:  0.14331821724772453
+ test_loss:  0.02448231913149357
+ewc: tensor(0.0073, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0073, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  481  train_loss:  0.03216044045984745  test_loss:  0.13221760094165802
+ test_loss:  0.1453254148364067
+ test_loss:  0.024270402267575264
+ewc: tensor(0.0072, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0072, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  482  train_loss:  0.03154970146715641  test_loss:  0.1341671720147133
+ test_loss:  0.14542636089026928
+ test_loss:  0.02428647316992283
+ewc: tensor(0.0072, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0072, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  483  train_loss:  0.03107356373220682  test_loss:  0.13351541012525558
+ test_loss:  0.14527015015482903
+ test_loss:  0.02536307368427515
+ewc: tensor(0.0072, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0072, device='cuda:0', grad_fn=<MulBackward0>)
+ epoch:  484  train_loss:  0.03163989074528217  test_loss:  0.13428884744644165
+ test_loss:  0.14414327591657639
+ test_loss:  0.02600935474038124
+ewc: tensor(0.0073, device='cuda:0', grad_fn=<MulBackward0>)
+ewc: tensor(0.0072, device='cuda:0', grad_fn=<MulBackward0>)
