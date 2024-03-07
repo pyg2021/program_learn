@@ -26,14 +26,14 @@ os.environ['CUDA_VISIBLE_DEVICES'] = "3"
 device="cuda"
 model=net(2,1,True,True).to(device)
 model=nn.parallel.DataParallel(model)
-model.load_state_dict(torch.load("/home/pengyaoguang/data/3D_net_model/modeltest6_4.pkl"))
+model.load_state_dict(torch.load("/home/pengyaoguang/data/3D_net_model/modeltest8_14.pkl"))
 
 
 #10012_20
 #10_50
 m=5
 ##data_prepare
-k=100
+k=50
 n=50
 R=sio.loadmat("/home/pengyaoguang/data/3D_RTM/RTM{}".format(k))["RTM"][20:120,20:120,20:120]
 

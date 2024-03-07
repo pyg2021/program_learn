@@ -123,9 +123,10 @@ def train(model, dataloader, optimizer, criterion, device, ewc=None, ewc_lambda=
         if ewc is not None:
             ewc_loss = ewc.penalty(model)
             loss += ewc_lambda * ewc_loss
-            print(ewc_lambda * ewc_loss,loss)
+            print(loss,ewc_lambda * ewc_loss)
         loss.backward()
         optimizer.step()
+    
 
 
 # Test function
@@ -158,14 +159,17 @@ for epoch in range(2):
     train(model, task1_loader, optimizer, criterion, device)
 task1_accuracy = test(model, task1_test_loader, device)
 print(f'Task 1 accuracy: {task1_accuracy}%')
-
+task2_accuracy_NEW = test(model, task2_test_loader, device)
+print(f'Tasknew 2 accuracy: {task2_accuracy_NEW}%')
 # Save EWC
 ewc = EWC(model, task1_loader, device)
 
 # Train on Task 2
 optimizer = optim.SGD(model.parameters(), lr=0.01, momentum=0.9)
-for epoch in range(2):
-    train(model, task2_loader, optimizer, criterion, device, ewc=ewc, ewc_lambda=500000 )
+for epoch in range(10):
+    train(model, task2_loader, optimizer, criterion, device, ewc=ewc, ewc_lambda=10 )
+    task1_accuracy_new = test(model, task1_test_loader, device)
+    print(f'Tasknew 1 accuracy: {task1_accuracy_new}%')
 task2_accuracy = test(model, task2_test_loader, device)
 
 print(f'Task 2 accuracy: {task2_accuracy}%')
