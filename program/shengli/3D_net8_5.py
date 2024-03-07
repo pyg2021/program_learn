@@ -16,7 +16,7 @@ os.environ['CUDA_VISIBLE_DEVICES'] = "0,1,3"
 start=time.time()
 
 ##data_prepare
-BatchSize=12
+BatchSize=9
 device="cuda"
 x_1,y_1=DataLoad(0,0+35)
 x,y=x_1,y_1
