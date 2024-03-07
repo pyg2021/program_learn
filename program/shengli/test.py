@@ -167,7 +167,7 @@ ewc = EWC(model, task1_loader, device)
 # Train on Task 2
 optimizer = optim.SGD(model.parameters(), lr=0.01, momentum=0.9)
 for epoch in range(10):
-    train(model, task2_loader, optimizer, criterion, device, ewc=ewc, ewc_lambda=10 )
+    train(model, task2_loader, optimizer, criterion, device, ewc=ewc, ewc_lambda=100 )
     task1_accuracy_new = test(model, task1_test_loader, device)
     print(f'Tasknew 1 accuracy: {task1_accuracy_new}%')
 task2_accuracy = test(model, task2_test_loader, device)
