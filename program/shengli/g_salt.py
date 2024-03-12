@@ -82,7 +82,7 @@ def fault(data):
     X,Y=np.meshgrid(x,y)
     d1=random.uniform(5,15)
     d2=random.uniform(5,15)
-    a=random.uniform(0,2*math.pi)
+    a=random.uniform(1/8*math.pi,2*math.pi)
     b=random.uniform(1/5*math.pi,1/2*math.pi)
     D1=d1*math.sin(a)+d2*math.cos(a)*math.sin(b)
     D2=d1*math.cos(a)-d2*math.sin(a)*math.cos(b)
@@ -125,10 +125,12 @@ def fault(data):
                         if k<math.floor(d):
                             data[i,j,k]=data[i,j,0]
     return data
-for epoch in range(25000,25001):
+for epoch in range(25000,25100):
     data=floded()
+    data=fault(data)
     data=salt(data)
     data=fault(data)
+
     # data=fault(data)
     scipy.io.savemat("/home/pengyaoguang/data/3D_v_model/v{}.mat".format(epoch), {'v':data})
 
