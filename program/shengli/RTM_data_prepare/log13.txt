@@ -1716,3 +1716,7 @@ Imaging source 48 out of 100
 38237.745296001434 s
 Imaging source 49 out of 100
 Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+38294.03657722473 s
+Imaging source 50 out of 100
+38336.39864349365 s
+Imaging source 51 out of 100

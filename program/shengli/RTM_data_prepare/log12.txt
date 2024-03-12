@@ -2051,3 +2051,5 @@ Imaging source 18 out of 100
 Trying to allocate more memory for symbol u than available on physical device, this will start swapping
 38484.08829283714 s
 Imaging source 19 out of 100
+38530.75017237663 s
+Imaging source 20 out of 100
