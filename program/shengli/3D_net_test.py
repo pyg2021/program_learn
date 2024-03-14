@@ -33,7 +33,7 @@ model.load_state_dict(torch.load("/home/pengyaoguang/data/3D_net_model/modeltest
 #10_50
 m=5
 ##data_prepare
-k=20100
+k=20000
 
 n=50
 R=sio.loadmat("/home/pengyaoguang/data/3D_RTM/RTM{}".format(k))["RTM"][20:120,20:120,20:120]
