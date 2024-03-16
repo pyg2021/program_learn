@@ -125,7 +125,7 @@ def fault(data):
                         if k<math.floor(d):
                             data[i,j,k]=data[i,j,0]
     return data
-for epoch in range(25000,25100):
+for epoch in range(25100,25120):
     data=floded()
     data=fault(data)
     data=salt(data)
