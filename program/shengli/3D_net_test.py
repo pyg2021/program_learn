@@ -1,5 +1,5 @@
 import torch
-from Model3D_unt import net
+from Model3D_unt3 import net
 import torch.nn as nn
 import scipy.io as sio
 import numpy as np
@@ -26,16 +26,16 @@ os.environ['CUDA_VISIBLE_DEVICES'] = "3"
 device="cuda"
 model=net(2,1,True,True).to(device)
 model=nn.parallel.DataParallel(model)
-model.load_state_dict(torch.load("/home/pengyaoguang/data/3D_net_model/modeltest9_2.pkl"))
+model.load_state_dict(torch.load("/home/pengyaoguang/data/3D_net_model/modeltest9_4.pkl"))
 
 
 #10012_20
 #10_50
 m=8
 ##data_prepare
-k=20000
+k=29999
 
-n=90
+n=20
 R=sio.loadmat("/home/pengyaoguang/data/3D_RTM/RTM{}".format(k))["RTM"][20:120,20:120,20:120]
 
 vmax=np.max(R)

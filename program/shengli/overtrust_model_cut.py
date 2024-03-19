@@ -23,11 +23,15 @@ print(vel.shape)
 #                 v1=v.swapaxes(0,2)
 #                 sio.savemat("data/3D_v/v{}.mat".format(m),{"v":v1})
 
-i=0
-while (i+400<=801):
-    v=vel[:100,i:i+400,i:i+400][:,::4,::4]
-    sio.savemat("data/3D_v_model/v{}.mat".format(m),{"v":v})
-    print(m)
-    i=i+5
-    m=m+1
+# i=0
+# while (i+400<=801):
+#     v=vel[:100,i:i+400,i:i+400][:,::4,::4]
+#     sio.savemat("data/3D_v_model/v{}.mat".format(m),{"v":v})
+#     print(m)
+#     i=i+5
+#     m=m+1
+m=29999
+v=vel[:100,:800,:800][:,::8,::8]
+print(v.shape)
+sio.savemat("data/3D_v_model/v{}.mat".format(m),{"v":v})
     
