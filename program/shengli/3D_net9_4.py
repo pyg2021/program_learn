@@ -1,4 +1,4 @@
-#训练复杂的合成模型
+#通过网络3训练复杂的合成模型
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -9,21 +9,21 @@ import scipy.io as sio
 import matplotlib.pyplot as plt
 from scipy.ndimage import gaussian_filter
 from DataLoad import DataLoad
-from Model3D_unt2 import net
+from Model3D_unt4 import net
 import os 
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID" 
 os.environ['CUDA_VISIBLE_DEVICES'] = "0,1,2,3"
 start=time.time()
 
 ##data_prepare
-BatchSize=15
+BatchSize=23
 device="cuda"
 # x_1,y_1=DataLoad(15000+0,15000+90)
 # x_2,y_2=DataLoad(20001,20000+25)
 # x_3,y_3=DataLoad(5000,5000+30)
 # x=np.concatenate((x_1,x_2,x_3),axis=0)
 # y=np.concatenate((y_1,y_2,y_3),axis=0)
-x,y=DataLoad(25000+0,25000+100)
+x,y=DataLoad(25000+0,25000+99)
 trian_number=y.shape[0]
 train_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(y).float())
 train_loader_1 = data_utils.DataLoader(train_data,batch_size=BatchSize,shuffle=True)
@@ -33,7 +33,7 @@ train_loader_1 = data_utils.DataLoader(train_data,batch_size=BatchSize,shuffle=T
 # x_3,y_3=DataLoad(5000+100,5000+109)
 # x=np.concatenate((x_1,x_2,x_3),axis=0)
 # y=np.concatenate((y_1,y_2,y_3),axis=0)
-x,y=DataLoad(20000+0,20000+40)
+x,y=DataLoad(25000+100,25000+119)
 test_number=y.shape[0]
 test_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(y).float())
 test_loader_1 = data_utils.DataLoader(test_data,batch_size=BatchSize,shuffle=True)
@@ -145,8 +145,8 @@ def train(model,train_loader,test_loader,epoch,device,optimizer,scheduler,loss_1
         test_loss_all.append(test_loss)
         print(' epoch: ',epoch_i," train_loss: ",epoch_loss," test_loss: ",test_loss)
         # test(model,train_loader_1,loss_1,device)
-        test(model,test_loader_2,loss_1,device)
-        if epoch_i%50==0 and epoch_i>=20:
+        # test(model,test_loader_2,loss_1,device)
+        if epoch_i%50==0 and epoch_i>=40:
             print((time.time()-start)/60,"min")
             plt.figure()
             plt.imshow(model(x).cpu().detach()[0,0,50,:,:].T)
@@ -212,10 +212,10 @@ def test(model,test_loader,loss_1,device,save_number=0):
 
 
 # ewc=EWC(model, train_loader_1, device)
-
+model.load_state_dict(torch.load("/home/pengyaoguang/data/3D_net_model/modeltest9_5.pkl"))
 optimizer = torch.optim.AdamW(model.parameters(),lr=1e-3)
-scheduler=torch.optim.lr_scheduler.StepLR(optimizer,step_size=1000,gamma=0.6)
+scheduler=torch.optim.lr_scheduler.StepLR(optimizer,step_size=800,gamma=0.5)
 loss_1=torch.nn.L1Loss()
-train(model,train_loader_1,test_loader_1,4000,device,optimizer,scheduler,loss_1,save_number=3)
+train(model,train_loader_1,test_loader_1,4000,device,optimizer,scheduler,loss_1,save_number=4)
 # test(model,train_loader_1,loss_1,device)
 # test(model,train_loader_2,loss_1,device)
