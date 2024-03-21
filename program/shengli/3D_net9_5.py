@@ -1,4 +1,3 @@
-#更新损失函数训练模型
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -9,21 +8,21 @@ import scipy.io as sio
 import matplotlib.pyplot as plt
 from scipy.ndimage import gaussian_filter
 from DataLoad import DataLoad
-from Model3D_unt3 import net
+from Model3D_unt4 import net
 import os 
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID" 
 os.environ['CUDA_VISIBLE_DEVICES'] = "0,1,2,3"
 start=time.time()
 
 ##data_prepare
-BatchSize=11
+BatchSize=16
 device="cuda"
 # x_1,y_1=DataLoad(15000+0,15000+90)
 # x_2,y_2=DataLoad(20001,20000+25)
 # x_3,y_3=DataLoad(5000,5000+30)
 # x=np.concatenate((x_1,x_2,x_3),axis=0)
 # y=np.concatenate((y_1,y_2,y_3),axis=0)
-x,y=DataLoad(25000+0,25000+100)
+x,y=DataLoad(25000+0,25000+99)
 trian_number=y.shape[0]
 train_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(y).float())
 train_loader_1 = data_utils.DataLoader(train_data,batch_size=BatchSize,shuffle=True)
@@ -33,7 +32,7 @@ train_loader_1 = data_utils.DataLoader(train_data,batch_size=BatchSize,shuffle=T
 # x_3,y_3=DataLoad(5000+100,5000+109)
 # x=np.concatenate((x_1,x_2,x_3),axis=0)
 # y=np.concatenate((y_1,y_2,y_3),axis=0)
-x,y=DataLoad(20000+0,20000+40)
+x,y=DataLoad(25000+100,25000+119)
 test_number=y.shape[0]
 test_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(y).float())
 test_loader_1 = data_utils.DataLoader(test_data,batch_size=BatchSize,shuffle=True)
@@ -212,8 +211,8 @@ def test(model,test_loader,loss_1,device,save_number=0):
 
 
 # ewc=EWC(model, train_loader_1, device)
-
-optimizer = torch.optim.AdamW(model.parameters(),lr=1e-3)
+# model.load_state_dict(torch.load("/home/pengyaoguang/data/3D_net_model/modeltest9_5.pkl"))
+optimizer = torch.optim.AdamW(model.parameters(),lr=5e-4)
 scheduler=torch.optim.lr_scheduler.StepLR(optimizer,step_size=1000,gamma=0.6)
 # loss_1=torch.nn.L1Loss()
 loss_1=torch.nn.MSELoss()

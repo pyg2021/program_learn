@@ -1,5 +1,5 @@
 import torch
-from Model3D_unt3 import net
+from Model3D_unt4 import net
 import torch.nn as nn
 import scipy.io as sio
 import numpy as np
@@ -33,9 +33,9 @@ model.load_state_dict(torch.load("/home/pengyaoguang/data/3D_net_model/modeltest
 #10_50
 m=8
 ##data_prepare
-k=29999
+k=25111
 
-n=20
+n=50
 R=sio.loadmat("/home/pengyaoguang/data/3D_RTM/RTM{}".format(k))["RTM"][20:120,20:120,20:120]
 
 vmax=np.max(R)

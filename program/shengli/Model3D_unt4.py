@@ -73,7 +73,7 @@ class net(nn.Module):
         self.in_channels = in_channels
         self.batch_normal = batch_normal
         self.bilinear = bilinear
-        n=64
+        n=32
         fiter=[n,n*2,n*4,n*8]
         
 
