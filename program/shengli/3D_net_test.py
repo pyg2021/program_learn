@@ -26,14 +26,14 @@ os.environ['CUDA_VISIBLE_DEVICES'] = "3"
 device="cuda"
 model=net(2,1,True,True).to(device)
 model=nn.parallel.DataParallel(model)
-model.load_state_dict(torch.load("/home/pengyaoguang/data/3D_net_model/modeltest9_6.pkl"))
+model.load_state_dict(torch.load("/home/pengyaoguang/data/3D_net_model/modeltest9_9.pkl"))
 
 
 #10012_20
 #10_50
 m=8
 ##data_prepare
-k=20000
+k=29998
 
 n=50
 R=sio.loadmat("/home/pengyaoguang/data/3D_RTM/RTM{}".format(k))["RTM"][20:120,20:120,20:120]
@@ -99,3 +99,5 @@ plt.figure()
 plt.imshow(y_1.detach().cpu()[0,0,n].T-torch.from_numpy(label[n].T))
 plt.colorbar()
 plt.savefig("/home/pengyaoguang/data/3D_net_result/v_error{}.png".format(m))
+
+sio.savemat("/home/pengyaoguang/data/3D_net_result/3D_result{}.mat".format(m),{'RTM':R,'v_real':label,'v_update':y_1.detach().cpu()[0,0],'v_smooth':label_smooth})

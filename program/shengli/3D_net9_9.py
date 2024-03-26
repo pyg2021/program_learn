@@ -19,7 +19,7 @@ BatchSize=7
 device="cuda"
 x_1,y_1=DataLoad(30000+0,30000+80)
 x_2,y_2=DataLoad(20001,20000+64)
-x_3,y_3=DataLoad(30000+81,30000+161)
+x_3,y_3=DataLoad(30000+81,30000+202)
 x=np.concatenate((x_1,x_2,x_3),axis=0)
 y=np.concatenate((y_1,y_2,y_3),axis=0)
 # x,y=DataLoad(30000+0,30000+80)
@@ -32,19 +32,19 @@ train_loader_1 = data_utils.DataLoader(train_data,batch_size=BatchSize,shuffle=T
 # x_3,y_3=DataLoad(5000+100,5000+109)
 # x=np.concatenate((x_1,x_2,x_3),axis=0)
 # y=np.concatenate((y_1,y_2,y_3),axis=0)
-x,y=DataLoad(29999,29999)
+x,y=DataLoad(29998,29998)
 test_number=y.shape[0]
 test_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(y).float())
 test_loader_1 = data_utils.DataLoader(test_data,batch_size=BatchSize,shuffle=True)
 
 
-x_1,y_1=DataLoad(15000,15000+15)
+x_1,y_1=DataLoad(15000,15000+1)
 x,y=x_1,y_1
 trian_number=y.shape[0]
 train_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(y).float())
 train_loader_2 = data_utils.DataLoader(train_data,batch_size=BatchSize,shuffle=True)
 
-x_1,y_1=DataLoad(15000,15000+30)
+x_1,y_1=DataLoad(15000,15000+1)
 x,y=x_1,y_1
 test_number=y.shape[0]
 test_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(y).float())
@@ -211,11 +211,11 @@ def test(model,test_loader,loss_1,device,save_number=0):
 
 
 # ewc=EWC(model, train_loader_1, device)
-# model.load_state_dict(torch.load("/home/pengyaoguang/data/3D_net_model/modeltest9_5.pkl"))
+model.load_state_dict(torch.load("/home/pengyaoguang/data/3D_net_model/modeltest9_7.pkl"))
 optimizer = torch.optim.AdamW(model.parameters(),lr=1e-3)
-scheduler=torch.optim.lr_scheduler.StepLR(optimizer,step_size=500,gamma=0.6)
+scheduler=torch.optim.lr_scheduler.StepLR(optimizer,step_size=200,gamma=0.5)
 # loss_1=torch.nn.L1Loss()
 loss_1=torch.nn.L1Loss()
-train(model,train_loader_1,test_loader_1,4000,device,optimizer,scheduler,loss_1,save_number=7)
+train(model,train_loader_1,test_loader_1,4000,device,optimizer,scheduler,loss_1,save_number=9)
 # test(model,train_loader_1,loss_1,device)
 # test(model,train_loader_2,loss_1,device)
