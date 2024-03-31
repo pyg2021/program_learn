@@ -10,7 +10,7 @@ import time
 import scipy.io as sio
 
 start=time.time()
-for j in range(30000+138,30000+140):
+for j in range(29998,29999):
     spacing = (10., 10., 10)  # Grid spacing in m. The domain size is now dx=1km, dy=1km, dz=1km
     origin = (0., 0., 0.)  # What is the location of the top left corner (x,y,z). This is necessary to define
     # Define a velocity profile. The velocity is in km/s
