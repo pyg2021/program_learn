@@ -1,0 +1,51 @@
+nohup: ignoring input
+ epoch:  0  train_loss:  4.993636301585606  test_loss:  4.224851767222087
+1.9103692253430684 min
+MoTTY X11 proxy: Authorisation not recognised
+
+[36mIn case you are trying to start a graphical application with "sudo", read this article in order to avoid this issue:
+[35m[4mhttps://blog.mobatek.net/post/how-to-keep-X11-display-after-su-or-sudo/[0m
+
+ epoch:  1  train_loss:  3.842523149081639  test_loss:  3.4480466842651367
+ epoch:  2  train_loss:  3.2458711521966115  test_loss:  2.9885993003845215
+ epoch:  3  train_loss:  2.7771143402372087  test_loss:  2.493617057800293
+ epoch:  4  train_loss:  2.333718078477042  test_loss:  2.0784170627593994
+ epoch:  5  train_loss:  1.9714920350483485  test_loss:  1.7846991618474324
+8.733441503842672 min
+ epoch:  6  train_loss:  1.753603424344744  test_loss:  1.6473726828893025
+ epoch:  7  train_loss:  1.6493210451943534  test_loss:  1.5653678973515828
+ epoch:  8  train_loss:  1.5682932904788427  test_loss:  1.4883943398793538
+ epoch:  9  train_loss:  1.49190092086792  test_loss:  1.417877475420634
+ epoch:  10  train_loss:  1.4185311709131514  test_loss:  1.3329972823460896
+15.46305646498998 min
+ epoch:  11  train_loss:  1.3425317406654358  test_loss:  1.2547296682993572
+ epoch:  12  train_loss:  1.2644716926983424  test_loss:  1.1753832499186199
+ epoch:  13  train_loss:  1.183932057448796  test_loss:  1.0921664237976074
+ epoch:  14  train_loss:  1.0927922299930029  test_loss:  1.0060102542241414
+ epoch:  15  train_loss:  0.9972179744924817  test_loss:  0.9047839840253195
+22.11334051688512 min
+ epoch:  16  train_loss:  0.8905437375817981  test_loss:  0.8058213591575623
+ epoch:  17  train_loss:  0.7885619359357017  test_loss:  0.6934646765391032
+ epoch:  18  train_loss:  0.6978689432144165  test_loss:  0.6018752257029215
+ epoch:  19  train_loss:  0.6022871072803225  test_loss:  0.5163586437702179
+ epoch:  20  train_loss:  0.5024065928799766  test_loss:  0.42584990461667377
+28.82384744087855 min
+ epoch:  21  train_loss:  0.4390986221177237  test_loss:  0.37402453025182086
+ epoch:  22  train_loss:  0.38553426946912495  test_loss:  0.33493827780087787
+ epoch:  23  train_loss:  0.34332017813410076  test_loss:  0.30078125
+ epoch:  24  train_loss:  0.3238988199404308  test_loss:  0.27772846817970276
+ epoch:  25  train_loss:  0.31689454721552984  test_loss:  0.2669313798348109
+35.439897839228315 min
+ epoch:  26  train_loss:  0.30331663148743765  test_loss:  0.2776649047931035
+ epoch:  27  train_loss:  0.29745082025017056  test_loss:  0.26581570009390515
+ epoch:  28  train_loss:  0.2885462407554899  test_loss:  0.2507547487815221
+ epoch:  29  train_loss:  0.2713454110281808  test_loss:  0.24564185241858164
+ epoch:  30  train_loss:  0.27117433824709486  test_loss:  0.24501506984233856
+42.03919671376546 min
+ epoch:  31  train_loss:  0.2704668715596199  test_loss:  0.24733694394429526
+ epoch:  32  train_loss:  0.2695556708744594  test_loss:  0.23599138855934143
+ epoch:  33  train_loss:  0.2676912450364658  test_loss:  0.23931794365247092
+ epoch:  34  train_loss:  0.2576912907617433  test_loss:  0.22642004489898682
+ epoch:  35  train_loss:  0.2536645882896015  test_loss:  0.23785016437371573
+48.68412367502848 min
+ epoch:  36  train_loss:  0.24927228902067458  test_loss:  0.23929822941621146
