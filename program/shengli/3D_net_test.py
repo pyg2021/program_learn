@@ -5,7 +5,8 @@ import scipy.io as sio
 import numpy as np
 from scipy.ndimage import gaussian_filter
 import matplotlib.pyplot as plt
-from DataLoad import DataLoad
+# from DataLoad import DataLoad
+from DataLoad_well import DataLoad
 import os 
 from skimage.metrics import structural_similarity as ssim
 
@@ -24,16 +25,16 @@ def ssim_metric(target: object, prediction: object, win_size: int=21):
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID" 
 os.environ['CUDA_VISIBLE_DEVICES'] = "3"
 device="cuda"
-model=net(2,1,True,True).to(device)
+model=net(3,1,True,True).to(device)
 model=nn.parallel.DataParallel(model)
-model.load_state_dict(torch.load("/home/pengyaoguang/data/3D_net_model/modeltest9_10.pkl"))
+model.load_state_dict(torch.load("/home/pengyaoguang/data/3D_net_model/modeltest10_1.pkl"))
 
 
 #10012_20
 #10_50
 m=8
 ##data_prepare
-k=25150
+k=29998
 
 n=50
 R=sio.loadmat("/home/pengyaoguang/data/3D_RTM/RTM{}".format(k))["RTM"][20:120,20:120,20:120]
@@ -67,6 +68,7 @@ label_smooth1=label_smooth.reshape(1,1,label_smooth.shape[0],label_smooth.shape[
 x=np.zeros((1,2,100,100,100))
 x[:,0]=R1
 x[:,1]=label_smooth1
+x,y=DataLoad(k,k)
 
 
 
