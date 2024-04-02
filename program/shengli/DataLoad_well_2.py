@@ -20,6 +20,7 @@ def DataLoad(a,b):
         x[i,0]=R1
         x[i,1]=label_smooth1
         label_well=label_smooth1
+        # label_well[:]=0
         for l in range(10):
             l1=np.random.randint(0,100)
             l2=np.random.randint(0,100)
