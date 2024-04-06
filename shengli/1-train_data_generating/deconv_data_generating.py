@@ -12,19 +12,20 @@ torch.manual_seed(1234)
 np.random.seed(1234)
 device = torch.device('cuda:0')
 
-velocity_filename = 'program/shengli/salt_data/v0.mat'
-# velocity_filename = 'shengli/data/Overthrust3D.mat'
-save_path = 'shengli/data/'
+velocity_filename = '/home/pengyaoguang/data/3D_v_model/v29998.mat'
+# velocity_filename = '/home/pengyaoguang/data/Overthrust3D.mat'
+save_path = '/home/pengyaoguang/data/3D_net_result/useful_result/'
 data = spio.loadmat(velocity_filename)
 torch.set_default_dtype(torch.float32)
 
-velocity = torch.from_numpy(data[str('v')]).float()*1000
+velocity = torch.from_numpy(data[str('v')]).float()
+# velocity = torch.from_numpy(data[str('velocity')]).float()
 # velocity = torch.from_numpy(data[str('velocity')])
 print(velocity.shape)
 shot_index = 50
 vmin, vmax = torch.quantile(velocity[:,:,shot_index],
                             torch.tensor([0.01, 0.99]))
-plt.imshow(velocity[1,:,:].T.cpu(), aspect='auto',
+plt.imshow(velocity[50,:,:].T.cpu(), aspect='auto',
              cmap='jet')
 plt.xlabel("Receivers")
 plt.ylabel("Time Sample")
@@ -42,7 +43,7 @@ shot_index = 50
 vmin, vmax = torch.quantile(reflectivity[:,:,shot_index],
                             torch.tensor([0.01, 0.99]))
 plt.figure()
-plt.imshow(reflectivity[1,:,:].T.cpu(), aspect='auto',
+plt.imshow(reflectivity[50,:,:].T.cpu(), aspect='auto',
              cmap=plt.cm.seismic, vmin=-vmax, vmax=vmax)
 plt.xlabel("Receivers")
 plt.ylabel("Time Sample")
@@ -53,9 +54,9 @@ plt.tight_layout()
 plt.savefig(save_path + 'salt_reflectivity.png')
 spio.savemat(save_path + 'salt_reflectivity.mat',{'reflectivity':reflectivity.cpu().data.numpy()})
 
-freq = 25
+freq = 10
 nt = 100
-dt = 0.004
+dt = 0.01
 peak_time = 1.0 / freq
 
 # source_amplitudes
@@ -87,7 +88,7 @@ shot_index = 50
 vmin, vmax = torch.quantile(seismic_data[:,:,shot_index],
                             torch.tensor([0.01, 0.99]))
 plt.figure()
-plt.imshow(seismic_data[1,:,:].cpu().T, aspect='auto',
+plt.imshow(seismic_data[50,:,:].cpu().T, aspect='auto',
              cmap=plt.cm.seismic, vmin=-vmax, vmax=vmax)
 plt.xlabel("Receivers")
 plt.ylabel("Time Sample")

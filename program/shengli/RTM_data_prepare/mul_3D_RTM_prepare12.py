@@ -136,6 +136,11 @@ for j in range(29999,30000):
         end=time.time()
         print(end-start,"s")
         #NBVAL_IGNORE_OUTPUT
-        sio.savemat("/home/pengyaoguang/data/3D_RTM/RTM{}.mat".format(j),{"RTM":image.data})
+        # sio.savemat("/home/pengyaoguang/data/3D_RTM/RTM{}.mat".format(j),{"RTM":image.data})
 
 
+# plt.figure()
+# plt.imshow(true_d.data[:,:],cmap="gray",aspect='auto')
+# plt.colorbar()
+# plt.savefig("/home/pengyaoguang/program_learn/program/shengli/RTM_data_prepare/1.png")
+# plt.close()
