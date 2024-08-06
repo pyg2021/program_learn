@@ -11,18 +11,18 @@ from DataLoad_deconv import DataLoad
 from Model3D_unt4 import net
 import os 
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID" 
-os.environ['CUDA_VISIBLE_DEVICES'] = "0,1,2,3"
+os.environ['CUDA_VISIBLE_DEVICES'] = "1,2,3"
 start=time.time()
 
 ##data_prepare
-BatchSize=20
+BatchSize=1
 device="cuda"
-x_1,y_1=DataLoad(25000+0,25000+99)
-x_2,y_2=DataLoad(25000+100,25000+119)
-x_3,y_3=DataLoad(25000+120,25000+159)
-x=np.concatenate((x_1,x_2,x_3),axis=0)
-y=np.concatenate((y_1,y_2,y_3),axis=0)
-# x,y=DataLoad(25000+220,25000+220)
+# x_1,y_1=DataLoad(25000+0,25000+99)
+# x_2,y_2=DataLoad(25000+100,25000+119)
+# x_3,y_3=DataLoad(25000+120,25000+159)
+# x=np.concatenate((x_1,x_2,x_3),axis=0)
+# y=np.concatenate((y_1,y_2,y_3),axis=0)
+x,y=DataLoad(25000+220,25000+220)
 trian_number=y.shape[0]
 train_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(y).float())
 train_loader_1 = data_utils.DataLoader(train_data,batch_size=BatchSize,shuffle=True)
@@ -32,7 +32,7 @@ train_loader_1 = data_utils.DataLoader(train_data,batch_size=BatchSize,shuffle=T
 # x_3,y_3=DataLoad(5000+100,5000+109)
 # x=np.concatenate((x_1,x_2,x_3),axis=0)
 # y=np.concatenate((y_1,y_2,y_3),axis=0)
-x,y=DataLoad(25000+220,25000+240)
+x,y=DataLoad(25000+220,25000+220)
 test_number=y.shape[0]
 test_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(y).float())
 test_loader_1 = data_utils.DataLoader(test_data,batch_size=BatchSize,shuffle=True)
@@ -116,7 +116,7 @@ def train(model,train_loader,test_loader,epoch,device,optimizer,scheduler,loss_1
             y=y.to(device)
             optimizer.zero_grad()
             y_1=model(x)
-            loss=loss_1(y_1,y)+2*loss_1(torch.clamp(y_1,1.5,8),y_1)
+            loss=loss_1(y_1,y)+2*loss_1(torch.clamp(y_1,1.5,8),y_1)+loss_2(y_1)
             if ewc is not None:
                 ewc_loss = ewc.penalty(model)
                 loss += ewc_lambda * ewc_loss
@@ -226,13 +226,13 @@ class TVLoss(nn.Module):
 # test(model,train_loader_1,loss_1,device)
 # test(model,train_loader_2,loss_1,device)
 
-
+loss_2=TVLoss()
 # ewc=EWC(model, train_loader_1, device)
 # model.load_state_dict(torch.load("/home/pengyaoguang/data/3D_net_model/modeltest9_10.pkl"))
 optimizer = torch.optim.AdamW(model.parameters(),lr=1e-3)
 scheduler=torch.optim.lr_scheduler.StepLR(optimizer,step_size=800,gamma=0.5)
 # loss_1=torch.nn.L1Loss()
 loss_1=torch.nn.L1Loss()
-train(model,train_loader_1,test_loader_1,4000,device,optimizer,scheduler,loss_1,save_number=8)
+train(model,train_loader_1,test_loader_1,4000,device,optimizer,scheduler,loss_1,save_number=9)
 # test(model,train_loader_1,loss_1,device)
 # test(model,train_loader_2,loss_1,device)

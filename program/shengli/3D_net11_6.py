@@ -7,22 +7,29 @@ import time
 import scipy.io as sio
 import matplotlib.pyplot as plt
 from scipy.ndimage import gaussian_filter
-from DataLoad_deconv import DataLoad
+from DataLoad import DataLoad
 from Model3D_unt4 import net
+from VIT_3D2 import ViT
 import os 
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID" 
 os.environ['CUDA_VISIBLE_DEVICES'] = "0,1,2,3"
 start=time.time()
 
 ##data_prepare
-BatchSize=20
+BatchSize=40
 device="cuda"
-x_1,y_1=DataLoad(25000+0,25000+99)
-x_2,y_2=DataLoad(25000+100,25000+119)
-x_3,y_3=DataLoad(25000+120,25000+159)
+# x_1,y_1=DataLoad(25000+0,25000+99)
+# x_2,y_2=DataLoad(25000+100,25000+119)
+# x_3,y_3=DataLoad(25000+120,25000+159)
+# x=np.concatenate((x_1,x_2,x_3),axis=0)
+# y=np.concatenate((y_1,y_2,y_3),axis=0)
+
+x_1,y_1=DataLoad(30000+0,30000+80)
+x_2,y_2=DataLoad(20001,20000+64)
+x_3,y_3=DataLoad(30000+81,30000+202)
 x=np.concatenate((x_1,x_2,x_3),axis=0)
 y=np.concatenate((y_1,y_2,y_3),axis=0)
-# x,y=DataLoad(25000+220,25000+220)
+# x,y=DataLoad(25000+0,25000+2)
 trian_number=y.shape[0]
 train_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(y).float())
 train_loader_1 = data_utils.DataLoader(train_data,batch_size=BatchSize,shuffle=True)
@@ -32,7 +39,7 @@ train_loader_1 = data_utils.DataLoader(train_data,batch_size=BatchSize,shuffle=T
 # x_3,y_3=DataLoad(5000+100,5000+109)
 # x=np.concatenate((x_1,x_2,x_3),axis=0)
 # y=np.concatenate((y_1,y_2,y_3),axis=0)
-x,y=DataLoad(25000+220,25000+240)
+x,y=DataLoad(29998,29998)
 test_number=y.shape[0]
 test_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(y).float())
 test_loader_1 = data_utils.DataLoader(test_data,batch_size=BatchSize,shuffle=True)
@@ -50,7 +57,16 @@ test_number=y.shape[0]
 test_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(y).float())
 test_loader_2 = data_utils.DataLoader(test_data,batch_size=BatchSize,shuffle=True)
 
-model=net(3,1,True,True).to(device)
+model=ViT(image_size = 100,
+        patch_size = 20,
+        num_classes = 1000,
+        dim = 1024,
+        depth = 6,
+        heads = 16,
+        mlp_dim = 2048,
+        dropout = 0.1,
+        channels=2,
+        emb_dropout = 0.1).to(device)
 model=nn.parallel.DataParallel(model)
 
 
@@ -145,30 +161,30 @@ def train(model,train_loader,test_loader,epoch,device,optimizer,scheduler,loss_1
         print(' epoch: ',epoch_i," train_loss: ",epoch_loss," test_loss: ",test_loss)
         # test(model,train_loader_1,loss_1,device)
         # test(model,test_loader_2,loss_1,device)
-        if epoch_i%5==0 and epoch_i>=0:
+        if epoch_i%50==0 and epoch_i>=20:
             print((time.time()-start)/60,"min")
             plt.figure()
-            plt.imshow(model(x).cpu().detach()[0,0,50,:,:].T)
+            plt.imshow(model(x).cpu().detach()[0,0,50,:].T)
             plt.colorbar()
-            plt.savefig("/home/pengyaoguang/data/3D_net_result/v_updata10_{}.png".format(save_number))
+            plt.savefig("/home/pengyaoguang/data/3D_net_result/v_updata11_{}.png".format(save_number))
             plt.close()
-            sio.savemat("/home/pengyaoguang/data/3D_net_result/v_updata10_{}.mat".format(save_number),{"v":model(x).cpu().detach()[0,0]})
-            torch.save(model.state_dict(),"/home/pengyaoguang/data/3D_net_model/modeltest10_{}.pkl".format(save_number))
+            sio.savemat("/home/pengyaoguang/data/3D_net_result/v_updata11_{}.mat".format(save_number),{"v":model(x).cpu().detach()[0,0]})
+            torch.save(model.state_dict(),"/home/pengyaoguang/data/3D_net_model/modeltest11_{}.pkl".format(save_number))
 
-            plt.figure()
-            plt.imshow(y.cpu().detach()[0,0,50,:,:].T)
-            plt.colorbar()
-            plt.savefig("/home/pengyaoguang/data/3D_net_result/v_real10_{}.png".format(save_number))
-            plt.close()
+            # plt.figure()
+            # plt.imshow(y.cpu().detach()[0,0,:,:].T)
+            # plt.colorbar()
+            # plt.savefig("/home/pengyaoguang/data/3D_net_result/v_real11_{}.png".format(save_number))
+            # plt.close()
 
-            plt.figure()
-            plt.plot(range(len(loss_all)),loss_all[:],label="train")
-            plt.plot(range(len(test_loss_all)),test_loss_all[:],label="test")
-            plt.xlabel("epoch")
-            plt.ylabel("loss")
-            plt.legend()
-            plt.savefig("/home/pengyaoguang/data/3D_net_result/history10_{}.png".format(save_number))
-            plt.close()
+            # plt.figure()
+            # plt.plot(range(len(loss_all)),loss_all[:],label="train")
+            # plt.plot(range(len(test_loss_all)),test_loss_all[:],label="test")
+            # plt.xlabel("epoch")
+            # plt.ylabel("loss")
+            # plt.legend()
+            # plt.savefig("/home/pengyaoguang/data/3D_net_result/history11_{}.png".format(save_number))
+            # plt.close()
 def test(model,test_loader,loss_1,device,save_number=0):
     test_loss_all=[]
     test_loss=0
@@ -228,11 +244,11 @@ class TVLoss(nn.Module):
 
 
 # ewc=EWC(model, train_loader_1, device)
-# model.load_state_dict(torch.load("/home/pengyaoguang/data/3D_net_model/modeltest9_10.pkl"))
+# model.load_state_dict(torch.load("/home/pengyaoguang/data/3D_net_model/modeltest11_5.pkl"))
 optimizer = torch.optim.AdamW(model.parameters(),lr=1e-3)
-scheduler=torch.optim.lr_scheduler.StepLR(optimizer,step_size=800,gamma=0.5)
+scheduler=torch.optim.lr_scheduler.StepLR(optimizer,step_size=1000,gamma=0.7)
 # loss_1=torch.nn.L1Loss()
 loss_1=torch.nn.L1Loss()
-train(model,train_loader_1,test_loader_1,4000,device,optimizer,scheduler,loss_1,save_number=8)
+train(model,train_loader_1,test_loader_1,10000,device,optimizer,scheduler,loss_1,save_number=6)
 # test(model,train_loader_1,loss_1,device)
 # test(model,train_loader_2,loss_1,device)

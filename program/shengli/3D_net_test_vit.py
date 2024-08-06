@@ -6,7 +6,8 @@ import numpy as np
 from scipy.ndimage import gaussian_filter
 import matplotlib.pyplot as plt
 # from DataLoad import DataLoad
-from DataLoad_deconv import DataLoad
+from DataLoad import DataLoad
+from VIT_3D2 import ViT
 import os 
 from skimage.metrics import structural_similarity as ssim
 
@@ -23,18 +24,27 @@ def ssim_metric(target: object, prediction: object, win_size: int=21):
 
 
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID" 
-os.environ['CUDA_VISIBLE_DEVICES'] = "3"
+os.environ['CUDA_VISIBLE_DEVICES'] = "2"
 device="cuda"
-model=net(3,1,True,True).to(device)
+model=ViT(image_size = 100,
+        patch_size = 20,
+        num_classes = 1000,
+        dim = 1024,
+        depth = 6,
+        heads = 16,
+        mlp_dim = 2048,
+        dropout = 0.1,
+        channels=2,
+        emb_dropout = 0.1).to(device)
 model=nn.parallel.DataParallel(model)
-model.load_state_dict(torch.load("/home/pengyaoguang/data/3D_net_model/modeltest10_10.pkl"))
+model.load_state_dict(torch.load("/home/pengyaoguang/data/3D_net_model/modeltest11_6.pkl"))
 
 
 #10012_20
 #10_50
 m=8
 ##data_prepare
-k=25220
+k=29998
 
 n=50
 R=sio.loadmat("/home/pengyaoguang/data/3D_RTM/RTM{}".format(k))["RTM"][20:120,20:120,20:120]

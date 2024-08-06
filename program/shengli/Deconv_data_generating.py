@@ -23,20 +23,20 @@ def deconv_data(m):
     velocity = torch.from_numpy(data[str('v')]).float()
     # velocity = torch.from_numpy(data[str('velocity')]).float()
     # velocity = torch.from_numpy(data[str('velocity')])
-    print(velocity.shape)
+    # print(velocity.shape)
     shot_index = 50
     vmin, vmax = torch.quantile(velocity[:,:,shot_index],
                                 torch.tensor([0.01, 0.99]))
-    plt.imshow(velocity[50,:,:].T.cpu(), aspect='auto',
-                 cmap='jet')
-    plt.xlabel("Receivers")
-    plt.ylabel("Time Sample")
-    plt.title("Velocity 57")
-    plt.colorbar()
-    # plt.tight_layout()
-    # plt.savefig(result_path+'observed data.jpg')
-    plt.savefig(save_path + 'salt_velocity.png')
-    spio.savemat(save_path + 'salt_velocity.mat',{'velocity':velocity.cpu().data.numpy()})
+    # plt.imshow(velocity[50,:,:].T.cpu(), aspect='auto',
+    #              cmap='jet')
+    # plt.xlabel("Receivers")
+    # plt.ylabel("Time Sample")
+    # plt.title("Velocity 57")
+    # plt.colorbar()
+    # # plt.tight_layout()
+    # # plt.savefig(result_path+'observed data.jpg')
+    # plt.savefig(save_path + 'salt_velocity.png')
+    # spio.savemat(save_path + 'salt_velocity.mat',{'velocity':velocity.cpu().data.numpy()})
 
     reflectivity = torch.zeros_like(velocity)
     n=velocity.shape[2]
@@ -84,7 +84,7 @@ def deconv_data(m):
 
 
     seismic_data = torch.matmul(reflectivity,source_amplitudes_matrix.T)
-    print(torch.matmul(reflectivity,source_amplitudes_matrix.T).shape)
+    # print(torch.matmul(reflectivity,source_amplitudes_matrix.T).shape)
 
     shot_index = 50
     vmin, vmax = torch.quantile(seismic_data[:,:,shot_index],
