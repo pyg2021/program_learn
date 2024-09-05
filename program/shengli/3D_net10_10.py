@@ -7,22 +7,22 @@ import time
 import scipy.io as sio
 import matplotlib.pyplot as plt
 from scipy.ndimage import gaussian_filter
-from DataLoad_well_2 import DataLoad
+from DataLoad_deconv import DataLoad
 from Model3D_unt4 import net
 import os 
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID" 
-os.environ['CUDA_VISIBLE_DEVICES'] = "3"
+os.environ['CUDA_VISIBLE_DEVICES'] = "0,1,2,3"
 start=time.time()
 
 ##data_prepare
 BatchSize=1
 device="cuda"
-x_1,y_1=DataLoad(25000+0,25000+1)
-x_2,y_2=DataLoad(25000+2,25000+2)
-x_3,y_3=DataLoad(25000+3,25000+3)
-x=np.concatenate((x_1,x_2,x_3),axis=0)
-y=np.concatenate((y_1,y_2,y_3),axis=0)
-# x,y=DataLoad(30000+0,30000+80)
+# x_1,y_1=DataLoad(25000+0,25000+99)
+# x_2,y_2=DataLoad(25000+100,25000+119)
+# x_3,y_3=DataLoad(25000+120,25000+159)
+# x=np.concatenate((x_1,x_2,x_3),axis=0)
+# y=np.concatenate((y_1,y_2,y_3),axis=0)
+x,y=DataLoad(25000+220,25000+220)
 trian_number=y.shape[0]
 train_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(y).float())
 train_loader_1 = data_utils.DataLoader(train_data,batch_size=BatchSize,shuffle=True)
@@ -32,7 +32,7 @@ train_loader_1 = data_utils.DataLoader(train_data,batch_size=BatchSize,shuffle=T
 # x_3,y_3=DataLoad(5000+100,5000+109)
 # x=np.concatenate((x_1,x_2,x_3),axis=0)
 # y=np.concatenate((y_1,y_2,y_3),axis=0)
-x,y=DataLoad(25000+150,25000+160)
+x,y=DataLoad(25000+220,25000+220)
 test_number=y.shape[0]
 test_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(y).float())
 test_loader_1 = data_utils.DataLoader(test_data,batch_size=BatchSize,shuffle=True)
@@ -199,7 +199,24 @@ def test(model,test_loader,loss_1,device,save_number=0):
     # plt.colorbar()
     # plt.savefig("/home/pengyaoguang/data/3D_net_result/v_real8_{}.png".format(save_number))
     # plt.close()
-
+class TVLoss(nn.Module):
+    def __init__(self):
+        super(TVLoss, self).__init__()
+ 
+    def __call__(self, input):
+        im_size = input.size()
+        batchSize = input.size()[0]
+        x_tv = torch.pow((input[:, :, 1:, :,:] - input[:, :, :im_size[2] - 1, :,:]), 2).sum()
+        y_tv = torch.pow((input[:, :, :, 1:,:] - input[:, :, :, :im_size[3] - 1,:]), 2).sum()
+        z_tv = torch.pow((input[:, :, :, :,1:] - input[:, :, :,:, :im_size[3] - 1]), 2).sum()
+        tv_x_size = self._tensor_size(input[:, :, 1:, :,:])
+        tv_y_size = self._tensor_size(input[:, :, :, 1:,:])
+        tv_z_size = self._tensor_size(input[:, :, :,:, 1:])
+        loss_tv = (x_tv / tv_x_size + y_tv / tv_y_size+z_tv/tv_z_size) / batchSize
+        return loss_tv
+ 
+    def _tensor_size(self, t):
+        return t.size()[1] * t.size()[2] * t.size()[3]*t.size()[4]
 
 # model.load_state_dict(torch.load("/home/pengyaoguang/data/3D_net_model/modeltest6_5.pkl"))
 # optimizer = torch.optim.AdamW(model.parameters(),lr=1e-3)
@@ -211,11 +228,11 @@ def test(model,test_loader,loss_1,device,save_number=0):
 
 
 # ewc=EWC(model, train_loader_1, device)
-model.load_state_dict(torch.load("/home/pengyaoguang/data/3D_net_model/modeltest10_1.pkl"))
+# model.load_state_dict(torch.load("/home/pengyaoguang/data/3D_net_model/modeltest9_10.pkl"))
 optimizer = torch.optim.AdamW(model.parameters(),lr=1e-3)
-scheduler=torch.optim.lr_scheduler.StepLR(optimizer,step_size=500,gamma=0.5)
+scheduler=torch.optim.lr_scheduler.StepLR(optimizer,step_size=800,gamma=0.5)
 # loss_1=torch.nn.L1Loss()
 loss_1=torch.nn.L1Loss()
-train(model,train_loader_1,test_loader_1,4000,device,optimizer,scheduler,loss_1,save_number=1)
+train(model,train_loader_1,test_loader_1,4000,device,optimizer,scheduler,loss_1,save_number=10)
 # test(model,train_loader_1,loss_1,device)
 # test(model,train_loader_2,loss_1,device)

@@ -15,11 +15,15 @@ os.environ['CUDA_VISIBLE_DEVICES'] = "0,1,3"
 start=time.time()
 
 ##data_prepare
+<<<<<<< HEAD
 BatchSize=3
+=======
+BatchSize=19
+>>>>>>> ced8e39b886587af1fdbdbf6afd752f79c015074
 device="cuda"
 x_1,y_1=DataLoad(25000+0,25000+99)
-x_2,y_2=DataLoad(25000+100,25000+101)
-x_3,y_3=DataLoad(25000+102,25000+103)
+x_2,y_2=DataLoad(25000+100,25000+119)
+x_3,y_3=DataLoad(25000+120,25000+159)
 x=np.concatenate((x_1,x_2,x_3),axis=0)
 y=np.concatenate((y_1,y_2,y_3),axis=0)
 # x,y=DataLoad(30000+0,30000+80)
