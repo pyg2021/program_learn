@@ -11,11 +11,11 @@ from DataLoad import DataLoad
 from Model3D_unt4 import net
 import os 
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID" 
-os.environ['CUDA_VISIBLE_DEVICES'] = "0,1,2,3"
+os.environ['CUDA_VISIBLE_DEVICES'] = "0,1,3"
 start=time.time()
 
 ##data_prepare
-BatchSize=12
+BatchSize=3
 device="cuda"
 x_1,y_1=DataLoad(25000+0,25000+99)
 x_2,y_2=DataLoad(25000+100,25000+101)
