@@ -13,12 +13,13 @@ device = torch.device('cuda:1' if torch.cuda.is_available()
 ny = 100
 nx = 100
 dx = 10.0
-for k in range(25000,25001):
+for k in range(30100,30300):
+# for k in range(25100,25300):
     v_0=sio.loadmat("/home/pengyaoguang/data/3D_v_model/v{}".format(k))["v"]*1000
     for j in range(v_0.shape[0]):
         v=v_0[j]
-        plt.imshow(v.T)
-        plt.savefig('/home/pengyaoguang/data/2D_data/2D_v_model/v{}_{}.jpg'.format(k,j))
+        # plt.imshow(v.T)
+        # plt.savefig('/home/pengyaoguang/data/2D_data/2D_v_model/v{}_{}.jpg'.format(k,j))
         
         # Smooth to use as migration model
         v_mig = torch.tensor(1/gaussian_filter(1/v, 40))
@@ -77,18 +78,18 @@ for k in range(25000,25001):
 
         # Plot
         receiver_amplitudes = out[-1]
-        vmin, vmax = torch.quantile(receiver_amplitudes[0],
-                                    torch.tensor([0.05, 0.95]).to(device))
-        _, ax = plt.subplots(1, 2, figsize=(10.5, 7), sharey=True)
-        ax[0].imshow(receiver_amplitudes[22].cpu().T, aspect='auto',
-                    cmap='gray', vmin=vmin, vmax=vmax)
-        ax[1].imshow(receiver_amplitudes[:, 45].cpu().T, aspect='auto',
-                    cmap='gray', vmin=vmin, vmax=vmax)
-        ax[0].set_xlabel("Channel")
-        ax[0].set_ylabel("Time Sample")
-        ax[1].set_xlabel("Shot")
-        plt.tight_layout()
-        plt.savefig('/home/pengyaoguang/data/2D_data/2D_RTM/forward_model{}_{}.jpg'.format(k,j))
+        # vmin, vmax = torch.quantile(receiver_amplitudes[0],
+        #                             torch.tensor([0.05, 0.95]).to(device))
+        # _, ax = plt.subplots(1, 2, figsize=(10.5, 7), sharey=True)
+        # ax[0].imshow(receiver_amplitudes[22].cpu().T, aspect='auto',
+        #             cmap='gray', vmin=vmin, vmax=vmax)
+        # ax[1].imshow(receiver_amplitudes[:, 45].cpu().T, aspect='auto',
+        #             cmap='gray', vmin=vmin, vmax=vmax)
+        # ax[0].set_xlabel("Channel")
+        # ax[0].set_ylabel("Time Sample")
+        # ax[1].set_xlabel("Shot")
+        # plt.tight_layout()
+        # plt.savefig('/home/pengyaoguang/data/2D_data/2D_RTM/forward_model{}_{}.jpg'.format(k,j))
 
 
         # Load observed data
@@ -124,20 +125,20 @@ for k in range(25000,25001):
                         actual_mute_end-mute_start]
         observed_scatter_masked = observed_data * mask
 
-        vmin, vmax = torch.quantile(observed_data[0],
-                                    torch.tensor([0.05, 0.95]).to(device))
-        _, ax = plt.subplots(1, 3, figsize=(10.5, 3.5), sharex=True,
-                            sharey=True)
-        ax[0].imshow(observed_data[0].cpu().T, aspect='auto', cmap='gray',
-                    vmin=vmin, vmax=vmax)
-        ax[0].set_title("Observed")
-        ax[1].imshow(mask[0].cpu().T, aspect='auto', cmap='gray')
-        ax[1].set_title("Mask")
-        ax[2].imshow(observed_scatter_masked[0].cpu().T, aspect='auto',
-                    cmap='gray', vmin=vmin, vmax=vmax)
-        ax[2].set_title("Masked data")
-        plt.tight_layout()
-        plt.savefig('/home/pengyaoguang/data/2D_data/2D_RTM/rtm_mask{}_{}.jpg'.format(k,j))
+        # vmin, vmax = torch.quantile(observed_data[0],
+        #                             torch.tensor([0.05, 0.95]).to(device))
+        # _, ax = plt.subplots(1, 3, figsize=(10.5, 3.5), sharex=True,
+        #                     sharey=True)
+        # ax[0].imshow(observed_data[0].cpu().T, aspect='auto', cmap='gray',
+        #             vmin=vmin, vmax=vmax)
+        # ax[0].set_title("Observed")
+        # ax[1].imshow(mask[0].cpu().T, aspect='auto', cmap='gray')
+        # ax[1].set_title("Mask")
+        # ax[2].imshow(observed_scatter_masked[0].cpu().T, aspect='auto',
+        #             cmap='gray', vmin=vmin, vmax=vmax)
+        # ax[2].set_title("Masked data")
+        # plt.tight_layout()
+        # plt.savefig('/home/pengyaoguang/data/2D_data/2D_RTM/rtm_mask{}_{}.jpg'.format(k,j))
 
 
 
@@ -181,14 +182,14 @@ for k in range(25000,25001):
             optimiser.step()
 
         # Plot
-        vmin, vmax = torch.quantile(scatter.detach(),
-                                    torch.tensor([0.05, 0.95]).to(device))
-        plt.figure(figsize=(10.5, 3.5))
-        plt.imshow(scatter.detach().cpu().T, aspect='auto', cmap='gray',
-                vmin=vmin, vmax=vmax)
-        plt.savefig('/home/pengyaoguang/data/2D_data/2D_RTM/rtm{}_{}.jpg'.format(k,j))
+        # vmin, vmax = torch.quantile(scatter.detach(),
+        #                             torch.tensor([0.05, 0.95]).to(device))
+        # plt.figure(figsize=(10.5, 3.5))
+        # plt.imshow(scatter.detach().cpu().T, aspect='auto', cmap='gray',
+        #         vmin=vmin, vmax=vmax)
+        # plt.savefig('/home/pengyaoguang/data/2D_data/2D_RTM/rtm{}_{}.jpg'.format(k,j))
 
         scatter.detach().cpu().numpy().tofile('/home/pengyaoguang/data/2D_data/2D_RTM/RTM{}_{}.bin'.format(k,j))
         end=time.time()
-        print('finish:',end-start,'s')
+        print('{}_{}'.format(k,j),'finish:',end-start,'s')
         # break
