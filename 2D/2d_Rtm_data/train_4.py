@@ -1,4 +1,4 @@
-#两种数据一起训练,并增加模型的复杂度,通过提升维度128
+#两种数据一起训练,并增加模型的复杂度,通过将RTM成像的图像转化为类似提示词的形式，n=10
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -9,7 +9,7 @@ import scipy.io as sio
 import matplotlib.pyplot as plt
 from scipy.ndimage import gaussian_filter
 from DataLoad import DataLoad
-from Model_2DUnet1118 import net
+from Model_2DUnet1118 import diffusion_net
 import os 
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID" 
 os.environ['CUDA_VISIBLE_DEVICES'] = "0,1,2,3"
@@ -52,9 +52,8 @@ test_number=y.shape[0]
 test_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(y).float())
 test_loader_2 = data_utils.DataLoader(test_data,batch_size=BatchSize,shuffle=True)
 
-model=net(2,1,128).to(device)
+model=diffusion_net(2,1).to(device)
 model=nn.parallel.DataParallel(model)
-
 
 # plt.figure()
 # plt.imshow(y.cpu().detach()[0,0,50,:,:].T)
@@ -218,11 +217,11 @@ def test(model,test_loader,loss_1,device,save_number=0):
 
 
 # ewc=EWC(model, train_loader_1, device)
-model.load_state_dict(torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_3.pkl"))
-optimizer = torch.optim.AdamW(model.parameters(),lr=1e-2)
+# model.load_state_dict(torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_4.pkl"))
+optimizer = torch.optim.Adam(model.parameters(),lr=1e-2)
 scheduler=torch.optim.lr_scheduler.StepLR(optimizer,step_size=1000,gamma=0.7)
-# loss_1=torch.nn.L1Loss()
+
 loss_1=torch.nn.MSELoss()
-train(model,train_loader_1,test_loader_1,10000,device,optimizer,scheduler,loss_1,save_number=3)
+train(model,train_loader_1,test_loader_1,10000,device,optimizer,scheduler,loss_1,save_number=4)
 # test(model,train_loader_1,loss_1,device)
 # test(model,train_loader_2,loss_1,device)

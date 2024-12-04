@@ -127,5 +127,16 @@ class diffusion_net(nn.Module):
                  base_c: int = 64):
         super(diffusion_net, self).__init__()
         self.net=net(in_channels,num_classes,base_c)
-    def forward(x):
+    def forward(self,x):
+        n=10
+        y=self.net(x)
+        x[:,1,:,:]=y
+        for i in range(n):
+            y=self.net(x)
+            x[:,1,:,:]=y
+        return y
+# model=diffusion_net(2,1)
+# x=torch.ones(1,2,100,100).float()
+# y=model(x)
+# print(y.shape)
 

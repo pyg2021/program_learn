@@ -119,13 +119,23 @@ class net(nn.Module):
         logits = self.out_conv(x)
         return logits
 
-# class diffusion_net(nn.Module):
-#     def __init__(self,
-#                  in_channels: int = 1,  # 默认输入图像的通道数为1，这里一般黑白图像为1，而彩色图像为3
-#                  num_classes: int = 2,  # 默认输出的分类类别数为2
-#                  # 默认基础通道为64，这里也可以改成大于2的任意2的次幂，不过越大模型的复杂度越高，参数越大，模型的拟合能力也就越强
-#                  base_c: int = 64):
-#         super(diffusion_net, self).__init__()
-#         self.net=net(in_channels,num_classes,base_c)
-#     def forward(x):
-
+class diffusion_net(nn.Module):
+    def __init__(self,
+                 in_channels: int = 1,  # 默认输入图像的通道数为1，这里一般黑白图像为1，而彩色图像为3
+                 num_classes: int = 2,  # 默认输出的分类类别数为2
+                 # 默认基础通道为64，这里也可以改成大于2的任意2的次幂，不过越大模型的复杂度越高，参数越大，模型的拟合能力也就越强
+                 base_c: int = 64):
+        super(diffusion_net, self).__init__()
+        self.net=net(in_channels,num_classes,base_c)
+    def forward(self,x):
+        n=2
+        x1=x[:,0,:,:].reshape(x.shape[0],1,x.shape[2],x.shape[3])
+        y=x[:,1,:,:].reshape(x.shape[0],1,x.shape[2],x.shape[3])
+        for i in range(n):
+            x=torch.cat([x1,y],1)
+            y=self.net(x)
+        return y
+# model=diffusion_net(2,1)
+# x=torch.ones(1,2,100,100).float()
+# y=model(x)
+# print(y.shape)
