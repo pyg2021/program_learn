@@ -217,8 +217,8 @@ def test(model,test_loader,loss_1,device,save_number=0):
 
 
 # ewc=EWC(model, train_loader_1, device)
-# model.load_state_dict(torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_4.pkl"))
-optimizer = torch.optim.Adam(model.parameters(),lr=1e-2)
+model.load_state_dict(torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_4.pkl"))
+optimizer = torch.optim.AdamW(model.parameters(),lr=1e-2)
 scheduler=torch.optim.lr_scheduler.StepLR(optimizer,step_size=1000,gamma=0.7)
 
 loss_1=torch.nn.MSELoss()

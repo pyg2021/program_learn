@@ -147,7 +147,7 @@ def train(model,train_loader,test_loader,epoch,device,optimizer,scheduler,loss_1
         print(' epoch: ',epoch_i," train_loss: ",epoch_loss," test_loss: ",test_loss)
         # test(model,train_loader_1,loss_1,device)
         # test(model,test_loader_2,loss_1,device)
-        if epoch_i%2==0 and epoch_i>0:
+        if epoch_i%2==0 and epoch_i>50:
             print((time.time()-start)/60,"min")
             plt.figure()
             plt.imshow(model(x).cpu().detach()[0,0,:,:].T)

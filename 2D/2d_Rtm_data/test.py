@@ -32,7 +32,8 @@ model.load_state_dict(torch.load("/home/pengyaoguang/data/2D_data/2D_result/mode
 
 m=8
 ##data_prepare
-k=25001
+k=30100
+save=False
 j=50
 ny=nx=100
 R=torch.from_file('/home/pengyaoguang/data/2D_data/2D_RTM/RTM{}_{}.bin'.format(k,j),
@@ -44,22 +45,30 @@ vmax=torch.max(R)
 plt.figure()
 plt.imshow(R.T/vmax,cmap="gray")
 plt.colorbar()
-plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/{}_{}rtm.png".format(k,j))
+if save:
+    plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/{}_{}rtm.png".format(k,j))
+else:
+    plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/rtm0.png")
 
 
 R1=R.reshape(1,1,R.shape[0],R.shape[1])
 plt.figure()
 plt.imshow(label.T)
 plt.colorbar()
-plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/{}_{}v_real_test.png".format(k,j))
-
+if save:
+    plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/{}_{}v_real_test.png".format(k,j))
+else:
+    plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/v_real_test0.png")
 
 label1=label.reshape(1,1,label.shape[0],label.shape[1])
 
 plt.figure()
 plt.imshow(label_smooth.T)
 plt.colorbar()
-plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/{}_{}v_smooth_test.png".format(k,j))
+if save:
+    plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/{}_{}v_smooth_test.png".format(k,j))
+else:
+    plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/v_smooth_test0.png")
 
 label_smooth1=label_smooth.reshape(1,1,label_smooth.shape[0],label_smooth.shape[1])
 x=np.zeros((1,2,100,100))
@@ -91,12 +100,17 @@ print("relative_error:",l1/l2)
 plt.figure()
 plt.imshow(y_1.detach().cpu()[0,0].T)
 plt.colorbar()
-plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/{}_{}v_updete_test.png".format(k,j))
+if save:
+    plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/{}_{}v_updete_test.png".format(k,j))
+else:
+    plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/v_updete_test0.png")
 print('ssim',ssim_metric(label.detach().cpu().numpy(),y_1.detach().cpu()[0,0].numpy()))
 
 plt.figure()
 plt.imshow(y_1.detach().cpu()[0,0].T-label.detach().cpu().T)
 plt.colorbar()
-plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/{}_{}v_error.png".format(k,j))
-
+if save:
+    plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/{}_{}v_error.png".format(k,j))
+else:
+    plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/v_error0.png")
 # sio.savemat("/home/pengyaoguang/data/3D_net_result/3D_result{}.mat".format(m),{'RTM':R,'v_real':label,'v_update':y_1.detach().cpu()[0,0],'v_smooth':label_smooth})
