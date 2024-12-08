@@ -1,4 +1,3 @@
-#复杂数据训练
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -19,9 +18,9 @@ start=time.time()
 BatchSize=200
 
 device="cuda"
-x_1,y_1=DataLoad(30000+0,30000+0)
-x_2,y_2=DataLoad(30000+0,30000+180)
-x_3,y_3=DataLoad(30000+0,30000+1)
+x_1,y_1=DataLoad(25000+0,25000+200)
+x_2,y_2=DataLoad(25000+0,25000+1)
+x_3,y_3=DataLoad(25000+0,25000+1)
 x=np.concatenate((x_1,x_2,x_3),axis=0)
 y=np.concatenate((y_1,y_2,y_3),axis=0)
 # x,y=DataLoad(30000+0,30000+80)
@@ -29,12 +28,12 @@ trian_number=y.shape[0]
 train_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(y).float())
 train_loader_1 = data_utils.DataLoader(train_data,batch_size=BatchSize,shuffle=True)
 
-x_1,y_1=DataLoad(30000+0,30000+0)
-x_2,y_2=DataLoad(30000+180,30000+200)
-x_3,y_3=DataLoad(30000+0,30000+1)
-x=np.concatenate((x_1,x_2,x_3),axis=0)
-y=np.concatenate((y_1,y_2,y_3),axis=0)
-# x,y=DataLoad(25000+80,25000+100)
+# x_1,y_1=DataLoad(15000+91,15000+100)
+# x_2,y_2=DataLoad(20000+100,20000+108)
+# x_3,y_3=DataLoad(5000+100,5000+109)
+# x=np.concatenate((x_1,x_2,x_3),axis=0)
+# y=np.concatenate((y_1,y_2,y_3),axis=0)
+x,y=DataLoad(25000+200,25000+240)
 test_number=y.shape[0]
 test_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(y).float())
 test_loader_1 = data_utils.DataLoader(test_data,batch_size=BatchSize,shuffle=True)
@@ -147,7 +146,7 @@ def train(model,train_loader,test_loader,epoch,device,optimizer,scheduler,loss_1
         print(' epoch: ',epoch_i," train_loss: ",epoch_loss," test_loss: ",test_loss)
         # test(model,train_loader_1,loss_1,device)
         # test(model,test_loader_2,loss_1,device)
-        if epoch_i%2==0 and epoch_i>0:
+        if epoch_i%2==0 and epoch_i>20:
             print((time.time()-start)/60,"min")
             plt.figure()
             plt.imshow(model(x).cpu().detach()[0,0,:,:].T)
@@ -187,7 +186,7 @@ def test(model,test_loader,loss_1,device,save_number=0):
             x=x.to(device)
             y=y.to(device)
             y_1=model(x)
-            loss=loss_1(y_1,y)+2*loss_1(torch.clamp(y_1,1000,8000),y_1)
+            loss=loss_1(y_1,y)+2*loss_1(torch.clamp(y_1,1.5,8),y_1)
             test_loss+=loss.detach().cpu().item()
     test_loss=test_loss/sum_2
     test_loss_all.append(test_loss)
@@ -218,11 +217,11 @@ def test(model,test_loader,loss_1,device,save_number=0):
 
 
 # ewc=EWC(model, train_loader_1, device)
-model.load_state_dict(torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_2.pkl"))
-optimizer = torch.optim.AdamW(model.parameters(),lr=1e-2)
-scheduler=torch.optim.lr_scheduler.StepLR(optimizer,step_size=1000,gamma=0.7)
+# model.load_state_dict(torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_0.pkl"))
+optimizer = torch.optim.Adam(model.parameters(),lr=1e-2)
+scheduler=torch.optim.lr_scheduler.StepLR(optimizer,step_size=200,gamma=0.6)
 # loss_1=torch.nn.L1Loss()
 loss_1=torch.nn.MSELoss()
-train(model,train_loader_1,test_loader_1,10000,device,optimizer,scheduler,loss_1,save_number=2)
+train(model,train_loader_1,test_loader_1,1000,device,optimizer,scheduler,loss_1,save_number=0)
 # test(model,train_loader_1,loss_1,device)
 # test(model,train_loader_2,loss_1,device)

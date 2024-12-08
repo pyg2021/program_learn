@@ -1,3 +1,4 @@
+#两种数据一起训练,并增加模型的复杂度,通过提升维度128
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -8,7 +9,7 @@ import scipy.io as sio
 import matplotlib.pyplot as plt
 from scipy.ndimage import gaussian_filter
 from DataLoad import DataLoad
-from Model_2DUnet1118 import net
+from Model_2DUnet1208 import net
 import os 
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID" 
 os.environ['CUDA_VISIBLE_DEVICES'] = "0,1,2,3"
@@ -18,8 +19,8 @@ start=time.time()
 BatchSize=200
 
 device="cuda"
-x_1,y_1=DataLoad(25000+0,25000+80)
-x_2,y_2=DataLoad(25000+0,25000+1)
+x_1,y_1=DataLoad(25000+0,25000+200)
+x_2,y_2=DataLoad(25000+0,25000+0)
 x_3,y_3=DataLoad(25000+0,25000+1)
 x=np.concatenate((x_1,x_2,x_3),axis=0)
 y=np.concatenate((y_1,y_2,y_3),axis=0)
@@ -28,12 +29,12 @@ trian_number=y.shape[0]
 train_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(y).float())
 train_loader_1 = data_utils.DataLoader(train_data,batch_size=BatchSize,shuffle=True)
 
-# x_1,y_1=DataLoad(15000+91,15000+100)
-# x_2,y_2=DataLoad(20000+100,20000+108)
-# x_3,y_3=DataLoad(5000+100,5000+109)
-# x=np.concatenate((x_1,x_2,x_3),axis=0)
-# y=np.concatenate((y_1,y_2,y_3),axis=0)
-x,y=DataLoad(25000+80,25000+100)
+x_1,y_1=DataLoad(25000+200,25000+240)
+x_2,y_2=DataLoad(25000+0,25000+0)
+x_3,y_3=DataLoad(25000+0,25000+1)
+x=np.concatenate((x_1,x_2,x_3),axis=0)
+y=np.concatenate((y_1,y_2,y_3),axis=0)
+# x,y=DataLoad(25000+80,25000+100)
 test_number=y.shape[0]
 test_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(y).float())
 test_loader_1 = data_utils.DataLoader(test_data,batch_size=BatchSize,shuffle=True)
@@ -51,7 +52,7 @@ test_number=y.shape[0]
 test_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(y).float())
 test_loader_2 = data_utils.DataLoader(test_data,batch_size=BatchSize,shuffle=True)
 
-model=net(2,1).to(device)
+model=net(2,1,128).to(device)
 model=nn.parallel.DataParallel(model)
 
 
@@ -144,9 +145,9 @@ def train(model,train_loader,test_loader,epoch,device,optimizer,scheduler,loss_1
         test_loss=test_loss/sum_2
         test_loss_all.append(test_loss)
         print(' epoch: ',epoch_i," train_loss: ",epoch_loss," test_loss: ",test_loss)
-        # test(model,train_loader_1,loss_1,device)
-        # test(model,test_loader_2,loss_1,device)
-        if epoch_i%2==0 and epoch_i>0:
+        # test(model,train_loader,loss_1,device)
+        # test(model,test_loader,loss_1,device)
+        if epoch_i%2==0 and epoch_i>20:
             print((time.time()-start)/60,"min")
             plt.figure()
             plt.imshow(model(x).cpu().detach()[0,0,:,:].T)
@@ -186,7 +187,7 @@ def test(model,test_loader,loss_1,device,save_number=0):
             x=x.to(device)
             y=y.to(device)
             y_1=model(x)
-            loss=loss_1(y_1,y)+2*loss_1(torch.clamp(y_1,1.5,8),y_1)
+            loss=loss_1(y_1,y)+2*loss_1(torch.clamp(y_1,1000,8000),y_1)
             test_loss+=loss.detach().cpu().item()
     test_loss=test_loss/sum_2
     test_loss_all.append(test_loss)
@@ -217,11 +218,11 @@ def test(model,test_loader,loss_1,device,save_number=0):
 
 
 # ewc=EWC(model, train_loader_1, device)
-model.load_state_dict(torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_0.pkl"))
+# model.load_state_dict(torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_5.pkl"))
 optimizer = torch.optim.AdamW(model.parameters(),lr=1e-2)
-scheduler=torch.optim.lr_scheduler.StepLR(optimizer,step_size=500,gamma=0.6)
+scheduler=torch.optim.lr_scheduler.StepLR(optimizer,step_size=1000,gamma=0.7)
 # loss_1=torch.nn.L1Loss()
 loss_1=torch.nn.MSELoss()
-train(model,train_loader_1,test_loader_1,10000,device,optimizer,scheduler,loss_1,save_number=0)
+train(model,train_loader_1,test_loader_1,10000,device,optimizer,scheduler,loss_1,save_number=5)
 # test(model,train_loader_1,loss_1,device)
 # test(model,train_loader_2,loss_1,device)
