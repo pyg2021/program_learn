@@ -11,6 +11,8 @@ from scipy.ndimage import gaussian_filter
 from DataLoad import DataLoad
 from Model_2DUnet1208 import net
 import os 
+from skimage.metrics import structural_similarity as ssim
+
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID" 
 os.environ['CUDA_VISIBLE_DEVICES'] = "0,1,2,3"
 start=time.time()
@@ -108,24 +110,28 @@ class EWC:
 def train(model,train_loader,test_loader,epoch,device,optimizer,scheduler,loss_1,ewc=None, ewc_lambda=0.5,save_number=0):
     loss_all=[]
     test_loss_all=[]
+    number=0
+    loss_number=float('inf')
     for epoch_i in range(epoch):
         epoch_loss=0
         model.train()
         sum_1=0
+        
         for i,(x,y) in enumerate(train_loader):
             sum_1+=1
             x=x.to(device)
             y=y.to(device)
             optimizer.zero_grad()
             y_1=model(x)
-            loss=loss_1(y_1,y)+2*loss_1(torch.clamp(y_1,1000,10000),y_1)
+            # loss=loss_1(y_1,y)+loss_1(torch.clamp(y_1,1000,10000),y_1)
+            loss=loss_1(y_1,y)
             if ewc is not None:
                 ewc_loss = ewc.penalty(model)
                 loss += ewc_lambda * ewc_loss
                 print('ewc:',ewc_lambda * ewc_loss)
             loss.backward()
             optimizer.step()
-            # scheduler.step()
+            scheduler.step()
             epoch_loss+=loss.detach().cpu().item()
         epoch_loss=epoch_loss/sum_1
         loss_all.append(epoch_loss)
@@ -140,8 +146,17 @@ def train(model,train_loader,test_loader,epoch,device,optimizer,scheduler,loss_1
                 x=x.to(device)
                 y=y.to(device)
                 y_1=model(x)
-                loss=loss_1(y_1,y)+2*loss_1(torch.clamp(y_1,1000,10000),y_1)
+                loss=loss_1(y_1,y)
                 test_loss+=loss.detach().cpu().item()
+            a=0.1
+            if test_loss>=loss_number+a:
+                number+=1
+                if number>50:
+                    number=0
+                    model.load_state_dict(torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_7.pkl"))
+            else:
+                number=0
+                loss_number=test_loss
         test_loss=test_loss/sum_2
         test_loss_all.append(test_loss)
         print(' epoch: ',epoch_i," train_loss: ",epoch_loss," test_loss: ",test_loss)
@@ -218,11 +233,13 @@ def test(model,test_loader,loss_1,device,save_number=0):
 
 
 # ewc=EWC(model, train_loader_1, device)
-model.load_state_dict(torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_7.pkl"))
+model.load_state_dict(torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_5.pkl"))
 optimizer = torch.optim.Adam(model.parameters(),lr=1e-2)
 scheduler=torch.optim.lr_scheduler.StepLR(optimizer,step_size=1000,gamma=0.7)
 loss_1=torch.nn.L1Loss()
 # loss_1=torch.nn.MSELoss()
-train(model,train_loader_1,test_loader_1,10000,device,optimizer,scheduler,loss_1,save_number=5)
+train(model,train_loader_1,test_loader_1,10000,device,optimizer,scheduler,loss_1,save_number=7)
 # test(model,train_loader_1,loss_1,device)
 # test(model,train_loader_2,loss_1,device)
+
+

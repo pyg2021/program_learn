@@ -25,14 +25,14 @@ def ssim_metric(target: object, prediction: object, win_size: int=21):
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID" 
 os.environ['CUDA_VISIBLE_DEVICES'] = "2"
 device="cuda"
-model=net(2,1,128).to(device)
+model=net(2,1).to(device)
 model=nn.parallel.DataParallel(model)
-model.load_state_dict(torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_3.pkl"))
+model.load_state_dict(torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_2.pkl"))
 
 
 m=8
 ##data_prepare
-k=29998
+k=30199
 save=False
 j=50
 ny=nx=100

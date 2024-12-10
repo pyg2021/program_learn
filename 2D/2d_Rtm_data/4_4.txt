@@ -656,3 +656,4 @@ nohup: ignoring input
  epoch:  443  train_loss:  1050.3546423581568  test_loss:  438943.2333984375
  epoch:  444  train_loss:  1064.3860564279084  test_loss:  437310.623046875
 960.8486397425334 min
+ epoch:  445  train_loss:  1057.1254752886177  test_loss:  436392.0947265625
