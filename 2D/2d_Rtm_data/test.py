@@ -8,7 +8,7 @@ import scipy.io as sio
 import matplotlib.pyplot as plt
 from scipy.ndimage import gaussian_filter
 from DataLoad import DataLoad
-from Model_2DUnet1118 import net
+from Model_2DUnet1208 import net
 import os 
 from skimage.metrics import structural_similarity as ssim
 
@@ -27,19 +27,23 @@ os.environ['CUDA_VISIBLE_DEVICES'] = "2"
 device="cuda"
 model=net(2,1).to(device)
 model=nn.parallel.DataParallel(model)
-model.load_state_dict(torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_2.pkl"))
+model.load_state_dict(torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_8.pkl"))
 
 
 m=8
 ##data_prepare
-k=30199
+k=0
 save=False
-j=50
+j=18
 ny=nx=100
-R=torch.from_file('/home/pengyaoguang/data/2D_data/2D_RTM/RTM{}_{}.bin'.format(k,j),
-                    size=ny*nx).reshape(ny, nx)
-label=torch.from_file('/home/pengyaoguang/data/2D_data/2D_v_model/v{}_{}.bin'.format(k,j),
-        size=ny*nx).reshape(ny, nx)
+##new_data
+R=torch.from_file('/home/pengyaoguang/data/2D_data/2D_RTM1209/RTM{}.bin'.format(k),
+                size=ny*nx).reshape(ny, nx)
+label=torch.Tensor(np.fromfile('/home/pengyaoguang/data/2D_data/2D_v_model1209/v{}.bin'.format(k))).reshape(ny, nx)*1000
+# R=torch.from_file('/home/pengyaoguang/data/2D_data/2D_RTM/RTM{}_{}.bin'.format(k,j),
+#                     size=ny*nx).reshape(ny, nx)
+# label=torch.from_file('/home/pengyaoguang/data/2D_data/2D_v_model/v{}_{}.bin'.format(k,j),
+#         size=ny*nx).reshape(ny, nx)
 label_smooth=torch.tensor(1/gaussian_filter(1/label, 40))
 vmax=torch.max(R)
 plt.figure()

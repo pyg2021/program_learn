@@ -117,7 +117,7 @@ def fault(data):
                         if k<math.floor(d):
                             data[i,k]=data[i,0]
     return data
-for epoch in range(10000,20000):
+for epoch in range(20000,30000):
     data=floded()
     data=fault(data)
     data=salt(data)
@@ -129,10 +129,11 @@ for epoch in range(10000,20000):
 
 
     #figure
-    plt.figure()
-    plt.imshow(data.T)
-    plt.colorbar()
-    plt.savefig("/home/pengyaoguang/program_learn/2D/2d_Rtm_data/1.png")
-    plt.close()
+    if epoch%100==0:
+        plt.figure()
+        plt.imshow(data.T)
+        plt.colorbar()
+        plt.savefig("/home/pengyaoguang/program_learn/2D/2d_Rtm_data/1.png")
+        plt.close()
     print(epoch)
     # time.sleep(1)

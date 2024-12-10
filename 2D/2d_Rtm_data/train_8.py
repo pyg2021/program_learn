@@ -1,4 +1,4 @@
-#合成数据训练instance
+#新的合成数据训练instance
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -9,6 +9,7 @@ import scipy.io as sio
 import matplotlib.pyplot as plt
 from scipy.ndimage import gaussian_filter
 from DataLoad import DataLoad
+from DataLoad1210 import DataLoad as DataLoad1
 from Model_2DUnet1208 import net
 import os 
 from skimage.metrics import structural_similarity as ssim
@@ -18,12 +19,12 @@ os.environ['CUDA_VISIBLE_DEVICES'] = "0,1,2,3"
 start=time.time()
 
 ##data_prepare
-BatchSize=200
+BatchSize=400
 
 device="cuda"
-x_1,y_1=DataLoad(25000+0,25000+260)
-x_2,y_2=DataLoad(25000+0,25000+0)
-x_3,y_3=DataLoad(25000+0,25000+1)
+x_1,y_1=DataLoad1(0,8000)
+x_2,y_2=DataLoad(25000,25299)
+x_3,y_3=DataLoad(25000,25000)
 x=np.concatenate((x_1,x_2,x_3),axis=0)
 y=np.concatenate((y_1,y_2,y_3),axis=0)
 # x,y=DataLoad(30000+0,30000+80)
@@ -31,9 +32,9 @@ trian_number=y.shape[0]
 train_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(y).float())
 train_loader_1 = data_utils.DataLoader(train_data,batch_size=BatchSize,shuffle=True)
 
-x_1,y_1=DataLoad(25000+260,25000+299)
-x_2,y_2=DataLoad(25000+0,25000+0)
-x_3,y_3=DataLoad(25000+0,25000+1)
+x_1,y_1=DataLoad1(8000,9000)
+x_2,y_2=DataLoad(25000,25000)
+x_3,y_3=DataLoad(25000,25000)
 x=np.concatenate((x_1,x_2,x_3),axis=0)
 y=np.concatenate((y_1,y_2,y_3),axis=0)
 # x,y=DataLoad(25000+80,25000+100)
@@ -42,17 +43,17 @@ test_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(
 test_loader_1 = data_utils.DataLoader(test_data,batch_size=BatchSize,shuffle=True)
 
 
-x_1,y_1=DataLoad(25000+0,25000+1)
-x,y=x_1,y_1
-trian_number=y.shape[0]
-train_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(y).float())
-train_loader_2 = data_utils.DataLoader(train_data,batch_size=BatchSize,shuffle=True)
+# x_1,y_1=DataLoad(25000+0,25000+1)
+# x,y=x_1,y_1
+# trian_number=y.shape[0]
+# train_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(y).float())
+# train_loader_2 = data_utils.DataLoader(train_data,batch_size=BatchSize,shuffle=True)
 
-x_1,y_1=DataLoad(25000+0,25000+1)
-x,y=x_1,y_1
-test_number=y.shape[0]
-test_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(y).float())
-test_loader_2 = data_utils.DataLoader(test_data,batch_size=BatchSize,shuffle=True)
+# x_1,y_1=DataLoad(25000+0,25000+1)
+# x,y=x_1,y_1
+# test_number=y.shape[0]
+# test_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(y).float())
+# test_loader_2 = data_utils.DataLoader(test_data,batch_size=BatchSize,shuffle=True)
 
 model=net(2,1).to(device)
 model=nn.parallel.DataParallel(model)
@@ -123,8 +124,8 @@ def train(model,train_loader,test_loader,epoch,device,optimizer,scheduler,loss_1
             y=y.to(device)
             optimizer.zero_grad()
             y_1=model(x)
-            # loss=loss_1(y_1,y)+loss_1(torch.clamp(y_1,1000,10000),y_1)
-            loss=loss_1(y_1,y)
+            loss=loss_1(y_1,y)+loss_1(torch.clamp(y_1,1000,10000),y_1)
+            # loss=loss_1(y_1,y)
             if ewc is not None:
                 ewc_loss = ewc.penalty(model)
                 loss += ewc_lambda * ewc_loss
@@ -148,15 +149,15 @@ def train(model,train_loader,test_loader,epoch,device,optimizer,scheduler,loss_1
                 y_1=model(x)
                 loss=loss_1(y_1,y)
                 test_loss+=loss.detach().cpu().item()
-            a=0.1
-            if test_loss>=loss_number+a:
-                number+=1
-                if number>50:
-                    number=0
-                    model.load_state_dict(torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_7.pkl"))
-            else:
-                number=0
-                loss_number=test_loss
+            # a=0.1
+            # if test_loss>=loss_number+a:
+            #     number+=1
+            #     if number>100:
+            #         number=0
+            #         model.load_state_dict(torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_{}.pkl".format(save_number)))
+            # else:
+            #     number=0
+            #     loss_number=test_loss
         test_loss=test_loss/sum_2
         test_loss_all.append(test_loss)
         print(' epoch: ',epoch_i," train_loss: ",epoch_loss," test_loss: ",test_loss)
@@ -233,12 +234,14 @@ def test(model,test_loader,loss_1,device,save_number=0):
 
 
 # ewc=EWC(model, train_loader_1, device)
-model.load_state_dict(torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_5.pkl"))
-optimizer = torch.optim.Adam(model.parameters(),lr=1e-2)
-scheduler=torch.optim.lr_scheduler.StepLR(optimizer,step_size=1000,gamma=0.7)
+model.load_state_dict(torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_8.pkl"))
+
+
+optimizer = torch.optim.AdamW(model.parameters(),lr=1e-2)
+scheduler=torch.optim.lr_scheduler.StepLR(optimizer,step_size=500,gamma=0.7)
 loss_1=torch.nn.L1Loss()
 # loss_1=torch.nn.MSELoss()
-train(model,train_loader_1,test_loader_1,10000,device,optimizer,scheduler,loss_1,save_number=7)
+train(model,train_loader_1,test_loader_1,10000,device,optimizer,scheduler,loss_1,save_number=8)
 # test(model,train_loader_1,loss_1,device)
 # test(model,train_loader_2,loss_1,device)
 
