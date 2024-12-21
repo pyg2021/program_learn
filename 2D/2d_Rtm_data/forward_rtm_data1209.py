@@ -13,7 +13,7 @@ device = torch.device('cuda:1' if torch.cuda.is_available()
 ny = 100
 nx = 100
 dx = 10.0
-for k in range(20000):
+for k in range(16122,20000):
 # for k in range(25100,25300):
     v=np.fromfile("/home/pengyaoguang/data/2D_data/2D_v_model1209/v{}.bin".format(k)).reshape(100,100)*1000
 

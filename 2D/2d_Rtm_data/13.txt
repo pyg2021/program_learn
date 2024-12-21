@@ -1,0 +1,1093 @@
+nohup: ignoring input
+ epoch:  0  train_loss:  653828.171875  test_loss:  510934.4375
+ epoch:  1  train_loss:  431683.859375  test_loss:  474800.71875
+ epoch:  2  train_loss:  360197.890625  test_loss:  485004.59375
+ epoch:  3  train_loss:  402364.515625  test_loss:  492781.84375
+ epoch:  4  train_loss:  417115.640625  test_loss:  482986.4375
+ epoch:  5  train_loss:  360508.5625  test_loss:  475333.84375
+ epoch:  6  train_loss:  344346.078125  test_loss:  470179.4375
+ epoch:  7  train_loss:  269674.2109375  test_loss:  464978.25
+ epoch:  8  train_loss:  298914.796875  test_loss:  459914.9375
+ epoch:  9  train_loss:  326824.0078125  test_loss:  452912.28125
+ epoch:  10  train_loss:  357962.984375  test_loss:  450025.65625
+ epoch:  11  train_loss:  405531.109375  test_loss:  448933.8125
+ epoch:  12  train_loss:  254249.47265625  test_loss:  443340.5
+ epoch:  13  train_loss:  404513.90625  test_loss:  438382.0625
+ epoch:  14  train_loss:  238875.77734375  test_loss:  434666.21875
+ epoch:  15  train_loss:  383503.90625  test_loss:  431525.09375
+ epoch:  16  train_loss:  466049.34375  test_loss:  426509.09375
+ epoch:  17  train_loss:  309194.2734375  test_loss:  426051.1875
+ epoch:  18  train_loss:  345525.828125  test_loss:  423598.84375
+ epoch:  19  train_loss:  244277.4453125  test_loss:  421027.90625
+ epoch:  20  train_loss:  382646.203125  test_loss:  421459.3125
+ epoch:  21  train_loss:  394967.78125  test_loss:  419809.59375
+ epoch:  22  train_loss:  367543.84375  test_loss:  419282.65625
+3.9537451187769572 min
+ epoch:  23  train_loss:  269655.75  test_loss:  415237.84375
+ epoch:  24  train_loss:  393021.5  test_loss:  410516.625
+4.087429968516032 min
+ epoch:  25  train_loss:  380864.625  test_loss:  409493.75
+ epoch:  26  train_loss:  280864.2734375  test_loss:  408081.09375
+4.202531039714813 min
+ epoch:  27  train_loss:  308814.359375  test_loss:  407942.0
+ epoch:  28  train_loss:  327347.59375  test_loss:  407377.46875
+4.357531384627024 min
+ epoch:  29  train_loss:  297959.828125  test_loss:  405021.1875
+ epoch:  30  train_loss:  351262.78125  test_loss:  403883.8125
+4.508623894055685 min
+ epoch:  31  train_loss:  209954.1484375  test_loss:  404927.15625
+ epoch:  32  train_loss:  222467.85546875  test_loss:  406266.3125
+4.56093600988388 min
+ epoch:  33  train_loss:  360866.28125  test_loss:  405982.09375
+ epoch:  34  train_loss:  290336.9296875  test_loss:  402111.71875
+4.640502695242564 min
+ epoch:  35  train_loss:  256187.5625  test_loss:  401737.4375
+ epoch:  36  train_loss:  292631.828125  test_loss:  401852.1875
+4.741342608133952 min
+ epoch:  37  train_loss:  345127.046875  test_loss:  400741.1875
+ epoch:  38  train_loss:  277691.4609375  test_loss:  399340.46875
+4.864648338158926 min
+ epoch:  39  train_loss:  347985.484375  test_loss:  398756.78125
+ epoch:  40  train_loss:  406352.0625  test_loss:  397005.40625
+4.970017536481222 min
+ epoch:  41  train_loss:  242287.890625  test_loss:  397440.875
+ epoch:  42  train_loss:  346938.515625  test_loss:  395788.1875
+5.062435658772786 min
+ epoch:  43  train_loss:  237072.8984375  test_loss:  393070.5
+ epoch:  44  train_loss:  183094.587890625  test_loss:  392731.9375
+5.192637813091278 min
+ epoch:  45  train_loss:  417892.203125  test_loss:  390401.6875
+ epoch:  46  train_loss:  399181.9375  test_loss:  389257.75
+5.320913525422414 min
+ epoch:  47  train_loss:  305451.140625  test_loss:  389272.34375
+ epoch:  48  train_loss:  224607.046875  test_loss:  388439.15625
+5.401963341236114 min
+ epoch:  49  train_loss:  263620.484375  test_loss:  389791.53125
+ epoch:  50  train_loss:  324921.671875  test_loss:  389531.96875
+5.455148080984752 min
+ epoch:  51  train_loss:  311968.96875  test_loss:  388061.59375
+ epoch:  52  train_loss:  243256.3671875  test_loss:  388284.65625
+5.535884106159211 min
+ epoch:  53  train_loss:  325467.703125  test_loss:  387271.09375
+ epoch:  54  train_loss:  279807.328125  test_loss:  388376.21875
+5.624949399630228 min
+ epoch:  55  train_loss:  298967.703125  test_loss:  385825.25
+ epoch:  56  train_loss:  305764.75  test_loss:  385137.09375
+5.732518490155538 min
+ epoch:  57  train_loss:  181067.1484375  test_loss:  386525.46875
+ epoch:  58  train_loss:  161974.0302734375  test_loss:  385392.96875
+5.790692087014516 min
+ epoch:  59  train_loss:  293494.625  test_loss:  385832.15625
+ epoch:  60  train_loss:  188669.55859375  test_loss:  388207.9375
+5.848294977347056 min
+ epoch:  61  train_loss:  300976.625  test_loss:  384424.59375
+ epoch:  62  train_loss:  259354.09375  test_loss:  381743.28125
+5.974840378761291 min
+ epoch:  63  train_loss:  306767.859375  test_loss:  382199.03125
+ epoch:  64  train_loss:  322062.71875  test_loss:  380702.78125
+6.079717636108398 min
+ epoch:  65  train_loss:  241100.890625  test_loss:  383375.9375
+ epoch:  66  train_loss:  385038.890625  test_loss:  381489.21875
+6.134803891181946 min
+ epoch:  67  train_loss:  171603.0390625  test_loss:  379736.09375
+ epoch:  68  train_loss:  235788.6171875  test_loss:  378085.9375
+6.270651074250539 min
+ epoch:  69  train_loss:  228568.3828125  test_loss:  378570.75
+ epoch:  70  train_loss:  244932.3671875  test_loss:  377727.75
+6.351836796601614 min
+ epoch:  71  train_loss:  291677.796875  test_loss:  378267.5
+ epoch:  72  train_loss:  280862.953125  test_loss:  376875.65625
+6.441416915257772 min
+ epoch:  73  train_loss:  233691.8359375  test_loss:  375844.6875
+ epoch:  74  train_loss:  314485.578125  test_loss:  376176.34375
+6.520669960975647 min
+ epoch:  75  train_loss:  302804.0625  test_loss:  376645.6875
+ epoch:  76  train_loss:  233315.40625  test_loss:  378194.96875
+6.5731199264526365 min
+ epoch:  77  train_loss:  186182.82421875  test_loss:  377265.125
+ epoch:  78  train_loss:  266108.71875  test_loss:  376159.59375
+6.641538449128469 min
+ epoch:  79  train_loss:  255580.0  test_loss:  375600.125
+ epoch:  80  train_loss:  189570.28125  test_loss:  375101.6875
+6.775243481000264 min
+ epoch:  81  train_loss:  257727.890625  test_loss:  375067.25
+ epoch:  82  train_loss:  380295.921875  test_loss:  375469.5
+6.868622748057048 min
+ epoch:  83  train_loss:  274514.71875  test_loss:  374925.09375
+ epoch:  84  train_loss:  307923.15625  test_loss:  374289.59375
+7.024890840053558 min
+ epoch:  85  train_loss:  309480.0625  test_loss:  373372.03125
+ epoch:  86  train_loss:  292713.125  test_loss:  373128.9375
+7.295757138729096 min
+ epoch:  87  train_loss:  323107.859375  test_loss:  372212.90625
+ epoch:  88  train_loss:  238420.5703125  test_loss:  371656.875
+7.508951445420583 min
+ epoch:  89  train_loss:  325345.859375  test_loss:  370625.875
+ epoch:  90  train_loss:  240248.3125  test_loss:  372984.1875
+7.705884353319804 min
+ epoch:  91  train_loss:  309083.328125  test_loss:  371891.6875
+ epoch:  92  train_loss:  287272.234375  test_loss:  369439.53125
+7.7991299510002134 min
+ epoch:  93  train_loss:  223637.0703125  test_loss:  369379.65625
+ epoch:  94  train_loss:  300564.375  test_loss:  367987.65625
+7.927317269643148 min
+ epoch:  95  train_loss:  225740.5390625  test_loss:  368931.625
+ epoch:  96  train_loss:  253800.8125  test_loss:  368773.75
+7.984722459316254 min
+ epoch:  97  train_loss:  251399.7109375  test_loss:  368865.90625
+ epoch:  98  train_loss:  232254.140625  test_loss:  367756.90625
+8.07185792128245 min
+ epoch:  99  train_loss:  325219.4375  test_loss:  366377.8125
+ epoch:  100  train_loss:  280920.6953125  test_loss:  367705.78125
+8.21610119342804 min
+ epoch:  101  train_loss:  267469.46875  test_loss:  368418.03125
+ epoch:  102  train_loss:  297666.8046875  test_loss:  369180.84375
+8.27627746661504 min
+ epoch:  103  train_loss:  289081.1875  test_loss:  368597.53125
+ epoch:  104  train_loss:  347723.5234375  test_loss:  367442.03125
+8.34656183719635 min
+ epoch:  105  train_loss:  305435.140625  test_loss:  367154.0625
+ epoch:  106  train_loss:  395597.921875  test_loss:  366544.34375
+8.409765168031056 min
+ epoch:  107  train_loss:  265230.7578125  test_loss:  366835.78125
+ epoch:  108  train_loss:  296021.3046875  test_loss:  366949.59375
+8.468348515033721 min
+ epoch:  109  train_loss:  151319.1484375  test_loss:  365409.28125
+ epoch:  110  train_loss:  287037.328125  test_loss:  364607.375
+8.60378346045812 min
+ epoch:  111  train_loss:  245735.015625  test_loss:  364377.59375
+ epoch:  112  train_loss:  237917.8125  test_loss:  364467.59375
+8.707819362481436 min
+ epoch:  113  train_loss:  374923.4375  test_loss:  363976.25
+ epoch:  114  train_loss:  278990.828125  test_loss:  364247.8125
+8.794936343034108 min
+ epoch:  115  train_loss:  275358.2109375  test_loss:  364578.53125
+ epoch:  116  train_loss:  230650.1875  test_loss:  363471.46875
+8.901946115493775 min
+ epoch:  117  train_loss:  254304.8359375  test_loss:  362027.71875
+ epoch:  118  train_loss:  251188.5390625  test_loss:  362623.28125
+9.006471502780915 min
+ epoch:  119  train_loss:  258358.375  test_loss:  362330.46875
+ epoch:  120  train_loss:  314097.8359375  test_loss:  362792.28125
+9.063883777459463 min
+ epoch:  121  train_loss:  289869.9375  test_loss:  363635.25
+ epoch:  122  train_loss:  309161.71875  test_loss:  364731.625
+9.143620109558105 min
+ epoch:  123  train_loss:  419044.390625  test_loss:  363818.75
+ epoch:  124  train_loss:  253865.921875  test_loss:  363702.0
+9.202530590693156 min
+ epoch:  125  train_loss:  216147.453125  test_loss:  363202.6875
+ epoch:  126  train_loss:  276830.7109375  test_loss:  362859.5
+9.253481543064117 min
+ epoch:  127  train_loss:  223588.6015625  test_loss:  361341.3125
+ epoch:  128  train_loss:  346013.46875  test_loss:  359962.59375
+9.38722090323766 min
+ epoch:  129  train_loss:  243468.109375  test_loss:  361010.46875
+ epoch:  130  train_loss:  135115.0458984375  test_loss:  360952.15625
+9.45103027423223 min
+ epoch:  131  train_loss:  285481.3203125  test_loss:  360487.96875
+ epoch:  132  train_loss:  218088.8046875  test_loss:  359467.15625
+9.536872986952464 min
+ epoch:  133  train_loss:  302329.96875  test_loss:  359382.6875
+ epoch:  134  train_loss:  191641.1640625  test_loss:  358124.75
+9.683994050820669 min
+ epoch:  135  train_loss:  253691.9140625  test_loss:  357698.90625
+ epoch:  136  train_loss:  249588.5859375  test_loss:  358303.5625
+9.844482465585072 min
+ epoch:  137  train_loss:  306178.65625  test_loss:  358738.5
+ epoch:  138  train_loss:  140877.7880859375  test_loss:  359514.84375
+9.907977430025737 min
+ epoch:  139  train_loss:  220989.8125  test_loss:  358929.34375
+ epoch:  140  train_loss:  255472.046875  test_loss:  358799.53125
+9.98263475894928 min
+ epoch:  141  train_loss:  220076.453125  test_loss:  359577.75
+ epoch:  142  train_loss:  275590.6875  test_loss:  361395.90625
+10.055623702208202 min
+ epoch:  143  train_loss:  163901.4765625  test_loss:  360938.03125
+ epoch:  144  train_loss:  277868.9453125  test_loss:  359243.625
+10.12595580816269 min
+ epoch:  145  train_loss:  214722.1328125  test_loss:  358084.4375
+ epoch:  146  train_loss:  306092.1640625  test_loss:  358062.625
+10.195651264985402 min
+ epoch:  147  train_loss:  268678.984375  test_loss:  357663.5
+ epoch:  148  train_loss:  242453.5234375  test_loss:  357646.25
+10.310431893666586 min
+ epoch:  149  train_loss:  199240.7109375  test_loss:  356635.59375
+ epoch:  150  train_loss:  132731.3046875  test_loss:  358256.40625
+10.439671496550242 min
+ epoch:  151  train_loss:  304341.4375  test_loss:  358265.03125
+ epoch:  152  train_loss:  276595.0  test_loss:  357686.78125
+10.499695074558257 min
+ epoch:  153  train_loss:  138963.9248046875  test_loss:  358289.78125
+ epoch:  154  train_loss:  234778.4921875  test_loss:  357359.21875
+10.548014505704243 min
+ epoch:  155  train_loss:  197385.234375  test_loss:  358496.71875
+ epoch:  156  train_loss:  135447.3271484375  test_loss:  359580.75
+10.595596158504486 min
+ epoch:  157  train_loss:  254830.1171875  test_loss:  358639.78125
+ epoch:  158  train_loss:  255669.1953125  test_loss:  357891.21875
+10.648759790261586 min
+ epoch:  159  train_loss:  380425.640625  test_loss:  358236.03125
+ epoch:  160  train_loss:  201050.34375  test_loss:  357886.59375
+10.708595200379689 min
+ epoch:  161  train_loss:  203243.8984375  test_loss:  357028.25
+ epoch:  162  train_loss:  356400.1875  test_loss:  357753.75
+10.75910648504893 min
+ epoch:  163  train_loss:  253917.5546875  test_loss:  360126.15625
+ epoch:  164  train_loss:  343338.9609375  test_loss:  360743.90625
+10.813430102666219 min
+ epoch:  165  train_loss:  279417.34375  test_loss:  360791.09375
+ epoch:  166  train_loss:  247225.234375  test_loss:  359367.90625
+10.86219839255015 min
+ epoch:  167  train_loss:  207007.640625  test_loss:  358597.65625
+ epoch:  168  train_loss:  235182.4609375  test_loss:  358625.59375
+10.91457599401474 min
+ epoch:  169  train_loss:  218202.9921875  test_loss:  357697.15625
+ epoch:  170  train_loss:  319205.625  test_loss:  359322.6875
+10.965836477279662 min
+ epoch:  171  train_loss:  274508.734375  test_loss:  357849.375
+ epoch:  172  train_loss:  213961.296875  test_loss:  356464.71875
+11.065235129992168 min
+ epoch:  173  train_loss:  181574.92578125  test_loss:  356014.6875
+ epoch:  174  train_loss:  269188.5703125  test_loss:  356774.15625
+11.154714858531952 min
+ epoch:  175  train_loss:  251201.5859375  test_loss:  356553.46875
+ epoch:  176  train_loss:  356347.8046875  test_loss:  354899.78125
+11.276485164960226 min
+ epoch:  177  train_loss:  181127.03515625  test_loss:  355017.625
+ epoch:  178  train_loss:  200794.03125  test_loss:  353643.34375
+11.369573537508646 min
+ epoch:  179  train_loss:  340457.359375  test_loss:  353799.21875
+ epoch:  180  train_loss:  193801.2265625  test_loss:  356482.21875
+11.431458985805511 min
+ epoch:  181  train_loss:  233529.6796875  test_loss:  355869.875
+ epoch:  182  train_loss:  235748.3125  test_loss:  354785.78125
+11.486223300298056 min
+ epoch:  183  train_loss:  286954.0546875  test_loss:  354785.125
+ epoch:  184  train_loss:  132418.8837890625  test_loss:  358941.40625
+11.552717312177021 min
+ epoch:  185  train_loss:  266306.34375  test_loss:  354356.03125
+ epoch:  186  train_loss:  413231.390625  test_loss:  354407.3125
+11.619264439741771 min
+ epoch:  187  train_loss:  159704.8984375  test_loss:  355569.25
+ epoch:  188  train_loss:  240434.9296875  test_loss:  355576.8125
+11.683126544952392 min
+ epoch:  189  train_loss:  137336.2763671875  test_loss:  356148.4375
+ epoch:  190  train_loss:  287281.6328125  test_loss:  354528.875
+11.75007157723109 min
+ epoch:  191  train_loss:  139889.986328125  test_loss:  355095.28125
+ epoch:  192  train_loss:  290881.859375  test_loss:  353288.3125
+11.83921239376068 min
+ epoch:  193  train_loss:  212519.6640625  test_loss:  356064.9375
+ epoch:  194  train_loss:  210454.1953125  test_loss:  354931.4375
+11.905828253428142 min
+ epoch:  195  train_loss:  236810.71875  test_loss:  354071.28125
+ epoch:  196  train_loss:  278590.2578125  test_loss:  352686.09375
+11.981963360309601 min
+ epoch:  197  train_loss:  332661.65625  test_loss:  353747.46875
+ epoch:  198  train_loss:  149935.197265625  test_loss:  355150.0625
+12.042831456661224 min
+ epoch:  199  train_loss:  183637.2890625  test_loss:  355444.65625
+ epoch:  200  train_loss:  373175.453125  test_loss:  354140.5625
+12.098262214660645 min
+ epoch:  201  train_loss:  204007.40625  test_loss:  354621.65625
+ epoch:  202  train_loss:  272462.9921875  test_loss:  353414.28125
+12.146254960695902 min
+ epoch:  203  train_loss:  303008.0078125  test_loss:  352755.0
+ epoch:  204  train_loss:  215908.2265625  test_loss:  351355.21875
+12.206376278400421 min
+ epoch:  205  train_loss:  274773.515625  test_loss:  350978.1875
+ epoch:  206  train_loss:  303532.875  test_loss:  353136.9375
+12.314474499225616 min
+ epoch:  207  train_loss:  209486.21875  test_loss:  356682.8125
+ epoch:  208  train_loss:  247371.4375  test_loss:  354690.125
+12.356354971726736 min
+ epoch:  209  train_loss:  266831.4140625  test_loss:  352923.03125
+ epoch:  210  train_loss:  253117.3046875  test_loss:  352634.8125
+12.41032279729843 min
+ epoch:  211  train_loss:  148389.53125  test_loss:  353064.65625
+ epoch:  212  train_loss:  189748.4921875  test_loss:  352440.78125
+12.460886677106222 min
+ epoch:  213  train_loss:  290639.6953125  test_loss:  352581.15625
+ epoch:  214  train_loss:  137262.748046875  test_loss:  354002.34375
+12.518826119105022 min
+ epoch:  215  train_loss:  268051.765625  test_loss:  351983.625
+ epoch:  216  train_loss:  196053.734375  test_loss:  352408.9375
+12.579474945863089 min
+ epoch:  217  train_loss:  132451.1123046875  test_loss:  353101.96875
+ epoch:  218  train_loss:  134117.5166015625  test_loss:  352148.90625
+12.638428103923797 min
+ epoch:  219  train_loss:  293812.875  test_loss:  351990.625
+ epoch:  220  train_loss:  280639.7734375  test_loss:  351187.375
+12.694937205314636 min
+ epoch:  221  train_loss:  129490.3564453125  test_loss:  351148.5
+ epoch:  222  train_loss:  273830.1015625  test_loss:  351535.03125
+12.754722185929616 min
+ epoch:  223  train_loss:  340751.234375  test_loss:  352779.4375
+ epoch:  224  train_loss:  216788.578125  test_loss:  354654.6875
+12.814978857835134 min
+ epoch:  225  train_loss:  192241.6875  test_loss:  354635.15625
+ epoch:  226  train_loss:  368651.6953125  test_loss:  352742.8125
+12.873350183169046 min
+ epoch:  227  train_loss:  342784.3203125  test_loss:  352654.4375
+ epoch:  228  train_loss:  143861.39453125  test_loss:  355439.75
+12.932340927918752 min
+ epoch:  229  train_loss:  132627.97265625  test_loss:  355473.15625
+ epoch:  230  train_loss:  178755.4140625  test_loss:  353550.59375
+12.98659172852834 min
+ epoch:  231  train_loss:  257058.8125  test_loss:  353157.40625
+ epoch:  232  train_loss:  338309.640625  test_loss:  354550.53125
+13.048865139484406 min
+ epoch:  233  train_loss:  179340.23828125  test_loss:  353941.1875
+ epoch:  234  train_loss:  192709.2890625  test_loss:  351802.75
+13.113541694482167 min
+ epoch:  235  train_loss:  282664.0  test_loss:  350836.1875
+ epoch:  236  train_loss:  227119.3203125  test_loss:  351287.03125
+13.187169504165649 min
+ epoch:  237  train_loss:  261220.34375  test_loss:  352382.34375
+ epoch:  238  train_loss:  198267.640625  test_loss:  353163.625
+13.242110713322957 min
+ epoch:  239  train_loss:  317829.6484375  test_loss:  351576.0625
+ epoch:  240  train_loss:  208826.2109375  test_loss:  350703.21875
+13.321585992972055 min
+ epoch:  241  train_loss:  235079.2109375  test_loss:  349676.1875
+ epoch:  242  train_loss:  213219.5546875  test_loss:  350249.28125
+13.415609963734944 min
+ epoch:  243  train_loss:  196987.234375  test_loss:  350871.625
+ epoch:  244  train_loss:  133287.3798828125  test_loss:  350257.03125
+13.456115158398946 min
+ epoch:  245  train_loss:  220348.0078125  test_loss:  350114.875
+ epoch:  246  train_loss:  193626.4296875  test_loss:  349648.71875
+13.508674482504526 min
+ epoch:  247  train_loss:  125917.115234375  test_loss:  349898.28125
+ epoch:  248  train_loss:  255569.703125  test_loss:  350147.96875
+13.55467106103897 min
+ epoch:  249  train_loss:  189496.546875  test_loss:  349345.03125
+ epoch:  250  train_loss:  134242.009765625  test_loss:  349920.375
+13.61484201749166 min
+ epoch:  251  train_loss:  182601.140625  test_loss:  351067.78125
+ epoch:  252  train_loss:  122763.82470703125  test_loss:  352253.59375
+13.66206752061844 min
+ epoch:  253  train_loss:  205816.4453125  test_loss:  351019.0625
+ epoch:  254  train_loss:  198900.3125  test_loss:  350682.875
+13.712892202536265 min
+ epoch:  255  train_loss:  260715.3046875  test_loss:  350296.28125
+ epoch:  256  train_loss:  319940.9453125  test_loss:  350253.6875
+13.774355328083038 min
+ epoch:  257  train_loss:  271238.03125  test_loss:  351297.90625
+ epoch:  258  train_loss:  289559.3828125  test_loss:  354090.28125
+13.836109105745951 min
+ epoch:  259  train_loss:  230870.171875  test_loss:  353736.625
+ epoch:  260  train_loss:  180319.75  test_loss:  353110.53125
+13.892944804827373 min
+ epoch:  261  train_loss:  178056.81640625  test_loss:  352841.8125
+ epoch:  262  train_loss:  362109.4453125  test_loss:  353257.71875
+13.954642295837402 min
+ epoch:  263  train_loss:  234970.8515625  test_loss:  353295.21875
+ epoch:  264  train_loss:  247529.9140625  test_loss:  352366.25
+14.008615692456564 min
+ epoch:  265  train_loss:  280098.84375  test_loss:  351301.5625
+ epoch:  266  train_loss:  277282.1015625  test_loss:  350702.46875
+14.060759818553924 min
+ epoch:  267  train_loss:  288056.234375  test_loss:  350941.0625
+ epoch:  268  train_loss:  248776.4375  test_loss:  350545.625
+14.117411168416341 min
+ epoch:  269  train_loss:  121384.5869140625  test_loss:  349527.625
+ epoch:  270  train_loss:  279131.0703125  test_loss:  348784.6875
+14.194909393787384 min
+ epoch:  271  train_loss:  242353.8046875  test_loss:  348805.34375
+ epoch:  272  train_loss:  278022.140625  test_loss:  349034.375
+14.256964993476867 min
+ epoch:  273  train_loss:  275213.0078125  test_loss:  349083.4375
+ epoch:  274  train_loss:  259851.359375  test_loss:  348347.15625
+14.323799884319305 min
+ epoch:  275  train_loss:  231518.5390625  test_loss:  348569.28125
+ epoch:  276  train_loss:  207043.515625  test_loss:  349457.9375
+14.378138069311778 min
+ epoch:  277  train_loss:  211827.59375  test_loss:  349512.71875
+ epoch:  278  train_loss:  242317.9296875  test_loss:  348069.9375
+14.454768518606821 min
+ epoch:  279  train_loss:  355629.71875  test_loss:  346282.4375
+ epoch:  280  train_loss:  229491.0390625  test_loss:  346663.6875
+14.525454767545064 min
+ epoch:  281  train_loss:  242837.1953125  test_loss:  347415.5
+ epoch:  282  train_loss:  119937.0634765625  test_loss:  346983.53125
+14.58371969461441 min
+ epoch:  283  train_loss:  120762.2421875  test_loss:  346376.3125
+ epoch:  284  train_loss:  271712.3671875  test_loss:  346611.21875
+14.63581546942393 min
+ epoch:  285  train_loss:  131997.658203125  test_loss:  347430.78125
+ epoch:  286  train_loss:  182007.609375  test_loss:  347575.3125
+14.682937145233154 min
+ epoch:  287  train_loss:  370016.125  test_loss:  347133.71875
+ epoch:  288  train_loss:  191958.0859375  test_loss:  347080.15625
+14.722351312637329 min
+ epoch:  289  train_loss:  305226.3359375  test_loss:  347305.78125
+ epoch:  290  train_loss:  235487.0859375  test_loss:  348073.84375
+14.761012876033783 min
+ epoch:  291  train_loss:  191191.25  test_loss:  349283.875
+ epoch:  292  train_loss:  242762.359375  test_loss:  348689.84375
+14.805496001243592 min
+ epoch:  293  train_loss:  286180.25  test_loss:  347505.8125
+ epoch:  294  train_loss:  124870.2412109375  test_loss:  347415.0625
+14.84414122502009 min
+ epoch:  295  train_loss:  194351.65625  test_loss:  346182.71875
+ epoch:  296  train_loss:  202255.375  test_loss:  345898.125
+14.94583607117335 min
+ epoch:  297  train_loss:  169055.71875  test_loss:  346856.78125
+ epoch:  298  train_loss:  382691.828125  test_loss:  347402.15625
+15.014654711882274 min
+ epoch:  299  train_loss:  213863.6875  test_loss:  347898.46875
+ epoch:  300  train_loss:  226638.1328125  test_loss:  347544.875
+15.078451017538706 min
+ epoch:  301  train_loss:  120010.96923828125  test_loss:  348725.1875
+ epoch:  302  train_loss:  187904.328125  test_loss:  348341.375
+15.141882161299387 min
+ epoch:  303  train_loss:  172788.625  test_loss:  347300.34375
+ epoch:  304  train_loss:  284088.03125  test_loss:  346833.5
+15.19443443218867 min
+ epoch:  305  train_loss:  194242.4609375  test_loss:  347004.40625
+ epoch:  306  train_loss:  121450.17236328125  test_loss:  347832.25
+15.25579591592153 min
+ epoch:  307  train_loss:  321688.4453125  test_loss:  347875.375
+ epoch:  308  train_loss:  223962.765625  test_loss:  349640.65625
+15.313808461030325 min
+ epoch:  309  train_loss:  129934.8681640625  test_loss:  347703.875
+ epoch:  310  train_loss:  219686.8046875  test_loss:  346676.46875
+15.370029274622599 min
+ epoch:  311  train_loss:  296200.7578125  test_loss:  347497.375
+ epoch:  312  train_loss:  307796.3984375  test_loss:  349037.15625
+15.432066865762074 min
+ epoch:  313  train_loss:  327163.9375  test_loss:  347587.90625
+ epoch:  314  train_loss:  226886.0625  test_loss:  347482.03125
+15.486934614181518 min
+ epoch:  315  train_loss:  351105.2890625  test_loss:  348317.84375
+ epoch:  316  train_loss:  244283.5078125  test_loss:  348347.25
+15.549010852972666 min
+ epoch:  317  train_loss:  202076.1875  test_loss:  347784.875
+ epoch:  318  train_loss:  284052.765625  test_loss:  347756.5
+15.614505088329315 min
+ epoch:  319  train_loss:  344699.71875  test_loss:  347056.375
+ epoch:  320  train_loss:  293778.390625  test_loss:  346358.4375
+15.677585780620575 min
+ epoch:  321  train_loss:  223632.703125  test_loss:  346737.28125
+ epoch:  322  train_loss:  236764.03125  test_loss:  345044.03125
+15.759496823946636 min
+ epoch:  323  train_loss:  168338.85546875  test_loss:  345073.625
+ epoch:  324  train_loss:  279433.234375  test_loss:  345506.5
+15.81900596221288 min
+ epoch:  325  train_loss:  314796.5703125  test_loss:  345148.4375
+ epoch:  326  train_loss:  268401.4375  test_loss:  343946.4375
+15.89277398188909 min
+ epoch:  327  train_loss:  328742.2265625  test_loss:  344548.90625
+ epoch:  328  train_loss:  249884.1875  test_loss:  345254.03125
+15.940293868382772 min
+ epoch:  329  train_loss:  175167.81640625  test_loss:  344858.28125
+ epoch:  330  train_loss:  205655.3828125  test_loss:  344848.75
+15.982335976759593 min
+ epoch:  331  train_loss:  222305.7265625  test_loss:  344789.40625
+ epoch:  332  train_loss:  115970.568359375  test_loss:  344313.09375
+16.025465945402782 min
+ epoch:  333  train_loss:  192766.6015625  test_loss:  343553.78125
+ epoch:  334  train_loss:  255864.9375  test_loss:  343631.71875
+16.09086633125941 min
+ epoch:  335  train_loss:  255194.828125  test_loss:  343462.0625
+ epoch:  336  train_loss:  224677.5703125  test_loss:  344048.71875
+16.14777849117915 min
+ epoch:  337  train_loss:  193434.1796875  test_loss:  345475.875
+ epoch:  338  train_loss:  128993.365234375  test_loss:  345910.96875
+16.204179453849793 min
+ epoch:  339  train_loss:  120563.2685546875  test_loss:  344952.875
+ epoch:  340  train_loss:  131367.158203125  test_loss:  343650.28125
+16.264880859851836 min
+ epoch:  341  train_loss:  190907.625  test_loss:  343580.96875
+ epoch:  342  train_loss:  325564.984375  test_loss:  344236.8125
+16.317353908220927 min
+ epoch:  343  train_loss:  182660.828125  test_loss:  344368.53125
+ epoch:  344  train_loss:  117332.14306640625  test_loss:  344271.03125
+16.377444310983023 min
+ epoch:  345  train_loss:  115750.255859375  test_loss:  343895.96875
+ epoch:  346  train_loss:  254056.2578125  test_loss:  343705.375
+16.437057785193126 min
+ epoch:  347  train_loss:  203189.484375  test_loss:  344266.375
+ epoch:  348  train_loss:  324425.546875  test_loss:  345411.25
+16.495995219548544 min
+ epoch:  349  train_loss:  167262.63671875  test_loss:  345661.34375
+ epoch:  350  train_loss:  254235.5234375  test_loss:  344463.375
+16.55351899067561 min
+ epoch:  351  train_loss:  241691.6875  test_loss:  344722.6875
+ epoch:  352  train_loss:  293688.5859375  test_loss:  346086.15625
+16.61443957487742 min
+ epoch:  353  train_loss:  115582.369140625  test_loss:  346957.96875
+ epoch:  354  train_loss:  129338.630859375  test_loss:  346950.65625
+16.67441664536794 min
+ epoch:  355  train_loss:  114422.94580078125  test_loss:  347059.0
+ epoch:  356  train_loss:  237903.3046875  test_loss:  346829.71875
+16.721575180689495 min
+ epoch:  357  train_loss:  245912.2265625  test_loss:  345984.46875
+ epoch:  358  train_loss:  383527.1484375  test_loss:  345107.71875
+16.784334814548494 min
+ epoch:  359  train_loss:  230686.515625  test_loss:  344992.03125
+ epoch:  360  train_loss:  313815.8515625  test_loss:  344898.59375
+16.843283092975618 min
+ epoch:  361  train_loss:  217181.046875  test_loss:  345273.34375
+ epoch:  362  train_loss:  220813.265625  test_loss:  345098.40625
+16.905465364456177 min
+ epoch:  363  train_loss:  272912.6953125  test_loss:  345833.78125
+ epoch:  364  train_loss:  248412.6171875  test_loss:  345957.15625
+16.958966020743052 min
+ epoch:  365  train_loss:  238557.546875  test_loss:  345057.1875
+ epoch:  366  train_loss:  237252.9375  test_loss:  345952.78125
+17.021339702606202 min
+ epoch:  367  train_loss:  255365.2421875  test_loss:  346672.78125
+ epoch:  368  train_loss:  202766.3828125  test_loss:  345072.53125
+17.083434343338013 min
+ epoch:  369  train_loss:  352384.640625  test_loss:  343845.65625
+ epoch:  370  train_loss:  185788.7265625  test_loss:  344043.09375
+17.145512839158375 min
+ epoch:  371  train_loss:  329254.3515625  test_loss:  343995.0625
+ epoch:  372  train_loss:  201392.921875  test_loss:  344418.53125
+17.19398137728373 min
+ epoch:  373  train_loss:  248433.671875  test_loss:  344120.21875
+ epoch:  374  train_loss:  229543.875  test_loss:  343103.84375
+17.27077600558599 min
+ epoch:  375  train_loss:  348393.984375  test_loss:  343103.90625
+ epoch:  376  train_loss:  247170.265625  test_loss:  343790.78125
+17.31302074988683 min
+ epoch:  377  train_loss:  251663.1875  test_loss:  342360.09375
+ epoch:  378  train_loss:  166024.0859375  test_loss:  340646.53125
+17.386517429351805 min
+ epoch:  379  train_loss:  132323.90625  test_loss:  340502.0625
+ epoch:  380  train_loss:  184626.171875  test_loss:  341470.21875
+17.487075571219126 min
+ epoch:  381  train_loss:  263968.7578125  test_loss:  342172.9375
+ epoch:  382  train_loss:  251452.34375  test_loss:  342491.21875
+17.535590116182963 min
+ epoch:  383  train_loss:  168122.80859375  test_loss:  342858.25
+ epoch:  384  train_loss:  218703.0625  test_loss:  341965.875
+17.586084071795145 min
+ epoch:  385  train_loss:  113844.13208007812  test_loss:  342712.40625
+ epoch:  386  train_loss:  117206.20556640625  test_loss:  342308.75
+17.63133439620336 min
+ epoch:  387  train_loss:  259646.8828125  test_loss:  341350.09375
+ epoch:  388  train_loss:  248029.5078125  test_loss:  341034.0
+17.683528598149618 min
+ epoch:  389  train_loss:  164614.25  test_loss:  342592.625
+ epoch:  390  train_loss:  196523.828125  test_loss:  343526.78125
+17.73828941186269 min
+ epoch:  391  train_loss:  384506.0703125  test_loss:  341609.5
+ epoch:  392  train_loss:  254365.234375  test_loss:  340199.53125
+17.79764137665431 min
+ epoch:  393  train_loss:  242016.6328125  test_loss:  341970.84375
+ epoch:  394  train_loss:  283142.34375  test_loss:  343373.84375
+17.860382866859435 min
+ epoch:  395  train_loss:  272619.78125  test_loss:  341735.9375
+ epoch:  396  train_loss:  175294.46875  test_loss:  341641.46875
+17.922269650300343 min
+ epoch:  397  train_loss:  166089.15234375  test_loss:  342405.6875
+ epoch:  398  train_loss:  239815.15625  test_loss:  343593.25
+17.981376846631367 min
+ epoch:  399  train_loss:  117053.40966796875  test_loss:  344152.9375
+ epoch:  400  train_loss:  185120.1015625  test_loss:  342839.84375
+18.041830734411874 min
+ epoch:  401  train_loss:  113442.81762695312  test_loss:  342264.0
+ epoch:  402  train_loss:  286721.28125  test_loss:  341222.65625
+18.10228822231293 min
+ epoch:  403  train_loss:  243726.9453125  test_loss:  342238.5625
+ epoch:  404  train_loss:  190156.4296875  test_loss:  342230.96875
+18.16220037142436 min
+ epoch:  405  train_loss:  124961.4775390625  test_loss:  342849.375
+ epoch:  406  train_loss:  306787.328125  test_loss:  342928.875
+18.218388287226357 min
+ epoch:  407  train_loss:  212860.0859375  test_loss:  343107.28125
+ epoch:  408  train_loss:  115384.9365234375  test_loss:  343038.4375
+18.280971705913544 min
+ epoch:  409  train_loss:  203422.984375  test_loss:  342360.3125
+ epoch:  410  train_loss:  219683.7421875  test_loss:  343580.0625
+18.333696329593657 min
+ epoch:  411  train_loss:  306876.0859375  test_loss:  344526.75
+ epoch:  412  train_loss:  229706.3984375  test_loss:  343027.4375
+18.396678256988526 min
+ epoch:  413  train_loss:  177333.671875  test_loss:  342573.59375
+ epoch:  414  train_loss:  232658.4140625  test_loss:  343372.84375
+18.46092793941498 min
+ epoch:  415  train_loss:  191847.640625  test_loss:  344342.09375
+ epoch:  416  train_loss:  242127.8671875  test_loss:  342652.5625
+18.52236964702606 min
+ epoch:  417  train_loss:  182654.375  test_loss:  342087.125
+ epoch:  418  train_loss:  174045.59375  test_loss:  340047.125
+18.588288549582163 min
+ epoch:  419  train_loss:  171754.88671875  test_loss:  340652.84375
+ epoch:  420  train_loss:  287085.4609375  test_loss:  342797.75
+18.654789872964223 min
+ epoch:  421  train_loss:  164333.26953125  test_loss:  343832.25
+ epoch:  422  train_loss:  129504.681640625  test_loss:  342452.53125
+18.715556569894154 min
+ epoch:  423  train_loss:  165566.046875  test_loss:  340669.34375
+ epoch:  424  train_loss:  214834.0078125  test_loss:  340867.75
+18.765786095460257 min
+ epoch:  425  train_loss:  241151.828125  test_loss:  341965.46875
+ epoch:  426  train_loss:  250464.390625  test_loss:  343418.875
+18.815810521443684 min
+ epoch:  427  train_loss:  333054.9140625  test_loss:  341211.84375
+ epoch:  428  train_loss:  165292.8671875  test_loss:  341528.90625
+18.864822761217752 min
+ epoch:  429  train_loss:  210660.8828125  test_loss:  342063.09375
+ epoch:  430  train_loss:  184062.0703125  test_loss:  341002.625
+18.90975416501363 min
+ epoch:  431  train_loss:  119169.83203125  test_loss:  341147.65625
+ epoch:  432  train_loss:  320667.484375  test_loss:  341938.34375
+18.950018258889518 min
+ epoch:  433  train_loss:  330154.0234375  test_loss:  342295.3125
+ epoch:  434  train_loss:  217332.5859375  test_loss:  341420.65625
+18.987632497151694 min
+ epoch:  435  train_loss:  118948.1220703125  test_loss:  341080.40625
+ epoch:  436  train_loss:  184755.0078125  test_loss:  341111.875
+19.038938589890797 min
+ epoch:  437  train_loss:  115181.22705078125  test_loss:  342025.6875
+ epoch:  438  train_loss:  196933.4453125  test_loss:  343554.46875
+19.081867841879525 min
+ epoch:  439  train_loss:  322340.375  test_loss:  343331.5
+ epoch:  440  train_loss:  236060.7734375  test_loss:  342142.6875
+19.137182760238648 min
+ epoch:  441  train_loss:  336259.796875  test_loss:  341093.375
+ epoch:  442  train_loss:  328238.0234375  test_loss:  341090.90625
+19.197600837548574 min
+ epoch:  443  train_loss:  278388.4609375  test_loss:  343225.0
+ epoch:  444  train_loss:  189020.7109375  test_loss:  343743.03125
+19.26039174000422 min
+ epoch:  445  train_loss:  321400.515625  test_loss:  340621.59375
+ epoch:  446  train_loss:  130269.26953125  test_loss:  339201.71875
+19.33962849378586 min
+ epoch:  447  train_loss:  215005.890625  test_loss:  340179.25
+ epoch:  448  train_loss:  127886.29296875  test_loss:  342802.5
+19.408222877979277 min
+ epoch:  449  train_loss:  356702.7109375  test_loss:  340652.0625
+ epoch:  450  train_loss:  317425.453125  test_loss:  340412.28125
+19.476319615046183 min
+ epoch:  451  train_loss:  341455.8125  test_loss:  340140.28125
+ epoch:  452  train_loss:  117330.5576171875  test_loss:  343646.5625
+19.540806786219278 min
+ epoch:  453  train_loss:  116740.92138671875  test_loss:  342067.0625
+ epoch:  454  train_loss:  174500.37109375  test_loss:  341664.125
+19.606015539169313 min
+ epoch:  455  train_loss:  195484.6875  test_loss:  339680.90625
+ epoch:  456  train_loss:  200361.0546875  test_loss:  341432.0625
+19.67265702486038 min
+ epoch:  457  train_loss:  131714.501953125  test_loss:  340586.59375
+ epoch:  458  train_loss:  199862.375  test_loss:  341220.40625
+19.739846297105153 min
+ epoch:  459  train_loss:  243021.6953125  test_loss:  339850.8125
+ epoch:  460  train_loss:  231469.890625  test_loss:  339655.46875
+19.805730744202933 min
+ epoch:  461  train_loss:  164975.01953125  test_loss:  339231.40625
+ epoch:  462  train_loss:  114709.53881835938  test_loss:  342696.0625
+19.87283255259196 min
+ epoch:  463  train_loss:  237706.03125  test_loss:  339795.0625
+ epoch:  464  train_loss:  251406.9140625  test_loss:  339075.78125
+19.954526849587758 min
+ epoch:  465  train_loss:  118946.0859375  test_loss:  340267.4375
+ epoch:  466  train_loss:  116242.52001953125  test_loss:  341058.96875
+20.013067829608918 min
+ epoch:  467  train_loss:  255906.59375  test_loss:  340848.625
+ epoch:  468  train_loss:  195809.8125  test_loss:  341367.375
+20.07095503807068 min
+ epoch:  469  train_loss:  286281.6484375  test_loss:  340073.5625
+ epoch:  470  train_loss:  210623.640625  test_loss:  339569.34375
+20.111860740184785 min
+ epoch:  471  train_loss:  116197.81640625  test_loss:  341359.78125
+ epoch:  472  train_loss:  135732.419921875  test_loss:  342319.65625
+20.146779588858287 min
+ epoch:  473  train_loss:  315778.09375  test_loss:  341150.9375
+ epoch:  474  train_loss:  307060.2109375  test_loss:  339980.1875
+20.189906164010367 min
+ epoch:  475  train_loss:  298431.2890625  test_loss:  340369.375
+ epoch:  476  train_loss:  212027.359375  test_loss:  340656.46875
+20.235616898536684 min
+ epoch:  477  train_loss:  169936.37109375  test_loss:  341276.03125
+ epoch:  478  train_loss:  219212.0703125  test_loss:  340812.03125
+20.280177295207977 min
+ epoch:  479  train_loss:  315738.7890625  test_loss:  340217.59375
+ epoch:  480  train_loss:  211359.03125  test_loss:  340639.15625
+20.320797435442607 min
+ epoch:  481  train_loss:  114545.6640625  test_loss:  342101.46875
+ epoch:  482  train_loss:  182285.9375  test_loss:  340652.59375
+20.384755460421243 min
+ epoch:  483  train_loss:  291307.5546875  test_loss:  340495.6875
+ epoch:  484  train_loss:  285397.671875  test_loss:  341235.15625
+20.44925986925761 min
+ epoch:  485  train_loss:  164166.10546875  test_loss:  342044.875
+ epoch:  486  train_loss:  298913.0  test_loss:  340753.03125
+20.51191796461741 min
+ epoch:  487  train_loss:  211659.6328125  test_loss:  339690.0625
+ epoch:  488  train_loss:  296547.1640625  test_loss:  339005.0
+20.604104955991108 min
+ epoch:  489  train_loss:  214969.671875  test_loss:  341138.40625
+ epoch:  490  train_loss:  235801.390625  test_loss:  341401.59375
+20.677117276191712 min
+ epoch:  491  train_loss:  201826.9140625  test_loss:  339762.75
+ epoch:  492  train_loss:  343177.6640625  test_loss:  338938.03125
+20.770756602287292 min
+ epoch:  493  train_loss:  242109.2890625  test_loss:  340623.5
+ epoch:  494  train_loss:  170457.171875  test_loss:  341275.03125
+20.84654848575592 min
+ epoch:  495  train_loss:  187749.171875  test_loss:  339528.5625
+ epoch:  496  train_loss:  242651.109375  test_loss:  338622.875
+20.97656265894572 min
+ epoch:  497  train_loss:  176187.703125  test_loss:  339564.09375
+ epoch:  498  train_loss:  344942.546875  test_loss:  339669.15625
+21.039350271224976 min
+ epoch:  499  train_loss:  114091.15502929688  test_loss:  339681.21875
+ epoch:  500  train_loss:  250410.96875  test_loss:  339184.4375
+21.11160832643509 min
+ epoch:  501  train_loss:  237506.796875  test_loss:  337748.84375
+ epoch:  502  train_loss:  140396.43359375  test_loss:  337651.6875
+21.396783328056337 min
+ epoch:  503  train_loss:  309066.703125  test_loss:  338947.84375
+ epoch:  504  train_loss:  301952.421875  test_loss:  341430.125
+21.428836397329967 min
+ epoch:  505  train_loss:  113899.56787109375  test_loss:  339180.6875
+ epoch:  506  train_loss:  236574.28125  test_loss:  338412.28125
+21.48809606631597 min
+ epoch:  507  train_loss:  189230.7421875  test_loss:  339363.6875
+ epoch:  508  train_loss:  115760.5830078125  test_loss:  339139.03125
+21.53465980688731 min
+ epoch:  509  train_loss:  290314.328125  test_loss:  338141.09375
+ epoch:  510  train_loss:  204048.0  test_loss:  339359.6875
+21.60592733224233 min
+ epoch:  511  train_loss:  166484.70703125  test_loss:  340099.96875
+ epoch:  512  train_loss:  177588.796875  test_loss:  339870.8125
+21.677154926458993 min
+ epoch:  513  train_loss:  265309.5  test_loss:  339356.25
+ epoch:  514  train_loss:  224748.2578125  test_loss:  339450.0
+21.731991787751515 min
+ epoch:  515  train_loss:  189581.890625  test_loss:  337480.65625
+ epoch:  516  train_loss:  169714.4609375  test_loss:  336350.34375
+22.066249752044676 min
+ epoch:  517  train_loss:  229097.7734375  test_loss:  338529.375
+ epoch:  518  train_loss:  161934.125  test_loss:  339991.65625
+22.128967225551605 min
+ epoch:  519  train_loss:  113094.72021484375  test_loss:  339268.90625
+ epoch:  520  train_loss:  268333.5625  test_loss:  337701.5
+22.176940059661867 min
+ epoch:  521  train_loss:  227381.515625  test_loss:  338052.28125
+ epoch:  522  train_loss:  244701.109375  test_loss:  338291.125
+22.226923406124115 min
+ epoch:  523  train_loss:  338720.046875  test_loss:  339213.46875
+ epoch:  524  train_loss:  112998.09838867188  test_loss:  340693.71875
+22.275706322987876 min
+ epoch:  525  train_loss:  202207.6484375  test_loss:  339023.1875
+ epoch:  526  train_loss:  195080.9921875  test_loss:  338958.71875
+22.321715346972148 min
+ epoch:  527  train_loss:  171095.72265625  test_loss:  337462.5625
+ epoch:  528  train_loss:  176142.0390625  test_loss:  337997.46875
+22.386874488989513 min
+ epoch:  529  train_loss:  263766.9296875  test_loss:  337671.9375
+ epoch:  530  train_loss:  286995.6484375  test_loss:  336598.78125
+22.452318863073984 min
+ epoch:  531  train_loss:  190810.59375  test_loss:  336996.03125
+ epoch:  532  train_loss:  185267.09375  test_loss:  338116.5625
+22.51965981721878 min
+ epoch:  533  train_loss:  203285.234375  test_loss:  337257.15625
+ epoch:  534  train_loss:  179540.4296875  test_loss:  336849.15625
+22.593060783545177 min
+ epoch:  535  train_loss:  301067.5859375  test_loss:  336848.875
+ epoch:  536  train_loss:  238857.3984375  test_loss:  336448.3125
+22.66444986263911 min
+ epoch:  537  train_loss:  247483.65625  test_loss:  336259.1875
+ epoch:  538  train_loss:  229360.796875  test_loss:  335903.125
+22.904744080702464 min
+ epoch:  539  train_loss:  320626.359375  test_loss:  335231.375
+ epoch:  540  train_loss:  196435.2734375  test_loss:  336210.28125
+23.00096587340037 min
+ epoch:  541  train_loss:  168853.14453125  test_loss:  337146.71875
+ epoch:  542  train_loss:  184651.015625  test_loss:  336268.9375
+23.064872614542644 min
+ epoch:  543  train_loss:  321306.59375  test_loss:  335715.90625
+ epoch:  544  train_loss:  266355.53125  test_loss:  336491.28125
+23.134162485599518 min
+ epoch:  545  train_loss:  196141.09375  test_loss:  337025.5625
+ epoch:  546  train_loss:  159294.38671875  test_loss:  336907.28125
+23.190145830313366 min
+ epoch:  547  train_loss:  162771.6171875  test_loss:  336552.625
+ epoch:  548  train_loss:  303205.640625  test_loss:  335192.3125
+23.35105640888214 min
+ epoch:  549  train_loss:  194924.6875  test_loss:  334363.3125
+ epoch:  550  train_loss:  185710.578125  test_loss:  334691.96875
+23.522144758701323 min
+ epoch:  551  train_loss:  177474.3515625  test_loss:  335506.375
+ epoch:  552  train_loss:  183548.8046875  test_loss:  335207.46875
+23.55403991540273 min
+ epoch:  553  train_loss:  220590.2109375  test_loss:  334786.125
+ epoch:  554  train_loss:  180443.7421875  test_loss:  334650.65625
+23.58676394621531 min
+ epoch:  555  train_loss:  125418.7421875  test_loss:  335352.46875
+ epoch:  556  train_loss:  243481.6171875  test_loss:  335738.3125
+23.640120764573414 min
+ epoch:  557  train_loss:  174001.4609375  test_loss:  335693.28125
+ epoch:  558  train_loss:  240422.046875  test_loss:  335447.0
+23.684362892309824 min
+ epoch:  559  train_loss:  202112.0390625  test_loss:  335864.125
+ epoch:  560  train_loss:  195386.8203125  test_loss:  336718.25
+23.73581353823344 min
+ epoch:  561  train_loss:  235325.2890625  test_loss:  336740.84375
+ epoch:  562  train_loss:  245972.234375  test_loss:  336122.34375
+23.798657262325285 min
+ epoch:  563  train_loss:  244987.0390625  test_loss:  336445.125
+ epoch:  564  train_loss:  237351.8984375  test_loss:  337587.40625
+23.85864437818527 min
+ epoch:  565  train_loss:  268793.375  test_loss:  336749.21875
+ epoch:  566  train_loss:  110244.00317382812  test_loss:  335326.25
+23.9175639351209 min
+ epoch:  567  train_loss:  219979.859375  test_loss:  335453.5625
+ epoch:  568  train_loss:  195220.8203125  test_loss:  336264.9375
+23.969857470194498 min
+ epoch:  569  train_loss:  184382.1328125  test_loss:  334787.84375
+ epoch:  570  train_loss:  176570.0  test_loss:  333597.34375
+24.049283548196158 min
+ epoch:  571  train_loss:  237537.6328125  test_loss:  333837.5625
+ epoch:  572  train_loss:  299270.5703125  test_loss:  335022.53125
+24.093658451239268 min
+ epoch:  573  train_loss:  251312.984375  test_loss:  336074.03125
+ epoch:  574  train_loss:  166619.73828125  test_loss:  336231.78125
+24.154593940575918 min
+ epoch:  575  train_loss:  117751.3505859375  test_loss:  335833.125
+ epoch:  576  train_loss:  229402.2734375  test_loss:  335559.8125
+24.210532168547314 min
+ epoch:  577  train_loss:  175252.046875  test_loss:  335784.25
+ epoch:  578  train_loss:  318736.4453125  test_loss:  334723.84375
+24.2725461602211 min
+ epoch:  579  train_loss:  312175.8828125  test_loss:  334383.5
+ epoch:  580  train_loss:  263986.0859375  test_loss:  335019.5
+24.340925371646883 min
+ epoch:  581  train_loss:  157116.64453125  test_loss:  334703.96875
+ epoch:  582  train_loss:  167285.80859375  test_loss:  334760.5625
+24.394365688165028 min
+ epoch:  583  train_loss:  111992.216796875  test_loss:  335316.25
+ epoch:  584  train_loss:  246653.8125  test_loss:  334346.34375
+24.45403272708257 min
+ epoch:  585  train_loss:  109508.16577148438  test_loss:  333671.46875
+ epoch:  586  train_loss:  115297.34765625  test_loss:  333993.5625
+24.51077654759089 min
+ epoch:  587  train_loss:  259073.5  test_loss:  335073.75
+ epoch:  588  train_loss:  168801.69921875  test_loss:  335605.0625
+24.570776267846426 min
+ epoch:  589  train_loss:  230824.75  test_loss:  333994.25
+ epoch:  590  train_loss:  238665.671875  test_loss:  334344.09375
+24.632870439688364 min
+ epoch:  591  train_loss:  166513.33984375  test_loss:  334011.8125
+ epoch:  592  train_loss:  252120.375  test_loss:  335333.65625
+24.69331141312917 min
+ epoch:  593  train_loss:  246097.4140625  test_loss:  335699.5625
+ epoch:  594  train_loss:  315050.7734375  test_loss:  334145.53125
+24.749559450149537 min
+ epoch:  595  train_loss:  274985.015625  test_loss:  333819.53125
+ epoch:  596  train_loss:  282718.6484375  test_loss:  334381.34375
+24.81944765249888 min
+ epoch:  597  train_loss:  180258.2578125  test_loss:  335484.21875
+ epoch:  598  train_loss:  262964.671875  test_loss:  334190.53125
+24.883464153607687 min
+ epoch:  599  train_loss:  283113.7578125  test_loss:  333859.71875
+ epoch:  600  train_loss:  169383.1015625  test_loss:  332235.40625
+24.958512461185457 min
+ epoch:  601  train_loss:  238630.5234375  test_loss:  331925.875
+ epoch:  602  train_loss:  233387.0546875  test_loss:  332230.375
+25.025497154394785 min
+ epoch:  603  train_loss:  120606.6376953125  test_loss:  333137.9375
+ epoch:  604  train_loss:  233382.0546875  test_loss:  333912.96875
+25.09115688800812 min
+ epoch:  605  train_loss:  239191.9375  test_loss:  333851.375
+ epoch:  606  train_loss:  254183.6171875  test_loss:  332736.71875
+25.153017695744833 min
+ epoch:  607  train_loss:  108389.86999511719  test_loss:  332319.0625
+ epoch:  608  train_loss:  122554.306640625  test_loss:  332708.71875
+25.2076354265213 min
+ epoch:  609  train_loss:  240705.1015625  test_loss:  331913.8125
+ epoch:  610  train_loss:  251871.40625  test_loss:  331202.3125
+25.29567268292109 min
+ epoch:  611  train_loss:  121103.890625  test_loss:  330631.15625
+ epoch:  612  train_loss:  188590.75  test_loss:  330480.46875
+25.392414780457816 min
+ epoch:  613  train_loss:  234988.0078125  test_loss:  331230.3125
+ epoch:  614  train_loss:  270260.890625  test_loss:  332080.15625
+25.436232527097065 min
+ epoch:  615  train_loss:  165639.171875  test_loss:  331876.5
+ epoch:  616  train_loss:  338674.7265625  test_loss:  330536.53125
+25.498311332861583 min
+ epoch:  617  train_loss:  279916.953125  test_loss:  331391.4375
+ epoch:  618  train_loss:  169449.109375  test_loss:  333089.5
+25.551368745168052 min
+ epoch:  619  train_loss:  108631.19458007812  test_loss:  333085.09375
+ epoch:  620  train_loss:  186442.0234375  test_loss:  331237.59375
+25.613680942853293 min
+ epoch:  621  train_loss:  267122.828125  test_loss:  330753.09375
+ epoch:  622  train_loss:  295075.203125  test_loss:  331281.8125
+25.670484046141308 min
+ epoch:  623  train_loss:  329088.421875  test_loss:  331701.6875
+ epoch:  624  train_loss:  189754.9609375  test_loss:  332346.625
+25.72925935983658 min
+ epoch:  625  train_loss:  312002.5625  test_loss:  332552.90625
+ epoch:  626  train_loss:  108519.06909179688  test_loss:  331820.09375
+25.783016379674276 min
+ epoch:  627  train_loss:  176886.8671875  test_loss:  331617.53125
+ epoch:  628  train_loss:  186786.7421875  test_loss:  332745.625
+25.842435912291208 min
+ epoch:  629  train_loss:  333947.6015625  test_loss:  332519.03125
+ epoch:  630  train_loss:  225244.390625  test_loss:  331143.75
+25.903719079494476 min
+ epoch:  631  train_loss:  107974.85986328125  test_loss:  330200.1875
+ epoch:  632  train_loss:  199002.3671875  test_loss:  330699.6875
+25.975255994002023 min
+ epoch:  633  train_loss:  167310.0234375  test_loss:  332170.4375
+ epoch:  634  train_loss:  175594.625  test_loss:  331776.0625
+26.033192165692647 min
+ epoch:  635  train_loss:  269703.203125  test_loss:  330261.75
+ epoch:  636  train_loss:  225099.2734375  test_loss:  330685.875
+26.08408372004827 min
+ epoch:  637  train_loss:  123127.6953125  test_loss:  331404.0625
+ epoch:  638  train_loss:  113883.05322265625  test_loss:  332049.78125
+26.129787282148996 min
+ epoch:  639  train_loss:  310209.3359375  test_loss:  331671.65625
+ epoch:  640  train_loss:  218774.328125  test_loss:  331202.875
+26.178996177514396 min
+ epoch:  641  train_loss:  107811.52490234375  test_loss:  331503.75
+ epoch:  642  train_loss:  157152.9921875  test_loss:  331742.71875
+26.244192043940227 min
+ epoch:  643  train_loss:  108377.6591796875  test_loss:  331548.25
+ epoch:  644  train_loss:  213069.59375  test_loss:  331663.0625
+26.30473722219467 min
+ epoch:  645  train_loss:  165733.5234375  test_loss:  332181.8125
+ epoch:  646  train_loss:  255598.3359375  test_loss:  331457.75
+26.359148470560708 min
+ epoch:  647  train_loss:  297279.453125  test_loss:  332294.1875
+ epoch:  648  train_loss:  110095.22192382812  test_loss:  332279.5625
+26.408304444948833 min
+ epoch:  649  train_loss:  326851.734375  test_loss:  330961.65625
+ epoch:  650  train_loss:  181589.65625  test_loss:  331781.125
+26.47446098725001 min
+ epoch:  651  train_loss:  192425.578125  test_loss:  332657.125
+ epoch:  652  train_loss:  176996.015625  test_loss:  332148.96875
+26.518803278605144 min
+ epoch:  653  train_loss:  242489.34375  test_loss:  331108.65625
+ epoch:  654  train_loss:  205141.53125  test_loss:  330172.1875
+26.59654676914215 min
+ epoch:  655  train_loss:  175568.4453125  test_loss:  332309.75
+ epoch:  656  train_loss:  220648.15625  test_loss:  332755.8125
+26.662048435211183 min
+ epoch:  657  train_loss:  358703.4765625  test_loss:  331994.59375
+ epoch:  658  train_loss:  159230.6875  test_loss:  333352.46875
+26.725147950649262 min
+ epoch:  659  train_loss:  302938.59375  test_loss:  331534.15625
+ epoch:  660  train_loss:  360446.5859375  test_loss:  330482.21875
+26.78774687051773 min
+ epoch:  661  train_loss:  173814.5703125  test_loss:  331307.15625
+ epoch:  662  train_loss:  245156.546875  test_loss:  331326.5
+26.844490377108254 min
+ epoch:  663  train_loss:  260146.53125  test_loss:  331711.15625
+ epoch:  664  train_loss:  192233.1015625  test_loss:  332149.90625
+26.90044449567795 min
+ epoch:  665  train_loss:  227865.5078125  test_loss:  331535.59375
+ epoch:  666  train_loss:  321689.421875  test_loss:  329814.8125
+26.97069071531296 min
+ epoch:  667  train_loss:  177455.609375  test_loss:  333004.6875
+ epoch:  668  train_loss:  219996.359375  test_loss:  334470.1875
+27.021472009023032 min
+ epoch:  669  train_loss:  238462.1796875  test_loss:  332966.21875
+ epoch:  670  train_loss:  241499.765625  test_loss:  331324.4375
+27.07786722977956 min
+ epoch:  671  train_loss:  196773.9453125  test_loss:  331382.5625
+ epoch:  672  train_loss:  269368.2265625  test_loss:  329270.96875
+27.151380070050557 min
+ epoch:  673  train_loss:  249650.5234375  test_loss:  327451.25
+ epoch:  674  train_loss:  160836.95703125  test_loss:  328950.46875
+27.215740565458933 min
+ epoch:  675  train_loss:  258853.6640625  test_loss:  330241.09375
+ epoch:  676  train_loss:  321860.125  test_loss:  329855.90625
+27.272251025835672 min
+ epoch:  677  train_loss:  156992.28125  test_loss:  329038.375
+ epoch:  678  train_loss:  243105.9921875  test_loss:  329061.96875
+27.323220360279084 min
+ epoch:  679  train_loss:  159704.24609375  test_loss:  331711.90625
+ epoch:  680  train_loss:  159422.875  test_loss:  332270.03125
+27.38084284067154 min
+ epoch:  681  train_loss:  111779.91845703125  test_loss:  331755.75
+ epoch:  682  train_loss:  110569.78881835938  test_loss:  328976.28125
+27.437518374125162 min
+ epoch:  683  train_loss:  187143.953125  test_loss:  329745.09375
+ epoch:  684  train_loss:  242808.5234375  test_loss:  331248.5625
+27.496983806292217 min
+ epoch:  685  train_loss:  156789.6640625  test_loss:  329182.8125
+ epoch:  686  train_loss:  189540.765625  test_loss:  327814.0625
+27.54498898188273 min
+ epoch:  687  train_loss:  122245.646484375  test_loss:  328679.28125
+ epoch:  688  train_loss:  108657.35498046875  test_loss:  329639.4375
+27.609419413407643 min
+ epoch:  689  train_loss:  196270.78125  test_loss:  329698.59375
+ epoch:  690  train_loss:  324657.453125  test_loss:  329692.875
+27.66572001775106 min
+ epoch:  691  train_loss:  171031.203125  test_loss:  330822.3125
+ epoch:  692  train_loss:  277858.421875  test_loss:  331138.59375
+27.730555617809294 min
+ epoch:  693  train_loss:  164175.14453125  test_loss:  331031.96875
+ epoch:  694  train_loss:  107191.77160644531  test_loss:  330011.125
+27.791428975264232 min
+ epoch:  695  train_loss:  239031.5546875  test_loss:  330314.21875
+ epoch:  696  train_loss:  231822.734375  test_loss:  331646.5
+27.84544763962428 min
+ epoch:  697  train_loss:  108878.77661132812  test_loss:  331023.03125
+ epoch:  698  train_loss:  307015.328125  test_loss:  329953.84375
+27.903474680582683 min
+ epoch:  699  train_loss:  278494.15625  test_loss:  330496.15625
+ epoch:  700  train_loss:  162932.1953125  test_loss:  332219.375
+27.965354843934378 min
+ epoch:  701  train_loss:  175747.453125  test_loss:  330994.71875
+ epoch:  702  train_loss:  112434.5380859375  test_loss:  330844.0625
+28.022591737906136 min
+ epoch:  703  train_loss:  224075.3671875  test_loss:  330693.53125
+ epoch:  704  train_loss:  224183.34375  test_loss:  329938.46875
+28.084080453713735 min
+ epoch:  705  train_loss:  203032.8046875  test_loss:  330395.03125
+ epoch:  706  train_loss:  230285.3203125  test_loss:  330526.125
+28.143711841106416 min
+ epoch:  707  train_loss:  237999.8203125  test_loss:  331061.0
+ epoch:  708  train_loss:  175250.7578125  test_loss:  331310.875
+28.20396106640498 min
+ epoch:  709  train_loss:  160965.5625  test_loss:  331420.375
+ epoch:  710  train_loss:  158928.5703125  test_loss:  331216.09375
+28.262243048350015 min
+ epoch:  711  train_loss:  207941.359375  test_loss:  330642.15625
+ epoch:  712  train_loss:  212349.2890625  test_loss:  331145.84375
+28.317351388931275 min
+ epoch:  713  train_loss:  185894.1796875  test_loss:  331275.03125
+ epoch:  714  train_loss:  161790.51953125  test_loss:  330769.65625
+28.36631886959076 min
+ epoch:  715  train_loss:  196418.1875  test_loss:  330558.9375
+ epoch:  716  train_loss:  107393.42041015625  test_loss:  331468.6875
+28.427839867273967 min
+ epoch:  717  train_loss:  165660.0078125  test_loss:  331408.40625
+ epoch:  718  train_loss:  109331.06030273438  test_loss:  331627.21875
+28.477716553211213 min
+ epoch:  719  train_loss:  156112.76171875  test_loss:  331176.9375
+ epoch:  720  train_loss:  186173.453125  test_loss:  330497.0625
+28.539567013581593 min
+ epoch:  721  train_loss:  197169.7734375  test_loss:  330180.1875
+ epoch:  722  train_loss:  237381.5859375  test_loss:  330441.0625
+28.595971886316935 min
+ epoch:  723  train_loss:  263879.1484375  test_loss:  330861.53125
+----------------------------------------------
+ epoch:  724  train_loss:  158425.4921875  test_loss:  331517.125
+28.655616223812103 min
+ epoch:  725  train_loss:  438.0233612060547  test_loss:  521.03564453125
+ epoch:  726  train_loss:  220.77574157714844  test_loss:  518.9956665039062
+28.74948654174805 min
+ epoch:  727  train_loss:  364.1379699707031  test_loss:  518.7201538085938
+Traceback (most recent call last):
+  File "/home/pengyaoguang/program_learn/2D/2d_Rtm_data/train_13_lora.py", line 320, in <module>
+    train(model,train_loader_1,test_loader_1,10000,device,optimizer,scheduler,loss_1,save_number=13)
+  File "/home/pengyaoguang/program_learn/2D/2d_Rtm_data/train_13_lora.py", line 137, in train
+    loss.backward()
+  File "/home/pengyaoguang/.conda/envs/pytorch3.9/lib/python3.9/site-packages/torch/_tensor.py", line 492, in backward
+    torch.autograd.backward(
+  File "/home/pengyaoguang/.conda/envs/pytorch3.9/lib/python3.9/site-packages/torch/autograd/__init__.py", line 251, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 168.00 MiB. GPU 0 has a total capacty of 23.65 GiB of which 38.56 MiB is free. Including non-PyTorch memory, this process has 7.20 GiB memory in use. Process 2709934 has 7.21 GiB memory in use. Process 2728220 has 9.18 GiB memory in use. Of the allocated memory 6.12 GiB is allocated by PyTorch, and 528.93 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF

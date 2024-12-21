@@ -1,0 +1,50 @@
+nohup: ignoring input
+ epoch:  0  train_loss:  626640.71875  test_loss:  624977.125
+ epoch:  1  train_loss:  626640.71875  test_loss:  624977.125
+ epoch:  2  train_loss:  626640.6875  test_loss:  624977.125
+ epoch:  3  train_loss:  626640.71875  test_loss:  624977.125
+ epoch:  4  train_loss:  626640.6875  test_loss:  624977.125
+ epoch:  5  train_loss:  626640.75  test_loss:  624977.125
+ epoch:  6  train_loss:  626640.71875  test_loss:  624977.125
+ epoch:  7  train_loss:  626640.75  test_loss:  624977.125
+ epoch:  8  train_loss:  626640.75  test_loss:  624977.125
+ epoch:  9  train_loss:  626640.71875  test_loss:  624977.125
+ epoch:  10  train_loss:  626640.71875  test_loss:  624977.125
+ epoch:  11  train_loss:  626640.65625  test_loss:  624977.125
+ epoch:  12  train_loss:  626640.71875  test_loss:  624977.125
+ epoch:  13  train_loss:  626640.71875  test_loss:  624977.125
+ epoch:  14  train_loss:  626640.71875  test_loss:  624977.125
+ epoch:  15  train_loss:  626640.71875  test_loss:  624977.125
+ epoch:  16  train_loss:  626640.71875  test_loss:  624977.125
+ epoch:  17  train_loss:  626640.6875  test_loss:  624977.125
+ epoch:  18  train_loss:  626640.6875  test_loss:  624977.125
+ epoch:  19  train_loss:  626640.6875  test_loss:  624977.125
+ epoch:  20  train_loss:  626640.6875  test_loss:  624977.125
+ epoch:  21  train_loss:  626640.75  test_loss:  624977.125
+ epoch:  22  train_loss:  626640.71875  test_loss:  624977.125
+0.6832211176554362 min
+ epoch:  23  train_loss:  626640.6875  test_loss:  624977.125
+ epoch:  24  train_loss:  626640.71875  test_loss:  624977.125
+0.7703471978505453 min
+ epoch:  25  train_loss:  626640.71875  test_loss:  624977.125
+ epoch:  26  train_loss:  626640.71875  test_loss:  624977.125
+0.8553690989812215 min
+ epoch:  27  train_loss:  626640.65625  test_loss:  624977.125
+ epoch:  28  train_loss:  626640.71875  test_loss:  624977.125
+0.9349734663963318 min
+ epoch:  29  train_loss:  626640.75  test_loss:  624977.125
+ epoch:  30  train_loss:  626640.6875  test_loss:  624977.125
+1.0162522077560425 min
+ epoch:  31  train_loss:  626640.71875  test_loss:  624977.125
+ epoch:  32  train_loss:  626640.71875  test_loss:  624977.125
+1.1005885561307271 min
+ epoch:  33  train_loss:  626640.6875  test_loss:  624977.125
+ epoch:  34  train_loss:  626640.71875  test_loss:  624977.125
+1.1820393482844034 min
+ epoch:  35  train_loss:  626640.71875  test_loss:  624977.125
+ epoch:  36  train_loss:  626640.6875  test_loss:  624977.125
+1.26402401526769 min
+ epoch:  37  train_loss:  626640.6875  test_loss:  624977.125
+ epoch:  38  train_loss:  626640.6875  test_loss:  624977.125
+1.3460570573806763 min
+ epoch:  39  train_loss:  626640.65625  test_loss:  624977.125

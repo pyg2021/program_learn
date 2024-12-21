@@ -5,3 +5,4 @@ nohup: ignoring input
  epoch:  3  train_loss:  3134.0170110066733  test_loss:  2746.837646484375
  epoch:  4  train_loss:  3082.9415969848633  test_loss:  2815.42041015625
  epoch:  5  train_loss:  3035.949030558268  test_loss:  2802.7487182617188
+ epoch:  6  train_loss:  3000.975873311361  test_loss:  2619.589111328125
