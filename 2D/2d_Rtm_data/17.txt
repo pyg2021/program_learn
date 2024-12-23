@@ -1,1 +1,25 @@
 nohup: ignoring input
+ epoch:  0  train_loss:  733.7129516601562 tv: tensor(116.4264, device='cuda:0', grad_fn=<DivBackward0>)  test_loss:  650.7713745117187
+ epoch:  1  train_loss:  695.8045247395834 tv: tensor(119.3425, device='cuda:0', grad_fn=<DivBackward0>)  test_loss:  644.6510192871094
+ epoch:  2  train_loss:  686.8887125651041 tv: tensor(93.5470, device='cuda:0', grad_fn=<DivBackward0>)  test_loss:  639.6819274902343
+ epoch:  3  train_loss:  651.7909545898438 tv: tensor(94.8653, device='cuda:0', grad_fn=<DivBackward0>)  test_loss:  638.762939453125
+ epoch:  4  train_loss:  623.5133768717448 tv: tensor(92.1912, device='cuda:0', grad_fn=<DivBackward0>)  test_loss:  638.4847839355468
+ epoch:  5  train_loss:  603.8965199788412 tv: tensor(87.8252, device='cuda:0', grad_fn=<DivBackward0>)  test_loss:  636.427783203125
+ epoch:  6  train_loss:  592.9652659098307 tv: tensor(89.3702, device='cuda:0', grad_fn=<DivBackward0>)  test_loss:  635.9475219726562
+ epoch:  7  train_loss:  588.8411763509115 tv: tensor(89.2548, device='cuda:0', grad_fn=<DivBackward0>)  test_loss:  635.0769470214843
+ epoch:  8  train_loss:  585.9600423177084 tv: tensor(91.2034, device='cuda:0', grad_fn=<DivBackward0>)  test_loss:  634.2875122070312
+ epoch:  9  train_loss:  582.027598063151 tv: tensor(112.6958, device='cuda:0', grad_fn=<DivBackward0>)  test_loss:  634.803857421875
+ epoch:  10  train_loss:  590.1270446777344 tv: tensor(103.4221, device='cuda:0', grad_fn=<DivBackward0>)  test_loss:  635.6236694335937
+ epoch:  11  train_loss:  548.3743387858073 tv: tensor(112.6756, device='cuda:0', grad_fn=<DivBackward0>)  test_loss:  636.9393493652344
+ epoch:  12  train_loss:  551.8141682942709 tv: tensor(97.5050, device='cuda:0', grad_fn=<DivBackward0>)  test_loss:  636.9446838378906
+ epoch:  13  train_loss:  560.3449503580729 tv: tensor(127.4249, device='cuda:0', grad_fn=<DivBackward0>)  test_loss:  638.3494201660156
+ epoch:  14  train_loss:  560.1400858561198 tv: tensor(119.9894, device='cuda:0', grad_fn=<DivBackward0>)  test_loss:  637.0703125
+ epoch:  15  train_loss:  551.7758636474609 tv: tensor(116.6137, device='cuda:0', grad_fn=<DivBackward0>)  test_loss:  638.2720947265625
+ epoch:  16  train_loss:  544.8388824462891 tv: tensor(143.1198, device='cuda:0', grad_fn=<DivBackward0>)  test_loss:  639.34140625
+ epoch:  17  train_loss:  541.9901072184244 tv: tensor(124.3267, device='cuda:0', grad_fn=<DivBackward0>)  test_loss:  638.4847900390625
+ epoch:  18  train_loss:  519.4529978434244 tv: tensor(108.1605, device='cuda:0', grad_fn=<DivBackward0>)  test_loss:  638.8737182617188
+ epoch:  19  train_loss:  508.0201059977214 tv: tensor(127.4777, device='cuda:0', grad_fn=<DivBackward0>)  test_loss:  638.7933288574219
+ epoch:  20  train_loss:  505.71434529622394 tv: tensor(117.4829, device='cuda:0', grad_fn=<DivBackward0>)  test_loss:  638.4194641113281
+ epoch:  21  train_loss:  525.1922098795573 tv: tensor(122.4573, device='cuda:0', grad_fn=<DivBackward0>)  test_loss:  638.0929748535157
+ epoch:  22  train_loss:  506.527592976888 tv: tensor(145.4757, device='cuda:0', grad_fn=<DivBackward0>)  test_loss:  638.8499206542969
+2.1670995076497395 min

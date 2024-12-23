@@ -25,9 +25,7 @@ def ssim_metric(target: object, prediction: object, win_size: int=21):
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID" 
 os.environ['CUDA_VISIBLE_DEVICES'] = "3"
 device="cuda"
-# model=net(2,1,128).to(device)
-# model=nn.parallel.DataParallel(model)
-# model.load_state_dict(torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_9.pkl"))
+
 class LORAConv2d(nn.Module):
     def __init__(self, original_conv, rank, downsample_factor=16):
         super(LORAConv2d, self).__init__()
@@ -94,11 +92,14 @@ def total_variation_loss(image, weight=1.0):
     # 如果你希望包括边缘像素，可以调整分母的计算方式
     
     return tv_loss
-model=torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_10.pkl")
+# model=torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_10.pkl")
+model=net(2,1,128).to(device)
+model=nn.parallel.DataParallel(model)
+model.load_state_dict(torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_18.pkl"))
 model=nn.parallel.DataParallel(model)
 m=8
 ##data_prepare
-k=29998
+k=25200
 save=False
 j=70
 ny=nx=100
