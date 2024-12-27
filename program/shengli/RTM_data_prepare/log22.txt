@@ -9,3 +9,13 @@ Trying to allocate more memory for symbol u than available on physical device, t
 Imaging source 4 out of 100
 172.76718401908875 s
 Imaging source 5 out of 100
+207.2563967704773 s
+Imaging source 6 out of 100
+239.49243354797363 s
+Imaging source 7 out of 100
+268.8805775642395 s
+Imaging source 8 out of 100
+292.11457085609436 s
+Imaging source 9 out of 100
+321.1606969833374 s
+Imaging source 10 out of 100

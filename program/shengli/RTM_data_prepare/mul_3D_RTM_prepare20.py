@@ -16,7 +16,7 @@ for j in range(25000,25001):
     origin = (0., 0., 0.)  # What is the location of the top left corner (x,y,z). This is necessary to define
     # Define a velocity profile. The velocity is in km/s
     shape = (100 ,100 ,100 )
-    v=sio.loadmat("/home/pengyaoguang/data/3D_v_model/v{}.mat".format(j))['v']
+    v=sio.loadmat("/home/yaoguang/data/3D_v_model/v{}.mat".format(j))['v']
     sample=1
     v=v[::sample,::sample,::sample]
     shape = (v.shape[0], v.shape[1], v.shape[2])  # Number of grid point (nx, ny, nz)
@@ -137,6 +137,6 @@ for j in range(25000,25001):
         end=time.time()
         print(end-start,"s")
         #NBVAL_IGNORE_OUTPUT
-        sio.savemat("/home/pengyaoguang/data/3D_RTM2/RTM{}.mat".format(j),{"RTM":image.data})
+        sio.savemat("/home/yaoguang/data/3D_RTM2/RTM{}.mat".format(j),{"RTM":image.data})
 
 
