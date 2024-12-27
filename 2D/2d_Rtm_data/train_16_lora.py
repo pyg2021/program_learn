@@ -13,7 +13,7 @@ from DataLoad1210 import DataLoad as DataLoad1
 from Model_2DUnet1208 import net
 import os 
 from skimage.metrics import structural_similarity as ssim
-
+import random
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID" 
 os.environ['CUDA_VISIBLE_DEVICES'] = "0,1,2,3"
 start=time.time()
@@ -28,8 +28,8 @@ device="cuda"
 # x=np.concatenate((x_1,x_2,x_3),axis=0)
 # y=np.concatenate((y_1,y_2,y_3),axis=0)
 x,y=DataLoad(30000+0,30000+202)
-x=x[::400]
-y=y[::400]
+x=x[::200]
+y=y[::200]
 trian_number=y.shape[0]
 train_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(y).float())
 train_loader_1 = data_utils.DataLoader(train_data,batch_size=BatchSize,shuffle=True)
@@ -117,6 +117,7 @@ def train(model,train_loader,test_loader,epoch,device,optimizer,scheduler,loss_1
     test_loss_all=[]
     number=0
     loss_number=float('inf')
+    sample_list = [i for i in range(100)]
     for epoch_i in range(epoch):
         epoch_loss=0
         model.train()
@@ -128,8 +129,10 @@ def train(model,train_loader,test_loader,epoch,device,optimizer,scheduler,loss_1
             y=y.to(device)
             optimizer.zero_grad()
             y_1=model(x)
-            loss=loss_1(y_1,y)+loss_1(torch.clamp(y_1,1000,10000),y_1)
-            # loss=loss_1(y_1,y)
+            # loss=loss_1(y_1,y)+loss_1(torch.clamp(y_1,1000,10000),y_1)
+            # tv_loss=total_variation_loss(y_1)
+            sam=random.sample(sample_list,5)
+            loss=loss_1(y_1[:,:,sam,:],y[:,:,sam,:])
             if ewc is not None:
                 ewc_loss = ewc.penalty(model)
                 loss += ewc_lambda * ewc_loss
@@ -156,7 +159,7 @@ def train(model,train_loader,test_loader,epoch,device,optimizer,scheduler,loss_1
             a=0.1
             if test_loss+a>=loss_number:
                 number+=1
-                if number>100:
+                if number>200:
                     number=0
                     print('----------------------------------------------')
                     # optimizer = torch.optim.AdamW(model.parameters(),lr=1e-2)
@@ -177,7 +180,7 @@ def train(model,train_loader,test_loader,epoch,device,optimizer,scheduler,loss_1
         print(' epoch: ',epoch_i," train_loss: ",epoch_loss," test_loss: ",test_loss)
         # test(model,train_loader,loss_1,device)
         # test(model,test_loader,loss_1,device)
-        if epoch_i%2==0 and epoch_i>200:
+        if epoch_i%2==0 and epoch_i>20:
             print((time.time()-start)/60,"min")
             plt.figure()
             plt.imshow(model(x).cpu().detach()[0,0,:,:].T)
@@ -296,15 +299,33 @@ def apply_lora_to_unet(model, rank, downsample_factor=16):
         if isinstance(module, nn.Conv2d):
             # 替换卷积层为LORAConv2d包装器
             setattr(model, name, LORAConv2d(module, rank, downsample_factor))
- 
+def total_variation_loss(image, weight=1.0):
+    # 获取图像的形状
+    batch_size, channels, height, width = image.size()
+    
+    # 计算水平方向的梯度
+    horizontal_diff = image[:, :, :, 1:] - image[:, :, :, :-1]
+    # 计算垂直方向的梯度
+    vertical_diff = image[:, :, 1:, :] - image[:, :, :-1, :]
+    
+    # 计算梯度的绝对值
+    abs_horizontal_diff = torch.abs(horizontal_diff)
+    abs_vertical_diff = torch.abs(vertical_diff)
+    
+    # 计算TV正则化项（L1范数）
+    tv_loss = weight * (torch.sum(abs_horizontal_diff) + torch.sum(abs_vertical_diff)) / (batch_size * channels * height * width - channels * (height + width - 1))
+    
+    # 注意：分母中的减项是为了去除边缘像素，因为这些像素在某一方向上没有相邻像素
+    # 如果你希望包括边缘像素，可以调整分母的计算方式
+    
+    return tv_loss
 # 应用LORA到预训练的U-Net模型
 model=net(2,1,128).to(device)
-model=torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_16.pkl").to(device)
-# model=nn.parallel.DataParallel(model)
-# model.load_state_dict(torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_9.pkl"))
+model=nn.parallel.DataParallel(model)
+model.load_state_dict(torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_9.pkl"))
 
 # model.eval()
-# apply_lora_to_unet(model, rank=16,downsample_factor=16)
+apply_lora_to_unet(model, rank=16,downsample_factor=16)
 # torch.save(model.state_dict(),"/home/pengyaoguang/data/2D_data/2D_result/modeltest9_{}.pkl".format(10))
 # model.load_state_dict(torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_10.pkl"))
 # torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_10.pkl").keys()==model.state_dict().keys()
@@ -317,8 +338,8 @@ model=torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_16.pkl").
 #     {'params': [param for name, param in model.named_parameters() if 'A' in name or 'B' in name or 's' in name], 'lr': 5e-1} # 优化LORA参数
 # ], lr=5e-1)
 optimizer = torch.optim.AdamW([
-    {'params': [param for name, param in model.named_parameters() if ('A' not in name and 'B' not in name and 's' not in name) and ('down' in name or 'in_conv' in name)], 'lr': 0},
-    {'params': [param for name, param in model.named_parameters() if ('A' not in name and 'B' not in name and 's' not in name) and ('down' not in name and 'in_conv' not in name)], 'lr': 1e-3},  # 冻结原始权重
+    {'params': [param for name, param in model.named_parameters() if ('A' not in name and 'B' not in name and 's' not in name) and ('down' in name or 'in_conv' in name or 'up' in name )], 'lr': 0},
+    {'params': [param for name, param in model.named_parameters() if ('A' not in name and 'B' not in name and 's' not in name) and ('down' not in name and 'in_conv' not in name and 'up' not in name)], 'lr': 1e-3},  # 冻结原始权重
     {'params': [param for name, param in model.named_parameters() if 'A' in name or 'B' in name or 's' in name], 'lr': 5e-1} # 优化LORA参数
 ], lr=5e-1)
 scheduler=torch.optim.lr_scheduler.StepLR(optimizer,step_size=1000,gamma=0.7)

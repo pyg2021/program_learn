@@ -20,7 +20,7 @@ os.environ['CUDA_VISIBLE_DEVICES'] = "0,1,2,3"
 start=time.time()
 
 ##data_prepare
-BatchSize=300
+BatchSize=200
 
 device="cuda"
 # x_1,y_1=DataLoad1(0,8000)
@@ -28,7 +28,7 @@ device="cuda"
 # x_3,y_3=DataLoad(25000,25000)
 # x=np.concatenate((x_1,x_2,x_3),axis=0)
 # y=np.concatenate((y_1,y_2,y_3),axis=0)
-x,y=DataLoad2(25000,25250)
+x,y=DataLoad2(25000,25260)
 trian_number=y.shape[0]
 train_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(y).float())
 train_loader_1 = data_utils.DataLoader(train_data,batch_size=BatchSize,shuffle=True)
@@ -38,7 +38,7 @@ train_loader_1 = data_utils.DataLoader(train_data,batch_size=BatchSize,shuffle=T
 # x_3,y_3=DataLoad(25000,25000)
 # x=np.concatenate((x_1,x_2,x_3),axis=0)
 # y=np.concatenate((y_1,y_2,y_3),axis=0)
-x,y=DataLoad2(25000+250,25000+279)
+x,y=DataLoad2(25000+260,25000+279)
 test_number=y.shape[0]
 test_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(y).float())
 test_loader_1 = data_utils.DataLoader(test_data,batch_size=BatchSize,shuffle=True)
@@ -155,8 +155,9 @@ def train(model,train_loader,test_loader,epoch,device,optimizer,scheduler,loss_1
                 number+=1
                 if number>100:
                     number=0
-                    lr=lr*0.5
+                    # lr=lr*0.5
                     print('----------------------------------------------')
+                    loss_1=torch.nn.L1Loss()
                     optimizer = torch.optim.AdamW(model.parameters(),lr=lr)
                     # loss_number=float('inf')
                     # model.load_state_dict(torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_{}.pkl".format(save_number)))
@@ -192,8 +193,8 @@ def train(model,train_loader,test_loader,epoch,device,optimizer,scheduler,loss_1
             plt.close()
 
             plt.figure()
-            plt.plot(range(len(loss_all)-100),loss_all[100:],label="train")
-            plt.plot(range(len(test_loss_all)-100),test_loss_all[100:],label="test")
+            plt.plot(range(len(loss_all)-50),loss_all[50:],label="train")
+            plt.plot(range(len(test_loss_all)-50),test_loss_all[50:],label="test")
             plt.xlabel("epoch")
             plt.ylabel("loss")
             plt.legend()

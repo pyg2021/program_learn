@@ -1,4 +1,4 @@
-#新的合成数据训练instance+128
+#针对于三维的数据，通过200个overtrust数据的井数据得到微调后的结果（相对于22增加了数据的数量到100）
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -10,16 +10,17 @@ import matplotlib.pyplot as plt
 from scipy.ndimage import gaussian_filter
 from DataLoad import DataLoad
 from DataLoad1210 import DataLoad as DataLoad1
+from DataLoad1221 import DataLoad as DataLoad2
 from Model_2DUnet1208 import net
 import os 
 from skimage.metrics import structural_similarity as ssim
 import random
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID" 
-os.environ['CUDA_VISIBLE_DEVICES'] = "0,1,2,3"
+os.environ['CUDA_VISIBLE_DEVICES'] = "1,2,3"
 start=time.time()
 
 ##data_prepare
-BatchSize=20
+BatchSize=10
 
 device="cuda"
 # x_1,y_1=DataLoad(30000,30001)
@@ -27,7 +28,7 @@ device="cuda"
 # x_3,y_3=DataLoad(30000,30000)
 # x=np.concatenate((x_1,x_2,x_3),axis=0)
 # y=np.concatenate((y_1,y_2,y_3),axis=0)
-x,y=DataLoad(30000+0,30000+202)
+x,y=DataLoad2(30000+0,30000+202)
 x=x[::200]
 y=y[::200]
 trian_number=y.shape[0]
@@ -39,7 +40,7 @@ train_loader_1 = data_utils.DataLoader(train_data,batch_size=BatchSize,shuffle=T
 # x_3,y_3=DataLoad(30000,30000)
 # x=np.concatenate((x_1,x_2,x_3),axis=0)
 # y=np.concatenate((y_1,y_2,y_3),axis=0)
-x,y=DataLoad(29998,29998)
+x,y=DataLoad2(29998,29998)
 # x=x[:2]
 # y=y[:2]
 # x,y=DataLoad(25000+80,25000+100)
@@ -130,9 +131,9 @@ def train(model,train_loader,test_loader,epoch,device,optimizer,scheduler,loss_1
             optimizer.zero_grad()
             y_1=model(x)
             # loss=loss_1(y_1,y)+loss_1(torch.clamp(y_1,1000,10000),y_1)
-            tv_loss=total_variation_loss(y_1)
+            # tv_loss=total_variation_loss(y_1)
             sam=random.sample(sample_list,5)
-            loss=loss_1(y_1[:,:,sam,:],y[:,:,sam,:])+0.1*tv_loss
+            loss=loss_1(y_1[:,:,sam,:],y[:,:,sam,:])
             if ewc is not None:
                 ewc_loss = ewc.penalty(model)
                 loss += ewc_lambda * ewc_loss
@@ -159,7 +160,7 @@ def train(model,train_loader,test_loader,epoch,device,optimizer,scheduler,loss_1
             a=0.1
             if test_loss+a>=loss_number:
                 number+=1
-                if number>10000:
+                if number>200:
                     number=0
                     print('----------------------------------------------')
                     # optimizer = torch.optim.AdamW(model.parameters(),lr=1e-2)
@@ -177,7 +178,7 @@ def train(model,train_loader,test_loader,epoch,device,optimizer,scheduler,loss_1
                 torch.save(model,"/home/pengyaoguang/data/2D_data/2D_result/modeltest9_{}.pkl".format(save_number))
         test_loss=test_loss/sum_2
         test_loss_all.append(test_loss)
-        print(' epoch: ',epoch_i," train_loss: ",epoch_loss,'tv:',tv_loss," test_loss: ",test_loss)
+        print(' epoch: ',epoch_i," train_loss: ",epoch_loss," test_loss: ",test_loss)
         # test(model,train_loader,loss_1,device)
         # test(model,test_loader,loss_1,device)
         if epoch_i%2==0 and epoch_i>20:
@@ -322,7 +323,7 @@ def total_variation_loss(image, weight=1.0):
 # 应用LORA到预训练的U-Net模型
 model=net(2,1,128).to(device)
 model=nn.parallel.DataParallel(model)
-model.load_state_dict(torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_9.pkl"))
+model.load_state_dict(torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_18.pkl"))
 
 # model.eval()
 apply_lora_to_unet(model, rank=16,downsample_factor=16)
@@ -343,9 +344,9 @@ optimizer = torch.optim.AdamW([
     {'params': [param for name, param in model.named_parameters() if 'A' in name or 'B' in name or 's' in name], 'lr': 5e-1} # 优化LORA参数
 ], lr=5e-1)
 scheduler=torch.optim.lr_scheduler.StepLR(optimizer,step_size=1000,gamma=0.7)
-loss_1=torch.nn.L1Loss()
-# loss_1=torch.nn.MSELoss()
-train(model,train_loader_1,test_loader_1,10000,device,optimizer,scheduler,loss_1,save_number=17)
+# loss_1=torch.nn.L1Loss()
+loss_1=torch.nn.MSELoss()
+train(model,train_loader_1,test_loader_1,10000,device,optimizer,scheduler,loss_1,save_number=23)
 # test(model,train_loader_1,loss_1,device)
 # test(model,train_loader_2,loss_1,device)
 

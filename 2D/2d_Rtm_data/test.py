@@ -92,26 +92,31 @@ def total_variation_loss(image, weight=1.0):
     # 如果你希望包括边缘像素，可以调整分母的计算方式
     
     return tv_loss
-# model=torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_10.pkl")
-model=net(2,1,128).to(device)
-model=nn.parallel.DataParallel(model)
-model.load_state_dict(torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_18.pkl"))
-model=nn.parallel.DataParallel(model)
+model=torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_22.pkl")
+# model=net(2,1,128).to(device)
+# model=nn.parallel.DataParallel(model)
+# model.load_state_dict(torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_22.pkl"))
 m=8
 ##data_prepare
-k=25200
+k=25000
 save=False
-j=70
+j=50
 ny=nx=100
 ##new_data
+R=torch.Tensor(sio.loadmat("/home/pengyaoguang/data/3D_RTM/RTM{}".format(k))["RTM"][20:120,20:120,20:120][j])
+label=torch.Tensor(sio.loadmat("/home/pengyaoguang/data/3D_v_model/v{}".format(k))["v"][j]*1000)
+
 # R=torch.from_file('/home/pengyaoguang/data/2D_data/2D_RTM1209/RTM{}.bin'.format(k),
 #                 size=ny*nx).reshape(ny, nx)
 # label=torch.Tensor(np.fromfile('/home/pengyaoguang/data/2D_data/2D_v_model1209/v{}.bin'.format(k))).reshape(ny, nx)*1000
-R=torch.from_file('/home/pengyaoguang/data/2D_data/2D_RTM/RTM{}_{}.bin'.format(k,j),
-                    size=ny*nx).reshape(ny, nx)
-label=torch.from_file('/home/pengyaoguang/data/2D_data/2D_v_model/v{}_{}.bin'.format(k,j),
-        size=ny*nx).reshape(ny, nx)
+
+# R=torch.from_file('/home/pengyaoguang/data/2D_data/2D_RTM/RTM{}_{}.bin'.format(k,j),
+#                     size=ny*nx).reshape(ny, nx)
+# label=torch.from_file('/home/pengyaoguang/data/2D_data/2D_v_model/v{}_{}.bin'.format(k,j),size=ny*nx).reshape(ny, nx)
+
+
 label_smooth=torch.tensor(1/gaussian_filter(1/label, 40))
+
 vmax=torch.max(R)
 plt.figure()
 plt.imshow(R.T/vmax,cmap="gray")

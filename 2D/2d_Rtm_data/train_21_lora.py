@@ -1,4 +1,4 @@
-#新的合成数据训练instance+128
+#通过200个overtrust数据的井数据得到微调后的结果（相对于16增加了数据的数量到400）
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -28,8 +28,8 @@ device="cuda"
 # x=np.concatenate((x_1,x_2,x_3),axis=0)
 # y=np.concatenate((y_1,y_2,y_3),axis=0)
 x,y=DataLoad(30000+0,30000+202)
-x=x[::200]
-y=y[::200]
+x=x[::50]
+y=y[::50]
 trian_number=y.shape[0]
 train_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(y).float())
 train_loader_1 = data_utils.DataLoader(train_data,batch_size=BatchSize,shuffle=True)
@@ -130,9 +130,9 @@ def train(model,train_loader,test_loader,epoch,device,optimizer,scheduler,loss_1
             optimizer.zero_grad()
             y_1=model(x)
             # loss=loss_1(y_1,y)+loss_1(torch.clamp(y_1,1000,10000),y_1)
-            tv_loss=total_variation_loss(y_1)
+            # tv_loss=total_variation_loss(y_1)
             sam=random.sample(sample_list,5)
-            loss=loss_1(y_1[:,:,sam,:],y[:,:,sam,:])+0.1*tv_loss
+            loss=loss_1(y_1[:,:,sam,:],y[:,:,sam,:])
             if ewc is not None:
                 ewc_loss = ewc.penalty(model)
                 loss += ewc_lambda * ewc_loss
@@ -159,7 +159,7 @@ def train(model,train_loader,test_loader,epoch,device,optimizer,scheduler,loss_1
             a=0.1
             if test_loss+a>=loss_number:
                 number+=1
-                if number>10000:
+                if number>200:
                     number=0
                     print('----------------------------------------------')
                     # optimizer = torch.optim.AdamW(model.parameters(),lr=1e-2)
@@ -177,7 +177,7 @@ def train(model,train_loader,test_loader,epoch,device,optimizer,scheduler,loss_1
                 torch.save(model,"/home/pengyaoguang/data/2D_data/2D_result/modeltest9_{}.pkl".format(save_number))
         test_loss=test_loss/sum_2
         test_loss_all.append(test_loss)
-        print(' epoch: ',epoch_i," train_loss: ",epoch_loss,'tv:',tv_loss," test_loss: ",test_loss)
+        print(' epoch: ',epoch_i," train_loss: ",epoch_loss," test_loss: ",test_loss)
         # test(model,train_loader,loss_1,device)
         # test(model,test_loader,loss_1,device)
         if epoch_i%2==0 and epoch_i>20:
@@ -343,9 +343,9 @@ optimizer = torch.optim.AdamW([
     {'params': [param for name, param in model.named_parameters() if 'A' in name or 'B' in name or 's' in name], 'lr': 5e-1} # 优化LORA参数
 ], lr=5e-1)
 scheduler=torch.optim.lr_scheduler.StepLR(optimizer,step_size=1000,gamma=0.7)
-loss_1=torch.nn.L1Loss()
-# loss_1=torch.nn.MSELoss()
-train(model,train_loader_1,test_loader_1,10000,device,optimizer,scheduler,loss_1,save_number=17)
+# loss_1=torch.nn.L1Loss()
+loss_1=torch.nn.MSELoss()
+train(model,train_loader_1,test_loader_1,10000,device,optimizer,scheduler,loss_1,save_number=21)
 # test(model,train_loader_1,loss_1,device)
 # test(model,train_loader_2,loss_1,device)
 
