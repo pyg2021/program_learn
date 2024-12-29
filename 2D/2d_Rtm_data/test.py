@@ -98,12 +98,12 @@ model=torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_22.pkl")
 # model.load_state_dict(torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_22.pkl"))
 m=8
 ##data_prepare
-k=25000
+k=25002
 save=False
 j=50
 ny=nx=100
 ##new_data
-R=torch.Tensor(sio.loadmat("/home/pengyaoguang/data/3D_RTM/RTM{}".format(k))["RTM"][20:120,20:120,20:120][j])
+R=torch.Tensor(sio.loadmat("/home/pengyaoguang/data/3D_RTM2/RTM{}".format(k))["RTM"][10:110,10:110,10:110][j])
 label=torch.Tensor(sio.loadmat("/home/pengyaoguang/data/3D_v_model/v{}".format(k))["v"][j]*1000)
 
 # R=torch.from_file('/home/pengyaoguang/data/2D_data/2D_RTM1209/RTM{}.bin'.format(k),
