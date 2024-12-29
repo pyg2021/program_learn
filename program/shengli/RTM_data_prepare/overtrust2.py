@@ -147,6 +147,6 @@ for i in range(nshots):
     end=time.time()
     print(end-start,"s")
     #NBVAL_IGNORE_OUTPUT
-    sio.savemat("/home/pengyaoguang/data/3D_RTM2/RTM_overtrust2.mat",{"RTM":image.data})
+    sio.savemat("/home/yaoguang/data/3D_RTM2/RTM_overtrust2.mat",{"RTM":image.data})
 
 

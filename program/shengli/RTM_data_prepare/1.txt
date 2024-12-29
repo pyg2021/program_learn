@@ -10,3 +10,11 @@ Imaging source 4 out of 900
 Imaging source 5 out of 900
 238.74336862564087 s
 Imaging source 6 out of 900
+279.50328254699707 s
+Imaging source 7 out of 900
+320.43258476257324 s
+Imaging source 8 out of 900
+360.5780029296875 s
+Imaging source 9 out of 900
+421.2310378551483 s
+Imaging source 10 out of 900
