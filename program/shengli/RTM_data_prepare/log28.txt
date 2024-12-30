@@ -1,0 +1,8 @@
+nohup: ignoring input
+Imaging source 1 out of 400
+56.85239553451538 s
+Imaging source 2 out of 400
+97.50479245185852 s
+Imaging source 3 out of 400
+138.33040571212769 s
+Imaging source 4 out of 400

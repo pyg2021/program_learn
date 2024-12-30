@@ -1,0 +1,36 @@
+nohup: ignoring input
+Imaging source 1 out of 400
+54.18366980552673 s
+Imaging source 2 out of 400
+92.73398566246033 s
+Imaging source 3 out of 400
+132.51646995544434 s
+Imaging source 4 out of 400
+171.7354667186737 s
+Imaging source 5 out of 400
+212.79363656044006 s
+Imaging source 6 out of 400
+252.8873941898346 s
+Imaging source 7 out of 400
+293.618928194046 s
+Imaging source 8 out of 400
+333.51547050476074 s
+Imaging source 9 out of 400
+373.20004510879517 s
+Imaging source 10 out of 400
+413.81967663764954 s
+Imaging source 11 out of 400
+454.49771308898926 s
+Imaging source 12 out of 400
+497.942134141922 s
+Imaging source 13 out of 400
+538.0946173667908 s
+Imaging source 14 out of 400
+579.5178623199463 s
+Imaging source 15 out of 400
+619.5049397945404 s
+Imaging source 16 out of 400
+659.6543021202087 s
+Imaging source 17 out of 400
+699.9143803119659 s
+Imaging source 18 out of 400
