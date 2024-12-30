@@ -1,0 +1,20 @@
+nohup: ignoring input
+Traceback (most recent call last):
+  File "/home/yaoguang/anaconda3/envs/pytorch3.9/lib/python3.9/site-packages/scipy/io/matlab/_mio.py", line 39, in _open_file
+    return open(file_like, mode), True
+FileNotFoundError: [Errno 2] No such file or directory: '/home/pengyaoguang/data/3D_v_model/fianl_v3.mat'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yaoguang/program_learn/program/shengli/RTM_data_prepare/overtrust2.py", line 19, in <module>
+    v=sio.loadmat("/home/pengyaoguang/data/3D_v_model/fianl_v3.mat")['v'][::8,::8,:][:100,:100]
+  File "/home/yaoguang/anaconda3/envs/pytorch3.9/lib/python3.9/site-packages/scipy/io/matlab/_mio.py", line 225, in loadmat
+    with _open_file_context(file_name, appendmat) as f:
+  File "/home/yaoguang/anaconda3/envs/pytorch3.9/lib/python3.9/contextlib.py", line 119, in __enter__
+    return next(self.gen)
+  File "/home/yaoguang/anaconda3/envs/pytorch3.9/lib/python3.9/site-packages/scipy/io/matlab/_mio.py", line 17, in _open_file_context
+    f, opened = _open_file(file_like, appendmat, mode)
+  File "/home/yaoguang/anaconda3/envs/pytorch3.9/lib/python3.9/site-packages/scipy/io/matlab/_mio.py", line 45, in _open_file
+    return open(file_like, mode), True
+FileNotFoundError: [Errno 2] No such file or directory: '/home/pengyaoguang/data/3D_v_model/fianl_v3.mat'
