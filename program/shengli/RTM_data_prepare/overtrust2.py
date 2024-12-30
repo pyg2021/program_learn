@@ -16,8 +16,8 @@ spacing = (10., 10., 10)  # Grid spacing in m. The domain size is now dx=1km, dy
 origin = (0., 0., 0.)  # What is the location of the top left corner (x,y,z). This is necessary to define
 # Define a velocity profile. The velocity is in km/s
 shape = (100 ,100 ,100 )
-v=sio.loadmat("/home/pengyaoguang/data/3D_v_model/fianl_v3.mat")['v'][::8,::8,:][:100,:100]
-sample=2
+v=sio.loadmat("/home/pengyaoguang/data/3D_v_model/fianl_v3.mat")['v'][::4,::4,:][:400,:400]
+sample=1
 v=v[::sample,::sample,::sample]
 shape = (v.shape[0], v.shape[1], v.shape[2])  # Number of grid point (nx, ny, nz)
 # Create true model from a preset
@@ -135,18 +135,18 @@ for i in range(nshots):
     plt.figure()
     plt.imshow(smooth_d.data.T/np.max(smooth_d.data))
     plt.colorbar()
-    plt.savefig('/home/pengyaoguang/program_learn/program/shengli/RTM_data_prepare/5.png')
+    plt.savefig('/home/pengyaoguang/program_learn/program/shengli/RTM_data_prepare/7.png')
     plt.close()
     plt.figure()
     plt.imshow(true_d.data.T/np.max(true_d.data))
     plt.colorbar()
-    plt.savefig('/home/pengyaoguang/program_learn/program/shengli/RTM_data_prepare/6.png')
+    plt.savefig('/home/pengyaoguang/program_learn/program/shengli/RTM_data_prepare/8.png')
     plt.close()
     op_imaging(u=u0, v=v, vp=model0.vp, dt=model0.critical_dt, 
             residual=residual)
     end=time.time()
     print(end-start,"s")
     #NBVAL_IGNORE_OUTPUT
-    sio.savemat("/home/yaoguang/data/3D_RTM2/RTM_overtrust2.mat",{"RTM":image.data})
+    sio.savemat("/home/pengyaoguang/data/3D_RTM2/RTM_overtrust2.mat",{"RTM":image.data})
 
 
