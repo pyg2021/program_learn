@@ -16,8 +16,9 @@ spacing = (10., 10., 10)  # Grid spacing in m. The domain size is now dx=1km, dy
 origin = (0., 0., 0.)  # What is the location of the top left corner (x,y,z). This is necessary to define
 # Define a velocity profile. The velocity is in km/s
 shape = (100 ,100 ,100 )
-v=sio.loadmat("/home/pengyaoguang/data/3D_v_model/fianl_v3.mat")['v'][::8,::8,:][:100,:100]
+v=sio.loadmat("/home/pengyaoguang/data/fianl_v3.mat")['v'][::8,::8,:][:100,:100]
 sample=1
+sio.savemat("/home/pengyaoguang/data/3D_RTM2/v0.mat",{'v':v})
 v=v[::sample,::sample,::sample]
 shape = (v.shape[0], v.shape[1], v.shape[2])  # Number of grid point (nx, ny, nz)
 # Create true model from a preset
@@ -147,6 +148,6 @@ for i in range(nshots):
     end=time.time()
     print(end-start,"s")
     #NBVAL_IGNORE_OUTPUT
-    sio.savemat("/home/pengyaoguang/data/3D_RTM2/RTM_overtrust{}.mat",{"RTM":image.data})
+    # sio.savemat("/home/pengyaoguang/data/3D_RTM2/RTM_overtrust{}.mat",{"RTM":image.data})
 
 
