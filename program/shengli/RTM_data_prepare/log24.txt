@@ -1,40 +1,85 @@
 nohup: ignoring input
 Imaging source 1 out of 400
-51.09845423698425 s
+48.514493465423584 s
 Imaging source 2 out of 400
-86.52502226829529 s
+83.12338900566101 s
 Imaging source 3 out of 400
-125.68823719024658 s
+118.27863955497742 s
 Imaging source 4 out of 400
-165.42370009422302 s
+153.0381054878235 s
 Imaging source 5 out of 400
-207.45991849899292 s
+189.09504795074463 s
 Imaging source 6 out of 400
-247.4597806930542 s
+224.23514080047607 s
 Imaging source 7 out of 400
-288.59691286087036 s
+260.11515641212463 s
 Imaging source 8 out of 400
-329.14679622650146 s
+296.2740173339844 s
 Imaging source 9 out of 400
-369.2064380645752 s
+331.96918177604675 s
 Imaging source 10 out of 400
-409.53369641304016 s
+367.62659072875977 s
 Imaging source 11 out of 400
-449.9723930358887 s
+403.68192887306213 s
 Imaging source 12 out of 400
-492.955762386322 s
+444.56836318969727 s
 Imaging source 13 out of 400
-533.235921382904 s
+485.0710651874542 s
 Imaging source 14 out of 400
-574.7312903404236 s
+527.3787117004395 s
 Imaging source 15 out of 400
-615.0241730213165 s
+568.792093038559 s
 Imaging source 16 out of 400
-655.2292239665985 s
+608.7601742744446 s
 Imaging source 17 out of 400
-695.7109882831573 s
+648.8880214691162 s
 Imaging source 18 out of 400
-736.1790375709534 s
+689.2657542228699 s
 Imaging source 19 out of 400
-779.6420147418976 s
+732.5870931148529 s
 Imaging source 20 out of 400
+772.888866186142 s
+Imaging source 21 out of 400
+815.1409561634064 s
+Imaging source 22 out of 400
+858.430582523346 s
+Imaging source 23 out of 400
+901.9239366054535 s
+Imaging source 24 out of 400
+944.8713073730469 s
+Imaging source 25 out of 400
+987.5778250694275 s
+Imaging source 26 out of 400
+1042.731484413147 s
+Imaging source 27 out of 400
+1086.8592989444733 s
+Imaging source 28 out of 400
+1129.1423189640045 s
+Imaging source 29 out of 400
+1172.640193939209 s
+Imaging source 30 out of 400
+Trying to allocate more memory for symbol u than available on physical device, this will start swapping
+Traceback (most recent call last):
+  File "/home/yaoguang/program_learn/program/shengli/RTM_data_prepare/mul_3D_RTM_prepare24.py", line 130, in <module>
+    smooth_d, u0, _ = solver.forward(vp=model0.vp, save=True)
+  File "/home/yaoguang/anaconda3/envs/pytorch3.9/lib/python3.9/site-packages/examples/seismic/acoustic/wavesolver.py", line 113, in forward
+    summary = self.op_fwd(save).apply(src=src, rec=rec, u=u,
+  File "/home/yaoguang/anaconda3/envs/pytorch3.9/lib/python3.9/site-packages/devito/operator/operator.py", line 827, in apply
+    args = self.arguments(**kwargs)
+  File "/home/yaoguang/anaconda3/envs/pytorch3.9/lib/python3.9/site-packages/devito/operator/operator.py", line 668, in arguments
+    args = self._prepare_arguments(**kwargs)
+  File "/home/yaoguang/anaconda3/envs/pytorch3.9/lib/python3.9/site-packages/devito/operator/operator.py", line 540, in _prepare_arguments
+    args.update(p._arg_values(**kwargs))
+  File "/home/yaoguang/anaconda3/envs/pytorch3.9/lib/python3.9/site-packages/devito/types/dense.py", line 824, in _arg_values
+    values = new._arg_defaults(alias=self).reduce_all()
+  File "/home/yaoguang/anaconda3/envs/pytorch3.9/lib/python3.9/site-packages/devito/types/dense.py", line 800, in _arg_defaults
+    args = ReducerMap({key.name: self._data_buffer})
+  File "/home/yaoguang/anaconda3/envs/pytorch3.9/lib/python3.9/site-packages/devito/types/dense.py", line 182, in _data_buffer
+    return self._data_allocated
+  File "/home/yaoguang/anaconda3/envs/pytorch3.9/lib/python3.9/site-packages/devito/types/dense.py", line 126, in wrapper
+    self._data = self._DataType(self.shape_allocated, self.dtype,
+  File "/home/yaoguang/anaconda3/envs/pytorch3.9/lib/python3.9/site-packages/devito/data/data.py", line 50, in __new__
+    ndarray, memfree_args = allocator.alloc(shape, dtype)
+  File "/home/yaoguang/anaconda3/envs/pytorch3.9/lib/python3.9/site-packages/devito/data/allocators.py", line 77, in alloc
+    raise RuntimeError("Unable to allocate %d elements in memory", str(size))
+RuntimeError: ('Unable to allocate %d elements in memory', '4856830464')
