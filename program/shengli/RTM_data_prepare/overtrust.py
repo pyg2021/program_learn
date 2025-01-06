@@ -18,14 +18,14 @@ origin = (0., 0., 0.)  # What is the location of the top left corner (x,y,z). Th
 shape = (100 ,100 ,100 )
 v=sio.loadmat("/home/pengyaoguang/data/fianl_v3.mat")['v'][::8,::8,:][:100,:100]
 sample=1
-sio.savemat("/home/pengyaoguang/data/3D_RTM2/v0.mat",{'v':v})
+# sio.savemat("/home/pengyaoguang/data/3D_RTM2/v0.mat",{'v':v})
 v=v[::sample,::sample,::sample]
 shape = (v.shape[0], v.shape[1], v.shape[2])  # Number of grid point (nx, ny, nz)
 # Create true model from a preset
 model = Model(vp=v, origin=origin, shape=shape, spacing=spacing,
                 space_order=6, nbl=20, bcs="damp")
 
-nshots = 900
+nshots = 400
 nreceivers = 1600
 t0 = 0.
 tn = 1000.  # Simulation last 1 second (1000 ms)
@@ -102,8 +102,8 @@ def ImagingOperator(model, image):
 
 # Prepare the varying source locations
 source_locations = np.empty((nshots, 3), dtype=np.float32)
-source_locations[:, 0] = np.repeat(np.linspace(0., model.domain_size[0], num=30),30)
-source_locations[:, 1] = np.tile(np.linspace(0., model.domain_size[1], num=30),30)
+source_locations[:, 0] = np.repeat(np.linspace(0., model.domain_size[0], num=20),20)
+source_locations[:, 1] = np.tile(np.linspace(0., model.domain_size[1], num=20),20)
 # source_locations[:, 0] = np.linspace(0., 1000, num=nshots)
 # source_locations[:, 1] = model.domain_size[1]*0.5
 source_locations[:, 2] = 1.
@@ -133,21 +133,21 @@ for i in range(nshots):
     # Compute gradient from the data residual  
     v = TimeFunction(name='v', grid=model.grid, time_order=2, space_order=4)
     residual = smooth_d.data - true_d.data
-    plt.figure()
-    plt.imshow(smooth_d.data.T/np.max(smooth_d.data))
-    plt.colorbar()
-    plt.savefig('/home/pengyaoguang/program_learn/program/shengli/RTM_data_prepare/5.png')
-    plt.close()
-    plt.figure()
-    plt.imshow(true_d.data.T/np.max(true_d.data))
-    plt.colorbar()
-    plt.savefig('/home/pengyaoguang/program_learn/program/shengli/RTM_data_prepare/6.png')
-    plt.close()
+    # plt.figure()
+    # plt.imshow(smooth_d.data.T/np.max(smooth_d.data))
+    # plt.colorbar()
+    # plt.savefig('/home/pengyaoguang/program_learn/program/shengli/RTM_data_prepare/5.png')
+    # plt.close()
+    # plt.figure()
+    # plt.imshow(true_d.data.T/np.max(true_d.data))
+    # plt.colorbar()
+    # plt.savefig('/home/pengyaoguang/program_learn/program/shengli/RTM_data_prepare/6.png')
+    # plt.close()
     op_imaging(u=u0, v=v, vp=model0.vp, dt=model0.critical_dt, 
             residual=residual)
     end=time.time()
     print(end-start,"s")
     #NBVAL_IGNORE_OUTPUT
-    # sio.savemat("/home/pengyaoguang/data/3D_RTM2/RTM_overtrust{}.mat",{"RTM":image.data})
+sio.savemat("/home/pengyaoguang/data/3D_RTM2/RTM1.mat",{"RTM":image.data})
 
 

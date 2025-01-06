@@ -92,21 +92,21 @@ def total_variation_loss(image, weight=1.0):
     # 如果你希望包括边缘像素，可以调整分母的计算方式
     
     return tv_loss
-model=torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_22.pkl")
+model=torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_27.pkl")
 # model=net(2,1,128).to(device)
 # model=nn.parallel.DataParallel(model)
 # model.load_state_dict(torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_22.pkl"))
 m=8
 ##data_prepare
-k=29998
+k=1
 save=False
 j=50
 ny=nx=100
 ##new_data
-# R=torch.Tensor(sio.loadmat("/home/pengyaoguang/data/3D_RTM2/RTM{}".format(k))["RTM"][20:120,20:120,20:120][j])
-# label=torch.Tensor(sio.loadmat("/home/pengyaoguang/data/3D_RTM2/v{}".format(k))["v"][j]*1000)
-R=torch.Tensor(sio.loadmat("/home/pengyaoguang/data/3D_RTM/RTM{}".format(k))["RTM"][20:120,20:120,20:120][j])
-label=torch.Tensor(sio.loadmat("/home/pengyaoguang/data/3D_v_model/v{}".format(k))["v"][j]*1000)
+R=torch.Tensor(sio.loadmat("/home/pengyaoguang/data/3D_RTM2/RTM{}".format(k))["RTM"][20:120,20:120,20:120][j])
+label=torch.Tensor(sio.loadmat("/home/pengyaoguang/data/3D_RTM2/v{}".format(k-1))["v"][j]*1000)
+# R=torch.Tensor(sio.loadmat("/home/pengyaoguang/data/3D_RTM/RTM{}".format(k))["RTM"][20:120,20:120,20:120][j])
+# label=torch.Tensor(sio.loadmat("/home/pengyaoguang/data/3D_v_model/v{}".format(k))["v"][j]*1000)
 
 # R=torch.from_file('/home/pengyaoguang/data/2D_data/2D_RTM1209/RTM{}.bin'.format(k),
 #                 size=ny*nx).reshape(ny, nx)
@@ -126,7 +126,7 @@ plt.colorbar()
 if save:
     plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/{}_{}rtm.png".format(k,j))
 else:
-    plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/rtm1.png")
+    plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/rtm0.png")
 R1=R.reshape(1,1,R.shape[0],R.shape[1])
 plt.figure()
 plt.imshow(label.T)

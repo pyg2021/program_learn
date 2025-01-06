@@ -1,4 +1,4 @@
-#针对于三维的数据，通过新的overtrust数据的井数据得到微调后的结果
+#针对于三维的数据，通过将旧的和新的overtrust数据的井数据得到微调后的结果
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -24,14 +24,14 @@ start=time.time()
 BatchSize=10
 
 device="cuda"
-# x_1,y_1=DataLoad(30000,30001)
-# x_2,y_2=DataLoad(30000,30000)
-# x_3,y_3=DataLoad(30000,30000)
-# x=np.concatenate((x_1,x_2,x_3),axis=0)
-# y=np.concatenate((y_1,y_2,y_3),axis=0)
-x,y=DataLoad3(53,59)
-x=x[::2]
-y=y[::2]
+x_1,y_1=DataLoad3(2,19)
+x_2,y_2=DataLoad3(27,51)
+x_3,y_3=DataLoad3(53,59)
+x=np.concatenate((x_1,x_2,x_3),axis=0)
+y=np.concatenate((y_1,y_2,y_3),axis=0)
+# x,y=DataLoad3(53,59)
+x=x[::10]
+y=y[::10]
 trian_number=y.shape[0]
 train_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(y).float())
 train_loader_1 = data_utils.DataLoader(train_data,batch_size=BatchSize,shuffle=True)
@@ -120,7 +120,7 @@ def train(model,train_loader,test_loader,epoch,device,optimizer,scheduler,loss_1
     number=0
     loss_number=float('inf')
     sample_list = [i for i in range(100)]
-    state=1
+    state=-1
     for epoch_i in range(epoch):
         epoch_loss=0
         model.train()
@@ -331,8 +331,10 @@ model=net(2,1,128).to(device)
 model=nn.parallel.DataParallel(model)
 model.load_state_dict(torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_18.pkl"))
 
-# model.eval()
+# # model.eval()
 apply_lora_to_unet(model, rank=16,downsample_factor=16)
+# model=torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_22.pkl")
+# model=nn.parallel.DataParallel(model)
 # torch.save(model.state_dict(),"/home/pengyaoguang/data/2D_data/2D_result/modeltest9_{}.pkl".format(10))
 # model.load_state_dict(torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_10.pkl"))
 # torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_10.pkl").keys()==model.state_dict().keys()
@@ -352,7 +354,7 @@ optimizer = torch.optim.AdamW([
 scheduler=torch.optim.lr_scheduler.StepLR(optimizer,step_size=1000,gamma=0.7)
 # loss_1=torch.nn.L1Loss()
 loss_1=torch.nn.MSELoss()
-train(model,train_loader_1,test_loader_1,10000,device,optimizer,scheduler,loss_1,save_number=24)
+train(model,train_loader_1,test_loader_1,10000,device,optimizer,scheduler,loss_1,save_number=27)
 # test(model,train_loader_1,loss_1,device)
 # test(model,train_loader_2,loss_1,device)
 

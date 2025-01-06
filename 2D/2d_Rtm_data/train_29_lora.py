@@ -1,4 +1,4 @@
-#针对于三维的数据，通过新的overtrust数据的井数据得到微调后的结果
+#针对于三维的数据，通过将overtrust数据的井数据得到微调后的结果（并改变了对encodeing参数的学习率）、增加数据量1000
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -24,14 +24,14 @@ start=time.time()
 BatchSize=10
 
 device="cuda"
-# x_1,y_1=DataLoad(30000,30001)
-# x_2,y_2=DataLoad(30000,30000)
-# x_3,y_3=DataLoad(30000,30000)
+# x_1,y_1=DataLoad3(2,19)
+# x_2,y_2=DataLoad3(27,51)
+# x_3,y_3=DataLoad3(53,59)
 # x=np.concatenate((x_1,x_2,x_3),axis=0)
 # y=np.concatenate((y_1,y_2,y_3),axis=0)
-x,y=DataLoad3(53,59)
-x=x[::2]
-y=y[::2]
+x,y=DataLoad3(1,59)
+x=x[::10]
+y=y[::10]
 trian_number=y.shape[0]
 train_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(y).float())
 train_loader_1 = data_utils.DataLoader(train_data,batch_size=BatchSize,shuffle=True)
@@ -120,7 +120,7 @@ def train(model,train_loader,test_loader,epoch,device,optimizer,scheduler,loss_1
     number=0
     loss_number=float('inf')
     sample_list = [i for i in range(100)]
-    state=1
+    state=-1
     for epoch_i in range(epoch):
         epoch_loss=0
         model.train()
@@ -187,7 +187,7 @@ def train(model,train_loader,test_loader,epoch,device,optimizer,scheduler,loss_1
         print(' epoch: ',epoch_i," train_loss: ",epoch_loss," test_loss: ",test_loss)
         # test(model,train_loader,loss_1,device)
         # test(model,test_loader,loss_1,device)
-        if epoch_i%2==0 and epoch_i>20:
+        if epoch_i%2==0 and epoch_i>2:
             print((time.time()-start)/60,"min")
             plt.figure()
             plt.imshow(model(x).cpu().detach()[0,0,:,:].T)
@@ -331,8 +331,10 @@ model=net(2,1,128).to(device)
 model=nn.parallel.DataParallel(model)
 model.load_state_dict(torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_18.pkl"))
 
-# model.eval()
+# # model.eval()
 apply_lora_to_unet(model, rank=16,downsample_factor=16)
+# model=torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_22.pkl")
+# model=nn.parallel.DataParallel(model)
 # torch.save(model.state_dict(),"/home/pengyaoguang/data/2D_data/2D_result/modeltest9_{}.pkl".format(10))
 # model.load_state_dict(torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_10.pkl"))
 # torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_10.pkl").keys()==model.state_dict().keys()
@@ -345,14 +347,14 @@ apply_lora_to_unet(model, rank=16,downsample_factor=16)
 #     {'params': [param for name, param in model.named_parameters() if 'A' in name or 'B' in name or 's' in name], 'lr': 5e-1} # 优化LORA参数
 # ], lr=5e-1)
 optimizer = torch.optim.AdamW([
-    {'params': [param for name, param in model.named_parameters() if ('A' not in name and 'B' not in name and 's' not in name) and ('down' in name or 'in_conv' in name or 'up' in name )], 'lr': 0},
+    {'params': [param for name, param in model.named_parameters() if ('A' not in name and 'B' not in name and 's' not in name) and ('down' in name or 'in_conv' in name or 'up' in name )], 'lr': 1e-3},
     {'params': [param for name, param in model.named_parameters() if ('A' not in name and 'B' not in name and 's' not in name) and ('down' not in name and 'in_conv' not in name and 'up' not in name)], 'lr': 1e-3},  # 冻结原始权重
     {'params': [param for name, param in model.named_parameters() if 'A' in name or 'B' in name or 's' in name], 'lr': 5e-1} # 优化LORA参数
 ], lr=5e-1)
 scheduler=torch.optim.lr_scheduler.StepLR(optimizer,step_size=1000,gamma=0.7)
 # loss_1=torch.nn.L1Loss()
 loss_1=torch.nn.MSELoss()
-train(model,train_loader_1,test_loader_1,10000,device,optimizer,scheduler,loss_1,save_number=24)
+train(model,train_loader_1,test_loader_1,10000,device,optimizer,scheduler,loss_1,save_number=29)
 # test(model,train_loader_1,loss_1,device)
 # test(model,train_loader_2,loss_1,device)
 

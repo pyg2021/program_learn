@@ -6,22 +6,22 @@ import time
 import scipy
 import multiprocessing
 from multiprocessing import Pool
-# rtm=sio.loadmat("/home/pengyaoguang/data/3D_RTM2/RTM_overtrust2.mat")['RTM']
-# rtm2=sio.loadmat("/home/pengyaoguang/data/3D_RTM2/RTM_overtrust{}.mat")['RTM']
-# plt.imshow(rtm[50].T/np.max(rtm[50]))
-# plt.colorbar()
-# plt.savefig('/home/pengyaoguang/program_learn/program/shengli/RTM_data_prepare/2.png')
-# plt.close()
-# plt.imshow(rtm2[50].T/np.max(rtm2[50]))
-# plt.colorbar()
-# plt.savefig('/home/pengyaoguang/program_learn/program/shengli/RTM_data_prepare/3.png')
-# plt.close()
-v=sio.loadmat("/home/pengyaoguang/data/3D_v_model/fianl_v3.mat")['v']*1000
-# sio.savemat("/home/pengyaoguang/data/3D_v_model/000.mat",{'v':v})
-plt.imshow(v[50].T[::2,::2])
+rtm=sio.loadmat("/home/pengyaoguang/data/3D_RTM2/RTM0.mat")['RTM']
+rtm2=sio.loadmat("/home/pengyaoguang/data/3D_RTM2/RTM1.mat")['RTM']
+plt.imshow(rtm[50].T/np.max(rtm[50]))
 plt.colorbar()
-plt.savefig('/home/pengyaoguang/program_learn/program/shengli/RTM_data_prepare/4.png')
+plt.savefig('/home/pengyaoguang/program_learn/program/shengli/RTM_data_prepare/2.png')
 plt.close()
+plt.imshow(rtm2[50].T/np.max(rtm2[50]))
+plt.colorbar()
+plt.savefig('/home/pengyaoguang/program_learn/program/shengli/RTM_data_prepare/3.png')
+plt.close()
+# v=sio.loadmat("/home/pengyaoguang/data/3D_v_model/fianl_v3.mat")['v']*1000
+# # sio.savemat("/home/pengyaoguang/data/3D_v_model/000.mat",{'v':v})
+# plt.imshow(v[50].T[::2,::2])
+# plt.colorbar()
+# plt.savefig('/home/pengyaoguang/program_learn/program/shengli/RTM_data_prepare/4.png')
+# plt.close()
 # v3=sio.loadmat("/home/pengyaoguang/data/3D_v_model/fianl_v3.mat")["v"]
 # v2=sio.loadmat("/home/pengyaoguang/data/3D_v_model/fianl_v2.mat")["v"]
 # print(v2[:,:,99])
