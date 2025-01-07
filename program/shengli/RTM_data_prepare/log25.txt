@@ -4,3 +4,5 @@ Imaging source 1 out of 400
 Imaging source 2 out of 400
 93.07374501228333 s
 Imaging source 3 out of 400
+132.9938235282898 s
+Imaging source 4 out of 400
