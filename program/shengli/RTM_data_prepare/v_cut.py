@@ -39,8 +39,8 @@ for i in range(0,v.shape[0]-L,int(L/6)):
     for j in range(0,v.shape[1]-L,int(L/6)):
         m+=1
         v_0=v[i:i+L,j:j+L][::4,::4]
-        # print(v_0.shape)
-        sio.savemat("/home/pengyaoguang/data/3D_RTM2/v{}.mat".format(m),{'v':v_0})
+        print(v_0.shape)
+        # sio.savemat("/home/pengyaoguang/data/3D_RTM2/v{}.mat".format(m),{'v':v_0})
 # print(m)
 L=600
 m=107
@@ -49,7 +49,7 @@ m=107
 for i in range(0,v.shape[0]-L,int(L/6)):
     for j in range(0,v.shape[1]-L,int(L/6)):
         m+=1
-        v_0=v[i:i+L,j:j+L][::4,::4]
-        # print(v_0.shape)
+        v_0=v[i:i+L,j:j+L][::6,::6]
+        print(v_0.shape)
         sio.savemat("/home/pengyaoguang/data/3D_RTM2/v{}.mat".format(m),{'v':v_0})
 print(m)
