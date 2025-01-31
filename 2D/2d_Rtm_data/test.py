@@ -92,7 +92,7 @@ def total_variation_loss(image, weight=1.0):
     # 如果你希望包括边缘像素，可以调整分母的计算方式
     
     return tv_loss
-model=torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_33.pkl")
+model=torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_47.pkl")
 # model=net(2,1,128).to(device)
 # model=nn.parallel.DataParallel(model)
 # model.load_state_dict(torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_22.pkl"))

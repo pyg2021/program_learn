@@ -24,14 +24,14 @@ start=time.time()
 BatchSize=10
 
 device="cuda"
-# x_1,y_1=DataLoad3(2,27)
-# x_2,y_2=DataLoad3(28,49)
-# x_3,y_3=DataLoad3(60,117)
-# x=np.concatenate((x_1,x_2,x_3),axis=0)
-# y=np.concatenate((y_1,y_2,y_3),axis=0)
-x,y=DataLoad3(1,1)
-x=x[::10]
-y=y[::10]
+x_1,y_1=DataLoad3(2,27)
+x_2,y_2=DataLoad3(28,49)
+x_3,y_3=DataLoad3(60,117)
+x=np.concatenate((x_1,x_2,x_3),axis=0)
+y=np.concatenate((y_1,y_2,y_3),axis=0)
+# x,y=DataLoad3(1,1)
+x=x[::1000]
+y=y[::1000]
 trian_number=y.shape[0]
 train_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(y).float())
 train_loader_1 = data_utils.DataLoader(train_data,batch_size=BatchSize,shuffle=True)
@@ -165,7 +165,7 @@ def train(model,train_loader,test_loader,epoch,device,optimizer,scheduler,loss_1
             # tv_loss=total_variation_loss(y_1)
             # sam=random.sample(sample_list,5)
             # loss=loss_1(y_1[:,:,sam,:],y[:,:,sam,:])
-            loss=loss_1(y_1[:,:,::5,:],y[:,:,::5,:])
+            loss=loss_1(y_1[:,:,::5,:],y[:,:,::5,:])+loss_1(y_1,y)
             if ewc is not None:
                 ewc_loss = ewc.penalty(model)
                 loss += ewc_lambda * ewc_loss
@@ -385,7 +385,7 @@ optimizer = torch.optim.AdamW([
 scheduler=torch.optim.lr_scheduler.StepLR(optimizer,step_size=1000,gamma=0.7)
 # loss_1=torch.nn.L1Loss()
 loss_1=torch.nn.MSELoss()
-train(model,train_loader_1,test_loader_1,10000,device,optimizer,scheduler,loss_1,save_number=41)
+train(model,train_loader_1,test_loader_1,10000,device,optimizer,scheduler,loss_1,save_number=42)
 # test(model,train_loader_1,loss_1,device)
 # test(model,train_loader_2,loss_1,device)
 
