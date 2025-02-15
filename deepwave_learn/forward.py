@@ -8,7 +8,7 @@ device = torch.device('cuda' if torch.cuda.is_available()
 ny = 2301
 nx = 751
 dx = 4.0
-v = torch.from_file('./deepwave_learn/marmousi_vp.bin',
+v = torch.from_file('/home/pengyaoguang/program_learn/deepwave_learn/marmousi_vp.bin',
                     size=ny*nx).reshape(ny, nx).to(device)
 
 
@@ -72,5 +72,5 @@ ax[0].set_ylabel("Time Sample")
 ax[1].set_xlabel("Shot")
 plt.tight_layout()
 
-plt.savefig('./deepwave_learn/part_image.png')
-receiver_amplitudes.cpu().numpy().tofile('./deepwave_learn/marmousi_data.bin')
+plt.savefig('/home/pengyaoguang/program_learn/deepwave_learn/part_image.png')
+receiver_amplitudes.cpu().numpy().tofile('/home/pengyaoguang/program_learn/deepwave_learn/marmousi_data.bin')

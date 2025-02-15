@@ -135,8 +135,23 @@ def train(model,train_loader,test_loader,epoch,device,optimizer,scheduler,loss_1
     for epoch_i in range(epoch):
         epoch_loss=0
         model.train()
-        
-
+        for i,(x,y) in enumerate(train_loader_1):
+            x=x.to(device)
+            y=y.to(device)
+            optimizer.zero_grad()
+            y_1=model(x)
+            # loss=loss_1(y_1,y)+loss_1(torch.clamp(y_1,1000,10000),y_1)
+            # tv_loss=total_variation_loss(y_1)
+            # sam=random.sample(sample_list,5)
+            # loss=loss_1(y_1[:,:,sam,:],y[:,:,sam,:])
+            loss=loss_1(y_1[:,:,::10,:],y[:,:,::10,:])
+            if ewc is not None:
+                ewc_loss = ewc.penalty(model)
+                loss += ewc_lambda * ewc_loss
+                print('ewc:',ewc_lambda * ewc_loss)
+            loss.backward()
+            optimizer.step()
+            # scheduler.step()
         for i,(x,y) in enumerate(train_loader_2):
             x=x.to(device)
             y=y.to(device)
@@ -156,24 +171,6 @@ def train(model,train_loader,test_loader,epoch,device,optimizer,scheduler,loss_1
             # scheduler.step()
 
             epoch_loss+=loss.detach().cpu().item()
-        for i,(x,y) in enumerate(train_loader_1):
-            x=x.to(device)
-            y=y.to(device)
-            optimizer.zero_grad()
-            y_1=model(x)
-            # loss=loss_1(y_1,y)+loss_1(torch.clamp(y_1,1000,10000),y_1)
-            # tv_loss=total_variation_loss(y_1)
-            # sam=random.sample(sample_list,5)
-            # loss=loss_1(y_1[:,:,sam,:],y[:,:,sam,:])
-            loss=loss_1(y_1[:,:,::10,:],y[:,:,::10,:])
-            if ewc is not None:
-                ewc_loss = ewc.penalty(model)
-                loss += ewc_lambda * ewc_loss
-                print('ewc:',ewc_lambda * ewc_loss)
-            loss.backward()
-            optimizer.step()
-            # scheduler.step()
-
         #     epoch_loss+=loss.detach().cpu().item()
         epoch_loss=epoch_loss/(i+1)
         loss_all.append(epoch_loss)
