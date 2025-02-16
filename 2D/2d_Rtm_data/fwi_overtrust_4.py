@@ -19,7 +19,7 @@ v_true = torch.tensor(sio.loadmat("/home/pengyaoguang/data/3D_RTM2/v{}".format(k
 # v_true = v_true[:ny, :nx]
 
 
-v_init = (torch.tensor(1/gaussian_filter(1/v_true.numpy(), 4))
+v_init = (torch.tensor(1/gaussian_filter(1/v_true.numpy(), 40))
           .to(device))
 plt.figure()
 plt.imshow((v_init.cpu().detach().numpy().T))
@@ -83,8 +83,9 @@ receiver_amplitudes = out[-1]
 
 
 plt.figure()
-vmax=torch.max(receiver_amplitudes[50].cpu())
-vmin=torch.min(receiver_amplitudes[50].cpu())
+vmax,vmin=torch.quantile(receiver_amplitudes[50].cpu(),torch.tensor([0.02,0.98]))
+# vmax=torch.max(receiver_amplitudes[50].cpu())
+# vmin=torch.min(receiver_amplitudes[50].cpu())
 plt.imshow(receiver_amplitudes[50].detach().cpu().T,aspect='auto',cmap="gray",vmax=vmax,vmin=vmin)
 plt.colorbar()
 plt.savefig("/home/pengyaoguang/program_learn/2D/2d_Rtm_data/0.png")
@@ -92,8 +93,8 @@ observed_data = receiver_amplitudes
 
 
 # Setup optimiser to perform inversion
-optimiser = torch.optim.Adam([v],lr=1e-1)
-# optimiser = torch.optim.SGD([v], lr=0.1, momentum=0.9)
+# optimiser = torch.optim.Adam([v],lr=1e-1)
+optimiser = torch.optim.SGD([v], lr=0.1, momentum=0.9)
 loss_fn = torch.nn.MSELoss()
 
 # Run optimisation/inversion
@@ -109,7 +110,7 @@ for epoch in range(n_epochs):
         receiver_locations=receiver_locations,
         pml_freq=freq,
     )
-    loss = 1e10 * loss_fn(out[-1], observed_data)
+    loss = 1e9 * loss_fn(out[-1], observed_data)
     # loss =  loss_fn(out[-1], observed_data)
     loss.backward()
     optimiser.step()

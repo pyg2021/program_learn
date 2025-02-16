@@ -83,7 +83,7 @@ optimiser = torch.optim.SGD([v], lr=0.1, momentum=0.9)
 loss_fn = torch.nn.MSELoss()
 
 # Run optimisation/inversion
-n_epochs = 25
+n_epochs = 1000
 v_true = v_true.to(device)
 
 for epoch in range(n_epochs):
