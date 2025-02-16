@@ -79,6 +79,7 @@ source_amplitudes = (
 
 # Setup optimiser to perform inversion
 optimiser = torch.optim.SGD([v], lr=0.1, momentum=0.9)
+# optimiser = torch.optim.Adam(v,lr=10e-3)
 loss_fn = torch.nn.MSELoss()
 
 # Run optimisation/inversion

@@ -38,7 +38,7 @@ receiver_depth = 2  # 2 * 4m = 8m
 
 freq = 15
 nt = 750
-dt = 0.0004
+dt = 0.0008
 peak_time = 1.5 / freq
 
 # source_locations
