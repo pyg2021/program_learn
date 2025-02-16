@@ -5,12 +5,12 @@ import deepwave
 from deepwave import scalar
 import numpy as np
 import scipy.io as sio
-device = torch.device('cuda:1' if torch.cuda.is_available()
+device = torch.device('cuda:2' if torch.cuda.is_available()
                       else 'cpu')
 ny = 100
 nx = 100
 dx = 4.0
-k=1
+k=0
 v_true = torch.tensor(sio.loadmat("/home/pengyaoguang/data/3D_RTM2/v{}".format(k))["v"][50]*1000).float()
 
 # Select portion of model for inversion
@@ -21,6 +21,10 @@ v_true = torch.tensor(sio.loadmat("/home/pengyaoguang/data/3D_RTM2/v{}".format(k
 
 v_init = (torch.tensor(1/gaussian_filter(1/v_true.numpy(), 40))
           .to(device))
+plt.figure()
+plt.imshow((v_init.cpu().detach().numpy().T))
+plt.savefig("/home/pengyaoguang/program_learn/2D/2d_Rtm_data/fwi/4_0.png")
+plt.close()
 v = v_init.clone()
 v.requires_grad_()
 
@@ -38,7 +42,7 @@ receiver_depth = 2  # 2 * 4m = 8m
 
 freq = 15
 nt = 750
-dt = 0.0004
+dt = 0.0008
 peak_time = 1.5 / freq
 
 # source_locations
@@ -67,7 +71,7 @@ source_amplitudes = (
 v_true = v_true.to(device)
 plt.figure()
 plt.imshow((v_true.cpu().detach().numpy().T))
-plt.savefig("/home/pengyaoguang/program_learn/2D/2d_Rtm_data/fwi/1.png")
+plt.savefig("/home/pengyaoguang/program_learn/2D/2d_Rtm_data/fwi/4_1.png")
 plt.close()
 out = scalar(v_true, dx, dt, source_amplitudes=source_amplitudes,
              source_locations=source_locations,
@@ -79,19 +83,24 @@ receiver_amplitudes = out[-1]
 
 
 plt.figure()
-plt.imshow(receiver_amplitudes[0].detach().cpu().T,aspect='auto')
+vmax,vmin=torch.quantile(receiver_amplitudes[50].cpu(),torch.tensor([0.02,0.98]))
+# vmax=torch.max(receiver_amplitudes[50].cpu())
+# vmin=torch.min(receiver_amplitudes[50].cpu())
+plt.imshow(receiver_amplitudes[50].detach().cpu().T,aspect='auto',cmap="gray",vmax=vmax,vmin=vmin)
+plt.colorbar()
 plt.savefig("/home/pengyaoguang/program_learn/2D/2d_Rtm_data/0.png")
 observed_data = receiver_amplitudes
 
 
 # Setup optimiser to perform inversion
+# optimiser = torch.optim.Adam([v],lr=1e-1)
 optimiser = torch.optim.SGD([v], lr=0.1, momentum=0.9)
 loss_fn = torch.nn.MSELoss()
 
 # Run optimisation/inversion
 n_epochs = 10000
 
-
+res=[]
 for epoch in range(n_epochs):
     optimiser.zero_grad()
     out = scalar(
@@ -110,10 +119,17 @@ for epoch in range(n_epochs):
         torch.quantile(v.grad.detach().abs(), 0.98)
     )
     print("epoch",epoch,"loss:",loss.cpu().item())
-    plt.figure()
-    plt.imshow((v.cpu().detach().numpy().T))
-    plt.savefig("/home/pengyaoguang/program_learn/2D/2d_Rtm_data/fwi/0.png".format(epoch))
-    plt.close()
+    res.append(loss.cpu().item())
+    if epoch%100==0:
+        plt.figure()
+        plt.imshow((v.cpu().detach().numpy().T))
+        plt.savefig("/home/pengyaoguang/program_learn/2D/2d_Rtm_data/fwi/4_2.png".format(epoch))
+        plt.close()
+
+        plt.figure()
+        plt.plot(range(len(res)),res)
+        plt.savefig("/home/pengyaoguang/program_learn/2D/2d_Rtm_data/fwi/4_3.png".format(epoch))
+        plt.close()
 
 
 

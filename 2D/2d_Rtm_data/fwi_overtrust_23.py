@@ -5,12 +5,12 @@ import deepwave
 from deepwave import scalar
 import numpy as np
 import scipy.io as sio
-device = torch.device('cuda:1' if torch.cuda.is_available()
+device = torch.device('cuda' if torch.cuda.is_available()
                       else 'cpu')
 ny = 100
 nx = 100
 dx = 4.0
-k=1
+k=0
 v_true = torch.tensor(sio.loadmat("/home/pengyaoguang/data/3D_RTM2/v{}".format(k))["v"][50]*1000).float()
 
 # Select portion of model for inversion
@@ -38,7 +38,7 @@ receiver_depth = 2  # 2 * 4m = 8m
 
 freq = 15
 nt = 750
-dt = 0.0004
+dt = 0.0008
 peak_time = 1.5 / freq
 
 # source_locations
@@ -67,7 +67,7 @@ source_amplitudes = (
 v_true = v_true.to(device)
 plt.figure()
 plt.imshow((v_true.cpu().detach().numpy().T))
-plt.savefig("/home/pengyaoguang/program_learn/2D/2d_Rtm_data/fwi/1.png")
+plt.savefig("/home/pengyaoguang/program_learn/2D/2d_Rtm_data/fwi/2.png")
 plt.close()
 out = scalar(v_true, dx, dt, source_amplitudes=source_amplitudes,
              source_locations=source_locations,
@@ -101,7 +101,7 @@ for epoch in range(n_epochs):
         receiver_locations=receiver_locations,
         pml_freq=freq,
     )
-    loss = 1e9 * loss_fn(out[-1], observed_data)
+    loss = 1e8 * loss_fn(out[-1], observed_data)
     # loss =  loss_fn(out[-1], observed_data)
     loss.backward()
     optimiser.step()
@@ -110,10 +110,11 @@ for epoch in range(n_epochs):
         torch.quantile(v.grad.detach().abs(), 0.98)
     )
     print("epoch",epoch,"loss:",loss.cpu().item())
-    plt.figure()
-    plt.imshow((v.cpu().detach().numpy().T))
-    plt.savefig("/home/pengyaoguang/program_learn/2D/2d_Rtm_data/fwi/0.png".format(epoch))
-    plt.close()
+    if epoch%100==0:
+        plt.figure()
+        plt.imshow((v.cpu().detach().numpy().T))
+        plt.savefig("/home/pengyaoguang/program_learn/2D/2d_Rtm_data/fwi/3.png".format(epoch))
+        plt.close()
 
 
 
