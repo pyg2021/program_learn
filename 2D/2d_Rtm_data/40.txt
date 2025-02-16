@@ -1,0 +1,17 @@
+
+nohup: ignoring input
+ epoch:  0  train_loss:  11496481.101267688  test_loss:  587532.15625
+ epoch:  1  train_loss:  14709813.721734965  test_loss:  706084.5
+ epoch:  2  train_loss:  11490014.90156987  test_loss:  624128.025
+ epoch:  3  train_loss:  8301086.552089475  test_loss:  573992.409375 epoch:  4  train_loss:  8764040.227096844  test_loss:  548591.4625
+10.132973110675811 min
+ epoch:  5  train_loss:  7498473.7949587265  test_loss:  529221.925
+ epoch:  6  train_loss:  7086536.0634028595  test_loss:  529322.16875
+13.450655722618103 min
+ epoch:  7  train_loss:  6915907.803471403  test_loss:  519818.99375
+ epoch:  8  train_loss:  6858914.919866597  test_loss:  520035.18125
+16.64335434436798 min
+ epoch:  9  train_loss:  6823453.320091391  test_loss:  521310.875
+ epoch:  10  train_loss:  6749712.342957694  test_loss:  518874.89375
+19.872883717219036 min
+ epoch:  11  train_loss:  6617912.428526681  test_loss:  522762.8875
