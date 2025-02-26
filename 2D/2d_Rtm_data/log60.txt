@@ -1,0 +1,8 @@
+nohup: ignoring input
+ epoch:  0  train_loss:  13414381.546666667  test_loss:  12131569.0
+ epoch:  1  train_loss:  13373842.093333334  test_loss:  12090145.0
+ epoch:  2  train_loss:  13335456.16  test_loss:  12055138.166666666
+ epoch:  3  train_loss:  13303355.333333334  test_loss:  12049713.333333334
+ epoch:  4  train_loss:  13280549.48  test_loss:  12022006.166666666
+ epoch:  5  train_loss:  13265782.093333334  test_loss:  12010743.166666666
+ epoch:  6  train_loss:  13250310.013333334  test_loss:  12007720.166666666
