@@ -61,7 +61,7 @@ class Up(nn.Module):
         self.up = nn.ConvTranspose2d(in_channels, in_channels // 2, kernel_size=2, stride=2)
         # 调用双层卷积类，通道数是否减半要看out_channels接收的值
         self.conv = DoubleConv(in_channels, out_channels)
-        self.att = AttnGate2D(out_channels,out_channels,out_channels)
+        self.att = AttnGate2D(out_channels,out_channels,2)
     def forward(self, x1: torch.Tensor, x2: torch.Tensor) -> torch.Tensor:
         x1 = self.up(x1)
 

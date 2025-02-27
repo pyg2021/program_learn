@@ -65,13 +65,23 @@ def salt(data0):
         for j in range(100):
             Z2[i,j]=a*math.exp(-(d1*math.pow((i-xref),2)+d3*math.pow((j-yref),2)+2*d2*(i-xref)*(j-yref)))
     Z2=101-Z2
+    if np.min(Z2)<0:
+        return salt(data0)
+    top=np.min(Z2)
+    d=0
+    while True:
+        if top<21:
+            break
+        d=int(random.uniform(20,50))
+        if d<top:
+            break
     v1=random.uniform(0.6,1)
     for i in range(Z2.shape[0]):
         for j in range(Z2.shape[1]):
-            data[i,j,math.floor(Z2[i,j]):]=v+v1
+            # print(math.floor(Z2[i,j]-d))
+            data[i,j,math.floor(Z2[i,j]-d):101-d-2]=v+v1
     # np.save("program/shengli/v.bin",data)
-    if np.min(Z2)<0:
-        salt(data0)
+    
     
     return data
 
@@ -125,14 +135,14 @@ def fault(data):
                         if k<math.floor(d):
                             data[i,j,k]=data[i,j,0]
     return data
-for epoch in range(25120,25300):
+for epoch in range(25300,25500):
     data=floded()
     data=fault(data)
     data=salt(data)
     data=fault(data)
 
     # data=fault(data)
-    # scipy.io.savemat("/home/pengyaoguang/data/3D_v_model/v{}.mat".format(epoch), {'v':data})
+    scipy.io.savemat("/home/pengyaoguang/data/3D_v_model/v{}.mat".format(epoch), {'v':data})
 
 
 
@@ -141,3 +151,4 @@ for epoch in range(25120,25300):
     plt.imshow(data[50].T)
     plt.colorbar()
     plt.savefig("data/3D_net_result/useful_result/1.png")
+    # break

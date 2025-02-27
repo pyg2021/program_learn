@@ -20,7 +20,7 @@ os.environ['CUDA_VISIBLE_DEVICES'] = "0,1,2,3"
 start=time.time()
 
 ##data_prepare
-BatchSize=100
+BatchSize=20
 
 device="cuda"
 # x_1,y_1=DataLoad1(0,8000)
@@ -135,6 +135,7 @@ def train(model,train_loader,test_loader,epoch,device,optimizer,scheduler,loss_1
             optimizer.step()
             scheduler.step()
             epoch_loss+=loss.detach().cpu().item()
+            print(loss.detach().cpu().item())
         epoch_loss=epoch_loss/sum_1
         loss_all.append(epoch_loss)
         
@@ -243,14 +244,14 @@ def test(model,test_loader,loss_1,device,save_number=0):
 model=net(2,1,128).to(device)
 model=nn.parallel.DataParallel(model)
 # ewc=EWC(model, train_loader_1, device)
-# model.load_state_dict(torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_60.pkl"))
+# model.load_state_dict(torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_61.pkl"))
 
 
 optimizer = torch.optim.AdamW(model.parameters(),lr=1e-3)
 scheduler=torch.optim.lr_scheduler.StepLR(optimizer,step_size=100,gamma=0.7)
 # loss_1=torch.nn.L1Loss()
 loss_1=torch.nn.MSELoss()
-train(model,train_loader_1,test_loader_1,10000,device,optimizer,scheduler,loss_1,save_number=60)
+train(model,train_loader_1,test_loader_1,10000,device,optimizer,scheduler,loss_1,save_number=61)
 # test(model,train_loader_1,loss_1,device)
 # test(model,train_loader_2,loss_1,device)
 
