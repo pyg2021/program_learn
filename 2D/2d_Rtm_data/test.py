@@ -92,26 +92,26 @@ def total_variation_loss(image, weight=1.0):
     # 如果你希望包括边缘像素，可以调整分母的计算方式
     
     return tv_loss
-model=torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_59.pkl")
-# model=net(2,1,128).to(device)
-# model=nn.parallel.DataParallel(model)
-# model.load_state_dict(torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_48.pkl")) 
+# model=torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_54.pkl")
+model=net(2,1,128).to(device)
+model=nn.parallel.DataParallel(model)
+model.load_state_dict(torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_18.pkl")) 
 m=8
 ##data_prepare
-k=201
+k=25275
 save=False
-j=80
+j=50
 ny=nx=100
 ##new_data
 # R=torch.Tensor(sio.loadmat("/home/pengyaoguang/data/3D_RTM2/RTM{}".format(k))["RTM"][20:120,20:120,20:120][j])
 # label=torch.Tensor(sio.loadmat("/home/pengyaoguang/data/3D_RTM2/v{}".format(k-1))["v"][j]*1000)
-R=torch.Tensor(sio.loadmat("/home/pengyaoguang/data/3D_RTM2/RTM{}".format(k))["RTM"][20:120,20:120,20:120][:,j])
-label=torch.Tensor(sio.loadmat("/home/pengyaoguang/data/3D_RTM2/v{}".format(k-1))["v"][:,j]*1000)
+# R=torch.Tensor(sio.loadmat("/home/pengyaoguang/data/3D_RTM2/RTM{}".format(k))["RTM"][20:120,20:120,20:120][:,j])
+# label=torch.Tensor(sio.loadmat("/home/pengyaoguang/data/3D_RTM2/v{}".format(k-1))["v"][:,j]*1000)
 ##process_real_data
 # R=torch.Tensor(sio.loadmat("/home/pengyaoguang/data/real_data/RTM{}".format(k))["RTM"])
 # label=torch.Tensor(sio.loadmat("/home/pengyaoguang/data/real_data/v{}".format(k))["v"]*1000)
-# R=torch.Tensor(sio.loadmat("/home/pengyaoguang/data/3D_RTM/RTM{}".format(k))["RTM"][20:120,20:120,20:120][j])
-# label=torch.Tensor(sio.loadmat("/home/pengyaoguang/data/3D_v_model/v{}".format(k))["v"][j]*1000)
+R=torch.Tensor(sio.loadmat("/home/pengyaoguang/data/3D_RTM/RTM{}".format(k))["RTM"][20:120,20:120,20:120][j])
+label=torch.Tensor(sio.loadmat("/home/pengyaoguang/data/3D_v_model/v{}".format(k))["v"][j]*1000)
 
 # R=torch.from_file('/home/pengyaoguang/data/2D_data/2D_RTM1209/RTM{}.bin'.format(k),
 #                 size=ny*nx).reshape(ny, nx)
