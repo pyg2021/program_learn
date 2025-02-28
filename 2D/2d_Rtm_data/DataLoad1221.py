@@ -22,5 +22,13 @@ def DataLoad(a,b):
             x[i,1]=label_smooth1
             y[i,0]=label1
             i=i+1
+        for j in range(100):
+            R1=R[:,j].reshape(1,1,R.shape[1],R.shape[2])
+            label1=label[:,j].reshape(1,1,label.shape[1],label.shape[2])
+            label_smooth1=label_smooth[:,j].reshape(1,1,label_smooth.shape[1],label_smooth.shape[2])
+            x[i,0]=R1
+            x[i,1]=label_smooth1
+            y[i,0]=label1
+            i=i+1
     return x,y
 

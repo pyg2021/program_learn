@@ -1,0 +1,7 @@
+nohup: ignoring input
+Traceback (most recent call last):
+  File "/home/pengyaoguang/program_learn/2D/2d_Rtm_data/train_62.py", line 31, in <module>
+    x,y=DataLoad2(25000,25260)
+  File "/home/pengyaoguang/program_learn/2D/2d_Rtm_data/DataLoad1221.py", line 29, in DataLoad
+    x[i,0]=R1
+IndexError: index 26100 is out of bounds for axis 0 with size 26100

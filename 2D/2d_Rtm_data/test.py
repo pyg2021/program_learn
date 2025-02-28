@@ -98,8 +98,8 @@ model=nn.parallel.DataParallel(model)
 model.load_state_dict(torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_18.pkl")) 
 m=8
 ##data_prepare
-k=25275
-save=False
+k=25242
+save=True
 j=50
 ny=nx=100
 ##new_data
@@ -129,7 +129,7 @@ plt.figure()
 plt.imshow(R.T/vmax,cmap="gray")
 plt.colorbar()
 if save:
-    plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/{}_{}rtm.png".format(k,j))
+    plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/{}_{}rtm.eps".format(k,j),dpi=300)
 else:
     plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/rtm0.png")
 R1=R.reshape(1,1,R.shape[0],R.shape[1])
@@ -137,7 +137,7 @@ plt.figure()
 plt.imshow(label.T)
 plt.colorbar()
 if save:
-    plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/{}_{}v_real_test.png".format(k,j))
+    plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/{}_{}v_real_test.eps".format(k,j),dpi=300)
 else:
     plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/v_real_test0.png")
 
@@ -147,7 +147,7 @@ plt.figure()
 plt.imshow(label_smooth.T)
 plt.colorbar()
 if save:
-    plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/{}_{}v_smooth_test.png".format(k,j))
+    plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/{}_{}v_smooth_test.eps".format(k,j),dpi=300)
 else:
     plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/v_smooth_test0.png")
 
@@ -183,7 +183,7 @@ plt.figure()
 plt.imshow(y_1.detach().cpu()[0,0].T)
 plt.colorbar()
 if save:
-    plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/{}_{}v_updete_test.png".format(k,j))
+    plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/{}_{}v_updete_test.eps".format(k,j),dpi=300)
 else:
     plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/v_updete_test0.png")
 print('ssim',ssim_metric(label.detach().cpu().numpy(),y_1.detach().cpu()[0,0].numpy()))
@@ -192,7 +192,7 @@ plt.figure()
 plt.imshow(y_1.detach().cpu()[0,0].T-label.detach().cpu().T)
 plt.colorbar()
 if save:
-    plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/{}_{}v_error.png".format(k,j))
+    plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/{}_{}v_error.eps".format(k,j),dpi=300)
 else:
     plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/v_error0.png")
 # sio.savemat("/home/pengyaoguang/data/3D_net_result/3D_result{}.mat".format(m),{'RTM':R,'v_real':label,'v_update':y_1.detach().cpu()[0,0],'v_smooth':label_smooth})

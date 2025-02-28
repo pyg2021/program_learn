@@ -11,6 +11,7 @@ import scipy.io as sio
 
 v=sio.loadmat("/home/pengyaoguang/data/fianl_v3.mat")["v"]
 # m=58
+print(v.shape)
 start=0
 
 #59-
