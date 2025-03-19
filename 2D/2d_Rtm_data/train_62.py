@@ -16,7 +16,7 @@ import os
 from skimage.metrics import structural_similarity as ssim
 
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID" 
-os.environ['CUDA_VISIBLE_DEVICES'] = "0,1,2,3"
+os.environ['CUDA_VISIBLE_DEVICES'] = "1,2,3"
 start=time.time()
 
 ##data_prepare
@@ -28,7 +28,7 @@ device="cuda"
 # x_3,y_3=DataLoad(25000,25000)
 # x=np.concatenate((x_1,x_2,x_3),axis=0)
 # y=np.concatenate((y_1,y_2,y_3),axis=0)
-x,y=DataLoad2(25000,25260)
+x,y=DataLoad2(25000,25240)
 trian_number=y.shape[0]
 train_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(y).float())
 train_loader_1 = data_utils.DataLoader(train_data,batch_size=BatchSize,shuffle=True)
@@ -38,7 +38,7 @@ train_loader_1 = data_utils.DataLoader(train_data,batch_size=BatchSize,shuffle=T
 # x_3,y_3=DataLoad(25000,25000)
 # x=np.concatenate((x_1,x_2,x_3),axis=0)
 # y=np.concatenate((y_1,y_2,y_3),axis=0)
-x,y=DataLoad2(25000+260,25000+279)
+x,y=DataLoad2(25000+241,25000+279)
 test_number=y.shape[0]
 test_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(y).float())
 test_loader_1 = data_utils.DataLoader(test_data,batch_size=BatchSize,shuffle=True)
@@ -164,7 +164,8 @@ def train(model,train_loader,test_loader,epoch,device,optimizer,scheduler,loss_1
             else:
                 number=0
                 loss_number=test_loss
-                torch.save(model.state_dict(),"/home/pengyaoguang/data/2D_data/2D_result/modeltest9_{}.pkl".format(save_number))
+                torch.save(model,"/home/pengyaoguang/data/2D_data/2D_result/modeltest9_{}.pkl".format(save_number))
+                # torch.save(model.state_dict(),"/home/pengyaoguang/data/2D_data/2D_result/modeltest9_{}.pkl".format(save_number))
         test_loss=test_loss/sum_2
         test_loss_all.append(test_loss)
         print(' epoch: ',epoch_i," train_loss: ",epoch_loss," test_loss: ",test_loss)

@@ -6,7 +6,7 @@ from scipy.ndimage import gaussian_filter
 import matplotlib.pyplot as plt
 ##data_prepare   def DataLoad(): 
 def DataLoad(a,b):
-    size=(b-a+1)*100
+    size=(b-a+1)*200
     x=np.zeros((size,2,100,100))
     y=np.zeros((size,1,100,100))
     i=0

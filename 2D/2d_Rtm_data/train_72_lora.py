@@ -1,4 +1,4 @@
-#针对于三维的数据，通过将SEAM数据的井数据得到微调后的结果（并改变了对encodeing参数的学习率），数据量300（中、大、小），通过少量真实数据微调,10口井10个井数据
+#针对于三维的数据，通过将overtrust数据的井数据得到微调后的结果（并改变了对encodeing参数的学习率），数据量200，三种数据块共存,通过少量真实数据微调,井数据没有权重，10口井10个井数据
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -12,48 +12,47 @@ from DataLoad import DataLoad
 from DataLoad1210 import DataLoad as DataLoad1
 from DataLoad1221 import DataLoad as DataLoad2
 from DataLoad1231 import DataLoad as DataLoad3
-from DataLoad20250220 import DataLoad as DataLoad4
 from Model_2DUnet1208 import net
 import os 
 from skimage.metrics import structural_similarity as ssim
 import random
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID" 
-os.environ['CUDA_VISIBLE_DEVICES'] = "0,1,2,3"
+os.environ['CUDA_VISIBLE_DEVICES'] = "1,2,3"
 start=time.time()
 
 ##data_prepare
 BatchSize=10
 
 device="cuda"
-x_1,y_1=DataLoad4(201,201)
-x_2,y_2=DataLoad3(201,201)
+# x_1,y_1=DataLoad3(2,27)
+# x_2,y_2=DataLoad3(28,49)
 # x_3,y_3=DataLoad3(60,117)
-x=np.concatenate((x_1,x_2),axis=0)
-y=np.concatenate((y_1,y_2),axis=0)
-# x,y=DataLoad4(201,201)
+# x=np.concatenate((x_1,x_2,x_3),axis=0)
+# y=np.concatenate((y_1,y_2,y_3),axis=0)
+x,y=DataLoad3(1,1)
 x=x[::10]
 y=y[::10]
 trian_number=y.shape[0]
 train_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(y).float())
 train_loader_1 = data_utils.DataLoader(train_data,batch_size=BatchSize,shuffle=True)
 
-x_1,y_1=DataLoad4(202,249)
-x_2,y_2=DataLoad3(202,249)
-# x_3,y_3=DataLoad3(60,117)
-x=np.concatenate((x_1,x_2),axis=0)
-y=np.concatenate((y_1,y_2),axis=0)
-# x,y=DataLoad4(202,249)
-x=x[::16]
-y=y[::16]
+x_1,y_1=DataLoad3(2,27)
+x_2,y_2=DataLoad3(28,49)
+x_3,y_3=DataLoad3(60,117)
+x=np.concatenate((x_1,x_2,x_3),axis=0)
+y=np.concatenate((y_1,y_2,y_3),axis=0)
+# x,y=DataLoad3(1,1)
+x=x[::50]
+y=y[::50]
 trian_number=y.shape[0]
 train_data=data_utils.TensorDataset(torch.from_numpy(x).float(),torch.from_numpy(y).float())
 train_loader_2 = data_utils.DataLoader(train_data,batch_size=BatchSize,shuffle=True)
-
-x_1,y_1=DataLoad4(201,201)
-x_2,y_2=DataLoad3(201,201)
-# x_3,y_3=DataLoad3(60,117)
-x=np.concatenate((x_1,x_2),axis=0)
-y=np.concatenate((y_1,y_2),axis=0)
+# x_1,y_1=DataLoad(30009,30010)
+# x_2,y_2=DataLoad(30000,30000)
+# x_3,y_3=DataLoad(30000,30000)
+# x=np.concatenate((x_1,x_2,x_3),axis=0)
+# y=np.concatenate((y_1,y_2,y_3),axis=0)
+x,y=DataLoad3(1,1)
 # x=x[:2]
 # y=y[:2]
 # x,y=DataLoad(25000+80,25000+100)
@@ -361,7 +360,7 @@ model=net(2,1,128).to(device)
 model=nn.parallel.DataParallel(model)
 model.load_state_dict(torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_18.pkl"))
 # # model.eval()
-apply_lora_to_unet(model, rank=16,downsample_factor=16)
+apply_lora_to_unet(model, rank=8,downsample_factor=16)
 # model=torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_22.pkl")
 # model=nn.parallel.DataParallel(model)
 # torch.save(model.state_dict(),"/home/pengyaoguang/data/2D_data/2D_result/modeltest9_{}.pkl".format(10))
@@ -376,14 +375,14 @@ apply_lora_to_unet(model, rank=16,downsample_factor=16)
 #     {'params': [param for name, param in model.named_parameters() if 'A' in name or 'B' in name or 's' in name], 'lr': 5e-1} # 优化LORA参数
 # ], lr=5e-1)
 optimizer = torch.optim.AdamW([
-    {'params': [param for name, param in model.named_parameters() if ('A' not in name and 'B' not in name and 's' not in name) and ('down' in name or 'in_conv' in name or 'up' in name )], 'lr': 1e-3},
-    {'params': [param for name, param in model.named_parameters() if ('A' not in name and 'B' not in name and 's' not in name) and ('down' not in name and 'in_conv' not in name and 'up' not in name)], 'lr': 1e-3},  # 冻结原始权重
+    {'params': [param for name, param in model.named_parameters() if ('A' not in name and 'B' not in name and 's' not in name) and ('down' in name or 'in_conv' in name or 'up' in name )], 'lr': 0},
+    {'params': [param for name, param in model.named_parameters() if ('A' not in name and 'B' not in name and 's' not in name) and ('down' not in name and 'in_conv' not in name and 'up' not in name)], 'lr': 0},  # 冻结原始权重
     {'params': [param for name, param in model.named_parameters() if 'A' in name or 'B' in name or 's' in name], 'lr': 5e-1} # 优化LORA参数
 ], lr=5e-1)
 scheduler=torch.optim.lr_scheduler.StepLR(optimizer,step_size=1000,gamma=0.7)
 # loss_1=torch.nn.L1Loss()
 loss_1=torch.nn.MSELoss()
-train(model,train_loader_1,test_loader_1,10000,device,optimizer,scheduler,loss_1,save_number=59)
+train(model,train_loader_1,test_loader_1,10000,device,optimizer,scheduler,loss_1,save_number=71)
 # test(model,train_loader_1,loss_1,device)
 # test(model,train_loader_2,loss_1,device)
 

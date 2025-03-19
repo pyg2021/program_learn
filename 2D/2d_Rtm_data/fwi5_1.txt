@@ -1,0 +1,179 @@
+nohup: ignoring input
+25242 0
+epoch 0 loss: 5159717.5
+epoch 0 loss: 5159685.5
+epoch 0 loss: 5159537.0
+epoch 0 loss: 5157906.0
+epoch 0 loss: 5149727.0
+epoch 0 loss: 5058748.5
+epoch 0 loss: 4574625.5
+epoch 0 loss: 1053830.625
+0.054675098260243735 min
+L2: tensor(458736.8438, device='cuda:3', grad_fn=<MseLossBackward0>) L1 tensor(534.0586, device='cuda:3', grad_fn=<MeanBackward0>) ssim: 0.44876750210649335 SNR: 13.935528790551055
+epoch 10 loss: 13569.056640625
+epoch 10 loss: 12838.6552734375
+epoch 10 loss: 11905.1826171875
+epoch 10 loss: 11316.0439453125
+epoch 10 loss: 10777.28125
+0.20592885414759318 min
+L2: tensor(412504.1875, device='cuda:3', grad_fn=<MseLossBackward0>) L1 tensor(453.6674, device='cuda:3', grad_fn=<MeanBackward0>) ssim: 0.5482506231800653 SNR: 14.396881368236196
+epoch 20 loss: 3704.4404296875
+epoch 20 loss: 3654.993896484375
+epoch 20 loss: 3583.973388671875
+epoch 20 loss: 3523.618896484375
+epoch 20 loss: 3449.232421875
+0.35348007281621296 min
+L2: tensor(401378.3438, device='cuda:3', grad_fn=<MseLossBackward0>) L1 tensor(430.0232, device='cuda:3', grad_fn=<MeanBackward0>) ssim: 0.6153965257364326 SNR: 14.515625650075085
+epoch 30 loss: 2261.2236328125
+epoch 30 loss: 2245.208740234375
+epoch 30 loss: 2234.174072265625
+epoch 30 loss: 2222.572998046875
+epoch 30 loss: 2211.845703125
+0.5054559508959452 min
+L2: tensor(396969.3750, device='cuda:3', grad_fn=<MseLossBackward0>) L1 tensor(422.2221, device='cuda:3', grad_fn=<MeanBackward0>) ssim: 0.6293652254186963 SNR: 14.563594931618745
+epoch 40 loss: 1925.635986328125
+epoch 40 loss: 1917.5955810546875
+epoch 40 loss: 1912.8955078125
+epoch 40 loss: 1909.8485107421875
+epoch 40 loss: 1906.8033447265625
+0.6474047780036927 min
+L2: tensor(395785.6250, device='cuda:3', grad_fn=<MseLossBackward0>) L1 tensor(420.1933, device='cuda:3', grad_fn=<MeanBackward0>) ssim: 0.6244346021221554 SNR: 14.576564632695826
+epoch 50 loss: 1806.7347412109375
+epoch 50 loss: 1805.5382080078125
+epoch 50 loss: 1802.989013671875
+epoch 50 loss: 1800.4344482421875
+epoch 50 loss: 1798.2896728515625
+0.7971776564915974 min
+L2: tensor(394864.7500, device='cuda:3', grad_fn=<MseLossBackward0>) L1 tensor(418.5368, device='cuda:3', grad_fn=<MeanBackward0>) ssim: 0.6307142786677469 SNR: 14.586681296008276
+epoch 60 loss: 1744.234375
+epoch 60 loss: 1744.821044921875
+epoch 60 loss: 1743.2578125
+epoch 60 loss: 1741.96044921875
+epoch 60 loss: 1741.0645751953125
+0.944692055384318 min
+L2: tensor(394238.9062, device='cuda:3', grad_fn=<MseLossBackward0>) L1 tensor(417.4728, device='cuda:3', grad_fn=<MeanBackward0>) ssim: 0.6334242240408048 SNR: 14.593570110287796
+epoch 70 loss: 1701.0416259765625
+epoch 70 loss: 1700.3673095703125
+epoch 70 loss: 1698.73095703125
+epoch 70 loss: 1697.7449951171875
+epoch 70 loss: 1696.76953125
+1.087925660610199 min
+L2: tensor(393797.5312, device='cuda:3', grad_fn=<MseLossBackward0>) L1 tensor(416.4694, device='cuda:3', grad_fn=<MeanBackward0>) ssim: 0.636882302206559 SNR: 14.598434919470902
+epoch 80 loss: 1664.9278564453125
+epoch 80 loss: 1664.4490966796875
+epoch 80 loss: 1663.850341796875
+epoch 80 loss: 1663.1214599609375
+epoch 80 loss: 1662.8555908203125
+1.2362169822057087 min
+L2: tensor(393428.9688, device='cuda:3', grad_fn=<MseLossBackward0>) L1 tensor(415.3274, device='cuda:3', grad_fn=<MeanBackward0>) ssim: 0.6402755876777587 SNR: 14.602501513414595
+epoch 90 loss: 1644.3131103515625
+epoch 90 loss: 1643.851318359375
+epoch 90 loss: 1643.192138671875
+epoch 90 loss: 1643.1907958984375
+epoch 90 loss: 1642.783935546875
+1.3870253642400105 min
+L2: tensor(392955.7812, device='cuda:3', grad_fn=<MseLossBackward0>) L1 tensor(414.2950, device='cuda:3', grad_fn=<MeanBackward0>) ssim: 0.6429784511085199 SNR: 14.607728211533717
+epoch 100 loss: 1627.9222412109375
+epoch 100 loss: 1627.01220703125
+epoch 100 loss: 1626.3511962890625
+epoch 100 loss: 1625.793212890625
+epoch 100 loss: 1625.2698974609375
+1.5529025157292684 min
+L2: tensor(392184.0625, device='cuda:3', grad_fn=<MseLossBackward0>) L1 tensor(412.5721, device='cuda:3', grad_fn=<MeanBackward0>) ssim: 0.6474430359061069 SNR: 14.616265468171118
+epoch 110 loss: 1610.76171875
+epoch 110 loss: 1610.3658447265625
+epoch 110 loss: 1609.98876953125
+epoch 110 loss: 1609.5203857421875
+epoch 110 loss: 1609.3814697265625
+1.7157874822616577 min
+L2: tensor(391373.0312, device='cuda:3', grad_fn=<MseLossBackward0>) L1 tensor(410.2534, device='cuda:3', grad_fn=<MeanBackward0>) ssim: 0.6515024108957641 SNR: 14.625256023302928
+epoch 120 loss: 1599.207275390625
+epoch 120 loss: 1598.9976806640625
+epoch 120 loss: 1598.6827392578125
+epoch 120 loss: 1598.4468994140625
+epoch 120 loss: 1598.3348388671875
+1.86636989514033 min
+L2: tensor(390833.8438, device='cuda:3', grad_fn=<MseLossBackward0>) L1 tensor(408.8164, device='cuda:3', grad_fn=<MeanBackward0>) ssim: 0.6544019798508429 SNR: 14.63124339570276
+epoch 130 loss: 1589.5848388671875
+epoch 130 loss: 1589.4713134765625
+epoch 130 loss: 1589.2672119140625
+epoch 130 loss: 1589.1904296875
+epoch 130 loss: 1589.082763671875
+2.014475623766581 min
+L2: tensor(390129.8438, device='cuda:3', grad_fn=<MseLossBackward0>) L1 tensor(407.3058, device='cuda:3', grad_fn=<MeanBackward0>) ssim: 0.6571560947018407 SNR: 14.63907312674655
+epoch 140 loss: 1583.2801513671875
+epoch 140 loss: 1583.205078125
+epoch 140 loss: 1583.0673828125
+epoch 140 loss: 1582.927734375
+epoch 140 loss: 1582.7489013671875
+2.1694966236750286 min
+L2: tensor(389239.8438, device='cuda:3', grad_fn=<MseLossBackward0>) L1 tensor(405.9804, device='cuda:3', grad_fn=<MeanBackward0>) ssim: 0.6602435086778138 SNR: 14.648991997232093
+epoch 150 loss: 1578.383544921875
+epoch 150 loss: 1578.23046875
+epoch 150 loss: 1578.190673828125
+epoch 150 loss: 1578.09912109375
+epoch 150 loss: 1578.0064697265625
+2.322928003470103 min
+L2: tensor(388021.0312, device='cuda:3', grad_fn=<MseLossBackward0>) L1 tensor(404.2607, device='cuda:3', grad_fn=<MeanBackward0>) ssim: 0.6633859636542138 SNR: 14.662612174526789
+epoch 160 loss: 1573.3187255859375
+epoch 160 loss: 1573.2337646484375
+epoch 160 loss: 1573.1307373046875
+epoch 160 loss: 1573.0267333984375
+epoch 160 loss: 1573.3095703125
+epoch 160 loss: 1572.92919921875
+2.4812409400939943 min
+L2: tensor(386579.2500, device='cuda:3', grad_fn=<MseLossBackward0>) L1 tensor(402.3301, device='cuda:3', grad_fn=<MeanBackward0>) ssim: 0.6666414733758665 SNR: 14.678779540822458
+epoch 170 loss: 1568.805419921875
+epoch 170 loss: 1568.7308349609375
+epoch 170 loss: 1568.56494140625
+epoch 170 loss: 1568.455810546875
+epoch 170 loss: 1568.283935546875
+2.636775819460551 min
+L2: tensor(384661.7188, device='cuda:3', grad_fn=<MseLossBackward0>) L1 tensor(399.8416, device='cuda:3', grad_fn=<MeanBackward0>) ssim: 0.670307830118004 SNR: 14.700375303101891
+epoch 180 loss: 1563.7012939453125
+epoch 180 loss: 1563.63671875
+epoch 180 loss: 1563.5411376953125
+epoch 180 loss: 1563.442626953125
+epoch 180 loss: 1563.3377685546875
+2.8009605765342713 min
+L2: tensor(382639.1562, device='cuda:3', grad_fn=<MseLossBackward0>) L1 tensor(397.3882, device='cuda:3', grad_fn=<MeanBackward0>) ssim: 0.6746525548688441 SNR: 14.723270676422093
+epoch 190 loss: 1559.645751953125
+epoch 190 loss: 1559.5133056640625
+epoch 190 loss: 1559.40966796875
+epoch 190 loss: 1559.3311767578125
+epoch 190 loss: 1559.2308349609375
+2.959346874554952 min
+L2: tensor(379988.5938, device='cuda:3', grad_fn=<MseLossBackward0>) L1 tensor(394.3344, device='cuda:3', grad_fn=<MeanBackward0>) ssim: 0.6802714036493035 SNR: 14.7534592632447
+epoch 200 loss: 1555.4716796875
+epoch 200 loss: 1555.3941650390625
+epoch 200 loss: 1555.3087158203125
+epoch 200 loss: 1555.2337646484375
+epoch 200 loss: 1555.1265869140625
+3.118818970521291 min
+L2: tensor(377479.2500, device='cuda:3', grad_fn=<MseLossBackward0>) L1 tensor(391.4255, device='cuda:3', grad_fn=<MeanBackward0>) ssim: 0.6856176851365854 SNR: 14.782234117986025
+/home/pengyaoguang/.conda/envs/pytorch3.9/lib/python3.9/site-packages/deepwave/common.py:399: UserWarning: At least six grid cells per wavelength is recommended, but at a frequency of 15, a minimum velocity of 1.15185546875, and a grid cell spacing of 4.0, there are only 0.019197591145833335.
+  warnings.warn("At least six grid cells per wavelength is "
+Traceback (most recent call last):
+  File "/home/pengyaoguang/program_learn/2D/2d_Rtm_data/fwi_save_reslut5_all.py", line 173, in <module>
+    optimiser.step(closure)
+  File "/home/pengyaoguang/.conda/envs/pytorch3.9/lib/python3.9/site-packages/torch/optim/optimizer.py", line 373, in wrapper
+    out = func(*args, **kwargs)
+  File "/home/pengyaoguang/.conda/envs/pytorch3.9/lib/python3.9/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/pengyaoguang/.conda/envs/pytorch3.9/lib/python3.9/site-packages/torch/optim/lbfgs.py", line 426, in step
+    loss, flat_grad, t, ls_func_evals = _strong_wolfe(
+  File "/home/pengyaoguang/.conda/envs/pytorch3.9/lib/python3.9/site-packages/torch/optim/lbfgs.py", line 50, in _strong_wolfe
+    f_new, g_new = obj_func(x, t, d)
+  File "/home/pengyaoguang/.conda/envs/pytorch3.9/lib/python3.9/site-packages/torch/optim/lbfgs.py", line 424, in obj_func
+    return self._directional_evaluate(closure, x, t, d)
+  File "/home/pengyaoguang/.conda/envs/pytorch3.9/lib/python3.9/site-packages/torch/optim/lbfgs.py", line 278, in _directional_evaluate
+    loss = float(closure())
+  File "/home/pengyaoguang/.conda/envs/pytorch3.9/lib/python3.9/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/pengyaoguang/program_learn/2D/2d_Rtm_data/fwi_save_reslut5_all.py", line 147, in closure
+    loss.backward()
+  File "/home/pengyaoguang/.conda/envs/pytorch3.9/lib/python3.9/site-packages/torch/_tensor.py", line 492, in backward
+    torch.autograd.backward(
+  File "/home/pengyaoguang/.conda/envs/pytorch3.9/lib/python3.9/site-packages/torch/autograd/__init__.py", line 251, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 1000.00 MiB. GPU 3 has a total capacty of 23.65 GiB of which 998.56 MiB is free. Process 468696 has 7.69 GiB memory in use. Process 470793 has 7.69 GiB memory in use. Including non-PyTorch memory, this process has 7.28 GiB memory in use. Of the allocated memory 6.74 GiB is allocated by PyTorch, and 81.16 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
