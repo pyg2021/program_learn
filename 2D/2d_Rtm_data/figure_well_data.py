@@ -2,21 +2,21 @@ import matplotlib.pyplot as plt
 import scipy.io as sio
 import numpy as np
 # k=25242
-# k=201
-k=1
+k=201
+# k=1
 # k=25242
-j=50
-# j=80
+# j=50
+j=80
 data_real=sio.loadmat('/home/pengyaoguang/data/well_data/{}_{}v_real_test.mat'.format(k,j))['data']
 data_updete=sio.loadmat('/home/pengyaoguang/data/well_data/{}_{}v_updete_test.mat'.format(k,j))['data']
 data_sm=sio.loadmat('/home/pengyaoguang/data/well_data/{}_{}v_smooth_test.mat'.format(k,j))['data']
 data_FWI=sio.loadmat('/home/pengyaoguang/data/well_data/{}_{}v_FWI.mat'.format(k,j))['data']
 # res=[50]
-plt.figure()
-plt.imshow(data_FWI.T,cmap='jet')
-plt.colorbar()
-plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/{}_{}v_FWI.eps".format(k,j),dpi=300)
-plt.close()
+# plt.figure()
+# plt.imshow(data_FWI.T,cmap='jet')
+# plt.colorbar()
+# plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/{}_{}v_FWI.eps".format(k,j),dpi=300)
+# plt.close()
 
 
 # plot vertical velocity-depth profile
@@ -32,7 +32,7 @@ for i in range(num_cols*num_rows):
     if i==0:
         line1, = ax1.plot(data_sm[p1]/1000,np.arange(0,hgrid),color='green',lw=1.5,ls='--',label='Initial')
         line2, = ax1.plot(data_FWI[p1]/1000,np.arange(0,hgrid),color='purple',lw=1.5,ls='--',label='FWI')
-        line4, = ax1.plot(data_updete[p1]/1000,np.arange(0,hgrid),color='blue',lw=1.5,ls='--',label='LUFormer')
+        line4, = ax1.plot(data_updete[p1]/1000,np.arange(0,hgrid),color='blue',lw=1.5,ls='--',label='LAUNet')
         line6, = ax1.plot(data_real[p1]/1000,np.arange(0,hgrid),color='red',lw=1.5,ls='--',label='True')
         
         plt.legend(loc='lower left',bbox_to_anchor=(0, -0.14),
@@ -50,7 +50,7 @@ for i in range(num_cols*num_rows):
     if i==1:
         line1, = ax1.plot(data_sm[p2]/1000,np.arange(0,hgrid),color='green',lw=1.5,ls='--',label='Initial')
         line2, = ax1.plot(data_FWI[p2]/1000,np.arange(0,hgrid),color='purple',lw=1.5,ls='--',label='FWI')
-        line4, = ax1.plot(data_updete[p2]/1000,np.arange(0,hgrid),color='blue',lw=1.5,ls='-.',label='LUFormer')
+        line4, = ax1.plot(data_updete[p2]/1000,np.arange(0,hgrid),color='blue',lw=1.5,ls='-.',label='LAUNet')
         line6, = ax1.plot(data_real[p2]/1000,np.arange(0,hgrid),color='red',lw=1.5,ls='--',label='True')
 
         
@@ -63,7 +63,7 @@ for i in range(num_cols*num_rows):
     if i==2:
         line1, = ax1.plot(data_sm[p3]/1000,np.arange(0,hgrid),color='green',lw=1.5,ls='--',label='Initial')
         line2, = ax1.plot(data_FWI[p3]/1000,np.arange(0,hgrid),color='purple',lw=1.5,ls='--',label='FWI')
-        line4, = ax1.plot(data_updete[p3]/1000,np.arange(0,hgrid),color='blue',lw=1.5,ls='--',label='LUFormer')
+        line4, = ax1.plot(data_updete[p3]/1000,np.arange(0,hgrid),color='blue',lw=1.5,ls='--',label='LAUNet')
         line6, = ax1.plot(data_real[p3]/1000,np.arange(0,hgrid),color='red',lw=1.5,ls='--',label='True')
 
         ax1.invert_yaxis()
