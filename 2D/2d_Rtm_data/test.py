@@ -102,31 +102,31 @@ def total_variation_loss(image, weight=1.0):
     return tv_loss
 # model=torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_62.pkl")
 # model=torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_49.pkl")
-# model=torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_59.pkl")
+model=torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_59.pkl")
 # model=torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_75.pkl")
-model=net(2,1,128).to(device)
-model=nn.parallel.DataParallel(model)
-model.load_state_dict(torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_18.pkl")) 
-m=8
+# model=net(2,1,128).to(device)
+# model=nn.parallel.DataParallel(model)
+# model.load_state_dict(torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_18.pkl")) 
+# m=8
 ##data_prepare
-k=25242
+# k=25242
 # k=1
-# k=201
-# j=80
-j=50
-save=False  
+k=201
+j=80
+# j=50
+save=True  
 
 ny=nx=100
 ##new_data
-# R=torch.Tensor(sio.loadmat("/home/pengyaoguang/data/3D_RTM2/RTM{}".format(k))["RTM"][20:120,20:120,20:120][j])
-# label=torch.Tensor(sio.loadmat("/home/pengyaoguang/data/3D_RTM2/v{}".format(k-1))["v"][j]*1000)
+R=torch.Tensor(sio.loadmat("/home/pengyaoguang/data/3D_RTM2/RTM{}".format(k))["RTM"][20:120,20:120,20:120][j])
+label=torch.Tensor(sio.loadmat("/home/pengyaoguang/data/3D_RTM2/v{}".format(k-1))["v"][j]*1000)
 # R=torch.Tensor(sio.loadmat("/home/pengyaoguang/data/3D_RTM2/RTM{}".format(k))["RTM"][20:120,20:120,20:120][:,j])
 # label=torch.Tensor(sio.loadmat("/home/pengyaoguang/data/3D_RTM2/v{}".format(k-1))["v"][:,j]*1000)
 ##process_real_data
 # R=torch.Tensor(sio.loadmat("/home/pengyaoguang/data/real_data/RTM{}".format(k))["RTM"])
 # label=torch.Tensor(sio.loadmat("/home/pengyaoguang/data/real_data/v{}".format(k))["v"]*1000)
-R=torch.Tensor(sio.loadmat("/home/pengyaoguang/data/3D_RTM/RTM{}".format(k))["RTM"][20:120,20:120,20:120][j])
-label=torch.Tensor(sio.loadmat("/home/pengyaoguang/data/3D_v_model/v{}".format(k))["v"][j]*1000)
+# R=torch.Tensor(sio.loadmat("/home/pengyaoguang/data/3D_RTM/RTM{}".format(k))["RTM"][20:120,20:120,20:120][j])
+# label=torch.Tensor(sio.loadmat("/home/pengyaoguang/data/3D_v_model/v{}".format(k))["v"][j]*1000)
 
 # R=torch.from_file('/home/pengyaoguang/data/2D_data/2D_RTM1209/RTM{}.bin'.format(k),
 #                 size=ny*nx).reshape(ny, nx)
@@ -141,9 +141,10 @@ label_smooth=torch.tensor(1/gaussian_filter(1/label, 40))
 # label_smooth=torch.tensor(label)
 vmax=torch.max(R)
 plt.figure()
-plt.imshow(R.T/vmax,cmap="gray")
+plt.imshow(R.T/vmax,vmin=-0.5,vmax=0.5,cmap="gray")
 if save:
-    plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/{}_{}rtm.eps".format(k,j),dpi=300)
+    plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/{}_{}rtm.eps".format(k,j) )
+    plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/{}_{}rtm.png".format(k,j) )
 else:
     plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/rtm0.png")
 R1=R.reshape(1,1,R.shape[0],R.shape[1])
@@ -158,7 +159,8 @@ plt.yticks(np.arange(0,100,step=19.9),['0','0.2','0.4','0.6','0.8','1.0'],fontsi
 plt.xticks(np.arange(0,100,step=19.9),['0','0.2','0.4','0.6','0.8','1.0'],fontsize=14)
 if save:
     sio.savemat('/home/pengyaoguang/data/well_data/{}_{}v_real_test.mat'.format(k,j),{'data':label})
-    plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/{}_{}v_real_test.eps".format(k,j),dpi=300)
+    plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/{}_{}v_real_test.eps".format(k,j) )
+    plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/{}_{}v_real_test.png".format(k,j) )
 else:
     plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/v_real_test0.png")
 plt.close()
@@ -173,7 +175,8 @@ plt.yticks(np.arange(0,100,step=19.9),['0','0.2','0.4','0.6','0.8','1.0'],fontsi
 plt.xticks(np.arange(0,100,step=19.9),['0','0.2','0.4','0.6','0.8','1.0'],fontsize=14)
 if save:
     sio.savemat('/home/pengyaoguang/data/well_data/{}_{}v_smooth_test.mat'.format(k,j),{'data':label_smooth})
-    plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/{}_{}v_smooth_test.eps".format(k,j),dpi=300)
+    plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/{}_{}v_smooth_test.eps".format(k,j) )
+    plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/{}_{}v_smooth_test.png".format(k,j) )
 else:
     plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/v_smooth_test0.png")
 plt.close()
@@ -216,7 +219,8 @@ plt.yticks(np.arange(0,100,step=19.9),['0','0.2','0.4','0.6','0.8','1.0'],fontsi
 plt.xticks(np.arange(0,100,step=19.9),['0','0.2','0.4','0.6','0.8','1.0'],fontsize=14)
 if save:
     sio.savemat('/home/pengyaoguang/data/well_data/{}_{}v_updete_test.mat'.format(k,j),{'data':y_1.detach().cpu()[0,0]})
-    plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/{}_{}v_updete_test.eps".format(k,j),dpi=300)
+    plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/{}_{}v_updete_test.eps".format(k,j) )
+    plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/{}_{}v_updete_test.png".format(k,j) )
 else:
     plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/v_updete_test0.png")
 print('ssim',ssim_metric(label.detach().cpu().numpy(),y_1.detach().cpu()[0,0].numpy()))
@@ -229,7 +233,8 @@ plt.ylabel('Z(km)',fontsize=14)
 plt.yticks(np.arange(0,100,step=19.9),['0','0.2','0.4','0.6','0.8','1.0'],fontsize=14)
 plt.xticks(np.arange(0,100,step=19.9),['0','0.2','0.4','0.6','0.8','1.0'],fontsize=14)
 if save:
-    plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/{}_{}v_error.eps".format(k,j),dpi=300)
+    plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/{}_{}v_error.eps".format(k,j) )
+    plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/{}_{}v_error.png".format(k,j) )
 else:
     plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/v_error0.png")
 plt.colorbar()
@@ -243,5 +248,6 @@ plt.xlabel('X(km)',fontsize=14)
 plt.ylabel('Z(km)',fontsize=14)
 plt.yticks(np.arange(0,100,step=19.9),['0','0.2','0.4','0.6','0.8','1.0'],fontsize=14)
 plt.xticks(np.arange(0,100,step=19.9),['0','0.2','0.4','0.6','0.8','1.0'],fontsize=14)
-plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/{}_{}v_FWI.eps".format(k,j),dpi=300)
+plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/{}_{}v_FWI.eps".format(k,j) )
+plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/{}_{}v_FWI.png".format(k,j) )
 plt.close()

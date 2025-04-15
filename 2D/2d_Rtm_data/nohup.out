@@ -1,0 +1,4 @@
+tensor(39.7070, device='cuda:0', grad_fn=<MeanBackward0>)
+relative_error: tensor(0.0017, device='cuda:0', grad_fn=<DivBackward0>)
+snr: 27.793138903655073
+ssim 0.9588723852485418
