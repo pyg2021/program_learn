@@ -15,7 +15,7 @@ print("some information:\n","nshots:",nshots,"nreceivers:",nreceivers,"fwi_itera
 #NBVAL_IGNORE_OUTPUT
 from examples.seismic import demo_model, plot_velocity, plot_perturbation
 
-m=10108
+m=25000
 n=50
 # Define true and initial model
 v=sio.loadmat("/home/pengyaoguang/data/3D_v_model/v{}.mat".format(m))['v']
@@ -207,9 +207,11 @@ from devito import mmax
 
 # Run FWI with gradient descent
 history = np.zeros((fwi_iterations, 1))
+
 for i in range(0, fwi_iterations):
     # Compute the functional value and gradient for the current
     # model estimate
+    print('------------------------------------------')
     phi, direction = fwi_gradient(model0.vp)
 
     # Store the history of the functional values
