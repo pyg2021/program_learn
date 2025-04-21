@@ -1,0 +1,35 @@
+nohup: ignoring input
+Operator `initdamp` ran in 0.01 s
+Operator `initdamp` ran in 0.01 s
+Operator `initdamp` ran in 0.01 s
+Operator `initdamp` ran in 0.01 s
+Operator `initdamp` ran in 0.01 s
+Operator `initdamp` ran in 0.01 s
+Operator `initdamp` ran in 0.01 s
+Operator `initdamp` ran in 0.01 s
+Operator `initdamp` ran in 0.01 s
+Operator `initdamp` ran in 0.01 s
+Operator `initdamp` ran in 0.01 s
+Operator `initdamp` ran in 0.01 s
+/home/yaoguang/anaconda3/envs/pytorch3.9/lib/python3.9/site-packages/distributed/node.py:182: UserWarning: Port 8787 is already in use.
+Perhaps you already have a cluster running?
+Hosting the HTTP server on port 38867 instead
+  warnings.warn(
+/home/yaoguang/anaconda3/envs/pytorch3.9/lib/python3.9/site-packages/distributed/node.py:182: UserWarning: Port 8787 is already in use.
+Perhaps you already have a cluster running?
+Hosting the HTTP server on port 36447 instead
+  warnings.warn(
+/home/yaoguang/anaconda3/envs/pytorch3.9/lib/python3.9/site-packages/distributed/node.py:182: UserWarning: Port 8787 is already in use.
+Perhaps you already have a cluster running?
+Hosting the HTTP server on port 45881 instead
+  warnings.warn(
+/home/yaoguang/anaconda3/envs/pytorch3.9/lib/python3.9/site-packages/distributed/node.py:182: UserWarning: Port 8787 is already in use.
+Perhaps you already have a cluster running?
+Hosting the HTTP server on port 43543 instead
+  warnings.warn(
+/home/yaoguang/anaconda3/envs/pytorch3.9/lib/python3.9/site-packages/distributed/node.py:182: UserWarning: Port 8787 is already in use.
+Perhaps you already have a cluster running?
+Hosting the HTTP server on port 37975 instead
+  warnings.warn(
+/home/yaoguang/anaconda3/envs/pytorch3.9/lib/python3.9/multiprocessing/resource_tracker.py:216: UserWarning: resource_tracker: There appear to be 177 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '

@@ -15,10 +15,11 @@ print("some information:\n","nshots:",nshots,"nreceivers:",nreceivers,"fwi_itera
 #NBVAL_IGNORE_OUTPUT
 from examples.seismic import demo_model, plot_velocity, plot_perturbation
 
-m=25242
+m=1
 n=50
 # Define true and initial model
-v=sio.loadmat("/home/yaoguang/data/3D_v_model/v{}.mat".format(m))['v']
+v=sio.loadmat("/home/yaoguang/data//3D_RTM2/v{}.mat".format(m-1))['v']
+# v=sio.loadmat("/home/yaoguang/data/3D_v_model/v{}.mat".format(m))['v']
 origin=(0., 0., 0. )
 shape=(100, 100, 100)
 spacing=(10., 10., 10.)
@@ -29,18 +30,18 @@ model0 = Model(vp=v, origin=origin, shape=shape, spacing=spacing,
                   space_order=6, nbl=20, grid=model.grid,bcs="damp")
 
 from devito import gaussian_smooth
-filter_sigma = (10, 10, 10 )
+filter_sigma = (40, 40, 40 )
 print("filter_sigma:",filter_sigma)
 gaussian_smooth(model0.vp, sigma=filter_sigma)
 # plot_velocity(model)
 # plot_velocity(model0)
 # plot_perturbation(model0, model)
 # model0.vp.data[:]=sio.loadmat("/home/yaoguang/data/3D_FWI/v_update{}_{}.mat".format(m,n))["v"]
-print("111111")
+# print("111111")
 # sio.savemat("/home/yaoguang/data/3D_FWI/v_start{}.mat".format(m),{"v":model0.vp.data})
 plt.figure()
 v_update=model0.vp.data[tuple(slice(model0.nbl, -model0.nbl) for _ in range(3))]
-plt.imshow(v_update[n].T,vmin=1.8,vmax=6)
+plt.imshow(v_update[n].T,vmin=1.8,vmax=6,cmap='jet')
 plt.colorbar()
 plt.savefig("/home/yaoguang/data/3D_FWI/v_start{}_{}.png".format(m,n))
 plt.close()
@@ -104,7 +105,7 @@ source_locations = np.empty((nshots, 3), dtype=np.float32)
 
 source_locations[:, 0] = np.repeat(np.linspace(20, model.domain_size[0], num=5), 5)
 source_locations[:, 1] = np.tile(np.linspace(20, model.domain_size[1], num=5), 5)
-source_locations[:, -1] = 10.
+source_locations[:, -1] = 1.
 
 # plot_velocity(model, source=source_locations)
 from devito import Eq, Operator
@@ -189,7 +190,7 @@ def fwi_gradient(vp_in):
 
 from sympy import Min, Max
 # Define bounding box constraints on the solution.
-def update_with_box(vp, alpha, dm, vmin=1.8, vmax=8):
+def update_with_box(vp, alpha, dm, vmin=1.5, vmax=10):
     """
     Apply gradient update in-place to vp with box constraint
 
@@ -233,14 +234,14 @@ for i in range(0, fwi_iterations):
     # Plot inverted velocity model
     plt.figure()
     v_update=model0.vp.data[tuple(slice(model.nbl, -model.nbl) for _ in range(3))]
-    plt.imshow(v_update[n].T,vmin=1.8,vmax=6)
+    plt.imshow(v_update[n].T,vmin=1.5,vmax=6)
     plt.colorbar()
-    plt.savefig("/home/yaoguang/data/3D_FWI/result2/v_update{}_{}_{}model.png".format(i,m,n))
-    # sio.savemat("/home/yaoguang/data/3D_FWI/v_update{}_{}.mat".format(m,n),{"v":model0.vp.data})
+    plt.savefig("/home/yaoguang/data/3D_FWI/v_update{}_{}model.png".format(m,n))
+    sio.savemat("/home/yaoguang/data/3D_FWI/v_update{}_{}.mat".format(m,n),{"v":model0.vp.data})
     plt.close()
     print("loss:",phi)
     end=time.time()
-    print((end-start),"min")
+    print(end-start,"s")
 
     # Plot objective function decrease
     plt.figure()
@@ -250,6 +251,6 @@ for i in range(0, fwi_iterations):
     plt.title('Convergence')
     # plt.show()
     plt.savefig("/home/yaoguang/data/3D_FWI/history{}_{}.png".format(m,n))
-    # sio.savemat("/home/yaoguang/data/3D_FWI/history{}_{}.mat".format(m,n),{'h':history})
+    sio.savemat("/home/yaoguang/data/3D_FWI/history{}_{}.mat".format(m,n),{'h':history})
     plt.close()
 # sio.savemat("/home/yaoguang/data/3D_FWI/v1.mat",{"v":model0.vp.data})
