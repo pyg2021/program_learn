@@ -35,9 +35,9 @@ gaussian_smooth(model0.vp, sigma=filter_sigma)
 # plot_velocity(model)
 # plot_velocity(model0)
 # plot_perturbation(model0, model)
-model0.vp.data[:]=sio.loadmat("/home/yaoguang/data/3D_FWI/v_update{}_{}.mat".format(m,n))["v"]
+# model0.vp.data[:]=sio.loadmat("/home/yaoguang/data/3D_FWI/v_update{}_{}.mat".format(m,n))["v"]
 print("111111")
-sio.savemat("/home/yaoguang/data/3D_FWI/v_start{}.mat".format(m),{"v":model0.vp.data})
+# sio.savemat("/home/yaoguang/data/3D_FWI/v_start{}.mat".format(m),{"v":model0.vp.data})
 plt.figure()
 v_update=model0.vp.data[tuple(slice(model0.nbl, -model0.nbl) for _ in range(3))]
 plt.imshow(v_update[n].T,vmin=1.8,vmax=6)
@@ -145,6 +145,7 @@ def fwi_gradient(vp_in):
                      coordinates=geometry.rec_positions)
     objective = 0.
     for i in range(nshots):
+        print(i)
         # Update source location
         geometry.src_positions[0, :] = source_locations[i, :]
 
@@ -235,11 +236,11 @@ for i in range(0, fwi_iterations):
     plt.imshow(v_update[n].T,vmin=1.8,vmax=6)
     plt.colorbar()
     plt.savefig("/home/yaoguang/data/3D_FWI/result2/v_update{}_{}_{}model.png".format(i,m,n))
-    sio.savemat("/home/yaoguang/data/3D_FWI/v_update{}_{}.mat".format(m,n),{"v":model0.vp.data})
+    # sio.savemat("/home/yaoguang/data/3D_FWI/v_update{}_{}.mat".format(m,n),{"v":model0.vp.data})
     plt.close()
     print("loss:",phi)
     end=time.time()
-    print(end-start,"s")
+    print((end-start),"min")
 
     # Plot objective function decrease
     plt.figure()
@@ -249,6 +250,6 @@ for i in range(0, fwi_iterations):
     plt.title('Convergence')
     # plt.show()
     plt.savefig("/home/yaoguang/data/3D_FWI/history{}_{}.png".format(m,n))
-    sio.savemat("/home/yaoguang/data/3D_FWI/history{}_{}.mat".format(m,n),{'h':history})
+    # sio.savemat("/home/yaoguang/data/3D_FWI/history{}_{}.mat".format(m,n),{'h':history})
     plt.close()
 # sio.savemat("/home/yaoguang/data/3D_FWI/v1.mat",{"v":model0.vp.data})
