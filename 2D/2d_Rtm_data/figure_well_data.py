@@ -17,6 +17,8 @@ data_FWI=sio.loadmat('/home/pengyaoguang/data/well_data/{}_{}v_FWI.mat'.format(k
 # plt.colorbar()
 # plt.savefig("/home/pengyaoguang/data/2D_data/2D_test_result/{}_{}v_FWI.eps".format(k,j),dpi=300)
 # plt.close()
+# plt.figure(data_real[50]/1000,np.arange(0,100))
+# plt.plot()
 
 
 # plot vertical velocity-depth profile

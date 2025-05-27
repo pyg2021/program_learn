@@ -73,7 +73,86 @@ class LORAConv2d(nn.Module):
         
         # 使用更新后的卷积层进行前向传播
         return updated_conv(x)
+class LORAConv2d_new(nn.Module):
+    def __init__(self, original_conv, rank, downsample_factor=16):
+        super(LORAConv2d_new, self).__init__()
+        self.original_conv = original_conv
+        self.rank = rank
+        self.downsample_factor = downsample_factor
+        
+        # 初始化LORA参数
+
+        self.A = nn.Parameter(torch.randn(original_conv.weight.size(0)*original_conv.weight.size(2)*original_conv.weight.size(3), rank) / downsample_factor)
+        self.B = nn.Parameter(torch.randn(rank, original_conv.weight.size(1)) / downsample_factor)
+        self.s = nn.Parameter(torch.zeros(1))  # 可选的缩放参数
  
+    def forward(self, x):
+        # 计算低秩更新项
+        # delta_weight = torch.matmul(self.A, self.B) * self.s
+        delta_weight = reshape(torch.matmul(self.A, self.B) * torch.sigmoid(self.s),(self.original_conv.weight.size(0),self.original_conv.weight.size(1),self.original_conv.weight.size(2),self.original_conv.weight.size(3)))
+        # delta_weight = torch.matmul(self.A, self.B)
+        # 注意：这里我们不能直接修改self.original_conv.weight，因为nn.Parameter是不可变的。
+        # 相反，我们会在每次前向传播时创建一个新的卷积层，使用更新后的权重。
+        
+        # 创建一个新的卷积层，使用原始权重加上LORA更新项
+        updated_weight = self.original_conv.weight + delta_weight
+        updated_conv = nn.Conv2d(
+            in_channels=self.original_conv.in_channels,
+            out_channels=self.original_conv.out_channels,
+            kernel_size=self.original_conv.kernel_size,
+            stride=self.original_conv.stride,
+            padding=self.original_conv.padding,
+            dilation=self.original_conv.dilation,
+            groups=self.original_conv.groups,
+            bias=self.original_conv.bias is not None,
+            padding_mode=self.original_conv.padding_mode
+        )
+        updated_conv.weight = nn.Parameter(updated_weight)
+        if self.original_conv.bias is not None:
+            updated_conv.bias = self.original_conv.bias
+        
+        # 使用更新后的卷积层进行前向传播
+        return updated_conv(x)
+class LORAConv2d_c(nn.Module):
+    def __init__(self, original_conv, rank, downsample_factor=16):
+        super(LORAConv2d_c, self).__init__()
+        self.original_conv = original_conv
+        self.rank = rank
+        self.downsample_factor = downsample_factor
+        
+        # 初始化LORA参数
+
+        self.A = nn.Parameter(torch.randn(original_conv.weight.size(0)*original_conv.weight.size(2), rank) / downsample_factor)
+        self.B = nn.Parameter(torch.randn(rank, original_conv.weight.size(1)*original_conv.weight.size(3)) / downsample_factor)
+        # self.s = nn.Parameter(torch.zeros(1))  # 可选的缩放参数
+ 
+    def forward(self, x):
+        # 计算低秩更新项
+        # delta_weight = torch.matmul(self.A, self.B) * self.s
+        delta_weight = reshape(torch.matmul(self.A, self.B),(self.original_conv.weight.size(0),self.original_conv.weight.size(1),self.original_conv.weight.size(2),self.original_conv.weight.size(3)))
+        # delta_weight = torch.matmul(self.A, self.B)
+        # 注意：这里我们不能直接修改self.original_conv.weight，因为nn.Parameter是不可变的。
+        # 相反，我们会在每次前向传播时创建一个新的卷积层，使用更新后的权重。
+        
+        # 创建一个新的卷积层，使用原始权重加上LORA更新项
+        updated_weight = self.original_conv.weight + delta_weight
+        updated_conv = nn.Conv2d(
+            in_channels=self.original_conv.in_channels,
+            out_channels=self.original_conv.out_channels,
+            kernel_size=self.original_conv.kernel_size,
+            stride=self.original_conv.stride,
+            padding=self.original_conv.padding,
+            dilation=self.original_conv.dilation,
+            groups=self.original_conv.groups,
+            bias=self.original_conv.bias is not None,
+            padding_mode=self.original_conv.padding_mode
+        )
+        updated_conv.weight = nn.Parameter(updated_weight)
+        if self.original_conv.bias is not None:
+            updated_conv.bias = self.original_conv.bias
+        
+        # 使用更新后的卷积层进行前向传播
+        return updated_conv(x)
 # 包装U-Net中的卷积层以应用LORA
 def apply_lora_to_unet(model, rank, downsample_factor=16):
     for name, module in list(model.named_modules()):
@@ -102,7 +181,8 @@ def total_variation_loss(image, weight=1.0):
     return tv_loss
 # model=torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_62.pkl")
 # model=torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_49.pkl")
-model=torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_59.pkl")
+# model=torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_59.pkl")
+model=torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_84.pkl")
 # model=torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_75.pkl")
 # model=net(2,1,128).to(device)
 # model=nn.parallel.DataParallel(model)
@@ -112,9 +192,9 @@ model=torch.load("/home/pengyaoguang/data/2D_data/2D_result/modeltest9_59.pkl")
 # k=25242
 # k=1
 k=201
+# j=80
 j=80
-# j=50
-save=True  
+save=False  
 
 ny=nx=100
 ##new_data
